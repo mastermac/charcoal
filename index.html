@@ -79,6 +79,18 @@
             top: -10px;
             font-size: 40px;
         }
+        .menutextspan {
+            float: left;
+            margin: 20px;
+            font-family: GothamBook;
+            font-size: 14px;
+            color: #000;
+            
+        }
+        .textspan {
+            margin-bottom: 80px;
+            margin-top: 10px;
+        }
 
         @media screen and (max-height: 450px) {
             .overlay a {
@@ -95,11 +107,15 @@
         @media screen and (max-width: 450px){
             .overlay-content {
                 position: relative;
-                top: 0%;
+                top: 5%;
                 width: 100%;
+                margin: 0px;
                 text-align: center;
-                margin-top: 10px;
                 font-family: GothamBook;
+            }
+            .textspan {
+                margin-bottom: 0px;
+                margin-top: 0px;
             }
         }
 
@@ -110,16 +126,14 @@
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content row">
-            <span style="float:left; margin:20px; font-family:GothamBook; font-size:14px; color:#000;" class="col-md-3">
-                <a href="#">about charcoal</a><br /><br /><br /><br />
+            <span class="col-md-3 menutextspan">
+                <a class="textspan" href="#">about charcoal</a>
                 <a href="#">contact us</a>
             </span>
             <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; width: 415px;height: 275px;background: rgb(240,240,240);border-radius: 2px;box-shadow: 2px 2px 3px rgba(0,0,0,0.15);">
                 <a href="#"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
                 <br />
                 VOLANT
-            </span>
-            <span class="col-md-1">
             </span>
             <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; width: 415px;height: 275px;background: rgb(240,240,240);border-radius: 2px;box-shadow: 2px 2px 3px rgba(0,0,0,0.15);">
                 <a href="#" target="_blank"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
