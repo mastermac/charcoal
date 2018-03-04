@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
@@ -15,11 +15,21 @@
             font-family: 'Nexa';
             src: url("src/font/Nexa-Light.otf");
         }
+        @font-face {
+            font-family: 'GothamBook';
+            src: url("src/font/Gotham-Book.otf");
+        }
         .prodlogo {
             margin-left: 10px;
             margin-right: 10px;
             height: 60px;
             width:145px;
+        }
+        .prodmenuimg {
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 60px;
+            width: 145px;
         }
         #main {
             padding: 8% 0;
@@ -27,14 +37,89 @@
         .inner {
             padding: 10% 0;
         }
+
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(252,252,252);
+            overflow-x: hidden;
+            transition: 0.5s;
+            font-family: GothamBook;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            font-family: GothamBook;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            font-family: GothamBook;
+        }
+
+            .overlay a:hover, .overlay a:focus {
+                color: #000;
+            }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: -10px;
+            font-size: 40px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
     </style>
 
 </head>
 <body style="background-color: rgb(249,249,249);">
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content row">
+            <span style="float:left; margin:20px; font-family:GothamBook; font-size:14px; color:#000;" class="col-md-3">
+                <a href="#">about charcoal</a><br /><br /><br /><br />
+                <a href="#">contact us</a>
+            </span>
+            <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; width: 415px;height: 275px;background: rgb(240,240,240);border-radius: 2px;box-shadow: 2px 2px 3px rgba(0,0,0,0.15);">
+                <a href="#"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
+                <br />
+                VOLANT
+            </span>
+            <span class="col-md-1">
+            </span>
+            <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; width: 415px;height: 275px;background: rgb(240,240,240);border-radius: 2px;box-shadow: 2px 2px 3px rgba(0,0,0,0.15);">
+                <a href="#" target="_blank"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
+                <br />
+                NAUTIC
+            </span>
+        </div>
+    </div>
+
     <div style="text-align:center; margin:10px;">
-        <span style="float:left;">
-            <img src="src/img/Menu Icon.png" />
-        </span>
+        <span style="cursor:pointer;float:left;" onclick="openNav()"><img src="src/img/Menu Icon.png"></span>
         <span>
             <img src="src/img/Logo.png" style="" />
         </span>
@@ -49,6 +134,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
     <script src="src/js/main.js"></script>
     <!--
     <script>
