@@ -1,0 +1,43 @@
+.menu {
+  float: left;
+  cursor: pointer;
+  margin: 0 auto;
+  padding-left: 1.25em;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+}
+.menu-global {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  border-top: 2px solid #a79d9d;
+  border-radius: 2px;
+  width: 51.6%;
+  transition: 0.55s;
+}
+.menu-top {
+  top: 8px;
+}
+.menu-middle {
+  top: 13px;
+}
+.menu-bottom {
+  top: 18px;
+}
+.menu-top-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(50deg);
+  transition: 0.55s 0.5s;
+}
+.menu-middle-click {
+  opacity: 0;
+}
+.menu-bottom-click {
+  backface-visibility: hidden;
+  top: 15px;
+  transform: rotate(-410deg);
+  transition: 0.55s 0.5s;
+}
