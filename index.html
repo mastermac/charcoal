@@ -27,9 +27,9 @@
             animation-fill-mode: none;
         }
         .prodlogo:hover {
-            -webkit-transform: scale(1.15);
-            -ms-transform: scale(1.15);
-            transform: scale(1.15);
+            position: relative; 
+            top: -2px;
+            transition-delay: 2s;
         }
         .prodmenuimg {
             margin-left: 10px;
@@ -53,14 +53,13 @@
             left: 0;
             background-color: rgb(252,252,252);
             overflow-x: hidden;
-            transition: 0.5s;
+            transition: 1s;
             font-family: GothamBook;
         }
 
         .overlay-content {
             position: relative;
             top: 25%;
-            width: 100%;
             text-align: center;
             margin-top: 30px;
             font-family: GothamBook;
@@ -76,9 +75,9 @@
             font-family: GothamBook;
         }
 
-            .overlay a:hover, .overlay a:focus {
-                color: #000;
-            }
+        .overlay a:hover, .overlay a:focus {
+            color: #000;
+        }
 
         .overlay .closebtn {
             position: absolute;
@@ -87,11 +86,11 @@
         }
         .menutextspan {
             float: left;
-            margin: 20px;
+            margin: 36px;
             font-family: GothamBook;
-            font-size: 14px;
             color: #000;
-            
+            letter-spacing:1.6px;
+            -webkit-font-smoothing: antialiased;
         }
         .textspan {
             margin-bottom: 80px;
@@ -135,21 +134,32 @@
 
 </head>
 <body class="container-fluid" style="background-color: rgb(249,249,249);">
-    <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+    <div style="text-align:center; margin:10px;">
+        <div class="menu" onclick="openCloseNav()">
+            <span class="menu-global menu-top"></span>
+            <span class="menu-global menu-middle"></span>
+            <span class="menu-global menu-bottom"></span>
+        </div>
+        <span>
+            <img src="src/img/Logo.png" style="width: 179px; margin-left:-2%;" />
+        </span>
+    </div>
+    
+    <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
         <div class="overlay-content row">
             <span class="col-md-3 menutextspan">
-                <a class="textspan" href="#">about charcoal</a>
-                <a href="#">contact us</a>
+                <a class="textspan" href="#" style="font-size: 14px;">about charcoal</a>
+                <a href="#" style="font-size: 14px;">contact us</a>
             </span>
-            <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; width: 415px;height: 275px;background: rgb(240,240,240);border-radius: 2px;box-shadow: 2px 2px 3px rgba(0,0,0,0.15);">
+            <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); margin-left:1px; max-width: 28%; flex:none;">
                 <a href="#"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
                 <br />
                 VOLANT
             </span>
-            <span class="col-md-1">
+            <span class="col-md-1" style="width: 40px; flex: none;">
             </span>
-            <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; width: 415px;height: 275px;background: rgb(240,240,240);border-radius: 2px;box-shadow: 2px 2px 3px rgba(0,0,0,0.15);">
+            <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); max-width: 28%; flex:none;">
                 <a href="#"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
                 <br />
                 NAUTIC
@@ -157,29 +167,22 @@
         </div>
     </div>
 
-    <div style="text-align:center; margin:10px;">
-        <span style="cursor:pointer;float:left;" onclick="openNav()"><img src="src/img/Menu Icon.png"></span>
-        <span>
-            <img src="src/img/Logo.png" style="width: 179px; margin-left:-2%;" />
-        </span>
-    </div>
     <div id="main">
         <div style="text-align:center; font-family: Nexa; font-size:22px; letter-spacing:2px; color: #676262; -webkit-font-smoothing: antialiased;" class="container inner">
             <p style="margin-bottom: 0.4rem;">reimagining the executive desk,</p><br />
-            <a href="#"><img class="prodlogo animated shrink" style="-webkit-animation-duration: 5s;" src="src/img/Volant Art Icon.png" /></a>
-            <a href="#"><img class="prodlogo animated shrink"  style="-webkit-animation-duration: 5s;" src="src/img/Nautic Art Icon.png" /></a>
+            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Volant Art Icon.png" /></a>
+            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Nautic Art Icon.png" /></a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script>
-        function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
+        function openCloseNav() {
+            if(document.getElementById("myNav").style.marginLeft == "-78%")
+                document.getElementById("myNav").style.marginLeft = "0%";
+            else
+                document.getElementById("myNav").style.marginLeft = "-78%";
         }
     </script>
     <script src="src/js/main.js"></script>
