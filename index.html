@@ -25,11 +25,13 @@
             height: 60px;
             width: 145px;
             animation-fill-mode: none;
+            transition: transform 1s;
         }
         .prodlogo:hover {
-            position: relative; 
-            top: -2px;
-            transition-delay: 2s;
+            position: relative;
+            -ms-transform: translate(0px,-6px);
+            -webkit-transform: translate(0px,-6px);
+            transform: translate(0px,-6px); 
         }
         .prodmenuimg {
             margin-left: 10px;
@@ -116,7 +118,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 12;
+            z-index: 2;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             margin-top:10px;
@@ -163,32 +165,33 @@
     <div style="text-align:center;" class="header-top clearfix">
         <div class="menu" onclick="openCloseNav()">
             <span class="menu-global menu-top"></span>
-            <span class="menu-global menu-middle"></span>
+            <span class="menu-global menu-middle1"></span>
+            <span class="menu-global menu-middle2"></span>
             <span class="menu-global menu-bottom"></span>
         </div>
         <span>
-            <img src="src/img/Logo.png" style="width: 179px; margin-left:-2%;" />
+            <img src="src/img/Logo.png" style="width: 179px; margin-left:-4.6%;" />
         </span>
-    </div>
     
-    <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
-        <div class="overlay-content row vertical-center">
-            <span class="col-md-3 menutextspan">
-                <a class="textspan" href="#" style="font-size: 14px;">about charcoal</a>
-                <a href="#" style="font-size: 14px;">contact us</a>
-            </span>
-            <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); margin-left:1px; max-width: 28%; flex:none;">
-                <a href="#"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
-                <br />
-                VOLANT
-            </span>
-            <span class="col-md-1" style="width: 40px; flex: none;">
-            </span>
-            <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); max-width: 28%; flex:none;">
-                <a href="#"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
-                <br />
-                NAUTIC
-            </span>
+        <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
+            <div class="overlay-content row vertical-center">
+                <span class="col-md-3 menutextspan">
+                    <a class="textspan" href="#" style="font-size: 14px;">about charcoal</a>
+                    <a href="#" style="font-size: 14px;">contact us</a>
+                </span>
+                <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); margin-left:1px; max-width: 28%; flex:none;">
+                    <a href="#"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
+                    <br />
+                    VOLANT
+                </span>
+                <span class="col-md-1" style="width: 40px; flex: none;">
+                </span>
+                <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius:         2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); max-width: 28%; flex:none;">
+                    <a href="#"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
+                    <br />
+                    NAUTIC
+                </span>
+            </div>
         </div>
     </div>
 
