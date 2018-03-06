@@ -41,7 +41,7 @@
             height: 100%;
         }
 
-        #main {
+        .vertical-center {
             min-height: 100%;
             min-height: 100vh;
             display: -webkit-box;
@@ -77,9 +77,7 @@
 
         .overlay-content {
             position: relative;
-            top: 25%;
             text-align: center;
-            margin-top: 30px;
             font-family: GothamBook;
         }
 
@@ -113,6 +111,15 @@
         .textspan {
             margin-bottom: 80px;
             margin-top: 10px;
+        }
+        .header-top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 12;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-top:10px;
         }
 
         @media screen and (max-height: 450px) {
@@ -153,7 +160,7 @@
 </head>
 <body class="container-fluid" style="background-color: rgb(249,249,249);">
     
-    <div style="text-align:center; margin:10px;">
+    <div style="text-align:center;" class="header-top clearfix">
         <div class="menu" onclick="openCloseNav()">
             <span class="menu-global menu-top"></span>
             <span class="menu-global menu-middle"></span>
@@ -165,7 +172,7 @@
     </div>
     
     <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
-        <div class="overlay-content row">
+        <div class="overlay-content row vertical-center">
             <span class="col-md-3 menutextspan">
                 <a class="textspan" href="#" style="font-size: 14px;">about charcoal</a>
                 <a href="#" style="font-size: 14px;">contact us</a>
@@ -185,7 +192,7 @@
         </div>
     </div>
 
-    <div id="main">
+    <div id="main" class="vertical-center">
         <div style="text-align:center; font-family: Nexa; font-size:22px; letter-spacing:2px; color: #676262; -webkit-font-smoothing: antialiased;" class="container inner">
             <p style="margin-bottom: 0.4rem;">reimagining the executive desk,</p><br />
             <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Volant Art Icon.png" /></a>
