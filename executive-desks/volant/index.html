@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Website Horizontal Scrolling with jQuery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Website Horizontal Scrolling with jQuery" />
+    <meta name="keywords" content="jquery, horizontal, scrolling, scroll, smooth" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Charcoal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <meta name="theme-color" content="#F9F9F9" />
+    </head>
+    <style>
+        @font-face {
+            font-family: 'Nexa';
+            src: url("font/Nexa-Light.otf");
+        }
+
+        @font-face {
+            font-family: 'GothamBook';
+            src: url("font/Gotham-Book.otf");
+        }
+
+        @font-face {
+            font-family: 'GothamLight';
+            src: url("font/Gotham-Light.otf");
+        }
+
+        .slide-icon {
+            height: 7px;
+            animation-fill-mode: none;
+            transition: transform 1s;
+        }
+        .slide-icon-act {
+            height: 8px;
+            animation-fill-mode: none;
+            transition: transform 1s;
+        }
+
+            .slide-icon:hover {
+                position: relative;
+                -ms-transform: translate(0px,-6px);
+                -webkit-transform: translate(0px,-6px);
+                transform: translate(0px,-6px);
+            }
+
+        .prodmenuimg {
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 60px;
+            width: 145px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .vertical-center {
+            min-height: 100%;
+            min-height: 100vh;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        .rightv-center {
+            min-height: 50%;
+            min-height: 50vh;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(252,252,252);
+            overflow-x: hidden;
+            transition: 1s;
+            font-family: GothamBook;
+        }
+
+        .overlay-content {
+            position: relative;
+            text-align: center;
+            font-family: GothamBook;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            font-family: GothamBook;
+        }
+
+            .overlay a:hover, .overlay a:focus {
+                color: #000;
+            }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: -10px;
+            font-size: 40px;
+        }
+
+        .menutextspan {
+            float: left;
+            margin: 36px;
+            font-family: GothamBook;
+            color: #000;
+            letter-spacing: 1.6px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .textspan {
+            margin-bottom: 80px;
+            margin-top: 10px;
+        }
+
+        .header-top {
+            position: fixed;
+            top: 0.7%;
+            width: 100%;
+            z-index: 3;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        .top-bar {
+            position: fixed;
+            top: 8%;
+            padding-left: 50px;
+            width: 100%;
+            z-index: 2;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            
+        }
+        .section {
+            padding-top: 180px;
+        }
+        span.reference {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+            span.reference a {
+                color: #fff;
+                text-shadow: 1px 1px 1px #000;
+                padding-right: 20px;
+            }
+
+                span.reference a:hover {
+                    color: #ddd;
+                    text-decoration: none;
+                }
+
+        navi-active {
+            height: 8px;
+            width: 8px;
+        }
+
+        navi-inactive {
+            height: 7px;
+            width: 7px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            .overlay-content {
+                position: relative;
+                top: 5%;
+                width: 100%;
+                margin: 0px;
+                text-align: center;
+                font-family: GothamBook;
+            }
+
+            .textspan {
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+            .menutextspan {
+                margin: 20px;
+                font-family: GothamBook;
+                font-size: 14px;
+                color: #000;
+            }
+        }
+
+    </style>
+    <body tabindex="1" style="background-color: rgb(249,249,249);">
+
+        <div style="text-align:center;" class="header-top clearfix">
+            <div class="menu" onclick="openCloseNav()">
+                <span class="menu-global menu-top"></span>
+                <span class="menu-global menu-middle1"></span>
+                <span class="menu-global menu-middle2"></span>
+                <span class="menu-global menu-bottom"></span>
+            </div>
+            <span style="margin-left:-2.4%;">
+                <img src="img/Logo.png" style="width: 190px;" />
+            </span>
+
+            <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
+                <div class="overlay-content row vertical-center">
+                    <span class="col-md-3 menutextspan">
+                        <a class="textspan" href="#" style="font-size: 14px;">about charcoal</a>
+                        <a href="#" style="font-size: 14px;">contact us</a>
+                    </span>
+                    <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); margin-left:1px; max-width: 28%; flex:none;">
+                        <a href="executive-desks/volant/index.html"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="img/Volant Products Page.png" /></a>
+                        <br />
+                        VOLANT
+                    </span>
+                    <span class="col-md-1" style="width: 40px; flex: none;">
+                    </span>
+                    <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius:         2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); max-width: 28%; flex:none;">
+                        <a href="#"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="img/Nautic Products Page.png" /></a>
+                        <br />
+                        NAUTIC
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <span class="reference">
+            </span>
+        </div>
+
+        <div style="text-align:left;" class="top-bar clearfix" id="topmenu">
+            <p>
+            </p>
+            <div class="row">
+                <div class="col col-md-1" style="padding-left: 0px;">
+                    <p style="letter-spacing: 2px; font-weight: 400; margin-bottom: 0px;">
+                        design
+                    </p>
+                    <div style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
+                        <a href="0" class="mynav"><img id="0" class="slide-icon-act animated " style="-webkit-animation-duration: 2.4s;" src="img/dot-ho.png" /></a>
+                        <a href="1" class="mynav"><img id="1" class="slide-icon animated" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
+                    </div>
+                </div>
+                <div class="col col-md-1 pull-left-1 text-center" style="padding-left: 0px;">
+                    <p style="letter-spacing: 2px; margin-bottom: 0px;">
+                        features
+                    </p>
+                    <div style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
+                        <a href="2" class="mynav"><img id="2" class="slide-icon animated nav-inactive" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
+                        <a href="3" class="mynav"><img id="3" class="slide-icon animated nav-inactive" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
+                    </div>
+                </div>
+                <div class="col col-md-2 text-center" style="padding-left: 0px;">
+                    <p style="letter-spacing: 2px; margin-bottom: 0px;">
+                        customize and pre-order
+                    </p>
+                    <div style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
+                        <a href="4" class="mynav"><img id="4" class="slide-icon animated nav-inactive" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
+                    </div>
+                </div>
+                <div class="col col-md-8" style="text-align: right; padding-right: 40px;">
+                        <a href="executive-desks/volant/index.html"><img class="" style="-webkit-animation-duration: 2.4s; width:56px; height: 23px;" src="img/Volant_link.png" /></a>
+                        <a href="#"><img class="" style="-webkit-animation-duration: 2.4s; width:56px; height: 23px;margin-left: 15px; opacity: 0.5;" src="img/Nautic_link.png" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <span class="left" style="padding:10px; padding-left:30px; float: left;">
+                <img class="imagepane" src="images/volant-01.png" />
+                <div style="text-align: center;">
+                    <img src="img/volant_salt_shade.png" height="24px" width="24px" /> <span style="color:rgb(59,59,59); letter-spacing: 2px; font-family: Nexa; font-size: 15px; vertical-align:bottom; margin-left:10px;">SALT</span>
+                </div>
+            </span>
+            <span class="right" style="float:left; padding: 10px; padding-top: 150px;">
+                <h3 style="font-family: Nexa; font-size: 11px; line-height: 11px; letter-spacing: 2px; color: rgb(102,102,102); margin-bottom: 25px;">
+                    AN ICON FOR ICONOCLASTS
+                </h3>
+                <h2 style="font-family: GothamBook; font-size: 18.5px; color: rgb(0,0,0); margin-bottom: 21px; font-weight: bold;">
+                    VOLANT<span><img src="img/textdot.png" height="3px" style="vertical-align: baseline; margin-left: 2px;" /></span>
+                </h2>
+                <p style="font-family: GothamLight; color: rgb(51,51,51); font-size: 14px; letter-spacing: 1px;">
+                    Our singular purpose was to create a product not bound by convention. Volant is the realization of that dream.
+                    Inspired by 21<sup>st</sup> century trends in aeronautics, we brought Volant to life using distinctive materials and integrated it with cutting edge technology.
+                </p>
+                <p style="font-family: GothamLight; color: rgb(51,51,51); font-size: 14px; letter-spacing: 1px;">
+                    Imagine with simple yet purposeful strokes, the body is constructed out of virtually seamless lines of Hi-Macs<sup style="top: 0em; font-size: 20px; font-size:160%;">&reg;</sup> - marrying the look of classic stone with avant grade form.
+                </p>
+
+            </span>
+        </div>
+        <div class="section" id="section2">
+            <span class="left">
+                S2:1
+            </span>
+            <span class="right">
+                S2:2
+            </span>
+        </div>
+        <div class="section" id="section3">
+            <span class="left">
+                S3:1
+            </span>
+            <span class="right">
+                S3:2
+            </span>
+        </div>
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script>
+            function openCloseNav() {
+                if (document.getElementById("myNav").style.marginLeft == "-78%")
+                    document.getElementById("myNav").style.marginLeft = "0%";
+                else
+                    document.getElementById("myNav").style.marginLeft = "-78%";
+            }
+            $(document).ready(function () {
+                $(".menu").click(function () {
+                    $(this).toggleClass("is-active");
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+            var val1 = 0;
+            var noOfTiles = 3;
+            $(function () {
+                $('.mynav').bind('click', function (event) {
+                    makeInactive();
+                    val1 = $(this).attr('href');
+                    makeActive();
+                    /*
+                    if you want to use one of the easing effects:
+                    $('html, body').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 1500,'easeInOutExpo');
+                     */
+                    horizontalScroll();
+                    event.preventDefault();
+                });
+            });
+            $(document).ready(function () {
+                resizeDiv();
+            });
+
+            $(window).resize(function () {
+                resizeDiv();
+            });
+            $('body').bind('keydown', function (event) {
+                if (event.keyCode == 39 || event.keyCode == 40) {
+                    makeInactive();
+                    val1++;
+                    val1 = val1 % noOfTiles;
+                    makeActive();
+                    horizontalScroll();
+                }
+                else if (event.keyCode == 37 || event.keyCode == 38) {
+                    makeInactive();
+                    if (val1 == 0)
+                        val1 = noOfTiles - 1;
+                    else
+                        val1--;
+                    makeActive();
+                    val1 = val1 % noOfTiles;
+                    horizontalScroll();
+                }
+            });
+            function makeActive() {
+                $('#' + val1).attr("src", "img/dot-ho.png");
+                $('#' + val1).removeClass("slide-icon");
+                $('#' + val1).addClass("slide-icon-act");
+            }
+            function makeInactive() {
+                $('#' + val1).attr("src", "img/dot-in.png");
+                $('#' + val1).removeClass("slide-icon-act");
+                $('#' + val1).addClass("slide-icon");
+            }
+            function horizontalScroll() {
+                $('html, body').stop().animate({
+                    scrollLeft: val1 * window.innerWidth
+                }, 1000);
+            }
+            function resizeDiv() {
+                $(".section").css("width", window.innerWidth + "px");
+                $("body").css("width", (3 * window.innerWidth) + "px");
+                $(".left").css("width", (window.innerWidth * .8) + "px");
+                $(".right").css("width", (window.innerWidth * .2)-30 + "px");
+                $(".imagepane").css("max-width", ((window.innerWidth * .8) - 40) + "px");
+
+            }
+            $(function () {
+                $('body').focus();
+            });
+        </script>
+    </body>
+</html>

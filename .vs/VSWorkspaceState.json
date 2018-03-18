@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\css",
-    "\\src\\img",
-    "\\src\\js"
+    "\\src\\js",
+    "\\volant",
+    "\\volant\\css",
+    "\\volant\\js"
   ],
-  "SelectedNode": "\\src\\img\\Nautic Products Page.png",
+  "SelectedNode": "\\volant\\css\\style.css",
   "PreviewInSolutionExplorer": false
 }
