@@ -317,7 +317,7 @@
                 </div>
             </div>
         </div>
-        <div class="section" id="section1">
+        <div class="section" id="section0">
             <span class="left" style="padding:10px; padding-left:30px; float: left;">
                 <img class="imagepane" src="images/volant-01.png" />
                 <div style="text-align: center;">
@@ -341,7 +341,7 @@
 
             </span>
         </div>
-        <div class="section" id="section2">
+        <div class="section" id="section1">
             <span class="right" style="float:left; padding: 10px; padding-top: 150px;">
                 <h2 style="font-family: GothamBook; font-size: 15px; color: rgb(0,0,0); margin-bottom: 21px; font-weight: bold;">
                     A story of extraordinary engineering,
@@ -357,7 +357,7 @@
                 <img class="imagepane" src="images/volant-01.png" />
             </span>
         </div>
-        <div class="section" id="section3">
+        <div class="section" id="section2">
             <span class="left">
                 S3:1
             </span>
@@ -441,12 +441,12 @@
             }
             function horizontalScroll() {
                 $('html, body').stop().animate({
-                    scrollLeft: val1 * window.innerWidth
+                    scrollTop: $("#section" + val1).offset().top
                 }, 1000);
             }
             function resizeDiv() {
-                $(".section").css("width", window.innerWidth + "px");
-                $("body").css("width", (3 * window.innerWidth) + "px");
+                //$(".section").css("width", window.innerWidth + "px");
+                //$("body").css("width", (3 * window.innerWidth) + "px");
                 $(".left").css("width", (window.innerWidth * .8) + "px");
                 $(".right").css("width", (window.innerWidth * .2)-30 + "px");
                 $(".imagepane").css("max-width", ((window.innerWidth * .8) - 40) + "px");

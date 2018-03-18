@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\js",
-    "\\volant",
-    "\\volant\\css",
-    "\\volant\\js"
+    "\\executive-desks\\volant",
+    "\\src\\js"
   ],
-  "SelectedNode": "\\volant\\css\\style.css",
+  "SelectedNode": "\\executive-desks",
   "PreviewInSolutionExplorer": false
 }
