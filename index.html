@@ -43,6 +43,10 @@
             height: 100%;
         }
 
+        p {
+            margin-top: 17px !important;
+        }
+        
         .vertical-center {
             min-height: 100%;
             min-height: 100vh;
@@ -85,6 +89,8 @@
 
         .overlay a {
             padding: 8px;
+            padding-left: 20px;
+            padding-right: 20px;
             text-decoration: none;
             font-size: 36px;
             color: #818181;
@@ -93,6 +99,14 @@
             font-family: GothamBook;
         }
 
+        .overlay p, h6 {
+            padding: 4px;
+            font-size: 11px;
+            color: rgb(102,102,102);
+            font-family: GothamBook;
+        }
+            
+        
         .overlay a:hover, .overlay a:focus {
             color: #000;
         }
@@ -102,13 +116,17 @@
             top: -10px;
             font-size: 40px;
         }
+        .menubar {
+            width:100%;
+        }
         .menutextspan {
-            float: left;
-            margin: 36px;
+            max-width: 27%;
             font-family: GothamBook;
-            color: #000;
-            letter-spacing:1.6px;
             -webkit-font-smoothing: antialiased;
+            text-align: -webkit-left;
+            margin: 52px;
+            left: 2%;
+            flex: none;
         }
         .textspan {
             margin-bottom: 80px;
@@ -128,7 +146,7 @@
             .overlay a {
                 font-size: 20px
             }
-
+            
             .overlay .closebtn {
                 font-size: 40px;
                 top: 15px;
@@ -176,20 +194,23 @@
         <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
             <div class="overlay-content row vertical-center">
                 <span class="col-md-3 menutextspan">
-                    <a class="textspan" href="#" style="font-size: 14px;">about charcoal</a>
-                    <a href="#" style="font-size: 14px;">contact us</a>
+                    <a style="float:left; width:50%; text-align: -webkit-left; font-size:14px; padding-left: 0px !important; letter-spacing: 1.6px; color: rgb(0,0,0); margin-top:-70% !important;" href="#">products<p style="margin-left: 30px; font-size: 14px; margin-top: -2px !important; color: rgb(51,51,51);">&#9679;</p></a>
+                    <a style="float:right; width:50%; text-align: -webkit-right; font-size:14px; padding-right: 0px !important; letter-spacing: 1.6px; color: rgb(0,0,0); margin-top:-70% !important;" href="#">contact us<p style="margin-right: 36px; font-size: 13.8px; margin-top: -2px !important; color: rgb(209,209,209);">&#x25CF;</p></a>
+                    <p style="letter-spacing: 2px; font-size: 10px;">REIMAGINING THE EXECUTIVE DESK</p>
+                    <h6 style="color: rgb(26,26,26); font-size: 13px; letter-spacing: 1.4px; margin-bottom: 14px; margin-top: 14px;">THE ART OF CHARCOAL.</h6>
+                    <p style="font-size: 12px;">The executive's desk is more than furniture, great businesses that shape the world are built here.<br>
+                    Yes, It remains a simple surface.<br>
+                    We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
-                <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); margin-left:1px; max-width: 28%; flex:none;">
-                    <a href="executive-desks/volant/index.html"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
-                    <br />
-                    VOLANT
+                <span class="col-md-3" style="padding:24px; padding-top:50px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(232,232,232,0.24), 2px 2px 0px rgba(192,192,192,0.44); max-width: 28%; flex:none;">
+                    <a href="#"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
+                    <p style="margin:0px; margin-bottom:2px; padding:0px; margin-top:20px !important; color:rgb(26,26,26); font-size:9px; letter-spacing: 1.6px;">VOLANT</p>
                 </span>
                 <span class="col-md-1" style="width: 40px; flex: none;">
                 </span>
-                <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius:         2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); max-width: 28%; flex:none;">
-                    <a href="#"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
-                    <br />
-                    NAUTIC
+                <span class="col-md-3" style="padding:24px; padding-top:50px; padding-left:0; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(232,232,232,0.24), 2px 2px 0px rgba(192,192,192,0.44); max-width: 28%; flex:none;">
+                    <a href="#" style="padding-left:0px;"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
+                    <p style="margin:0px; margin-bottom:2px; padding:0px; margin-top:20px !important; color:rgb(26,26,26); font-size:9px; letter-spacing: 1.6px;">NAUTIC</p>
                 </span>
             </div>
         </div>
@@ -198,7 +219,7 @@
     <div id="main" class="vertical-center">
         <div style="margin-top:-5%; text-align:center; font-family: Nexa; font-size:22px; letter-spacing:2px; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
             <p style="margin-bottom: 0.4rem;">reimagining the executive desk,</p><br />
-            <a href="executive-desks/volant/index.html"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Volant Art Icon.png" /></a>
+            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Volant Art Icon.png" /></a>
             <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Nautic Art Icon.png" /></a>
         </div>
     </div>
