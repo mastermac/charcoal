@@ -48,6 +48,10 @@
             margin-bottom: 1.25vw !important;
         }
         
+        .hidden {
+            visibility: hidden;
+        }
+        
         .vertical-center {
             min-height: 100%;
             min-height: 100vh;
@@ -128,6 +132,21 @@
             margin-left: 7vw;
             flex: none;
         }
+        
+        #menuani1:hover {
+            content: url('src/img/Volant%20Active.png');
+            -ms-transform: translate(0, 2.4vw);
+            -webkit-transform: translate(0, 2.4vw);
+            transform: translate(0, 2.4vw); 
+        }
+        
+        #menuani2:hover {
+            content: url('src/img/Nautic%20Active.png');
+            -ms-transform: translate(-0.7vw, 3.36vw);
+            -webkit-transform: translate(-0.7vw, 3.36vw);
+            transform: translate(-0.7vw, 3.36vw); 
+        }
+        
         .textspan {
             margin-bottom: 80px;
             margin-top: 10px;
@@ -167,12 +186,6 @@
                 margin-bottom: 0px;
                 margin-top: 0px;
             }
-            .menutextspan {
-                margin: 20px;
-                font-family: GothamBook;
-                font-size: 14px;
-                color: #000;
-            }
         }
 
     </style>
@@ -187,30 +200,30 @@
             <span class="menu-global menu-middle2"></span>
             <span class="menu-global menu-bottom"></span>
         </div>
-        <span style="margin-left:-2.4%;">
+        <span style="margin-left:-2.3%;">
             <img src="src/img/Logo.png" style="width: 190px;" />
         </span>
     
         <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
             <div class="overlay-content row vertical-center">
                 <span class="menutextspan">
-                    <a style="float:left; width:50%; text-align: -webkit-left; font-size: 0.9vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-74% !important;" href="#">products<p style="margin-left: 2.3vw; font-size: 0.9vw; margin-top: -0.03vw !important; color: rgb(51,51,51);">&#9679;</p></a>
-                    <a style="float:right; width:50%; text-align: -webkit-right; font-size: 0.9vw; padding-right: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-74% !important;" href="#">contact us<p style="margin-right: 2.8vw; font-size: 0.88vw; margin-top: -0.03vw !important; color: rgb(209,209,209);">&#x25CF;</p></a>
+                    <a style="float:left; width:50%; text-align: -webkit-left; font-size: 0.9vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-74% !important;" href="#">products<p style="margin-left: 2.3vw; font-size: 0.9vw; margin-top: -0.02vw !important; color: rgb(51,51,51);">&#9679;</p></a>
+                    <a style="float:right; width:50%; text-align: -webkit-right; font-size: 0.9vw; padding-right: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-74% !important;" href="#">contact us<p style="margin-right: 2.8vw; font-size: 0.88vw; margin-top: -0.02vw !important; color: rgb(209,209,209);">&#x25CF;</p></a>
                     <p style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
                     <h6 style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
-                    <p style="font-size: 0.67vw; line-height: 1.14vw;">The executive's desk is more than furniture, great businesses that shape the world are built here.<br>
-                    Yes, It remains a simple surface.<br>
+                    <p style="font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, great businesses that shape the world are built here. Yet, it remains a simple surface.</p>
+                    <p style="font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
-                <span class="col-md-3" style="padding:24px; padding-top:50px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(232,232,232,0.24), 2px 2px 0px rgba(192,192,192,0.44); max-width: 28%; flex:none;">
-                    <a href="#"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="src/img/Volant Products Page.png" /></a>
-                    <p style="margin:0px; margin-bottom:2px; padding:0px; margin-top:20px !important; color:rgb(26,26,26); font-size:9px; letter-spacing: 1.6px;">VOLANT</p>
+                <span class="menutextspan" style="max-width: 31%; margin:0px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(160, 160, 160, 0.24), 2px 2px 0px rgba(192,192,192,0.44); flex:none;">
+                    <a style="padding: 0 !important;" href="#"><img id="menuani1" class="menuimg col-md-12" style=" padding: 0; padding-bottom: 1vw; width: 24vw; transition: transform 3s;" src="src/img/Volant%20Inactive.png" />
+                    <p id="menuvolant1" style="color: rgb(26,26,26); font-size: 0.5vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -12% !important;">VOLANT.</p></a>
                 </span>
-                <span class="col-md-1" style="width: 40px; flex: none;">
+                <span class="" style="width: 3vw; flex: none;">
                 </span>
-                <span class="col-md-3" style="padding:24px; padding-top:50px; padding-left:0; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(232,232,232,0.24), 2px 2px 0px rgba(192,192,192,0.44); max-width: 28%; flex:none;">
-                    <a href="#" style="padding-left:0px;"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="src/img/Nautic Products Page.png" /></a>
-                    <p style="margin:0px; margin-bottom:2px; padding:0px; margin-top:20px !important; color:rgb(26,26,26); font-size:9px; letter-spacing: 1.6px;">NAUTIC</p>
+                <span class="menutextspan" style="max-width: 31%; margin:0px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(160, 160, 160, 0.24), 2px 2px 0px rgba(192,192,192,0.44); flex:none;">
+                    <a style="padding: 0 !important;" href="#"><img id="menuani2" class="menuimg col-md-12" style=" padding: 0; padding-bottom: 1vw; width: 24vw; transition: transform 3s;" src="src/img/Nautic%20Inactive.png" />
+                    <p id="menuvolant2" style="color: rgb(26,26,26); font-size: 0.5vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -12% !important;">NAUTIC.</p></a>
                 </span>
             </div>
         </div>
@@ -219,8 +232,8 @@
     <div id="main" class="vertical-center">
         <div style="margin-top:-5%; text-align:center; font-family: Nexa; font-size:22px; letter-spacing:2px; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
             <p style="margin-bottom: 0.4rem;">reimagining the executive desk,</p><br />
-            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Volant Art Icon.png" /></a>
-            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 2.4s;" src="src/img/Nautic Art Icon.png" /></a>
+            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 1s;" src="src/img/Volant Art Icon.png" /></a>
+            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 1s;" src="src/img/Nautic Art Icon.png" /></a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
@@ -233,6 +246,16 @@
             else
                 document.getElementById("myNav").style.marginLeft = "-78%";
         }
+        $("#menuani1").hover(function(){
+            $('#menuvolant1').addClass('hidden');
+        },function(){
+            $('#menuvolant1').removeClass('hidden');
+        });
+        $("#menuani2").hover(function(){
+            $('#menuvolant2').addClass('hidden');
+        },function(){
+            $('#menuvolant2').removeClass('hidden');
+        });
     </script>
     <script src="src/js/main.js"></script>
     <!--
