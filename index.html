@@ -52,6 +52,17 @@
             visibility: hidden;
         }
         
+        img {
+            width: 100%;
+            height: 100%;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .row {
+            margin-left: -1vw;
+        }
+        
         .vertical-center {
             min-height: 100%;
             min-height: 100vh;
@@ -128,8 +139,10 @@
             font-family: GothamBook;
             -webkit-font-smoothing: antialiased;
             text-align: -webkit-left;
-            margin: 3vw;
-            margin-left: 7vw;
+            margin-bottom: 2.7vw;
+            margin-left: 8vw;
+            margin-top: 1.4vw;
+            margin-right: 2.9vw;
             flex: none;
         }
         
@@ -147,14 +160,6 @@
             width: 100%;
             opacity: 0;
             transition: .4s ease;
-        }
-        
-        #menuani1 {
-            transition: .04s ease;
-        }
-        
-        #menuani2 {
-            transition: .04s ease;
         }
         
         .textspan {
@@ -214,32 +219,34 @@
         <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
             <div class="overlay-content row vertical-center">
                 <span class="menutextspan">
-                    <a style="float:left; width:50%; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-74% !important;" href="#">products<p style="margin-left: 2.24vw; font-size: 0.86vw; margin-top: -0.02vw !important; color: rgb(51,51,51);">&#9679;</p></a>
-                    <a style="float:right; width:50%; text-align: -webkit-right; font-size: 0.8vw; padding-right: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-74% !important;" href="#">contact us<p style="margin-right: 2.92vw; font-size: 0.82vw; margin-top: -0.02vw !important; color: rgb(209,209,209);">&#x25CF;</p></a>
+                    <a style="float:left; width:50%; text-align: -webkit-left; font-size: 0.9vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-70% !important;" href="#">products<p style="margin-left: 2.4vw; font-size: 0.95vw; margin-top: -0.2vw !important; color: rgb(51,51,51); text-shadow: 0.001vw 0.001vw 0.001vw #000;">&#9679;</p></a>
+                    <a style="float:right; width:50%; text-align: -webkit-right; font-size: 1vw; padding-right: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-70% !important;" href="#">know more<p style="margin-right: 3.1vw; font-size: 1vw; margin-top: -0.2vw !important; color: rgb(209,209,209);">&#9679;</p></a>
                     <p style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
                     <h6 style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
                     <p style="font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, great businesses that shape the world are built here. Yet, it remains a simple surface.</p>
                     <p style="font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
-                <span class="menutextspan" style="max-width: 31%; margin:0px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(160, 160, 160, 0.24), 2px 2px 0px rgba(192,192,192,0.44); flex:none;">
-                    <a class="overlayhover" id="oh1" style="padding: 0 !important; position: relative;" href="#">
-                        <img id="menuani1" class="menuimg col-md-12" style=" padding: 0; padding-bottom: 1vw; width: 24vw;" src="src/img/Volant%20Inactive.png" />
-                        <div class="overlaymenu">
-                            <img id="menuani11" class="menuimg col-md-12" style="margin-top: 2.4vw; padding: 0; padding-bottom: 1vw; width: 24vw; transition: transform 3s;" src="src/img/Volant%20Active.png">
+                <a class="overlayhover" style="top: -0.5vw; padding: 0 !important; position: relative;" href="#">
+                    <div id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Inactive.png');">
+                    </div>
+                    <div class="overlaymenu">
+                            <div style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Active.png');">
+                            </div>
+                    <!--<p id="menuvolant1" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -12% !important;">VOLANT.</p>-->
                         </div>
-                    <p id="menuvolant1" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -12% !important;">VOLANT.</p></a>
+                </a>
+                <span class="" style="width: 2.67vw; flex: none;">
                 </span>
-                <span class="" style="width: 3vw; flex: none;">
-                </span>
-                <span class="menutextspan" id="oh2" style="max-width: 31%; margin:0px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: rgb(240,240,240); box-shadow: -1px -1px 0px rgba(160, 160, 160, 0.24), 2px 2px 0px rgba(192,192,192,0.44); flex:none;">
-                    <a class="overlayhover" style="padding: 0 !important; position: relative;" href="#">
-                        <img id="menuani2" class="menuimg col-md-12" style=" padding: 0; padding-bottom: 1vw; width: 24vw;" src="src/img/Nautic%20Inactive.png" />
-                        <div class="overlaymenu">
-                            <img id="menuani21" class="menuimg col-md-12" style="margin-top: 3.4vw; margin-left: -1.34vw; padding: 0; padding-bottom: 1vw; width: 24vw; transition: transform 3s;" src="src/img/Nautic%20Active.png">
+                <a class="overlayhover" style="top: -0.5vw; padding: 0 !important; position: relative;" href="#">
+                    <div id="menuani2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Inactive.png');">
+                    </div>
+                    <div class="overlaymenu">
+                            <div style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Active.png');">
+                            </div>
+                    <!--<p id="menuvolant1" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -12% !important;">VOLANT.</p>-->
                         </div>
-                    <p id="menuvolant2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -12% !important;">NAUTIC.</p></a>
-                </span>
+                </a>
             </div>
         </div>
     </div>
@@ -267,20 +274,6 @@
             else
                 document.getElementById("myNav").style.marginLeft = "-78%";
         }
-        $("#oh1").hover(function(){
-            $('#menuvolant1').addClass('hidden');
-            $('#menuani1').addClass('hidden');
-        },function(){
-            $('#menuvolant1').removeClass('hidden');
-            $('#menuani1').removeClass('hidden');
-        });
-        $("#oh2").hover(function(){
-            $('#menuvolant2').addClass('hidden');
-            $('#menuani2').addClass('hidden');
-        },function(){
-            $('#menuvolant2').removeClass('hidden');
-            $('#menuani2').removeClass('hidden');
-        });
     </script>
     <script src="src/js/main.js"></script>
     <!--
