@@ -47,6 +47,10 @@
             height: 100%;
         }
 
+        div, p, span, a {
+            animation: fadein 2s;
+        }
+        
         p {
             margin-top: 1.25vw !important;
             margin-bottom: 1.25vw !important;
@@ -61,6 +65,14 @@
             height: 100%;
             padding: 0 !important;
             margin: 0 !important;
+        }
+        
+        #menufillin input {         
+            margin-bottom: 0.4vw;
+            width: 16vw;
+            height: 0.84vw;
+            border: none;
+            background-color: rgb(229,229,229);
         }
         
         .row {
@@ -179,6 +191,26 @@
             box-sizing: border-box;
             margin-top:10px;
         }
+        
+        .menuselect {
+            border: 0;
+            color: unset;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+        
+        .menudot1 {
+            font-size: 0.77vw;
+            margin-top: -0.2vw !important;
+            color: rgb(51,51,51);
+            text-shadow: 0.001vw 0.001vw 0.001vw #000;
+        }
+        
+        .menudot2 {
+            font-size: 0.86vw;
+            margin-top: -0.2vw !important;
+            color: rgb(209,209,209) !important;
+        }
 
         @media screen and (max-height: 450px) {
             .overlay a {
@@ -222,35 +254,77 @@
         
         <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
             <div class="overlay-content row vertical-center">
-                <span class="menutextspan">
-                    <a style="float:left; width:50%; text-align: -webkit-left; font-size: 0.86vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">products<p style="margin-left: 2.3vw; font-size: 0.77vw; margin-top: -0.2vw !important; color: rgb(51,51,51); text-shadow: 0.001vw 0.001vw 0.001vw #000;">&#9679;</p></a>
-                    <a style="float:right; width:50%; text-align: -webkit-right; font-size: 0.86vw; padding-right: 0.14vw !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p style="margin-right: 2.65vw; font-size: 0.86vw; margin-top: -0.2vw !important; color: rgb(209,209,209);">&#9679;</p></a>
-                    <p style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
-                    <h6 style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
-                    <p style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, great businesses that shape the world are built here. Yet, it remains a simple surface.</p>
-                    <p style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
+                <span class="menutextspan" style="position: relative;">
+                    <a id="menu1" style="float:left; width:50%; text-align: -webkit-left; font-size: 0.86vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot1" style="margin-left: 2.3vw;">&#9679;</p></a>
+                    <a id="menu2" style="float:right; width:50%; text-align: -webkit-right; font-size: 0.86vw; padding-right: 0.14vw !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot2" style="margin-right: 2.65vw;">&#9679;</p></a>
+                    <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
+                    <h6 class="menusp1" style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
+                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, great businesses that shape the world are built here. Yet, it remains a simple surface.</p>
+                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
-                <a class="overlayhover" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
-                    <div id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Inactive.png');">
-                    </div>
-                    <p id="menuvolant1" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">VOLANT.</p>
-                    <div class="overlaymenu">
-                        <div style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Active.png');">
-                        </div>
-                    </div>
-                </a>
-                <span class="" style="width: 2.67vw; flex: none;">
+                
+                <span class="menutextspan menusp21 hidden" style="position: absolute; left:2vw; height: 26vw;  top::16vw;">
+                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.68vw; margin-top: -0.56vw !important; line-height: 1.4vw;">EMAIL US <span style="position: absolute; margin-top:-0.1vw; margin-left: 1vw;"><U>support@charcoaltech.com</U></span><br>
+                        Change Country <select class="menuselect" style="margin-left: 0.6vw;background-color: unset;border: 0;color: rgb(102, 100, 100);letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="India"><u>India</u></option><option value="UAE">UAE</option></select>
+                    </p>
+                    <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.68vw; margin-top: 2.8vw !important;">ORDER A CATALOGUE
+                    </p>
+                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">
+                        <input type="radio" name="gender" value="male"> <label>Ms</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" value="female"> <label>Mr</label>
+                    </p>
+                    <p id="menufillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: -0.8vw !important; margin-bottom: 1.4vw !important">
+                    Name<br>
+                    <input type="text" class="name " id="name"><br>
+                    Street Address<br>
+                    <input type="text" class="stadd" id="stadd"><br>
+                    Zip Code<br>
+                    <input type="text" class="zipcode" id="zipcode"><br>
+                    City/Town<br>
+                    <input type="text" class="city" id="city"><br>
+                    Country<br>
+                    <input type="text" class="country" id="country"><br>
+                    E-mail Address<br>
+                    <input type="text" class="email" id="email"><br>
+                    Telephone<br>
+                    <input type="text" class="tel" id="tel"><br>
+                    </p>
+                    <p class="menusp21" style="margin-top:0 !important;">
+                        <a href="#" style="padding: 0; display: unset; font-size: 0;">
+                        <img src="src/img/Order%20now.png" style="width: 6vw; height: 1.29vw;">
+                        </a>
+                    </p>
                 </span>
-                <a class="overlayhover" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
-                    <div id="menuani2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Inactive.png');">
+                
+                <a class="overlayhover menusp2" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
+                    <div class="menusp2" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Inactive.png');">
                     </div>
-                    <p id="menuvolant1" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">NAUTIC.</p>
+                    <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">VOLANT.</p>
                     <div class="overlaymenu">
-                        <div style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Active.png');">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Active.png');">
                         </div>
                     </div>
                 </a>
+                
+                <span class="menusp3" style="width: 2.67vw; flex: none;">
+                </span>
+                
+                <a class="overlayhover menusp4" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
+                    <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Inactive.png');">
+                    </div>
+                    <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">NAUTIC.</p>
+                    <div class="overlaymenu">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Active.png');">
+                        </div>
+                    </div>
+                </a>
+                
+                <div class="menusp22 hidden" style="position: absolute; z-index: -2;">
+                    <div class="menusp22" style="max-width: 100%; width: 37vw; height: 25vw; padding:0; margin:0; margin-top: 9vw; margin-left: 26vw; background-size: cover; background-image: url('src/img/Catalogue.png');">
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -278,6 +352,30 @@
             else
                 document.getElementById("myNav").style.marginLeft = "-78%";
         }
+        $("#menu1").click(function() {
+            $(".menusp1").removeClass("hidden")
+            $(".menusp2").removeClass("hidden")
+            $(".menusp3").removeClass("hidden")
+            $(".menusp4").removeClass("hidden")
+            $(".menusp21").addClass("hidden")
+            $(".menusp22").addClass("hidden")
+            $("#menudot1").removeClass("menudot2")
+            $("#menudot1").addClass("menudot1")
+            $("#menudot2").removeClass("menudot1")
+            $("#menudot2").addClass("menudot2")
+        });
+        $("#menu2").click(function() {
+            $(".menusp21").removeClass("hidden")
+            $(".menusp22").removeClass("hidden")
+            $(".menusp1").addClass("hidden")
+            $(".menusp2").addClass("hidden")
+            $(".menusp3").addClass("hidden")
+            $(".menusp4").addClass("hidden")
+            $("#menudot2").removeClass("menudot2")
+            $("#menudot2").addClass("menudot1")
+            $("#menudot1").removeClass("menudot1")
+            $("#menudot1").addClass("menudot2")
+        });
     </script>
     <script src="src/js/main.js"></script>
     <!--
