@@ -14,6 +14,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/examples.css" />
+    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/examples.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				scrollingSpeed: 1700,
+                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+				menu: '#menu',
+				bigSectionsDestination:'top'
+			});
+		});
+	</script>
 </head>
     <style>
         @font-face {
@@ -32,22 +52,13 @@
         }
 
         .slide-icon {
-            height: 7px;
-            animation-fill-mode: none;
-            transition: transform 1s;
+            height: 0.45vw;
+            width: 0.4vw;
         }
         .slide-icon-act {
-            height: 8px;
-            animation-fill-mode: none;
-            transition: transform 1s;
+            height: 0.5vw;
+            width: 0.5vw;
         }
-
-            .slide-icon:hover {
-                position: relative;
-                -ms-transform: translate(0px,-6px);
-                -webkit-transform: translate(0px,-6px);
-                transform: translate(0px,-6px);
-            }
 
         .prodmenuimg {
             margin-left: 10px;
@@ -59,7 +70,52 @@
         html, body {
             height: 100%;
         }
+        
+        p {
+            margin-top: 1.25vw !important;
+            margin-bottom: 1.25vw !important;
+        }
+        
+        .secp {
+            font-family: GothamLight;
+            color: rgb(51,51,51);
+            font-size: 0.77vw;
+            margin-right: 2.4vw;
+            letter-spacing: 0.06vw;
+            -webkit-font-smoothing: antialiased;
+            -webkit-justify-content: center;
+            text-align: -webkit-left;
+            padding-left: 5.6vw;
+            line-height: 1.29vw;
+            margin-bottom: -0.79vw !important;
+        }
+        
+        .hidden {
+            visibility: hidden;
+        }
 
+        #menufillin input {         
+            margin-bottom: 0.4vw;
+            width: 16vw;
+            height: 0.84vw;
+            border: none;
+            background-color: rgb(229,229,229);
+        }
+        
+        .row {
+            margin-top: -2.7vw;
+            margin-left: 2vw;
+        }
+        
+        .dots {
+            padding: o !important;
+            text-align: center;
+        }
+        
+        .singledot {
+            
+        }
+        
         .vertical-center {
             min-height: 100%;
             min-height: 100vh;
@@ -130,9 +186,16 @@
             font-family: GothamBook;
         }
 
-            .overlay a:hover, .overlay a:focus {
-                color: #000;
-            }
+        .overlay p, h6 {
+            letter-spacing: 0.04vw;
+            color: rgb(102,102,102);
+            font-family: GothamBook;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .overlay a:hover, .overlay a:focus {
+            color: #000;
+        }
 
         .overlay .closebtn {
             position: absolute;
@@ -140,42 +203,123 @@
             font-size: 40px;
         }
 
-        .menutextspan {
-            float: left;
-            margin: 36px;
-            font-family: GothamBook;
-            color: #000;
-            letter-spacing: 1.6px;
-            -webkit-font-smoothing: antialiased;
+        .menubar {
+            width:100%;
         }
-
+        .menutextspan {
+            max-width: 21%;
+            font-family: GothamBook;
+            -webkit-font-smoothing: antialiased;
+            text-align: -webkit-left;
+            margin-bottom: 2.7vw;
+            margin-left: 7vw;
+            margin-top: 2vw;
+            margin-right: 3.9vw;
+            flex: none;
+        }
+        
+        .overlayhover:hover .overlaymenu {
+            opacity: 1;
+        }
+        
+        .overlaymenu {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .4s ease;
+        }
+        
         .textspan {
             margin-bottom: 80px;
             margin-top: 10px;
         }
-
         .header-top {
             position: fixed;
             top: 0.7%;
             width: 100%;
-            z-index: 3;
+            z-index: 2;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            margin-top: 10px;
+            margin-top:10px;
         }
+        
+        .menuselect {
+            border: 0;
+            color: unset;
+            background: transparent;
+            -webkit-appearance: none;
+        }
+        
+        .menudot1 {
+            font-size: 0.77vw;
+            margin-top: -0.2vw !important;
+            color: rgb(51,51,51);
+            text-shadow: 0.001vw 0.001vw 0.001vw #000;
+        }
+        
+        .menudot2 {
+            font-size: 0.86vw;
+            margin-top: -0.2vw !important;
+            color: rgb(209,209,209) !important;
+        }
+        
         .top-bar {
             position: fixed;
             top: 8%;
-            padding-left: 50px;
             width: 100%;
             z-index: 2;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             
         }
-        .section {
-            padding-top: 180px;
+        
+        .pulse {
+            margin-left: 50%;
+            margin-top: -3%;
+            display: block;
+            width: 0.4vw;
+            height: 0.4vw;
+            border-radius: 50%;
+            background: #ffffff8c;
+            cursor: pointer;
+            box-shadow: 0 0 #ffffff8c;
+            animation: pulse 2s infinite;
         }
+        .pulse:hover {
+            animation: none;
+        }
+
+        @-webkit-keyframes pulse {
+        0% {
+            -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+        }
+        70% {
+            -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        }
+        100% {
+            -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+            }
+        }
+        @keyframes pulse {
+        0% {
+            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+            box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+        }
+        70% {
+            -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+            box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        }
+        100% {
+            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+            box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+            }
+        }
+        
         span.reference {
             position: fixed;
             left: 10px;
@@ -205,256 +349,250 @@
             width: 7px;
         }
 
-        @media screen and (max-height: 450px) {
-            .overlay a {
-                font-size: 20px
-            }
-
-            .overlay .closebtn {
-                font-size: 40px;
-                top: 15px;
-                right: 35px;
-            }
-        }
-
-        @media screen and (max-width: 450px) {
-            .overlay-content {
-                position: relative;
-                top: 5%;
-                width: 100%;
-                margin: 0px;
-                text-align: center;
-                font-family: GothamBook;
-            }
-
-            .textspan {
-                margin-bottom: 0px;
-                margin-top: 0px;
-            }
-
-            .menutextspan {
-                margin: 20px;
-                font-family: GothamBook;
-                font-size: 14px;
-                color: #000;
-            }
-        }
-
     </style>
     <body tabindex="1" style="background-color: rgb(249,249,249);">
 
         <div style="text-align:center;" class="header-top clearfix">
-            <div class="menu" onclick="openCloseNav()">
-                <span class="menu-global menu-top"></span>
-                <span class="menu-global menu-middle1"></span>
-                <span class="menu-global menu-middle2"></span>
-                <span class="menu-global menu-bottom"></span>
-            </div>
-            <span style="margin-left:-2.4%;">
-                <img src="img/Logo.png" style="width: 190px;" />
-            </span>
-
-            <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
-                <div class="overlay-content row vertical-center">
-                    <span class="col-md-3 menutextspan">
-                        <a class="textspan" href="#" style="font-size: 14px;">about charcoal</a>
-                        <a href="#" style="font-size: 14px;">contact us</a>
-                    </span>
-                    <span class="col-md-3" style="padding:10px; padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius: 2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); margin-left:1px; max-width: 28%; flex:none;">
-                        <a href="executive-desks/volant/index.html"><img class="col-md-12" style="width: 310px; vertical-align:middle; height:115px; padding:0px; opacity:0.7;" src="img/Volant Products Page.png" /></a>
-                        <br />
-                        VOLANT
-                    </span>
-                    <span class="col-md-1" style="width: 40px; flex: none;">
-                    </span>
-                    <span class="col-md-3" style="padding:10px;padding-top:60px; text-align:center;font-family:GothamBook; background: rgb(240,240,240); border-radius:         2.4px; border: 1.2px solid #9a390026; box-shadow: 1px 1px 1px rgba(0,0,0,0.15), inset 0px 0px 1px rgba(0,0,0,0.15); max-width: 28%; flex:none;">
-                        <a href="#"><img class="col-md-12" style="width:377px; height: 114px;padding:0px;opacity:0.7;" src="img/Nautic Products Page.png" /></a>
-                        <br />
-                        NAUTIC
-                    </span>
-                </div>
-            </div>
+        <div class="menu" onclick="openCloseNav()">
+            <span class="menu-global menu-top"></span>
+            <span class="menu-global menu-middle1"></span>
+            <span class="menu-global menu-middle2"></span>
+            <span class="menu-global menu-bottom"></span>
         </div>
-
-        <div>
-            <span class="reference">
-            </span>
-        </div>
-
-        <div style="text-align:left;" class="top-bar clearfix" id="topmenu">
-            <p>
-            </p>
-            <div class="row">
-                <div class="col col-md-1" style="padding-left: 0px;">
-                    <p style="letter-spacing: 2px; font-weight: 400; margin-bottom: 0px;">
-                        design
+        
+        <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
+            <div class="overlay-content vertical-center" style="margin-left: -1vw;">
+                <span class="menutextspan" style="position: relative;">
+                    <a id="menu1" style="float:left; width:50%; text-align: -webkit-left; font-size: 0.86vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot1" style="margin-left: 2.3vw;">&#9679;</p></a>
+                    <a id="menu2" style="float:right; width:50%; text-align: -webkit-right; font-size: 0.86vw; padding-right: 0.14vw !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot2" style="margin-right: 2.65vw;">&#9679;</p></a>
+                    <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
+                    <h6 class="menusp1" style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
+                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, great businesses that shape the world are built here. Yet, it remains a simple surface.</p>
+                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
+                    We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
+                </span>
+                
+                <span class="menutextspan menusp21 hidden" style="position: absolute; left:2vw; height: 26vw;  top::16vw;">
+                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.68vw; margin-top: -0.56vw !important; line-height: 1.4vw;">EMAIL US <span style="position: absolute; margin-top:-0.1vw; margin-left: 1vw;"><U>support@charcoaltech.com</U></span><br>
+                        Change Country <select class="menuselect" style="margin-left: 0.6vw;background-color: unset;border: 0;color: rgb(102, 100, 100);letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="India"><u>India</u></option><option value="UAE">UAE</option></select>
                     </p>
-                    <div style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
-                        <a href="0" class="mynav"><img id="0" class="slide-icon-act animated " style="-webkit-animation-duration: 2.4s;" src="img/dot-ho.png" /></a>
-                        <a href="1" class="mynav"><img id="1" class="slide-icon animated" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
+                    <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.68vw; margin-top: 2.8vw !important;">ORDER A CATALOGUE
+                    </p>
+                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">
+                        <input type="radio" name="gender" value="male"> <label>Ms</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" value="female"> <label>Mr</label>
+                    </p>
+                    <p id="menufillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: -0.8vw !important; margin-bottom: 1.4vw !important">
+                    Name<br>
+                    <input type="text" class="name " id="name"><br>
+                    Street Address<br>
+                    <input type="text" class="stadd" id="stadd"><br>
+                    Zip Code<br>
+                    <input type="text" class="zipcode" id="zipcode"><br>
+                    City/Town<br>
+                    <input type="text" class="city" id="city"><br>
+                    Country<br>
+                    <input type="text" class="country" id="country"><br>
+                    E-mail Address<br>
+                    <input type="text" class="email" id="email"><br>
+                    Telephone<br>
+                    <input type="text" class="tel" id="tel"><br>
+                    </p>
+                    <p class="menusp21" style="margin-top:0 !important;">
+                        <a href="#" style="padding: 0; display: unset; font-size: 0;">
+                        <img src="img/Order%20now.png" style="width: 6vw; height: 1.29vw;">
+                        </a>
+                    </p>
+                </span>
+                
+                <a class="overlayhover menusp2" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
+                    <div class="menusp2" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Inactive.png');">
+                    </div>
+                    <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">VOLANT.</p>
+                    <div class="overlaymenu">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Active.png');">
+                        </div>
+                    </div>
+                </a>
+                
+                <span class="menusp3" style="width: 2.67vw; flex: none;">
+                </span>
+                
+                <a class="overlayhover menusp4" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
+                    <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Nautic%20Inactive.png');">
+                    </div>
+                    <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">NAUTIC.</p>
+                    <div class="overlaymenu">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Nautic%20Active.png');">
+                        </div>
+                    </div>
+                </a>
+                
+                <div class="menusp22 hidden" style="position: absolute; z-index: -2;">
+                    <div class="menusp22" style="max-width: 100%; width: 37vw; height: 25vw; padding:0; margin:0; margin-top: 9vw; margin-left: 26vw; background-size: cover; background-image: url('img/Catalogue.png');">
                     </div>
                 </div>
-                <div class="col col-md-1 pull-left-1 text-center" style="padding-left: 0px;">
-                    <p style="letter-spacing: 2px; margin-bottom: 0px;">
-                        features
-                    </p>
-                    <div style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
-                        <a href="2" class="mynav"><img id="2" class="slide-icon animated nav-inactive" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
-                        <a href="3" class="mynav"><img id="3" class="slide-icon animated nav-inactive" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
-                    </div>
-                </div>
-                <div class="col col-md-2 text-center" style="padding-left: 0px;">
-                    <p style="letter-spacing: 2px; margin-bottom: 0px;">
-                        customize and pre-order
-                    </p>
-                    <div style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
-                        <a href="4" class="mynav"><img id="4" class="slide-icon animated nav-inactive" style="-webkit-animation-duration: 2.4s;" src="img/dot-in.png" /></a>
-                    </div>
-                </div>
-                <div class="col col-md-8" style="text-align: right; padding-right: 40px;">
-                        <a href="executive-desks/volant/index.html"><img class="" style="-webkit-animation-duration: 2.4s; width:56px; height: 23px;" src="img/Volant_link.png" /></a>
-                        <a href="#"><img class="" style="-webkit-animation-duration: 2.4s; width:56px; height: 23px;margin-left: 15px; opacity: 0.5;" src="img/Nautic_link.png" /></a>
-                </div>
+                
             </div>
         </div>
+        <div style="text-align:left; z-index: -2;" class="top-bar clearfix" id="topmenu">
+        <p>
+        </p>
+        <div class="row">
+            <div style="padding-left: 0px; margin-right: 5.7vw;">
+                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; font-weight: 400; margin-bottom: -0.4vw !important;">
+                    design
+                </p>
+                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
+                    <a class="singledot" href="#firstPage" class="mynav"><img id="0" class="slide-icon-act" src="img/dot-ho.png" /></a>
+                    <a class="singledot" href="#secondPage" class="mynav"><img id="1" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
+                </div>
+            </div>
+            <div style="padding-left: 0px; margin-right: 6.5vw;">
+                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-bottom: -0.4vw !important;">
+                    features
+                </p>
+                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
+                    <a class="singledot" href="#thirdPage" class="mynav"><img id="2" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
+                    <a class="singledot" href="#fourthPage" class="mynav"><img id="3" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
+                </div>
+            </div>
+            <div style="padding-left: 0px;">
+                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-bottom: -0.4vw !important;">
+                    customize and pre-order
+                </p>
+                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
+                    <a class="singledot" href="#lastPage" class="mynav"><img id="4" class="slide-icon animated nav-inactive" src="img/dot-in.png" /></a>
+                </div>
+            </div>
+            <div style="text-align: right; padding-right: 3.4vw; margin-top: 0.7vw; flex: 1;">
+                    <a style="margin-right: 1.4vw;" href="executive-desks/volant/index.html"><img class="" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.84" src="img/Volant_link.png" /></a>
+                    <a href="#"><img class="" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.64;" src="img/Nautic_link.png" /></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div style="text-align:center; z-index: -2;" class="header-top clearfix">
+        <span>
+            <img src="img/Logo.png" style="width: 190px;" />
+        </span>
+    </div>
+        
+        <div id="fullpage">
+            
         <div class="section" id="section0">
-            <span class="left" style="padding:10px; padding-left:30px; float: left;">
-                <img class="imagepane" src="images/volant-01.png" />
-                <div style="text-align: center;">
-                    <img src="img/volant_salt_shade.png" height="24px" width="24px" /> <span style="color:rgb(59,59,59); letter-spacing: 2px; font-family: Nexa; font-size: 15px; vertical-align:bottom; margin-left:10px;">SALT</span>
+            <span class="left" style="float: left; width: 72%;">
+                <img class="imagepane" style="max-width: 104vw; margin-top: 7.2vw; margin-left: -5vw;" src="img/Volant01.jpg" />
+                <div style="text-align: center; position: relative">
+                    <img style="width: 1.2vw; position: absolute; top: -5vw; margin-left: -3vw;" src="img/volant_salt_shade.png" />
+                    <span style="position: absolute; color:rgb(59,59,59); letter-spacing: 0.2vw; font-family: Nexa; font-size: 0.5vw; margin-top: -4.6vw; margin-left: -0.6vw;">SALT</span>
                 </div>
             </span>
-            <span class="right" style="float:left; padding: 10px; padding-top: 150px;">
-                <h3 style="font-family: Nexa; font-size: 11px; line-height: 11px; letter-spacing: 2px; color: rgb(102,102,102); margin-bottom: 25px;">
+            <span class="right" style="float:left; margin-top: 15vw; width: 28%;">
+                <h3 style="font-family: Nexa; font-size: 0.5vw; letter-spacing: 0.18vw; color: rgb(102,102,102);margin-bottom: 1.4vw; text-align: left; margin-left: 5.6vw;">
                     AN ICON FOR ICONOCLASTS
                 </h3>
-                <h2 style="font-family: GothamBook; font-size: 18.5px; color: rgb(0,0,0); margin-bottom: 21px; font-weight: bold;">
-                    VOLANT<span><img src="img/textdot.png" height="3px" style="vertical-align: baseline; margin-left: 2px;" /></span>
+                <h2 style="font-family: GothamBook; font-size: 1.2vw;color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
+                    VOLANT.
                 </h2>
-                <p style="font-family: GothamLight; color: rgb(51,51,51); font-size: 14px; letter-spacing: 1px;">
+                <p class="secp">
                     Our singular purpose was to create a product not bound by convention. Volant is the realization of that dream.
                     Inspired by 21<sup>st</sup> century trends in aeronautics, we brought Volant to life using distinctive materials and integrated it with cutting edge technology.
                 </p>
-                <p style="font-family: GothamLight; color: rgb(51,51,51); font-size: 14px; letter-spacing: 1px;">
-                    Imagine with simple yet purposeful strokes, the body is constructed out of virtually seamless lines of Hi-Macs<sup style="top: 0em; font-size: 20px; font-size:160%;">&reg;</sup> - marrying the look of classic stone with avant grade form.
+                <p class="secp">
+                    Imagined with simple yet purposeful strokes, the body is constructed out of virtually seamless lines of Hi-Macs<sup style="top: 0em; font-size: 1vw;">&reg;</sup> - marrying the look of classic stone with avant grade form.
                 </p>
 
             </span>
         </div>
-        <div class="section" id="section1">
-            <span class="right" style="float:left; padding: 10px; padding-top: 150px;">
-                <h2 style="font-family: GothamBook; font-size: 15px; color: rgb(0,0,0); margin-bottom: 21px; font-weight: bold;">
+        <div class="section" id="section1" style="position: relative;">
+            <span class="right" style="position: absolute; float: left; margin-top: 24vw; width: 36%; margin-left: -50vw;">
+                <h2 style="font-family: GothamBook; font-size: 0.86vw; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
                     A story of extraordinary engineering,
                 </h2>
-                <p style="font-family: GothamLight; color: rgb(51,51,51); font-size: 13px; letter-spacing: 1px;">
+                <p class="secp">
                     For Volant to exist as it does, our engineers and designers had to create a light-weight frame strong enough to withstand an incredible 2,500 N-m of torque and yet ensure that Volant remains aesthetically stunning.
                 </p>
-                <p style="font-family: GothamLight; color: rgb(51,51,51); font-size: 13px; letter-spacing: 1px;">
+                <p class="secp">
                     Drawing lessons from the cutting edge in aeronautics and automobile engineering, that's exactly what they did.
                 </p>
             </span>
-            <span class="left" style="float: right;">
-                <img class="imagepane" src="images/volant-01.png" />
+            <span class="left" style="float: left; width: 69%;">
+                <img class="imagepane" style="max-width: 92.5vw; margin-top: 10.2vw; margin-left: 10vw;" src="img/Volant02.jpg" />
             </span>
         </div>
         <div class="section" id="section2">
-            <span class="left">
-                S3:1
+            <span class="left" style="float: left; width: 72%;">
+                <p style="position: absolute; float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.056vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 8.8vw !important; margin-left: 15vw">
+                    Change the height with just a word or at the touch of a button.
+                </p>
+                <img class="imagepane" style="max-width: 96vw; margin-top: 10.4vw; margin-left: 0;" src="img/Volant03.jpg" />
+                <div style="text-align: center; position: relative">
+                    <img style="width: 1.2vw; position: absolute; top: -3.3vw; margin-left: 10vw;" src="img/volant_graphite_shade.png" />
+                    <span style="position: absolute; color:rgb(59,59,59); letter-spacing: 0; font-family: Nexa; font-size: 0.5vw; margin-top: -3vw; margin-left: 12.2vw;">GRAPHITE</span>
+                </div>
             </span>
-            <span class="right">
-                S3:2
+            <span class="right" style="float:left; margin-top: 15vw; width: 28%;">
+                <img style="width: 6.2vw; margin-top: 13vw; margin-left: -17vw;" src="img/Volant%20Icon.png" />
+                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.08vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 5vw">
+                    Sitting is the new smoking.
+                </p>
             </span>
+        </div>
+        <div class="section" id="section3" style="background-image: url('img/Volant04.jpg'); background-size: 100% 100%; background-repeat: no-repeat; position: relative;">
+            <span class="pulse"></span>
+            <span class="pulse" style="margin-left: 59.6%; margin-top: 3%;"></span>
+            <!--<span>
+                <h2 style="font-family: GothamBook; font-size: 1.2vw;color: rgb(178,178,178); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
+                    The Intelligence.
+                </h2>
+                <p class="secp" style="color: rgb(153, 153, 153);">
+                    Volant has been outfitted with a powerful processor, seamlessly combining Charcoal's proprietary software and hardware. Software updates will introduce new features and improve existing functionality, making the product more capable over time.
+                </p>
+                <p class="secp">
+                    In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
+                </p>
+            </span>-->
+        </div>   
         </div>
 
         <!-- The JavaScript -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script type="text/javascript" src="jquery.easing.1.3.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
-            function openCloseNav() {
-                if (document.getElementById("myNav").style.marginLeft == "-78%")
-                    document.getElementById("myNav").style.marginLeft = "0%";
-                else
-                    document.getElementById("myNav").style.marginLeft = "-78%";
-            }
-            $(document).ready(function () {
-                $(".menu").click(function () {
-                    $(this).toggleClass("is-active");
-                });
-            });
+        function openCloseNav() {
+            if(document.getElementById("myNav").style.marginLeft == "-78%")
+                document.getElementById("myNav").style.marginLeft = "0%";
+            else
+                document.getElementById("myNav").style.marginLeft = "-78%";
+        }
+        $("#menu1").click(function() {
+            $(".menusp1").removeClass("hidden")
+            $(".menusp2").removeClass("hidden")
+            $(".menusp3").removeClass("hidden")
+            $(".menusp4").removeClass("hidden")
+            $(".menusp21").addClass("hidden")
+            $(".menusp22").addClass("hidden")
+            $("#menudot1").removeClass("menudot2")
+            $("#menudot1").addClass("menudot1")
+            $("#menudot2").removeClass("menudot1")
+            $("#menudot2").addClass("menudot2")
+        });
+        $("#menu2").click(function() {
+            $(".menusp21").removeClass("hidden")
+            $(".menusp22").removeClass("hidden")
+            $(".menusp1").addClass("hidden")
+            $(".menusp2").addClass("hidden")
+            $(".menusp3").addClass("hidden")
+            $(".menusp4").addClass("hidden")
+            $("#menudot2").removeClass("menudot2")
+            $("#menudot2").addClass("menudot1")
+            $("#menudot1").removeClass("menudot1")
+            $("#menudot1").addClass("menudot2")
+        });
         </script>
-
-        <script type="text/javascript">
-            var val1 = 0;
-            var noOfTiles = 3;
-            $(function () {
-                $('.mynav').bind('click', function (event) {
-                    makeInactive();
-                    val1 = $(this).attr('href');
-                    makeActive();
-                    /*
-                    if you want to use one of the easing effects:
-                    $('html, body').stop().animate({
-                        scrollLeft: $($anchor.attr('href')).offset().left
-                    }, 1500,'easeInOutExpo');
-                     */
-                    horizontalScroll();
-                    event.preventDefault();
-                });
-            });
-            $(document).ready(function () {
-                resizeDiv();
-            });
-
-            $(window).resize(function () {
-                resizeDiv();
-            });
-            $('body').bind('keydown', function (event) {
-                if (event.keyCode == 39 || event.keyCode == 40) {
-                    makeInactive();
-                    val1++;
-                    val1 = val1 % noOfTiles;
-                    makeActive();
-                    horizontalScroll();
-                }
-                else if (event.keyCode == 37 || event.keyCode == 38) {
-                    makeInactive();
-                    if (val1 == 0)
-                        val1 = noOfTiles - 1;
-                    else
-                        val1--;
-                    makeActive();
-                    val1 = val1 % noOfTiles;
-                    horizontalScroll();
-                }
-            });
-            function makeActive() {
-                $('#' + val1).attr("src", "img/dot-ho.png");
-                $('#' + val1).removeClass("slide-icon");
-                $('#' + val1).addClass("slide-icon-act");
-            }
-            function makeInactive() {
-                $('#' + val1).attr("src", "img/dot-in.png");
-                $('#' + val1).removeClass("slide-icon-act");
-                $('#' + val1).addClass("slide-icon");
-            }
-            function horizontalScroll() {
-                $('html, body').stop().animate({
-                    scrollTop: $("#section" + val1).offset().top
-                }, 1000);
-            }
-            function resizeDiv() {
-                //$(".section").css("width", window.innerWidth + "px");
-                //$("body").css("width", (3 * window.innerWidth) + "px");
-                $(".left").css("width", (window.innerWidth * .8) + "px");
-                $(".right").css("width", (window.innerWidth * .2)-30 + "px");
-                $(".imagepane").css("max-width", ((window.innerWidth * .8) - 40) + "px");
-
-            }
-            $(function () {
-                $('body').focus();
-            });
-        </script>
+        <script src="js/main.js"></script>
     </body>
 </html>
