@@ -1,99 +1,67 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+﻿<!doctype html>
+<html lang="en-us">
 <head>
-    <title>Volant | Charcoal</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="description" content="Website for smart tables" />
-    <meta name="keywords" content="smart table, charcoal, volant" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F9F9F9" />
-
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="css/examples.css" />
-    
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
-
-	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
-	<script type="text/javascript" src="js/examples.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				scrollingSpeed: 1700,
-                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-				menu: '#menu',
-				bigSectionsDestination:'top'
-			});
-		});
-	</script>
-</head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Charcoal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/css/animate.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <meta name="theme-color" content="#F9F9F9">
     <style>
         @font-face {
             font-family: 'Nexa';
-            src: url("font/Nexa-Light.otf");
+            src: url("src/font/Nexa-Light.otf");
         }
-
         @font-face {
             font-family: 'GothamBook';
-            src: url("font/Gotham-Book.otf");
+            src: url("src/font/Gotham-Book.otf");
         }
-
         @font-face {
             font-family: 'GothamLight';
-            src: url("font/Gotham-Light.otf");
+            src: url("src/font/Gotham-Light.otf");
         }
-
-        .slide-icon {
-            height: 0.45vw;
-            width: 0.4vw;
-        }
-        .slide-icon-act {
-            height: 0.5vw;
-            width: 0.5vw;
-        }
-
-        .prodmenuimg {
-            margin-left: 10px;
-            margin-right: 10px;
+        .prodlogo {
+            margin-left: 35px !important;
+            margin-right: 40px !important;
             height: 60px;
             width: 145px;
+            animation-fill-mode: none;
+            transition: transform 1s;
         }
-
+        .prodlogo:hover {
+            position: relative;
+            -ms-transform: translate(0px,-6px);
+            -webkit-transform: translate(0px,-6px);
+            transform: translate(0px,-6px); 
+        }
         html, body {
             height: 100%;
+        }
+
+        div, p, span, a {
+            transition-property: visibility;
+            transition-duration: 1s;
+            animation: fadein 2s;
         }
         
         p {
             margin-top: 1.25vw !important;
             margin-bottom: 1.25vw !important;
         }
-        
-        .secp {
-            font-family: GothamLight;
-            color: rgb(51,51,51);
-            font-size: 0.77vw;
-            margin-right: 2.4vw;
-            letter-spacing: 0.06vw;
-            -webkit-font-smoothing: antialiased;
-            -webkit-justify-content: center;
-            text-align: -webkit-left;
-            padding-left: 5.6vw;
-            line-height: 1.29vw;
-            margin-bottom: -0.79vw !important;
-        }
-        
         .hidden {
             visibility: hidden;
         }
-
+        
+        img {
+            width: 100%;
+            height: 100%;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
         #menufillin input {         
             margin-bottom: 0.4vw;
             width: 16vw;
@@ -103,17 +71,7 @@
         }
         
         .row {
-            margin-top: -2.7vw;
-            margin-left: 2vw;
-        }
-        
-        .dots {
-            padding: o !important;
-            text-align: center;
-        }
-        
-        .singledot {
-            
+            margin-left: -1vw;
         }
         
         .vertical-center {
@@ -137,26 +95,6 @@
             justify-content: center;
         }
 
-        .rightv-center {
-            min-height: 50%;
-            min-height: 50vh;
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-            -moz-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            width: 100%;
-            -webkit-box-pack: center;
-            -moz-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-        }
         .overlay {
             height: 100%;
             width: 0;
@@ -178,6 +116,7 @@
 
         .overlay a {
             padding: 8px;
+            padding-right: 20px;
             text-decoration: none;
             font-size: 36px;
             color: #818181;
@@ -185,14 +124,14 @@
             transition: 0.3s;
             font-family: GothamBook;
         }
-
+        
         .overlay p, h6 {
             letter-spacing: 0.04vw;
             color: rgb(102,102,102);
             font-family: GothamBook;
             -webkit-font-smoothing: antialiased;
         }
-        
+            
         .overlay a:hover, .overlay a:focus {
             color: #000;
         }
@@ -202,7 +141,6 @@
             top: -10px;
             font-size: 40px;
         }
-
         .menubar {
             width:100%;
         }
@@ -267,92 +205,40 @@
             margin-top: -0.2vw !important;
             color: rgb(209,209,209) !important;
         }
-        
-        .top-bar {
-            position: fixed;
-            top: 8%;
-            width: 100%;
-            z-index: 2;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+            
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
             
         }
-        
-        .pulse {
-            margin-left: 50%;
-            margin-top: -3%;
-            display: block;
-            width: 0.4vw;
-            height: 0.4vw;
-            border-radius: 50%;
-            background: #ffffff8c;
-            cursor: pointer;
-            box-shadow: 0 0 #ffffff8c;
-            animation: pulse 2s infinite;
-        }
-        .pulse:hover {
-            animation: none;
-        }
-
-        @-webkit-keyframes pulse {
-        0% {
-            -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-        }
-        70% {
-            -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-        }
-        100% {
-            -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        @media screen and (max-width: 450px){
+            .overlay-content {
+                position: relative;
+                top: 5%;
+                width: 100%;
+                margin: 0px;
+                text-align: center;
+                font-family: GothamBook;
             }
-        }
-        @keyframes pulse {
-        0% {
-            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-            box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-        }
-        70% {
-            -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-            box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-        }
-        100% {
-            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-            box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+            .textspan {
+                margin-bottom: 0px;
+                margin-top: 0px;
             }
-        }
-        
-        span.reference {
-            position: fixed;
-            left: 10px;
-            bottom: 10px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-            span.reference a {
-                color: #fff;
-                text-shadow: 1px 1px 1px #000;
-                padding-right: 20px;
-            }
-
-                span.reference a:hover {
-                    color: #ddd;
-                    text-decoration: none;
-                }
-
-        navi-active {
-            height: 8px;
-            width: 8px;
-        }
-
-        navi-inactive {
-            height: 7px;
-            width: 7px;
         }
 
     </style>
-    <body tabindex="1" style="background-color: rgb(249,249,249);">
 
-        <div style="text-align:center;" class="header-top clearfix">
+</head>
+<body class="container-fluid" style="background-color: rgb(249,249,249); padding-right: 0px; padding-left:0px;">
+    
+    <div style="text-align:center;" class="header-top clearfix">
         <div class="menu" onclick="openCloseNav()">
             <span class="menu-global menu-top"></span>
             <span class="menu-global menu-middle1"></span>
@@ -361,7 +247,7 @@
         </div>
         
         <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
-            <div class="overlay-content vertical-center" style="margin-left: -1vw;">
+            <div class="overlay-content row vertical-center">
                 <span class="menutextspan" style="position: relative;">
                     <a id="menu1" style="float:left; width:50%; text-align: -webkit-left; font-size: 0.86vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot1" style="margin-left: 2.3vw;">&#9679;</p></a>
                     <a id="menu2" style="float:right; width:50%; text-align: -webkit-right; font-size: 0.86vw; padding-right: 0.14vw !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot2" style="margin-right: 2.65vw;">&#9679;</p></a>
@@ -400,17 +286,17 @@
                     </p>
                     <p class="menusp21" style="margin-top:0 !important;">
                         <a href="#" style="padding: 0; display: unset; font-size: 0;">
-                        <img src="img/Order%20now.png" style="width: 6vw; height: 1.29vw;">
+                        <img src="src/img/Order%20now.png" style="width: 6vw; height: 1.29vw;">
                         </a>
                     </p>
                 </span>
                 
                 <a class="overlayhover menusp2" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
-                    <div class="menusp2" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Inactive.png');">
+                    <div class="menusp2" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Inactive.png');">
                     </div>
                     <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">VOLANT.</p>
                     <div class="overlaymenu">
-                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Active.png');">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Active.png');">
                         </div>
                     </div>
                 </a>
@@ -419,149 +305,41 @@
                 </span>
                 
                 <a class="overlayhover menusp4" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
-                    <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Nautic%20Inactive.png');">
+                    <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Inactive.png');">
                     </div>
                     <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">NAUTIC.</p>
                     <div class="overlaymenu">
-                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Nautic%20Active.png');">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Nautic%20Active.png');">
                         </div>
                     </div>
                 </a>
                 
                 <div class="menusp22 hidden" style="position: absolute; z-index: -2;">
-                    <div class="menusp22" style="max-width: 100%; width: 37vw; height: 25vw; padding:0; margin:0; margin-top: 9vw; margin-left: 26vw; background-size: cover; background-image: url('img/Catalogue.png');">
+                    <div class="menusp22" style="max-width: 100%; width: 37vw; height: 25vw; padding:0; margin:0; margin-top: 9vw; margin-left: 26vw; background-size: cover; background-image: url('src/img/Catalogue.png');">
                     </div>
                 </div>
                 
             </div>
         </div>
-        <div style="text-align:left; z-index: -2;" class="top-bar clearfix" id="topmenu">
-        <p>
-        </p>
-        <div class="row">
-            <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; font-weight: 400; margin-bottom: -0.4vw !important;">
-                    design
-                </p>
-                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
-                    <a class="singledot" href="#firstPage" class="mynav"><img id="0" class="slide-icon-act" src="img/dot-ho.png" /></a>
-                    <a class="singledot" href="#secondPage" class="mynav"><img id="1" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
-                </div>
-            </div>
-            <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-bottom: -0.4vw !important;">
-                    features
-                </p>
-                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
-                    <a class="singledot" href="#thirdPage" class="mynav"><img id="2" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
-                    <a class="singledot" href="#fourthPage" class="mynav"><img id="3" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
-                </div>
-            </div>
-            <div style="padding-left: 0px;">
-                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-bottom: -0.4vw !important;">
-                    customize and pre-order
-                </p>
-                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
-                    <a class="singledot" href="#lastPage" class="mynav"><img id="4" class="slide-icon animated nav-inactive" src="img/dot-in.png" /></a>
-                </div>
-            </div>
-            <div style="text-align: right; padding-right: 3.4vw; margin-top: 0.7vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="executive-desks/volant/index.html"><img class="" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.84" src="img/Volant_link.png" /></a>
-                    <a href="#"><img class="" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.64;" src="img/Nautic_link.png" /></a>
-            </div>
-        </div>
-    </div>
     </div>
     
     <div style="text-align:center; z-index: -2;" class="header-top clearfix">
         <span>
-            <img src="img/Logo.png" style="width: 190px;" />
+            <img src="src/img/Logo.png" style="width: 190px;" />
         </span>
     </div>
-        
-        <div id="fullpage">
-            
-        <div class="section" id="section0">
-            <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 104vw; margin-top: 7.2vw; margin-left: -5vw;" src="img/Volant01.jpg" />
-                <div style="text-align: center; position: relative">
-                    <img style="width: 1.2vw; position: absolute; top: -5vw; margin-left: -3vw;" src="img/volant_salt_shade.png" />
-                    <span style="position: absolute; color:rgb(59,59,59); letter-spacing: 0.2vw; font-family: Nexa; font-size: 0.5vw; margin-top: -4.6vw; margin-left: -0.6vw;">SALT</span>
-                </div>
-            </span>
-            <span class="right" style="float:left; margin-top: 15vw; width: 28%;">
-                <h3 style="font-family: Nexa; font-size: 0.5vw; letter-spacing: 0.18vw; color: rgb(102,102,102);margin-bottom: 1.4vw; text-align: left; margin-left: 5.6vw;">
-                    AN ICON FOR ICONOCLASTS
-                </h3>
-                <h2 style="font-family: GothamBook; font-size: 1.2vw;color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
-                    VOLANT.
-                </h2>
-                <p class="secp">
-                    Our singular purpose was to create a product not bound by convention. Volant is the realization of that dream.
-                    Inspired by 21<sup>st</sup> century trends in aeronautics, we brought Volant to life using distinctive materials and integrated it with cutting edge technology.
-                </p>
-                <p class="secp">
-                    Imagined with simple yet purposeful strokes, the body is constructed out of virtually seamless lines of Hi-Macs<sup style="top: 0em; font-size: 1vw;">&reg;</sup> - marrying the look of classic stone with avant grade form.
-                </p>
 
-            </span>
+    <div id="main" class="vertical-center">
+        <div style="margin-top:-5%; text-align:center; font-family: Nexa; font-size:22px; letter-spacing:2px; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
+            <p style="margin-bottom: 0.4rem !important;">reimagining the executive desk,</p><br />
+            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 1s;" src="src/img/Volant Art Icon.png" /></a>
+            <a href="#"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 1s;" src="src/img/Nautic Art Icon.png" /></a>
         </div>
-        <div class="section" id="section1" style="position: relative;">
-            <span class="right" style="position: absolute; float: left; margin-top: 24vw; width: 36%; margin-left: -50vw;">
-                <h2 style="font-family: GothamBook; font-size: 0.86vw; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
-                    A story of extraordinary engineering,
-                </h2>
-                <p class="secp">
-                    For Volant to exist as it does, our engineers and designers had to create a light-weight frame strong enough to withstand an incredible 2,500 N-m of torque and yet ensure that Volant remains aesthetically stunning.
-                </p>
-                <p class="secp">
-                    Drawing lessons from the cutting edge in aeronautics and automobile engineering, that's exactly what they did.
-                </p>
-            </span>
-            <span class="left" style="float: left; width: 69%;">
-                <img class="imagepane" style="max-width: 92.5vw; margin-top: 10.2vw; margin-left: 10vw;" src="img/Volant02.jpg" />
-            </span>
-        </div>
-        <div class="section" id="section2">
-            <span class="left" style="float: left; width: 72%;">
-                <p style="position: absolute; float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.056vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 8.8vw !important; margin-left: 15vw">
-                    Change the height with just a word or at the touch of a button.
-                </p>
-                <img class="imagepane" style="max-width: 96vw; margin-top: 10.4vw; margin-left: 0;" src="img/Volant03.jpg" />
-                <div style="text-align: center; position: relative">
-                    <img style="width: 1.2vw; position: absolute; top: -3.3vw; margin-left: 10vw;" src="img/volant_graphite_shade.png" />
-                    <span style="position: absolute; color:rgb(59,59,59); letter-spacing: 0; font-family: Nexa; font-size: 0.5vw; margin-top: -3vw; margin-left: 12.2vw;">GRAPHITE</span>
-                </div>
-            </span>
-            <span class="right" style="float:left; margin-top: 15vw; width: 28%;">
-                <img style="width: 6.2vw; margin-top: 13vw; margin-left: -17vw;" src="img/Volant%20Icon.png" />
-                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.08vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 5vw">
-                    Sitting is the new smoking.
-                </p>
-            </span>
-        </div>
-        <div class="section" id="section3" style="background-image: url('img/Volant04.jpg'); background-size: 100% 100%; background-repeat: no-repeat; position: relative;">
-            <span class="pulse"></span>
-            <span class="pulse" style="margin-left: 59.6%; margin-top: 3%;"></span>
-            <!--<span>
-                <h2 style="font-family: GothamBook; font-size: 1.2vw;color: rgb(178,178,178); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
-                    The Intelligence.
-                </h2>
-                <p class="secp" style="color: rgb(153, 153, 153);">
-                    Volant has been outfitted with a powerful processor, seamlessly combining Charcoal's proprietary software and hardware. Software updates will introduce new features and improve existing functionality, making the product more capable over time.
-                </p>
-                <p class="secp">
-                    In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
-                </p>
-            </span>-->
-        </div>   
-        </div>
-
-        <!-- The JavaScript -->
-        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-        <script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script>
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-78%")
                 document.getElementById("myNav").style.marginLeft = "0%";
@@ -592,7 +370,17 @@
             $("#menudot1").removeClass("menudot1")
             $("#menudot1").addClass("menudot2")
         });
-        </script>
-        <script src="js/main.js"></script>
-    </body>
+    </script>
+    <script src="src/js/main.js"></script>
+    <!--
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-XXXXX-X', 'auto');
+      ga('send', 'pageview');
+    </script>
+    -->
+</body>
 </html>
