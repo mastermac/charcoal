@@ -17,8 +17,8 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="css/examples.css" />
     
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
 	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
 
@@ -27,8 +27,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-                		anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-				menu: '#menu',
+                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
 				bigSectionsDestination:'top'
 			});
 		});
@@ -112,7 +111,13 @@
         }
         
         .singledot {
-            
+            margin-top: 48% !important;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+        }
+        
+        .singledot:hover {
+            text-decoration: none;
         }
         
         .vertical-center {
@@ -255,7 +260,7 @@
         }
         
         .menudot1 {
-            font-size: 0.77vw;
+            font-size: 0.87vw;
             margin-top: -0.2vw !important;
             color: rgb(51,51,51);
             text-shadow: 0.001vw 0.001vw 0.001vw #000;
@@ -264,7 +269,11 @@
         .menudot2 {
             font-size: 0.86vw;
             margin-top: -0.2vw !important;
-            color: rgb(209,209,209) !important;
+            color: rgb(209,209,209);
+        }
+        
+        .mynav:hover p {
+            color: rgb(51,51,51) !important;
         }
         
         .top-bar {
@@ -351,7 +360,7 @@
     </style>
     <body tabindex="1" style="background-color: rgb(249,249,249);">
 
-        <div style="text-align:center;" class="header-top clearfix">
+        <div style="text-align:center; z-index: 4;" class="header-top clearfix">
         <div class="menu" onclick="openCloseNav()">
             <span class="menu-global menu-top"></span>
             <span class="menu-global menu-middle1"></span>
@@ -362,7 +371,7 @@
         <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
                 <span class="menutextspan" style="position: relative;">
-                    <a id="menu1" style="float:left; width:50%; text-align: -webkit-left; font-size: 0.86vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="index.html">products<p id="menudot1" class="menudot1" style="margin-left: 2.3vw;">&#9679;</p></a>
+                    <a id="menu1" style="float:left; width:50%; text-align: -webkit-left; font-size: 0.86vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot1" style="margin-left: 2.3vw;">&#9679;</p></a>
                     <a id="menu2" style="float:right; width:50%; text-align: -webkit-right; font-size: 0.86vw; padding-right: 0.14vw !important; letter-spacing: 0.14vw; color: rgb(0,0,0); margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot2" style="margin-right: 2.65vw;">&#9679;</p></a>
                     <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
                     <h6 class="menusp1" style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
@@ -404,7 +413,7 @@
                     </p>
                 </span>
                 
-                <a class="overlayhover menusp2" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="index.html">
+                <a class="overlayhover menusp2" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
                     <div class="menusp2" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Inactive.png');">
                     </div>
                     <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">VOLANT.</p>
@@ -439,42 +448,42 @@
         </p>
         <div class="row">
             <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; font-weight: 400; margin-bottom: -0.4vw !important;">
-                    design
+                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); font-weight: 1000; margin-bottom: -0.4vw !important;">
+                    <strong>design</strong>
                 </p>
-                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased;" class="container inner">
-                    <a class="singledot" href="#firstPage" class="mynav"><img id="0" class="slide-icon-act" src="img/dot-ho.png" /></a>
-                    <a class="singledot" href="#secondPage" class="mynav"><img id="1" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
+                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; margin-top: 1vw; position: relative;" class="container inner">
+                    <a class="singledot mynav" href="#firstPage" style="margin-left: -2.2vw;"><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#secondPage" style="margin-left: -1.5vw;"><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-bottom: -0.4vw !important;">
+                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); font-weight: 1000; margin-bottom: -0.4vw !important;">
                     features
                 </p>
-                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
-                    <a class="singledot" href="#thirdPage" class="mynav"><img id="2" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
-                    <a class="singledot" href="#fourthPage" class="mynav"><img id="3" class="slide-icon nav-inactive" src="img/dot-in.png" /></a>
+                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
+                    <a class="singledot mynav" href="#thirdPage" style="margin-left: -2.6vw; margin-top: 39% !important;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#fourthPage" style="margin-left: -1.9vw; margin-top: 39% !important;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <p style="float:left; text-align: -webkit-left; font-size: 0.8vw; padding-left: 0px !important; letter-spacing: 0.14vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-bottom: -0.4vw !important;">
+                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); font-weight: 1000; margin-bottom: -0.4vw !important;">
                     customize and pre-order
                 </p>
-                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;" class="container inner">
-                    <a class="singledot" href="#lastPage" class="mynav"><img id="4" class="slide-icon animated nav-inactive" src="img/dot-in.png" /></a>
+                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
+                    <a class="singledot mynav" href="#lastPage" style="margin-top: 1.6vw !important; margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="text-align: right; padding-right: 3.4vw; margin-top: 0.7vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="index.html"><img class="" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.84" src="img/Volant_link.png" /></a>
+                    <a style="margin-right: 1.4vw;" href="executive-desks/volant/index.html"><img class="" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.84" src="img/Volant_link.png" /></a>
                     <a href="#"><img class="" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.64;" src="img/Nautic_link.png" /></a>
             </div>
         </div>
     </div>
     </div>
     
-    <div style="text-align:center; z-index: -2;" class="header-top clearfix">
+    <div style="text-align:center; z-index: 2;" class="header-top clearfix">
         <span>
-            <img src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 22.7vw;" />
+            <img src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 13.2vw;" />
         </span>
     </div>
         
@@ -561,6 +570,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
+            var val1 = 0;
+            
+            $(function () {
+                $('.mynav').bind('click', function (event) {
+                    makeInactive();
+                    val1 = $(this).children().attr('id');
+                    makeActive();
+                });
+            });
+            
+            function makeActive() {
+                $('#' + val1).removeClass("menudot2");
+                $('#' + val1).addClass("menudot1");
+            }
+            function makeInactive() {
+                $('#' + val1).removeClass("menudot1");
+                $('#' + val1).addClass("menudot2");
+            }
+            
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-78%")
                 document.getElementById("myNav").style.marginLeft = "0%";
