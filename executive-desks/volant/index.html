@@ -28,7 +28,8 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-				bigSectionsDestination:'top'
+				bigSectionsDestination:'top',
+                scroll
 			});
 		});
 	</script>
@@ -47,6 +48,11 @@
         @font-face {
             font-family: 'GothamLight';
             src: url("font/Gotham-Light.otf");
+        }
+        
+        @font-face {
+            font-family: 'GothamELight';
+            src: url("font/Gotham-ExtraLight.otf");
         }
 
         .slide-icon {
@@ -77,9 +83,9 @@
         .secp {
             font-family: GothamLight;
             color: rgb(51,51,51);
-            font-size: 0.74vw;
+            font-size: 0.77vw;
             margin-right: 2.4vw;
-            letter-spacing: 0.06vw;
+            letter-spacing: 0.05vw;
             -webkit-font-smoothing: antialiased;
             -webkit-justify-content: center;
             text-align: -webkit-left;
@@ -390,7 +396,7 @@
         }
 
     </style>
-    <body tabindex="1" style="background-color: rgb(249,249,249);">
+    <body tabindex="1" style="background-color: rgb(250,250,250);">
 
         <div style="text-align:center; z-index: 4;" class="header-top clearfix">
         <div class="menu" onclick="openCloseNav()">
@@ -480,7 +486,7 @@
         </p>
         <div class="row">
             <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); font-weight: bold; margin-bottom: -0.4vw !important;">
+                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important;">
                     <strong>design</strong>
                 </p>
                 <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; margin-top: 1vw; position: relative;" class="container inner">
@@ -489,7 +495,7 @@
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); font-weight: bold; margin-bottom: -0.4vw !important;">
+                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important;">
                     features
                 </p>
                 <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
@@ -498,7 +504,7 @@
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); font-weight: bold; margin-bottom: -0.4vw !important;">
+                <p style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important;">
                     customize and pre-order
                 </p>
                 <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
@@ -515,7 +521,7 @@
     
     <div style="text-align:center; z-index: 2;" class="header-top clearfix">
         <span>
-            <img src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 13.2vw;" />
+            <img src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.6vw;" />
         </span>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
@@ -523,31 +529,31 @@
             
         <div class="section" id="section0">
             <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 104vw; margin-top: 7.2vw; margin-left: -5vw;" src="img/Volant01.jpg" />
+                <img class="imagepane" style="max-width: 104vw; margin-top: 9.7vw; margin-left: -5vw;" src="img/Volant01.jpg" />
                 <div style="text-align: center; position: relative">
-                    <img style="width: 1.2vw; position: absolute; top: -5vw; margin-left: -3vw;" src="img/volant_salt_shade.png" />
-                    <span style="position: absolute; color:rgb(59,59,59); letter-spacing: 0.01vw; font-family: Nexa; font-size: 0.46vw; margin-top: -4.6vw; margin-left: -0.6vw;">SALT</span>
+                    <img style="width: 1.2vw; position: absolute; top: -4.9vw; margin-left: -3vw;" src="img/volant_salt_shade.png" />
+                    <span style="position: absolute; color:rgb(59,59,59); letter-spacing: 0.02vw; font-family: Nexa; font-size: 0.46vw; margin-top: -4.5vw; margin-left: -0.6vw;">SALT</span>
                 </div>
             </span>
-            <span class="right" style="float:left; margin-top: 15vw; width: 28%;">
-                <h3 style="font-family: Nexa; font-size: 0.5vw; letter-spacing: 0.18vw; color: rgb(102,102,102);margin-bottom: 1.4vw; text-align: left; margin-left: 5.6vw;">
+            <span class="right" style="float:left; margin-top: 18.5vw; width: 28%;">
+                <h3 style="font-family: Nexa; font-size: 0.5vw; font-weight: lighter; letter-spacing: 0.18vw; color: rgb(102,102,102); margin-bottom: 1.3vw; text-align: left; margin-left: 5.6vw;">
                     AN ICON FOR ICONOCLASTS
                 </h3>
-                <h2 style="font-family: GothamBook; font-size: 1vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.1vw;">
+                <h2 style="font-family: GothamBook; font-size: 1vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.1vw; margin-bottom: 1.1vw;">
                     VOLANT.
                 </h2>
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.067vw;">Our singular purpose was to create a product</p>
-                <p class="secp" style="letter-spacing: 0.03vw;">
+                <p class="secp" style="margin-top: 0 !important; margin-bottom: -1.2vw !important; letter-spacing: 0.057vw;">Our singular purpose was to create a product</p>
+                <p class="secp" style="letter-spacing: 0.02vw;">
                     not bound by convention. Volant is the realization
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.07vw; margin-top: 0.8vw !important;">of that dream.Inspired by 21<sup>st</sup> century trends</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.07vw;">in aeronautics, we brought Volant to life</p>
+                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.06vw; margin-top: 0.8vw !important;">of that dream.Inspired by 21<sup>st</sup> century trends</p>
+                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.06vw;">in aeronautics, we brought Volant to life</p>
                 <p class="secp" style="margin-top: 1.26vw !important;">using distinctive materials and integrated it with cutting edge technology.
                 </p>
-                <p class="secp" style="margin-top: 1.14vw; margin-bottom: -1.2vw !important; letter-spacing: 0.067vw;">
+                <p class="secp" style="margin-top: 1.1vw !important; margin-bottom: -1.2vw !important; letter-spacing: 0.057vw;">
                     Imagined with simple yet purposeful strokes,</p>
-                <p class="secp" style="letter-spacing: 0.04vw;">the body is constructed out of virtually seamless</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.047vw; margin-top: 0.86vw !important;">lines of Hi-Macs<sup style="top: 0em; font-size: 1vw;">&reg;</sup> - marrying the look of classic</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; margin-top: 1.197vw !important; letter-spacing: 0.067vw; word-spacing: 0.01vw">stone with the avant grade form.
+                <p class="secp" style="letter-spacing: 0.029vw;">the body is constructed out of virtually seamless</p>
+                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.037vw; margin-top: 0.86vw !important;">lines of Hi-Macs<sup style="top: 0em; font-size: 1vw;">&reg;</sup> - marrying the look of classic</p>
+                <p class="secp" style="margin-bottom: -1.2vw !important; margin-top: 1.197vw !important; letter-spacing: 0.057vw; word-spacing: 0.01vw">stone with the avant grade form.
                 </p>
 
             </span>
@@ -586,7 +592,22 @@
                 </p>
             </span>
         </div>
-        <div class="section" id="section3" style="background-image: url('img/Volant04.jpg'); background-size: 100% 100%; background-repeat: no-repeat; position: relative;">
+        <div class="section" id="section3" style="position: relative; background-color: #171817;">
+            <span class="left" style="float: left; width: 72%;">
+                <img class="imagepane" style="max-width: 80.7vw; margin-top: 0; margin-left: 0;" src="img/Volant04.jpg" />
+            </span>
+            <span class="right" style="float:left; margin-top: 15vw; width: 28%;">
+                <p style="float:left; text-align: -webkit-left; font-size: 0.77vw; font-weight: lighter; padding-left: 0px !important; letter-spacing: 0.08vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 4vw">
+                    <h2 style="font-family: GothamBook; font-size: 1.2vw;color: rgb(178,178,178); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
+                    The Intelligence.
+                    </h2>
+                    <p class="secp" style="color: rgb(153, 153, 153);">
+                        Volant has been outfitted with a powerful processor, seamlessly combining Charcoal's proprietary software and hardware. Software updates will introduce new features and improve existing functionality, making the product more capable over time.
+                    </p>
+                    <p class="secp">
+                        In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
+                    </p>
+            </span>
             <span class="pulse"></span>
             <span class="pulse" style="margin-left: 59.6%; margin-top: 3%;"></span>
             <!--<span>
@@ -630,14 +651,14 @@
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-78%")
             {
-                $('#fullpage, #topmenu').css("opacity", "1.0").animate({opacity: 0}, 400, function(){
+                $('#fullpage, #topmenu').css("opacity", "1.0").animate({opacity: 0}, 100, function(){
                     $('#fullpage, #topmenu').css("visibility", "hidden");
                 })
                 document.getElementById("myNav").style.marginLeft = "0%";
             }
             else
             {
-                $('#fullpage, #topmenu').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 100);
                 document.getElementById("myNav").style.marginLeft = "0%";
                 document.getElementById("myNav").style.marginLeft = "-78%";
             }
@@ -645,7 +666,7 @@
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
-                $('#fullpage, #topmenu').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 100);
                 document.getElementById("myNav").style.marginLeft = "-78%";
             }
         });
