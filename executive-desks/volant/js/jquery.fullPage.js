@@ -1235,7 +1235,7 @@
 
                 //haven't they scrolled in a while?
                 //(enough to be consider a different scrolling action to scroll another section)
-                if(timeDiff > 200){
+                if(timeDiff > 50){
                     //emptying the array, we dont care about old scrollings for our averages
                     scrollings = [];
                 }
