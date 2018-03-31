@@ -634,6 +634,18 @@
         <script>
             var val1 = 0;
             
+            var $isAnimatedFourth = $('.fourth .is-animated'),
+            $isAnimatedFourthSingle = $('.fourth .is-animated__single');
+ 
+/* this code is part of the onLeave callback */
+if( ( index == 1 || index == 2 || index == 3 ) && nextIndex == 4 ) {
+    $isAnimatedFourth.addClass('animated zoomIn').css('animation-delay', '.6s');
+    $isAnimatedFourthSingle.addClass('animated lightSpeedIn').css('animation-delay', '1.2s')
+    $isAnimatedFourthSingle.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    $(this).removeClass('lightSpeedIn').addClass('zoomOutDown');
+    });
+}
+            
             $(function () {
                 $('.mynav').bind('click', function (event) {
                     makeInactive();
@@ -654,14 +666,14 @@
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-78%")
             {
-                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.4}, 400);
+                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.25}, 400);
                 document.getElementById("myNav").style.marginLeft = "0%";
                 $('#outsidediv').css("z-index", "1");
                 $('body').css("overflow","hidden");
             }
             else
             {
-                $('#fullpage, #topmenu').css("opacity", "0.4").animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 400);
                 document.getElementById("myNav").style.marginLeft = "-78%";
                 $('#outsidediv').css("z-index", "-1");
             }
@@ -669,7 +681,7 @@
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
-                $('#fullpage, #topmenu').css("opacity", "0.4").animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 400);
                 document.getElementById("myNav").style.marginLeft = "-78%";
                 $('#outsidediv').css("z-index", "-1");
             }
