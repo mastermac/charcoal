@@ -28,7 +28,9 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-				bigSectionsDestination:'top'
+				bigSectionsDestination:'top',
+                easingcss3: 'cubic-bezier(.42,0,1,1)',
+                scrollingSpeed: 700
 			});
 		});
 	</script>
@@ -589,7 +591,7 @@
                 </div>
             </span>
             <span class="right" style="float:left; margin-top: 13.5vw; width: 28%;">
-                <img style="position: absolute; width: 6.2vw; margin-top: 13vw; margin-left: -4.25vw;" src="img/Volant Icon 01.png" />
+                <img class="is-animated__single" style="position: absolute; width: 6.2vw; margin-top: 13vw; margin-left: -4.25vw;" src="img/Volant Icon 01.png" />
                 <img style="position: absolute; width: 1vw; margin-top: 14vw; margin-left: 0.45vw;" src="img/Volant Icon 02.png" />
                 <p style="float:left; text-align: -webkit-left; font-size: 0.707vw; font-family: gothamLight; font-weight: bold; padding-left: 0px !important; letter-spacing: 0.074vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 4vw">
                     Sitting is the new smoking.
@@ -633,19 +635,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
             var val1 = 0;
-            
-            var $isAnimatedFourth = $('.fourth .is-animated'),
-            $isAnimatedFourthSingle = $('.fourth .is-animated__single');
- 
-/* this code is part of the onLeave callback */
-if( ( index == 1 || index == 2 || index == 3 ) && nextIndex == 4 ) {
-    $isAnimatedFourth.addClass('animated zoomIn').css('animation-delay', '.6s');
-    $isAnimatedFourthSingle.addClass('animated lightSpeedIn').css('animation-delay', '1.2s')
-    $isAnimatedFourthSingle.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-    $(this).removeClass('lightSpeedIn').addClass('zoomOutDown');
-    });
-}
-            
+            var $isAnimatedThird = $('#section2 .is-animated__single');
+            if( ( index == 1 || index == 2) && nextIndex == 3 ) {
+                $isAnimatedThird.eq(0).animate({marginLeft: '2vw', marginTop: '14vw'}, 1000);
+            }
             $(function () {
                 $('.mynav').bind('click', function (event) {
                     makeInactive();
@@ -666,14 +659,14 @@ if( ( index == 1 || index == 2 || index == 3 ) && nextIndex == 4 ) {
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-78%")
             {
-                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.25}, 400);
+                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.25}, 250);
                 document.getElementById("myNav").style.marginLeft = "0%";
                 $('#outsidediv').css("z-index", "1");
                 $('body').css("overflow","hidden");
             }
             else
             {
-                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 250);
                 document.getElementById("myNav").style.marginLeft = "-78%";
                 $('#outsidediv').css("z-index", "-1");
             }
@@ -681,7 +674,7 @@ if( ( index == 1 || index == 2 || index == 3 ) && nextIndex == 4 ) {
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
-                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 250);
                 document.getElementById("myNav").style.marginLeft = "-78%";
                 $('#outsidediv').css("z-index", "-1");
             }
