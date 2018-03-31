@@ -654,20 +654,24 @@
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-78%")
             {
-                $('#fullpage, #topmenu').css("opacity", "1.0").animate({opacity: 0.6}, 400);
+                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.4}, 400);
                 document.getElementById("myNav").style.marginLeft = "0%";
+                $('#outsidediv').css("z-index", "1");
+                $('body').css("overflow","hidden");
             }
             else
             {
-                $('#fullpage, #topmenu').css("opacity", "0.6").animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css("opacity", "0.4").animate({opacity: 1}, 400);
                 document.getElementById("myNav").style.marginLeft = "-78%";
+                $('#outsidediv').css("z-index", "-1");
             }
         }
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
-                $('#fullpage, #topmenu').css("opacity", "0.6").animate({opacity: 1}, 400);
+                $('#fullpage, #topmenu').css("opacity", "0.4").animate({opacity: 1}, 400);
                 document.getElementById("myNav").style.marginLeft = "-78%";
+                $('#outsidediv').css("z-index", "-1");
             }
         });
         $("#menu1").click(function() {
