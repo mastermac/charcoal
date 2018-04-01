@@ -28,9 +28,7 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-				bigSectionsDestination:'top',
-                easingcss3: 'cubic-bezier(.42,0,1,1)',
-                scrollingSpeed: 700
+				bigSectionsDestination:'top'
 			});
 		});
 	</script>
@@ -330,8 +328,9 @@
         }
         
         .pulse {
-            margin-left: 50%;
-            margin-top: -3%;
+            position: relative;
+            margin-left: 40%;
+            margin-top: -2%;
             display: block;
             width: 0.4vw;
             height: 0.4vw;
@@ -576,7 +575,7 @@
                 </p>
             </span>
             <span class="left" style="float: left; width: 69%;">
-                <img class="imagepane" style="max-width: 95vw; margin-top: 9.2vw; margin-left: 10vw;" src="img/Volant02.jpg" />
+                <img class="imagepane" style="max-width: 116vw; margin-top: 5.8vw; margin-left: -1vw;" src="img/Volant02.jpg" />
             </span>
         </div>
         <div class="section" id="section2">
@@ -591,18 +590,19 @@
                 </div>
             </span>
             <span class="right" style="float:left; margin-top: 13.5vw; width: 28%;">
-                <img class="is-animated__single" style="position: absolute; width: 6.2vw; margin-top: 13vw; margin-left: -4.25vw;" src="img/Volant Icon 01.png" />
+                <img class="notAnimated" style="position: absolute; width: 6.2vw; margin-top: 13vw; margin-left: -4.25vw;" src="img/Volant Icon 01.png" />
                 <img style="position: absolute; width: 1vw; margin-top: 14vw; margin-left: 0.45vw;" src="img/Volant Icon 02.png" />
                 <p style="float:left; text-align: -webkit-left; font-size: 0.707vw; font-family: gothamLight; font-weight: bold; padding-left: 0px !important; letter-spacing: 0.074vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 4vw">
                     Sitting is the new smoking.
                 </p>
             </span>
         </div>
-        <div class="section" id="section3" style="position: relative; background-color: #171817;">
-            <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 80.7vw; margin-top: 0; margin-left: 0;" src="img/Volant04.jpg" />
+        <div class="section" id="section3" style="position: relative; background-color: rgb(24,24,22);">
+            <span class="left" style="float: left; right: 0; width: 77%; height: 100%; background-image: url('img/Volant04.jpg'); background-size: cover; background-position: 99.7%;">
+                <span class="pulse"></span>
+                <span class="pulse" style="margin-left: 59.6%; margin-top: 3%;"></span>
             </span>
-            <span class="right" style="float:left; margin-top: 15vw; width: 28%; text-shadow: none;">
+            <span class="right" style="float:left; position: absolute; margin-top: 20.7vw; margin-left: -17.5vw; width: 28%; text-shadow: none; font-size: 0.05vw">
                 <h2 style="font-family: GothamBook; font-size: 1.2vw;color: rgb(178,178,178); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
                     The Intelligence.
                 </h2>
@@ -613,19 +613,6 @@
                     In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
                 </p>
             </span>
-            <span class="pulse"></span>
-            <span class="pulse" style="margin-left: 59.6%; margin-top: 3%;"></span>
-            <!--<span>
-                <h2 style="font-family: GothamBook; font-size: 1.2vw;color: rgb(178,178,178); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.1vw;">
-                    The Intelligence.
-                </h2>
-                <p class="secp" style="color: rgb(153, 153, 153);">
-                    Volant has been outfitted with a powerful processor, seamlessly combining Charcoal's proprietary software and hardware. Software updates will introduce new features and improve existing functionality, making the product more capable over time.
-                </p>
-                <p class="secp">
-                    In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
-                </p>
-            </span>-->
         </div>   
         </div>
 
@@ -635,17 +622,56 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
             var val1 = 0;
-            var $isAnimatedThird = $('#section2 .is-animated__single');
-            if( ( index == 1 || index == 2) && nextIndex == 3 ) {
-                $isAnimatedThird.eq(0).animate({marginLeft: '2vw', marginTop: '14vw'}, 1000);
+        
+            var image = { width: 550, height: 190 };
+            var target = { x: 184, y: 88 };
+            var pointer = $('.pulse');
+            $(document).ready(updatePointer);
+            $(window).resize(updatePointer);
+            function updatePointer() {
+                var windowWidth = $(window).width();
+                var windowHeight = $(window).height();
+                // Get largest dimension increase
+                var xScale = windowWidth / image.width;
+                var yScale = windowHeight / image.height;
+                var scale;
+                var yOffset = 0;
+                var xOffset = 0;
+                if (xScale > yScale) {
+                    // The image fits perfectly in x axis, stretched in y
+                    scale = xScale;
+                    yOffset = (windowHeight - (image.height * scale)) / 2;
+                } else {
+                    // The image fits perfectly in y axis, stretched in x
+                    scale = yScale;
+                    xOffset = (windowWidth - (image.width * scale)) / 2;
+                }
+                pointer.css('top', (target.y) * scale + yOffset);
+                pointer.css('left', (target.x) * scale + xOffset);
             }
-            $(function () {
-                $('.mynav').bind('click', function (event) {
-                    makeInactive();
-                    val1 = $(this).children().attr('id');
-                    makeActive();
+            
+            $(function() {
+            var $elements = $('#section2'); //contains all elements of nonAnimated class
+            var $window = $(window);
+            $window.on('scroll', function(e) {
+                $elements.each(function(i, elem) { //loop through each element
+                    if ($(this).hasClass('animated')) // check if already animated
+                        return;
+                    animateMe($(this));
+                    });
                 });
             });
+
+            function animateMe(elem) {
+                var winTop = $(window).scrollTop(); // calculate distance from top of window
+                var winBottom = winTop + $(window).height();
+                var elemTop = $(elem).offset().top; // element distance from top of page
+                var elemBottom = elemTop + $(elem).height();
+                if ((elemBottom <= winBottom) && (elemTop >= winTop)) {
+                    // exchange classes if element visible
+                    $(elem).removeClass('notAnimated').addClass('animated');
+                }
+            }
             
             function makeActive() {
                 $('#' + val1).removeClass("menudot2");
