@@ -83,7 +83,7 @@
             margin-bottom: 1.25vw !important;
         }
         
-        input {
+        input, select {
             outline: none;
         }
         
@@ -414,7 +414,7 @@
             <span class="menu-global menu-bottom"></span>
         </div>
         
-        <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
+        <div id="myNav" class="overlay" style="width:78%; margin-left:-80%; box-shadow: 0.01vw 0.01vw 1vw;">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
                 <span class="menutextspan" style="position: relative; margin-left: 7.7vw; margin-right: 3vw;">
                     <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: -webkit-left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
@@ -429,9 +429,9 @@
                 </span>
                 
                 <span class="menutextspan menusp21 hidden" style="position: absolute; left: 3vw; height: 26vw;">
-                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: -0.34vw !important; line-height: 1.3vw;">EMAIL US <span style="position: absolute; color: rgb(125,125,125); margin-top: 0.3vw; margin-left: 0.6vw; border-bottom: 0.01vw outset; line-height: 1.1; letter-spacing: 0.04vw;">support@charcoaltech.com</span><br>
+                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: -0.34vw !important; line-height: 1.3vw;">EMAIL US <span style="position: absolute; color: rgb(125,125,125); margin-top: 0.2vw; margin-left: 0.6vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;">support@charcoaltech.com</span><br>
                     </p>
-                    <p class="menusp21" style="letter-spacing: 0.07vw; color: rgb(125,125,125); font-size: 0.64vw; font-weight: lighter; margin-top: 2.2vw !important;">ORDER A CATALOGUE
+                    <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 2.2vw !important;">ORDER A CATALOGUE
                     </p>
                     <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.5vw !important">
                         <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -732,25 +732,25 @@
             }
             
         function openCloseNav() {
-            if(document.getElementById("myNav").style.marginLeft == "-78%")
+            if(document.getElementById("myNav").style.marginLeft == "-80%")
             {
-                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.25}, 250);
+                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.15}, 250);
                 document.getElementById("myNav").style.marginLeft = "0%";
                 $('#outsidediv').css("z-index", "1");
                 $('body').css("overflow","hidden");
             }
             else
             {
-                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 250);
-                document.getElementById("myNav").style.marginLeft = "-78%";
+                $('#fullpage, #topmenu').css("opacity", "0.15").animate({opacity: 1}, 250);
+                document.getElementById("myNav").style.marginLeft = "-80%";
                 $('#outsidediv').css("z-index", "-1");
             }
         }
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
-                $('#fullpage, #topmenu').css("opacity", "0.25").animate({opacity: 1}, 250);
-                document.getElementById("myNav").style.marginLeft = "-78%";
+                $('#fullpage, #topmenu').css("opacity", "0.15").animate({opacity: 1}, 250);
+                document.getElementById("myNav").style.marginLeft = "-80%";
                 $('#outsidediv').css("z-index", "-1");
             }
         });
