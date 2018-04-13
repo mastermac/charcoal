@@ -493,7 +493,7 @@
         </p>
         <div class="row">
             <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <p style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <p class="dark" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     design
                 </p>
                 <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; margin-top: 1vw; position: relative;" class="container inner">
@@ -502,7 +502,7 @@
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <p style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <p class="dark" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     features
                 </p>
                 <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
@@ -511,7 +511,7 @@
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <p style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <p class="dark" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     customize and pre-order
                 </p>
                 <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
@@ -532,7 +532,7 @@
         </span>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
-        <div id="fullpage">
+        <div id="fullpage" style="color:rgb(250,250,250);">
             
         <div class="section" id="section0">
             <span class="left" style="float: left; width: 72%;">
@@ -600,7 +600,7 @@
                 </p>
             </span>
         </div>
-        <div class="section" id="section3" style="position: relative; background-color: rgb(24,24,22);">
+        <div class="section" id="section3" onclick="dark" style="position: relative; background-color: rgb(24,24,22);">
             <span class="left" style="float: left; right: 0; width: 77%; height: 100%; background-image: url('img/Volant04.jpg'); background-size: cover; background-position: 90%;">
                 <span id="pulse01" class="pulse"></span>
                 <span id="pulse02" class="pulse" style="margin-left: 23.2%; margin-top: 2.7%;"></span>
@@ -695,28 +695,17 @@
                 }
             });
             
-            $(function() {
             var $elements = $('#section2'); //contains all elements of nonAnimated class
             var $window = $(window);
-            $window.on('scroll', function(e) {
-                $elements.each(function(i, elem) { //loop through each element
-                    if ($(this).hasClass('animated')) // check if already animated
-                        return;
-                    animateMe($(this));
-                    });
-                });
+            $('#section2').on('click', function(e) {
+                if($('img').hasClass('notAnimated'))
+                    {
+                        $('.notAnimated').animate({marginTop: '12.4vw', marginLeft: '-3.9vw'}, 500);
+                        $('.notAnimated').addClass('Animated')
+                        $('.Animated').removeClass('notAnimated')
+                    }
             });
 
-            function animateMe(elem) {
-                var winTop = $(window).scrollTop(); // calculate distance from top of window
-                var winBottom = winTop + $(window).height();
-                var elemTop = $(elem).offset().top; // element distance from top of page
-                var elemBottom = elemTop + $(elem).height();
-                if ((elemBottom <= winBottom) && (elemTop >= winTop)) {
-                    // exchange classes if element visible
-                    $(elem).removeClass('notAnimated').addClass('animated');
-                }
-            }
             $('.singledot').click(function() {
                 makeInactive();
                 val1 = $(this).children('p').attr('id');
@@ -730,18 +719,23 @@
                 $('#' + val1).removeClass("menudot1");
                 $('#' + val1).addClass("menudot2");
             }
+            $('#section3').click(function() {
+                if($('#section3').hasClass('active')) {
+                    $(".dark").css("color", "white");
+                }
+            });
             
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-80%")
             {
-                $('#fullpage, #topmenu').css("opacity", "1").animate({opacity: 0.15}, 250);
+                $('#fullpage, #topmenu').css("color", "rgb(250,250,250)").animate({color: 'rgb(220,220,220,0.15)'}, 250);
                 document.getElementById("myNav").style.marginLeft = "0%";
                 $('#outsidediv').css("z-index", "1");
                 $('body').css("overflow","hidden");
             }
             else
             {
-                $('#fullpage, #topmenu').css("opacity", "0.15").animate({opacity: 1}, 250);
+                $('#fullpage, #topmenu').css("opacity", 'rgb(220,220,220,0.15)').animate({color: "rgb(250,250,250,1)"}, 250);
                 document.getElementById("myNav").style.marginLeft = "-80%";
                 $('#outsidediv').css("z-index", "-1");
             }
@@ -749,7 +743,7 @@
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
-                $('#fullpage, #topmenu').css("opacity", "0.15").animate({opacity: 1}, 250);
+                $('#fullpage, #topmenu').css("opacity", 'rgb(220,220,220,0.15)').animate({color: "rgb(250,250,250,1)"}, 250);
                 document.getElementById("myNav").style.marginLeft = "-80%";
                 $('#outsidediv').css("z-index", "-1");
             }
