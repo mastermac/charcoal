@@ -26,10 +26,75 @@
 	<script type="text/javascript" src="js/examples.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+            var val1 = 0;
 			$('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-				bigSectionsDestination:'top'
+				bigSectionsDestination:'top',
+                'afterLoad': function(anchorLink, index){
+                    if(index == 1) {
+                        makeInactive();
+                        val1 = 0;
+                        makeActive();
+                        $('.dark').css('color', 'black');
+                        $('#logo').attr('src', 'img/Logo.png');
+                        $('#iconlink1').attr('src', 'img/Volant_link.png');
+                        $('#iconlink2').attr('src', 'img/Nautic_link.png');
+                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
+                        $('.menudot1').attr('style','color: rgb(51,51,51) !important');
+                        $('.menudot2').attr('style','color: rgb(209,209,209) !important');
+                    }
+                    if(index == 2) {
+                        makeInactive();
+                        val1 = 1;
+                        makeActive();
+                        $('.dark').css('color', 'black');
+                        $('#logo').attr('src', 'img/Logo.png');
+                        $('#iconlink1').attr('src', 'img/Volant_link.png');
+                        $('#iconlink2').attr('src', 'img/Nautic_link.png');
+                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
+                        $('.menudot1').attr('style','color: rgb(51,51,51) !important');
+                        $('.menudot2').attr('style','color: rgb(209,209,209) !important');
+                    }
+                    if(index == 3) {
+                        makeInactive();
+                        val1 = 2;
+                        makeActive();
+                        $('.dark').css('color', 'black');
+                        $('#logo').attr('src', 'img/Logo.png');
+                        $('#iconlink1').attr('src', 'img/Volant_link.png');
+                        $('#iconlink2').attr('src', 'img/Nautic_link.png');
+                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
+                        $('.menudot1').attr('style','color: rgb(51,51,51) !important');
+                        $('.menudot2').attr('style','color: rgb(209,209,209) !important');
+                        if($('img').hasClass('notAnimated'))
+                        {
+                            $('.notAnimated').animate({marginTop: '12.4vw', marginLeft: '-3.9vw'}, 1400);
+                            $('.notAnimated').addClass('Animated')
+                            $('.Animated').removeClass('notAnimated')
+                        }
+                    }
+                    if(index == 4) {
+                        makeInactive();
+                        val1 = 3;
+                        makeActive();
+                        $('.dark').css('color', 'rgb(153,153,153)');
+                        $('#logo').attr('src', 'img/Logo Dark.png');
+                        $('#iconlink1').attr('src', 'img/Volant Icon dark.png');
+                        $('#iconlink2').attr('src', 'img/Nautic Icon dark.png');
+                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(153,153,153)');
+                        $('.menudot1').attr('style','color: rgb(153,153,153) !important');
+                        $('.menudot2').attr('style','color: rgb(71,71,71) !important');
+                    }
+                }
 			});
+            function makeActive() {
+                $('#' + val1).removeClass("menudot2");
+                $('#' + val1).addClass("menudot1");
+            }
+            function makeInactive() {
+                $('#' + val1).removeClass("menudot1");
+                $('#' + val1).addClass("menudot2");
+            }
 		});
 	</script>
 </head>
@@ -103,6 +168,10 @@
         
         .hidden {
             visibility: hidden;
+        }
+        
+        #menudot2 {
+            margin-right: 2.57vw;
         }
 
         #menufillin input {         
@@ -284,12 +353,15 @@
             margin-top: -0.2vw !important;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
+            transition: color linear .8s;
+            
         }
         
         .menudot2 {
             font-size: 0.86vw;
             margin-top: -0.15vw !important;
             color: rgb(209,209,209) !important;
+            transition: color linear .4s;
         }
         
         input[type='radio'] {
@@ -373,35 +445,6 @@
             box-shadow: 0 0 0 0 rgba(204,169,44, 0);
             }
         }
-        
-        span.reference {
-            position: fixed;
-            left: 10px;
-            bottom: 10px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-            span.reference a {
-                color: #fff;
-                text-shadow: 1px 1px 1px #000;
-                padding-right: 20px;
-            }
-
-                span.reference a:hover {
-                    color: #ddd;
-                    text-decoration: none;
-                }
-
-        navi-active {
-            height: 8px;
-            width: 8px;
-        }
-
-        navi-inactive {
-            height: 7px;
-            width: 7px;
-        }
 
     </style>
     <body tabindex="1" style="background-color: rgb(250,250,250);">
@@ -418,7 +461,7 @@
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
                 <span class="menutextspan" style="position: relative; margin-left: 7.7vw; margin-right: 3vw;">
                     <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: -webkit-left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
-                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: -webkit-right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot2" style="margin-right: 2.57vw;">&#9679;</p></a>
+                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: -webkit-right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot2">&#9679;</p></a>
                     <p style="font-family: GothamLight; float:right; text-align: -webkit-right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-70% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain"><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA"><u>USA</u><option value="UAE">UAE</option></select>
                     </p>
                     <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
@@ -519,8 +562,8 @@
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="executive-desks/volant/index.html"><img class="" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
-                    <a href="#"><img class="" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.57; margin-top: 1.6vw;" src="img/Nautic_link.png" /></a>
+                    <a style="margin-right: 1.4vw;" href="executive-desks/volant/index.html"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
+                    <a href="#"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.57; margin-top: 1.6vw;" src="img/Nautic_link.png" /></a>
             </div>
         </div>
     </div>
@@ -528,7 +571,7 @@
     
     <div style="text-align:center; z-index: 2;" class="header-top clearfix">
         <span>
-            <img src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
+            <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
         </span>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
@@ -677,35 +720,6 @@
                 pointer2.css('left', (target.x) * scale + xOffset);
             }
             
-            $(document).ready(function() {
-                $(document).on("scroll", onScroll);
-                function onScroll(event){
-                    var scrollPos = $(document).scrollTop();
-                    $('a').each(function () {
-                        var currLink = $(this);
-                        var refElement = $(currLink.children('p').attr("id"));
-                            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                                $('a').children('p').removeClass("menudot2");
-                                currLink.children('p').addClass("menudot1");
-                            }
-                        else{
-                            currLink.removeClass("menudot1");
-                        }
-                    });
-                }
-            });
-            
-            var $elements = $('#section2'); //contains all elements of nonAnimated class
-            var $window = $(window);
-            $('#section2').on('click', function(e) {
-                if($('img').hasClass('notAnimated'))
-                    {
-                        $('.notAnimated').animate({marginTop: '12.4vw', marginLeft: '-3.9vw'}, 500);
-                        $('.notAnimated').addClass('Animated')
-                        $('.Animated').removeClass('notAnimated')
-                    }
-            });
-
             $('.singledot').click(function() {
                 makeInactive();
                 val1 = $(this).children('p').attr('id');
