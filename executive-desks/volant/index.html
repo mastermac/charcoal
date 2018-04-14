@@ -62,26 +62,35 @@
                         
                         $(".dark").fadeOut(600, function() {
                             $('.dark').css('color', 'rgb(153,153,153)');
+                            $(".dark").css("opacity","0.9");
                         }.bind(this)).fadeIn(500);
                         
                         $(".menudot1").fadeOut(400, function() {
                             $(".menudot1").attr("style","color: rgb(153,153,153) !important");
+                            $(".menudot1").css("opacity","0.9");
                         }.bind(this)).fadeIn(500);
                         
                         $(".menudot2").fadeOut(400, function() {
                             $(".menudot2").attr("style","color: rgb(71,71,71) !important");
                         }.bind(this)).fadeIn(500);
                         
+                        $(".menu-global").fadeOut(100, function() {
+                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(153,153,153)');
+                        }.bind(this)).fadeIn(500);
+                        
                         $("#logo").fadeOut(600, function() {
                             $("#logo").attr("src","img/Logo Dark.png");
+                            $("#logo").css("opacity","0.9");
                         }.bind(this)).fadeIn(500);
                         
                         $("#iconlink1").fadeOut(600, function() {
-                            $("#iconlink1").attr("src","img/Volant_link.png");
+                            $("#iconlink1").attr("src","img/Volant Icon Dark.png");
+                            $("#iconlink1").css("opacity","0.6");
                         }.bind(this)).fadeIn(500);
                         
                         $("#iconlink2").fadeOut(600, function() {
-                            $("#iconlink2").attr("src","img/Nautic_link.png");
+                            $("#iconlink2").attr("src","img/Nautic Icon Dark.png");
+                            $("#iconlink2").css("opacity","0.4");
                         }.bind(this)).fadeIn(500);
                     }
                     
@@ -96,54 +105,45 @@
                         
                         $(".dark").fadeOut(100, function() {
                             $('.dark').css('color', 'black');
+                            $(".dark").css("opacity","1");
                         }.bind(this)).fadeIn(100);
                         
                         $("#logo").fadeOut(100, function() {
                             $("#logo").attr("src","img/Logo.png");
+                            $("#logo").css("opacity","1");
                         }.bind(this)).fadeIn(100);
                         
                         $("#iconlink1").fadeOut(100, function() {
                             $("#iconlink1").attr("src","img/Volant_link.png");
+                            $("#iconlink1").css("opacity","1");
                         }.bind(this)).fadeIn(100);
                         
                         $("#iconlink2").fadeOut(100, function() {
                             $("#iconlink2").attr("src","img/Nautic_link.png");
+                            $("#iconlink2").css("opacity","1");
                         }.bind(this)).fadeIn(100);
                         
                         $(".menudot1").fadeOut(100, function() {
                             $(".menudot1").attr("style","color: rgb(51,51,51) !important");
+                            $(".menudot1").css("opacity","1");
                         }.bind(this)).fadeIn(1000);
                         
                         $(".menudot2").fadeOut(100, function() {
                             $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                         }.bind(this)).fadeIn(1000);
+                        
+                        $(".menu-global").fadeOut(100, function() {
+                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
+                        }.bind(this)).fadeIn(1000);
                     }
                 },
                 'afterLoad': function(anchorLink, index){
-                    if(index == 1) {
-                        $('#iconlink1').attr('src', 'img/Volant_link.png');
-                        $('#iconlink2').attr('src', 'img/Nautic_link.png');
-                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
-                    }
-                    if(index == 2) {
-                        $('#iconlink1').attr('src', 'img/Volant_link.png');
-                        $('#iconlink2').attr('src', 'img/Nautic_link.png');
-                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
-                    }
                     if(index == 3) {
-                        $('#iconlink1').attr('src', 'img/Volant_link.png');
-                        $('#iconlink2').attr('src', 'img/Nautic_link.png');
-                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
                         if($('img').hasClass('notAnimated'))
                         {
                             $('.notAnimated').addClass('iconAnimated')
                             $('.iconAnimated').removeClass('notAnimated')
                         }
-                    }
-                    if(index == 4) {
-                        $('#iconlink1').attr('src', 'img/Volant Icon dark.png');
-                        $('#iconlink2').attr('src', 'img/Nautic Icon dark.png');
-                        $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(153,153,153)');
                     }
                 }
 			});
@@ -486,7 +486,7 @@
             width: 0.35vw;
             height: 0.35vw;
             border-radius: 50%;
-            background: rgb(255,255,255,0.5);
+            background: rgb(255,255,255,0.4);
             cursor: pointer;
             box-shadow: 0 0 #ffffff8c;
             animation: pulse 2s infinite;
@@ -724,7 +724,7 @@
                 <span id="pulse02" class="pulse" style="margin-left: 23.2%; margin-top: 2.7%;"></span>
             </span>
             <span class="right" style="float:left; position: absolute; margin-top: 21.3vw; margin-left: -17.1vw; width: 28%; text-shadow: none; font-size: 0.05vw">
-                <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(165,165,165); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
+                <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(165,165,165,0.9); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
                     The Intelligence<span style="font-family: monospace; font-size: 0.7vw;">.</span>
                 </h2>
                 <p class="secp" style="color: rgb(153, 153, 153); line-height: 1.23vw;">
