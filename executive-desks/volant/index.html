@@ -187,7 +187,7 @@
         }
         
         #logo {
-            transition-delay: 1s;
+            transition: 5s ease;
         }
         
         #menudot2 {
@@ -768,11 +768,6 @@
                 $('#' + val1).removeClass("menudot1");
                 $('#' + val1).addClass("menudot2");
             }
-            $('#section3').click(function() {
-                if($('#section3').hasClass('active')) {
-                    $(".dark").css("color", "white");
-                }
-            });
             
         function openCloseNav() {
             if(document.getElementById("myNav").style.marginLeft == "-80%")
