@@ -30,11 +30,31 @@
 			$('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
 				bigSectionsDestination:'top',
-                'afterLoad': function(anchorLink, index){
-                    if(index == 1) {
+                onLeave: function(index, nextIndex, direction){                
+                    if(nextIndex == 1) {
                         makeInactive();
                         val1 = 0;
                         makeActive();
+                    }
+                    if(nextIndex == 2) {
+                        makeInactive();
+                        val1 = 1;
+                        makeActive();
+                    }
+                    if(nextIndex == 3) {
+                        makeInactive();
+                        val1 = 2;
+                        makeActive();
+                    }
+                    if(nextIndex == 4) {
+                        makeInactive();
+                        val1 = 3;
+                        makeActive();
+                        $('#logo').attr('src', 'img/Logo Dark.png');
+                    }
+                },
+                'afterLoad': function(anchorLink, index){
+                    if(index == 1) {
                         $('.dark').css('color', 'black');
                         $('#logo').attr('src', 'img/Logo.png');
                         $('#iconlink1').attr('src', 'img/Volant_link.png');
@@ -44,9 +64,6 @@
                         $('.menudot2').attr('style','color: rgb(209,209,209) !important');
                     }
                     if(index == 2) {
-                        makeInactive();
-                        val1 = 1;
-                        makeActive();
                         $('.dark').css('color', 'black');
                         $('#logo').attr('src', 'img/Logo.png');
                         $('#iconlink1').attr('src', 'img/Volant_link.png');
@@ -56,9 +73,6 @@
                         $('.menudot2').attr('style','color: rgb(209,209,209) !important');
                     }
                     if(index == 3) {
-                        makeInactive();
-                        val1 = 2;
-                        makeActive();
                         $('.dark').css('color', 'black');
                         $('#logo').attr('src', 'img/Logo.png');
                         $('#iconlink1').attr('src', 'img/Volant_link.png');
@@ -68,17 +82,13 @@
                         $('.menudot2').attr('style','color: rgb(209,209,209) !important');
                         if($('img').hasClass('notAnimated'))
                         {
-                            $('.notAnimated').animate({marginTop: '12.4vw', marginLeft: '-3.9vw'}, 1400);
+                            $('.notAnimated').animate({marginTop: '12.4vw', marginLeft: '-3.85vw'}, 800);
                             $('.notAnimated').addClass('Animated')
                             $('.Animated').removeClass('notAnimated')
                         }
                     }
                     if(index == 4) {
-                        makeInactive();
-                        val1 = 3;
-                        makeActive();
                         $('.dark').css('color', 'rgb(153,153,153)');
-                        $('#logo').attr('src', 'img/Logo Dark.png');
                         $('#iconlink1').attr('src', 'img/Volant Icon dark.png');
                         $('#iconlink2').attr('src', 'img/Nautic Icon dark.png');
                         $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(153,153,153)');
@@ -168,6 +178,10 @@
         
         .hidden {
             visibility: hidden;
+        }
+        
+        #logo {
+            transition-delay: 1s;
         }
         
         #menudot2 {
@@ -353,7 +367,7 @@
             margin-top: -0.2vw !important;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
-            transition: color linear .8s;
+            transition: color linear .6s;
             
         }
         
