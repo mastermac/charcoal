@@ -544,16 +544,18 @@
             <span class="menu-global menu-bottom"></span>
         </div>
         
-        <div id="myNav" class="overlay" style="width:78%; margin-left:-80%; box-shadow: 0.0001vw 0.0001vw 0.6vw;">
+        <div id="myNav" class="overlay" style="width:78%; margin-left:-80%; box-shadow: 0 0 1vw rgb(125,125,125,0.23);">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
                 <span class="menutextspan" style="position: relative; margin-left: 7.7vw; margin-right: 3vw;">
                     <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: -webkit-left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
                     <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: -webkit-right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot02">&#9679;</p></a>
-                    <p style="font-family: GothamLight; float:right; text-align: -webkit-right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain"><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA"><u>USA</u><option value="UAE">UAE</option></select>
+                    <div>
+                    <p style="font-family: GothamLight; float:right; text-align: -webkit-right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" selected value><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA"><u>USA</u><option value="UAE">UAE</option></select>
                     </p>
+                        </div>
                     <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
                     <h6 class="menusp1" style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
-                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, great businesses that shape the world are built here. Yet, it remains a simple surface.</p>
+                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, businesses that shape the world are built here. Yet, it remains a simple surface.</p>
                     <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
@@ -878,6 +880,11 @@
             });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
         });
+        
+        /*$('select[name^=menuselect]').change(function () {
+            $(this).children(':first').attr('selected', true);
+        });*/
+        
         </script>
         <script src="js/main.js"></script>
     </body>
