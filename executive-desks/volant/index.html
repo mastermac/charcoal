@@ -55,7 +55,7 @@
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
-                    if(nextIndex == 4) {
+                    if(nextIndex == 4 || nextIndex == 5) {
                         makeInactive();
                         val1 = 3;
                         makeActive();
@@ -101,7 +101,7 @@
                             $('.notAnimated').removeClass('iconAnimated')
                         }
                     }
-                    if(index == 4 && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
+                    if((index == 4 || index == 5) && (nextIndex==1 || nextIndex==2 || nextIndex==3) && !(nextIndex == 5 && nextIndex == 4)) {
                         
                         $(".dark").fadeOut(100, function() {
                             $('.dark').css('color', 'black');
@@ -668,7 +668,7 @@
             
         <div class="section" id="section0">
             <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 104vw; margin-top: 9.7vw; margin-left: -5vw;" src="img/Volant01.jpg" />
+                <img class="imagepane" style="max-width: 104vw; margin-top: 9.7vw; margin-left: -5vw;" src="img/Volant01.png" />
                 <div style="text-align: center; position: relative">
                     <img style="width: 1.2vw; position: absolute; top: -4.9vw; margin-left: -3vw;" src="img/volant_salt_shade.png" />
                     <span style="position: absolute; color:rgb(120,120,120); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -4.5vw; margin-left: -0.56vw;">SALT</span>
@@ -754,6 +754,12 @@
             </span>
             <span class="right" style="float:left; position: absolute; margin-top: 21.3vw; margin-left: -17.1vw; width: 28%; text-shadow: none; font-size: 0.05vw">
             </span>
+            <div style="text-align: center; position: relative">
+                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
+                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
+                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Customisation%20Icon%20Slate%20Inactive.png"/>
+                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Concrete%20Graphite%20Inactive.png" />
+            </div>
         </div>
         </div>
 
