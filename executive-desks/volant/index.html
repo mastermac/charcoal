@@ -55,9 +55,30 @@
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
-                    if((nextIndex == 4 || nextIndex == 5)  && (index == 1 || index == 2 || index == 3)) {
+                    if(nextIndex == 4 && index == 5) {
                         makeInactive();
                         val1 = 3;
+                        makeActive();
+                        $(".menudot1").attr("style","color: rgb(153,153,153) !important");
+                        $(".menudot1").css("opacity","0.9");
+                        $(".menudot2").attr("style","color: rgb(71,71,71) !important");
+                    }
+                    
+                    if(nextIndex == 5 && index == 4) {
+                        makeInactive();
+                        val1 = 4;
+                        makeActive();
+                        $(".menudot1").attr("style","color: rgb(153,153,153) !important");
+                        $(".menudot1").css("opacity","0.9");
+                        $(".menudot2").attr("style","color: rgb(71,71,71) !important");
+                    }
+                    
+                    if((nextIndex == 4 || nextIndex == 5)  && (index == 1 || index == 2 || index == 3)) {
+                        makeInactive();
+                        if(nextIndex == 4)
+                            val1 = 3;
+                        else
+                            val1 = 4;
                         makeActive();
                         
                         $(".dark").fadeOut(600, function() {
@@ -102,7 +123,7 @@
                         }
                     }
                     if((index == 4 || index == 5) && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
-                        
+                        $('body').css('background-color', 'rgb(250,250,250)');
                         $(".dark").fadeOut(100, function() {
                             $('.dark').css('color', 'black');
                             $(".dark").css("opacity","1");
@@ -137,7 +158,7 @@
                         }.bind(this)).fadeIn(1000);
                     }
                     if(index == 5 && nextIndex == 4) {
-                        $('body').css('background-color:rgb(24,24,24)');
+                        $('body').css('background-color' , 'rgb(24,24,24)');
                     }
                 },
                 'afterLoad': function(anchorLink, index){
@@ -752,13 +773,13 @@
         </div>
         <div class="section" id="section4" onclick="dark" style="position: relative; background-color: rgb(24,24,22);">
             <div style="position: relative; top: -2vw; margin-top: 0; left: 14.3vw; width: 71.2vw; height: 25vw;" class="header-top clearfix">
-                <span style="position: absolute; background-color: grey; width: 55vw; height: 25vw; left: 0;">
+                <span id="page51" class="page5img" style="position: absolute; background-color: grey; width: 55vw; height: 25vw; left: 0; cursor: pointer;" onclick="page5filler">
                     
                 </span>
-                <span style="position: absolute; background-color: #777a7d; width: 25vw; height: 15vw; right: 0; top:0;">
+                <span id="page52" class="page5img" style="position: absolute; background-color: #777a7d; width: 25vw; height: 15vw; right: 0; top:0; cursor: pointer;" onclick="page5filler">
                     
                 </span>
-                <span style="position: absolute; background-color: #989898; width: 25vw; height: 10vw; right: 0; bottom: 0;">
+                <span id="page53" class="page5img" style="position: absolute; background-color: #989898; width: 25vw; height: 10vw; right: 0; bottom: 0; cursor: pointer;" onclick="page5filler">
                     
                 </span>
             </div>
