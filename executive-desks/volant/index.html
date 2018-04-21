@@ -55,7 +55,7 @@
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
-                    if(nextIndex == 4 || nextIndex == 5) {
+                    if((nextIndex == 4 || nextIndex == 5)  && (index == 1 || index == 2 || index == 3)) {
                         makeInactive();
                         val1 = 3;
                         makeActive();
@@ -101,7 +101,7 @@
                             $('.notAnimated').removeClass('iconAnimated')
                         }
                     }
-                    if((index == 4 || index == 5) && (nextIndex==1 || nextIndex==2 || nextIndex==3) && !(nextIndex == 5 && nextIndex == 4)) {
+                    if((index == 4 || index == 5) && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
                         
                         $(".dark").fadeOut(100, function() {
                             $('.dark').css('color', 'black');
@@ -135,6 +135,9 @@
                         $(".menu-global").fadeOut(100, function() {
                             $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
                         }.bind(this)).fadeIn(1000);
+                    }
+                    if(index == 5 && nextIndex == 4) {
+                        $('body').css('background-color:rgb(24,24,24)');
                     }
                 },
                 'afterLoad': function(anchorLink, index){
@@ -748,18 +751,43 @@
             </span>
         </div>
         <div class="section" id="section4" onclick="dark" style="position: relative; background-color: rgb(24,24,22);">
-            <span class="left" style="float: left; right: 0; width: 80%; height: 40%; background-image: url('img/Volant04.png'); background-size: cover; background-position: 100%;">
-            </span>
-            <span class="right" style="float:left; position: absolute; margin-top: 21.3vw; margin-left: -17.1vw; width: 28%; text-shadow: none; font-size: 0.05vw">
-            </span>
-            <div style="text-align: center; position: relative">
-                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
-                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
-                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Customisation%20Icon%20Slate%20Inactive.png"/>
-                <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/page5/Concrete%20Graphite%20Inactive.png" />
+            <div style="position: relative; top: -2vw; margin-top: 0; left: 14.3vw; width: 71.2vw; height: 25vw;" class="header-top clearfix">
+                <span style="position: absolute; background-color: grey; width: 55vw; height: 25vw; left: 0;">
+                    
+                </span>
+                <span style="position: absolute; background-color: #777a7d; width: 25vw; height: 15vw; right: 0; top:0;">
+                    
+                </span>
+                <span style="position: absolute; background-color: #989898; width: 25vw; height: 10vw; right: 0; bottom: 0;">
+                    
+                </span>
             </div>
-            <span style="position: absolute; color:rgb(178,178,178); letter-spacing: 0.07vw; font-family: GothamBook; font-weight: lighter; font-size: 0.5vw; margin-top: -3.8vw; margin-left: 12.4vw;">AED 15,500</span>
-            <span style="position: absolute; color:rgb(178,178,178); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -3.8vw; margin-left: 12.4vw;">PRE-ORDER ENQUIRY</span>
+            <div style="text-align: center; position: relative;">
+                <span style="position: absolute; color: rgb(178,178,178); top: 0.8vw; left: 14.3vw; color: rgb(153,153,153);
+text-shadow: none; font-size: 0.94vw; letter-spacing: 0.16vw; font-family: GothamBook; font-weight: lighter;">editions</span>
+            </div>
+            <div style="text-align: center; position: relative;">
+                <span style="position: absolute; top: 4.2vw; left: 15.4vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.1vw;">
+                    solid
+                </span>
+                <span>
+                    <img style="width: 1.4vw; position: absolute; top: 4vw; left: 18vw;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
+                    <img style="width: 1.4vw; position: absolute; top: 4vw; left: 20vw;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
+                    <img style="width: 1.4vw; position: absolute; top: 4vw; left: 22vw;" src="img/page5/Customisation%20Icon%20Slate%20Inactive.png"/>
+                </span>
+                <span style="position: absolute; top: 4.2vw; left: 26.2vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.1vw;">
+                    concrete
+                </span>
+                <span>
+                    <img style="width: 1.4vw; position: absolute; top: 4vw; left: 30.5vw;" src="img/page5/Concrete%20Graphite%20Inactive.png"/>
+                </span>
+            </div>
+            <div style="text-align: center; position: relative;">
+                <span style="position: absolute; color: rgb(178,178,178); top: 4.2vw; left: 39.4vw; color: rgb(153,153,153);
+text-shadow: none; font-size: 0.9vw; letter-spacing: 0.1vw; font-family: GothamBook; font-weight: lighter;">AED 15,500</span>
+                <span style="position: absolute; color: rgb(178,178,178); top: 4.2vw; left: 57.3vw; color: rgb(153,153,153);
+text-shadow: none; font-size: 0.9vw; letter-spacing: 0.1vw; font-family: GothamBook; font-weight: lighter;">PRE-ORDER ENQUIRY</span>
+            </div>
         </div>
         </div>
 
