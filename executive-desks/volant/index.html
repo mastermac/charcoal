@@ -364,7 +364,7 @@
             font-family: GothamBook;
         }
 
-        .overlay a {
+        .overlay a:not(#noemail) {
             padding: 8px;
             text-decoration: none;
             font-size: 36px;
@@ -372,6 +372,10 @@
             display: block;
             transition: 0.3s;
             font-family: GothamBook;
+        }
+        
+        a:hover {
+            text-decoration: none !important;
         }
 
         .overlay p, h6 {
@@ -583,7 +587,7 @@
                 </span>
                 
                 <span class="menutextspan menusp21 hidden" style="position: absolute; left: 3vw; height: 26vw;">
-                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: -0.34vw !important; line-height: 1.3vw;">EMAIL US <span style="position: absolute; color: rgb(125,125,125); margin-top: 0.2vw; margin-left: 0.6vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;">support@charcoaltech.com</span><br>
+                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: -0.34vw !important; line-height: 1.3vw;">EMAIL US <span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 0.2vw; margin-left: 0.6vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
                     <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 2.2vw !important;">ORDER A CATALOGUE
                     </p>
@@ -630,7 +634,7 @@
                     </div>
                     <p class="menusp2 menusp2et" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">n.SPACE</p>
                     <div class="overlaymenu">
-                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/N%20Space%20Active.png');">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity: 0.85; background-size: cover; background-image: url('img/N%20Space%20Active.png');">
                         </div>
                     </div>
                 </a>
