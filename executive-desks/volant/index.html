@@ -537,6 +537,13 @@
         .pulse:hover {
             animation: none;
         }
+        .addtick {
+            content:url(img/page5/Activation%20Tick.png);
+            margin-top: 0.55vw;
+            margin-left: 0.45vw;
+            width: 0.47vw !important;
+            height: 0.37vw;
+        }
 
         @-webkit-keyframes pulse {
         0% {
@@ -800,30 +807,31 @@
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 0.8vw; left: 14.3vw;
+                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 0.74vw; left: 14.2vw;
 text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold;">editions</span>
+                <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(165,165,165,0.9); margin-top: 2.6vw; margin-left: -35.75vw; width: 31.4vw; height: 0.1vw; position: absolute;"></span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; top: 4.2vw; left: 15.4vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.13vw;">
+                <span style="position: absolute; top: 4.1vw; left: 15.2vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
                     solid
                 </span>
                 <span>
-                    <img style="width: 1.4vw; position: absolute; top: 4vw; left: 18vw;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
-                    <img style="width: 1.4vw; position: absolute; top: 4vw; left: 20vw;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
+                    <img id="tick1" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 18vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
+                    <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 20vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
                 </span>
-                <span style="position: absolute; top: 4.2vw; left: 26.2vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.13vw;">
+                <span style="position: absolute; top: 4.1vw; left: 26.25vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
                     concrete
                 </span>
                 <span>
-                    <img style="width: 1.4vw; position: absolute; top: 4vw; left: 30.5vw;" src="img/page5/Concrete%20Graphite%20Inactive.png"/>
+                    <img id="tick3" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 30.5vw; cursor: pointer;" src="img/page5/Concrete%20Graphite%20Inactive.png"/>
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 4.2vw; left: 39.4vw;
-text-shadow: none; font-size: 0.9vw; letter-spacing: 0.14vw; font-family: GothamBook; font-weight: lighter;">AED 15,500</span>
+                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 3.98vw; left: 39.4vw;
+text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;">AED 15,500</span>
                 
-                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 4.2vw; left: 57.3vw;
-text-shadow: none; font-size: 0.9vw; letter-spacing: 0.14vw; font-family: GothamBook; font-weight: lighter;">PRE-ORDER ENQUIRY</span>
+                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 3.98vw; left: 57.3vw;
+text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 13vw; position: absolute; top: -0.25vw; left: -0.5vw; color: rgb(165,165,165,0.9);">PRE-ORDER ENQUIRY</span>
             </div>
         </div>
         </div>
@@ -956,6 +964,12 @@ text-shadow: none; font-size: 0.9vw; letter-spacing: 0.14vw; font-family: Gotham
                 $('.menusp2').css("visibility", "hidden");
             });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
+        });
+        var tick = "tick2";
+        $(".shadetick").click(function() {
+            $("#"+tick).removeClass("addtick");
+            tick = $(this).attr("id");
+            $(this).addClass("addtick");
         });
         </script>
         <script src="js/main.js"></script>
