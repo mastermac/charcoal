@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Volant</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+        <style>
+            @font-face {
+                font-family: 'Nexa';
+                src: url("src/font/Nexa-Light.otf");
+            }
+            @font-face {
+                font-family: 'GothamBook';
+                src: url("src/font/Gotham-Book.otf");
+            }
+            body {
+                background-color: #080806;
+                overflow: hidden;
+            }
+            .header-top {
+                position: fixed;
+                top: 0.7%;
+                width: 100%;
+                z-index: 2;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                margin-top:10px;
+            }
+            .outer {
+                display: table;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+
+            .middle {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .inner {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 0;
+            }
+            
+            img.volant {
+                width: 104vw;
+                margin-top: -24vw;
+            }
+            p.volantText1 {
+                margin-top: -31vw;
+                margin-left: 46vw;
+                font-family: GothamBook;
+                letter-spacing: 0.9vw;
+                font-size: 1.1vw;
+                color:grey;
+            }
+            p.volantText2 {
+                margin-top: 0vw;
+                margin-left: 43vw;
+                font-family: GothamBook;
+                letter-spacing: 0.2vw;
+                font-size: 1vw;
+                color: rgb(83, 83, 83);
+            }
+        </style>
+    </head>
+    <body>
+        <div style="text-align:center;" class="header-top clearfix">
+            <span>
+                <img id="logo" src="executive-desks/volant/img/Logo%20Dark.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
+            </span>
+        </div>
+        <a style="cursor: default;" href="executive-desks/volant/index.html">
+        <div class="outer">
+            <div class="middle">
+                <div class="inner">
+                    <img class="volant" src="executive-desks/volant/img/Volant%20One%20time%20page.jpg">
+                    <p class="volantText1">VOLANT</p>
+                    <p class="volantText2">an icon for iconoclasts</p>
+                </div>
+            </div>
+        </div>
+        </a>
+    </body>
