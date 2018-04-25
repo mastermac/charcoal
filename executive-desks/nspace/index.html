@@ -242,7 +242,7 @@
         
         .secp {
             font-family: GothamLight;
-            color: rgb(95,95,95);
+            color: rgb(51,51,51);
             font-size: 0.77vw;
             margin-right: 2.4vw;
             letter-spacing: 0.05vw;
@@ -278,6 +278,18 @@
         .iconAnimated {
             transition: transform 2s ease;
             transform: translateZ(0) translate(0.4vw,-0.6vw);
+        }
+        
+        .sliderAnimatedHide {
+            opacity: 0;
+            transition: transform 2s ease, opacity 2s ease;
+            transform: translateZ(0) translate(4vw,0);
+        }
+        
+        .sliderAnimatedShow {
+            opacity: 1;
+            transition: transform 2s ease, opacity 2s ease;
+            transform: translateZ(0) translate(4vw,0);
         }
         
         .row {
@@ -481,6 +493,21 @@
             transition: color linear .2s;
         }
         
+        .page2dot1 {
+            font-size: 0.9vw;
+            margin-top: 19.9vw !important;
+            color: rgb(51,51,51) !important;
+            text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
+        }
+        
+        .page2dot2 {
+            font-size: 0.86vw;
+            margin-top: 20vw!important;
+            color: rgb(125,125,125) !important;
+            text-shadow: none;
+            transition: color linear .2s;
+        }
+        
         input[type='radio'] {
             -webkit-appearance:none;
             width:0.6vw;
@@ -543,7 +570,7 @@
             width: 0.47vw !important;
             height: 0.37vw;
         }
-
+        
         @-webkit-keyframes pulse {
         0% {
             -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
@@ -729,6 +756,28 @@
                     This is <i>n.</i> space</p>
             </span>
         </div>
+        <div class="section" id="section1" style="position: relative;">
+            <span class="right" style="position: absolute; float: left; margin-top: 0.1vw; width: 34%; margin-left: -50.73vw;  text-shadow: none;">
+                <h2 style="font-family: GothamBook; font-size: 0.86vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.1vw;">
+                    Realising Imagination,
+                </h2>
+                <p class="secp" style="line-height: 1.3vw; margin-top: 1.1vw !important; letter-spacing: 0.06vw">
+                    To materialize the innate movement in the form, we created n. Space using seamless lines of HI-MACS.
+                </p>
+                <p class="secp" style="line-height: 1.3vw; margin-top:1.4vw !important; letter-spacing: 0.06vw">
+                    This allows our designers the artistic freedom to work with undulating curves and organic free-forms, an incredible design versatility to realise their imagination.
+                </p>
+            </span>
+            <span class="left" style="float: left; width: 69%;">
+                <img class="imagepane imageslider" class="animated fadeOutRight" style="max-width: 73.2vw; margin-top: -6.1vw; margin-left: 29.4vw;" src="img/nspace02.png" />
+            </span>
+            <span class="left" style="float: left;">
+                <p id="page2dot1" class="page2dot2" style="position: absolute; margin-left: 0; cursor: pointer;" onclick="imagechange()">&#9679;</p>
+                <p id="page2dot2" class="page2dot2" style="position: absolute; margin-left: 2.3vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
+                <p id="page2dot3" class="page2dot2" style="position: absolute; margin-left: 4.6vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
+                <p class="secp" style="position: absolute; float: left; margin-top: 17.1vw; width: 34%; margin-left: -5vw;  text-shadow: none;">The Forms</p>
+            </span>
+        </div>
 
         <!-- The JavaScript -->
         <script type="text/javascript" src="jquery.easing.1.3.js"></script>
@@ -859,6 +908,12 @@
             });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
         });
+        $(".page2dot2").click(function() {
+            $(".page2dot1").addClass("page2dot2");
+            $(".page2dot2").removeClass("page2dot1");
+            $(this).addClass("page2dot1");
+            $(this).removeClass("page2dot2");
+        })
         var tick = "tick2";
         $(".shadetick").click(function() {
             tick = $(this).attr("id");
@@ -881,6 +936,9 @@
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
             }
         });
+        function imagechange() {
+            $(".imageslider").addClass("sliderAnimatedHide");
+        }
         </script>
         <script src="js/main.js"></script>
     </body>
