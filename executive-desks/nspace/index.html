@@ -282,14 +282,19 @@
         
         .sliderAnimatedHide {
             opacity: 0;
-            transition: transform 2s ease, opacity 2s ease;
+            transition: transform 2s ease, opacity 1s ease;
             transform: translateZ(0) translate(4vw,0);
+        }
+        
+        .sliderReset{
+            opacity: 0;
+            transform: translateZ(0) translate(-4vw,0);
         }
         
         .sliderAnimatedShow {
             opacity: 1;
-            transition: transform 2s ease, opacity 2s ease;
-            transform: translateZ(0) translate(4vw,0);
+            transition: transform 2s ease, opacity 1s ease;
+            transform: translateZ(0) translate(0,0);
         }
         
         .row {
@@ -960,7 +965,14 @@
             }
         });
         function imagechange() {
-            $(".imageslider").addClass("sliderAnimatedHide");
+            $(".imageslider").removeClass("sliderAnimatedShow");
+            setTimeout(function() {
+                $(".imageslider").addClass("sliderAnimatedHide");
+            }, 1000);
+            $(".imageslider").addClass("sliderReset");
+            setTimeout(function() {
+                $(".imageslider").addClass("sliderAnimatedShow");
+            }, 1000);
         }
         </script>
         <script src="js/main.js"></script>
