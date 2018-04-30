@@ -55,7 +55,7 @@
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
-                    if(nextIndex == 4 && index == 5) {
+                    if(nextIndex == 4) {
                         makeInactive();
                         val1 = 3;
                         makeActive();
@@ -64,23 +64,16 @@
                         $(".menudot2").attr("style","color: rgb(71,71,71) !important");
                     }
                     
-                    if(nextIndex == 5 && index == 4) {
+                    if(nextIndex == 5) {
                         makeInactive();
                         val1 = 4;
                         makeActive();
-                        $(".menudot1").attr("style","color: rgb(153,153,153) !important");
-                        $(".menudot1").css("opacity","0.9");
-                        $(".menudot2").attr("style","color: rgb(71,71,71) !important");
+                        $(".menudot1").attr("style","color: rgb(51,51,51) !important");
+                        $(".menudot2").attr("style","color: rgb(172,172,172) !important");
                     }
                     
-                    if((nextIndex == 4 || nextIndex == 5)  && (index == 1 || index == 2 || index == 3)) {
-                        makeInactive();
-                        if(nextIndex == 4)
-                            val1 = 3;
-                        else
-                            val1 = 4;
-                        makeActive();
-                        
+                    
+                    if((nextIndex == 4)  && (index == 1 || index == 2 || index == 3 || index == 5)) {
                         $(".dark").fadeOut(600, function() {
                             $('.dark').css('color', 'rgb(153,153,153)');
                             $(".dark").css("opacity","0.9");
@@ -122,7 +115,8 @@
                             $('.notAnimated').removeClass('iconAnimated')
                         }
                     }
-                    if((index == 4 || index == 5) && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
+                    
+                    if((index == 4) && (nextIndex==1 || nextIndex==2 || nextIndex==3 || nextIndex==5)) {
                         $('body').css('background-color', 'rgb(250,250,250)');
                         $(".dark").fadeOut(100, function() {
                             $('.dark').css('color', 'black');
@@ -157,10 +151,8 @@
                             $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
                         }.bind(this)).fadeIn(1000);
                     }
-                    if(index == 5 && nextIndex == 4) {
-                        $('body').css('background-color' , 'rgb(24,24,24)');
-                    }
                 },
+                
                 'afterLoad': function(anchorLink, index){
                     if(index == 3) {
                         if($('img').hasClass('notAnimated'))
@@ -181,7 +173,6 @@
             }
 		});
 	</script>
-</head>
     <style>
         @font-face {
             font-family: 'Nexa';
@@ -572,6 +563,7 @@
         }
 
     </style>
+    </head>
     <body tabindex="1" style="background-color: rgb(250,250,250);">
 
         <div style="text-align:center; z-index: 4;" class="header-top clearfix">
@@ -794,33 +786,23 @@
                 </p>
             </span>
         </div>
-        <div class="section" id="section4" onclick="dark" style="position: relative; background-color: rgb(24,24,22);">
-            <div style="position: relative; top: -2vw; margin-top: 0; left: 14.3vw; width: 71.2vw; height: 25vw;" class="header-top clearfix">
-                <span id="page51" class="page5img" style="position: absolute; background-color: grey; width: 55vw; height: 25vw; left: 0; cursor: pointer;" onclick="page5filler">
-                    
-                </span>
-                <span id="page52" class="page5img" style="position: absolute; background-color: #777a7d; width: 25vw; height: 15vw; right: 0; top:0; cursor: pointer;" onclick="page5filler">
-                    
-                </span>
-                <span id="page53" class="page5img" style="position: absolute; background-color: #989898; width: 25vw; height: 10vw; right: 0; bottom: 0; cursor: pointer;" onclick="page5filler">
-                    
-                </span>
-            </div>
+        <div class="section" id="section4" onclick="dark" style="position: relative; background-color: rgb(204,204,204);">
+            
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 0.74vw; left: 14.4vw;
+                <span style="position: absolute; color: rgb(51,51,51,0.9); top: 0.74vw; left: 14.4vw;
 text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold;">editions</span>
-                <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(165,165,165,0.9); margin-top: 3vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;">
-                <img src="img/page5/Customisation%20Line.png" style="color: rgb(165,165,165,0.9); margin-top: 6vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;"></span>
+                <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 3vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;">
+                <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 6vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;"></span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; top: 4.1vw; left: 15.2vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
+                <span style="position: absolute; top: 4.1vw; left: 15.2vw; color: rgb(0, 0, 0, 0.6); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
                     solid
                 </span>
                 <span>
                     <img id="tick1" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 18vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
                     <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 20vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
                 </span>
-                <span style="position: absolute; top: 4.1vw; left: 26.25vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
+                <span style="position: absolute; top: 4.1vw; left: 26.25vw; color: rgb(0, 0, 0, 0.6); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
                     concrete
                 </span>
                 <span>
@@ -828,11 +810,11 @@ text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: Gotha
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 3.98vw; left: 39.4vw;
+                <span style="position: absolute; color: rgb(0, 0, 0, 0.6); top: 3.98vw; left: 39.4vw;
 text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;">AED 15,500</span>
                 
-                <span style="position: absolute; color: rgb(165,165,165,0.9); top: 3.98vw; left: 68.15vw;
-text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 13vw; position: absolute; top: -0.25vw; left: -0.5vw; color: rgb(165,165,165,0.9);">PRE-ORDER ENQUIRY</span>
+                <span style="position: absolute; color: rgb(0,0,0,0.5); top: 3.98vw; left: 68.15vw;
+text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 13vw; position: absolute; top: -0.25vw; left: -0.5vw; color: rgb(165,165,165,0.6);">PRE-ORDER ENQUIRY</span>
             </div>
         </div>
         </div>
