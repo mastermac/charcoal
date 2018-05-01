@@ -282,12 +282,10 @@
         
         .sliderAnimatedHide {
             opacity: 0;
-            transition: transform 2s ease, opacity 1s ease;
-            transform: translateZ(0) translate(4vw,0);
+            transition: opacity 0.5s ease;
         }
         
-        .sliderReset{
-            opacity: 0;
+        .sliderResetLeft {
             transform: translateZ(0) translate(-4vw,0);
         }
         
@@ -296,6 +294,8 @@
             transition: transform 2s ease, opacity 1s ease;
             transform: translateZ(0) translate(0,0);
         }
+        
+        
         
         .row {
             margin-top: -2.7vw;
@@ -965,14 +965,18 @@
             }
         });
         function imagechange() {
+            
+            $(".imageslider").removeClass("sliderAnimateHide");
+            $(".imageslider").removeClass("sliderResetLeft");
             $(".imageslider").removeClass("sliderAnimatedShow");
+            $(".imageslider").addClass("sliderAnimatedHide");
+            
             setTimeout(function() {
-                $(".imageslider").addClass("sliderAnimatedHide");
-            }, 1000);
-            $(".imageslider").addClass("sliderReset");
+                $(".imageslider").addClass("sliderResetLeft");
+            }, 500);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
-            }, 1000);
+            }, 600);
         }
         </script>
         <script src="js/main.js"></script>
