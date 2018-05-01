@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-    <title>Volant | Charcoal</title>
+    <title>N Space</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -36,7 +36,7 @@
                         val1 = 0;
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important");
-                        $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                        $(".menudot2").attr("style","color: rgb(172,172,172) !important");
                     }
                     
                     if(nextIndex == 2) {
@@ -55,7 +55,7 @@
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
-                    if(nextIndex == 4) {
+                    if(nextIndex == 4 && index == 5) {
                         makeInactive();
                         val1 = 3;
                         makeActive();
@@ -64,16 +64,23 @@
                         $(".menudot2").attr("style","color: rgb(71,71,71) !important");
                     }
                     
-                    if(nextIndex == 5) {
+                    if(nextIndex == 5 && index == 4) {
                         makeInactive();
                         val1 = 4;
                         makeActive();
-                        $(".menudot1").attr("style","color: rgb(51,51,51) !important");
-                        $(".menudot2").attr("style","color: rgb(172,172,172) !important");
+                        $(".menudot1").attr("style","color: rgb(153,153,153) !important");
+                        $(".menudot1").css("opacity","0.9");
+                        $(".menudot2").attr("style","color: rgb(71,71,71) !important");
                     }
                     
-                    
-                    if((nextIndex == 4)  && (index == 1 || index == 2 || index == 3 || index == 5)) {
+                    if((nextIndex == 4 || nextIndex == 5)  && (index == 1 || index == 2 || index == 3)) {
+                        makeInactive();
+                        if(nextIndex == 4)
+                            val1 = 3;
+                        else
+                            val1 = 4;
+                        makeActive();
+                        
                         $(".dark").fadeOut(600, function() {
                             $('.dark').css('color', 'rgb(153,153,153)');
                             $(".dark").css("opacity","0.9");
@@ -115,8 +122,7 @@
                             $('.notAnimated').removeClass('iconAnimated')
                         }
                     }
-                    
-                    if((index == 4) && (nextIndex==1 || nextIndex==2 || nextIndex==3 || nextIndex==5)) {
+                    if((index == 4 || index == 5) && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
                         $('body').css('background-color', 'rgb(250,250,250)');
                         $(".dark").fadeOut(100, function() {
                             $('.dark').css('color', 'black');
@@ -151,8 +157,10 @@
                             $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
                         }.bind(this)).fadeIn(1000);
                     }
+                    if(index == 5 && nextIndex == 4) {
+                        $('body').css('background-color' , 'rgb(24,24,24)');
+                    }
                 },
-                
                 'afterLoad': function(anchorLink, index){
                     if(index == 3) {
                         if($('img').hasClass('notAnimated'))
@@ -234,7 +242,7 @@
         
         .secp {
             font-family: GothamLight;
-            color: rgb(95,95,95);
+            color: rgb(51,51,51);
             font-size: 0.77vw;
             margin-right: 2.4vw;
             letter-spacing: 0.05vw;
@@ -269,16 +277,16 @@
         
         .iconAnimated {
             transition: transform 2s ease;
-            transform: translateZ(0) translate(0.4vw,-0.6vw);
+            transform: translateZ(0) translate(0, -0.6vw);
         }
         
         .sliderAnimatedHide {
             opacity: 0;
-            transition: opacity 0.46s ease;
+            transition: opacity 0.33s ease;
         }
         
         .sliderResetLeft {
-            transform: translateZ(0) translate(-0.6vw,0);
+            transform: translateZ(0) translate(-2vw,0);
         }
         
         .sliderAnimatedShow {
@@ -484,7 +492,22 @@
         .menudot2 {
             font-size: 0.86vw;
             margin-top: -0.15vw !important;
+            color: rgb(172,172,172) !important;
+            transition: color linear .2s;
+        }
+        
+        .page2dot1 {
+            font-size: 0.74vw;
+            margin-top: 19.9vw !important;
+            color: rgb(51,51,51) !important;
+            text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
+        }
+        
+        .page2dot2 {
+            font-size: 0.66vw;
+            margin-top: 20vw!important;
             color: rgb(209,209,209) !important;
+            text-shadow: none;
             transition: color linear .2s;
         }
         
@@ -550,7 +573,7 @@
             width: 0.47vw !important;
             height: 0.37vw;
         }
-
+        
         @-webkit-keyframes pulse {
         0% {
             -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
@@ -635,7 +658,7 @@
                     </p>
                 </span>
                 
-                <a class="overlayhover menusp2" style="top: -0.45vw; padding: 0 !important; position: relative;" href="#">
+                <a class="overlayhover menusp2" style="top: -0.45vw; padding: 0 !important; position: relative;" href="../volant/index.html">
                     <div class="menusp2 menusp2et" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity:0.85; background-size: cover; background-image: url('img/Volant%20Inactive.png');">
                     </div>
                     <p class="menusp2" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">VOLANT.</p>
@@ -648,7 +671,7 @@
                 <span class="menusp3" style="width: 2.67vw; flex: none;">
                 </span>
                 
-                <a class="overlayhover menusp4" style="top: -0.45vw; padding: 0 !important; position: relative;" href="../nspace/index.html">
+                <a class="overlayhover menusp4" style="top: -0.45vw; padding: 0 !important; position: relative;" href="#">
                     <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity: 0.85; background-size: cover; background-image: url('img/N%20Space%20Inactive.png');">
                     </div>
                     <p class="menusp2 menusp2et" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">n.SPACE</p>
@@ -697,8 +720,8 @@
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="#"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
-                    <a href="../nspace/index.html"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.40; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
+                    <a style="margin-right: 1.4vw;" href="../volant/index.html"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
+                    <a href="#"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.40; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
             </div>
         </div>
     </div>
@@ -712,131 +735,74 @@
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
         <div id="fullpage" style="color:rgb(250,250,250);">
             
-        <div class="section" id="section0">
+        <div class="section" id="section0" style="background-color: rgb(209,209,209);">
             <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 103vw; margin-top: 9.48vw; margin-left: -7.4vw;" src="img/Volant01.png" />
+                <img class="imagepane" style="max-width: 92vw; margin-top: 4.8vw; margin-left: -7.6vw;" src="img/nspace01.png" />
                 <div style="text-align: center; position: relative">
-                    <img style="width: 1.2vw; position: absolute; top: -6.9vw; margin-left: -3vw;" src="img/volant_salt_shade.png" />
-                    <span style="position: absolute; color:rgb(120,120,120); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -6.5vw; margin-left: -0.56vw;">SALT</span>
+                    <img style="width: 1.2vw; position: absolute; top: -18.2vw; margin-left: 28.7vw;" src="img/nspcae_gray_slat_shade.png" />
+                    <span style="position: absolute; color:rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; top: -17.9vw; margin-left: 30.7vw; width: 4vw; text-shadow: none;">Gray &amp; Salt</span>
                 </div>
             </span>
-            <span class="right" style="float:left; margin-top: 17.8vw; margin-left: -2.37vw; width: 28%;">
-                <h3 style="font-family: Nexa; font-size: 0.5vw; font-weight: lighter; letter-spacing: 0.2vw; color: rgb(125,125,125); margin-bottom: 1.3vw; text-align: left; margin-left: 5.6vw;">
-                    AN ICON FOR ICONOCLASTS
+            <span class="right" style="float:left; margin-top: 9.4vw; margin-left: -11vw; width: 36%; text-shadow: none;">
+                <h3 style="font-family: Nexa; font-size: 0.48vw; font-weight: lighter; letter-spacing: 0.21vw; color: rgb(102,102,102); margin-bottom: 1.3vw; text-align: left; margin-left: 5.6vw;">
+                    ASYMMETRY &amp; BEAUTY
                 </h3>
-                <h2 style="font-family: GothamBook; font-size: 1vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.12vw; margin-bottom: 1.1vw;">
-                    VOLANT<span style="font-family: monospace; font-size: 0.7vw;">.</span>
+                <h2 style="font-family: GothamBook; font-size: 1vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.15vw; margin-bottom: 1.1vw;">
+                    n SPACE<span style="font-family: monospace; font-size: 0.7vw;">.</span>
                 </h2>
-                <p class="secp" style="margin-top: 0 !important; margin-bottom: -1.2vw !important; letter-spacing: 0.057vw;">Our singular purpose was to create a product</p>
-                <p class="secp" style="letter-spacing: 0.02vw;">
-                    not bound by convention. Volant is the realization
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.06vw; margin-top: 0.8vw !important;">of that dream. Inspired by 21<sup>st</sup> century trends</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.06vw;">in aeronautics, we brought Volant to life and</p>
-                <p class="secp" style="margin-top: 1.26vw !important;">integrated it with cutting edge technology.
-                </p>
-                <p class="secp" style="margin-top: 1.1vw !important; margin-bottom: -1.2vw !important; letter-spacing: 0.057vw;">
-                    Imagined with simple yet purposeful strokes,</p>
-                <p class="secp" style="letter-spacing: 0.029vw;">the body is constructed out of virtually seamless</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.037vw; margin-top: 0.86vw !important;">lines of Hi-Macs<sup style="top: 0em; font-size: 1vw;">&reg;</sup> - marrying the look of classic</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; margin-top: 1.197vw !important; letter-spacing: 0.057vw; word-spacing: 0.01vw">stone with the avant grade form.
-                </p>
-
+                <p class="secp" style="margin-top: 0 !important; margin-bottom: -1.2vw !important; letter-spacing: 0.044vw;">There's always beauty in symmetry, but that's why it's easy.</p>
+                <p class="secp" style="letter-spacing: 0.04vw;">
+                    So we set the design brief - create a beautiful product using
+                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.056vw; margin-top: 0.8vw !important;">principles of asymmetry. Though challenging, or perhaps</p>
+                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.058vw;">because of it, we knew the creation will stand the test of time.</p>
+                <p class="secp" style="margin-top: 1.5vw !important; margin-bottom: -1.2vw !important; letter-spacing: 0.057vw;">
+                    This is <i>n.</i> space</p>
             </span>
         </div>
         <div class="section" id="section1" style="position: relative;">
-            <span class="right" style="position: absolute; float: left; margin-top: 23.2vw; width: 35%; margin-left: -50.73vw;">
-                <h2 style="font-family: GothamBook; font-size: 0.86vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.07vw;">
-                    A story of extraordinary engineering,
+            <span class="right" style="position: absolute; float: left; margin-top: 0.1vw; width: 34%; margin-left: -50.73vw;  text-shadow: none;">
+                <h2 style="font-family: GothamBook; font-size: 0.86vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.1vw;">
+                    Realising Imagination,
                 </h2>
-                <p class="secp" style="line-height: 1.3vw; margin-top: 1.1vw !important;">
-                    For Volant to exist as it does, our engineers and designers had to create a light-weight frame strong enough to withstand an incredible 2,500 N-m of torque and yet ensure that Volant remains aesthetically stunning.
+                <p class="secp" style="line-height: 1.3vw; margin-top: 1.1vw !important; letter-spacing: 0.06vw">
+                    To materialize the innate movement in the form, we created n. Space using seamless lines of HI-MACS.
                 </p>
-                <p class="secp" style="line-height: 1.3vw; margin-top:1.4vw !important;">
-                    Drawing lessons from the cutting edge in aeronautics and automobile engineering, that's exactly what they did.
+                <p class="secp" style="line-height: 1.3vw; margin-top:1.4vw !important; letter-spacing: 0.06vw">
+                    This allows our designers the artistic freedom to work with undulating curves and organic free-forms, an incredible design versatility to realise their imagination.
                 </p>
             </span>
+            <span class="right" style="position: absolute; float: left; margin-top: 13.4vw; width: 34%; margin-left: -53.5vw;  text-shadow: none;">
+                <img class="imagepane" class="animated fadeOutRight" style="max-width: 24vw;" src="img/Art_Imagine.png" />
+            </span>
             <span class="left" style="float: left; width: 69%;">
-                <img class="imagepane" style="max-width: 93vw; margin-top: 11vw; margin-left: 8.5vw;" src="img/Volant02.jpg" />
+                <img class="imagepane imageslider" class="animated fadeOutRight" style="max-width: 73.2vw; margin-top: -6.1vw; margin-left: 29.4vw;" src="img/nspace02.png" />
+            </span>
+            <span class="left" style="float: left;">
+                <p id="page2dot1" class="page2dot2" style="position: absolute; margin-left: 0.3vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
+                <p id="page2dot2" class="page2dot2" style="position: absolute; margin-left: 1.9vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
+                <p id="page2dot3" class="page2dot2" style="position: absolute; margin-left: 3.5vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
+                <img class="imagepane" class="animated fadeOutRight" style="position: absolute; max-width: 44vw; margin-top: 13.8vw; margin-left: -24vw;" src="img/Line.png" />
+                <p class="secp" style="position: absolute; float: left; margin-top: 18vw !important; margin-left: -6vw !important; letter-spacing: 0.1vw; text-shadow: none;">The Forms</p>
             </span>
         </div>
         <div class="section" id="section2">
-            <span class="left" style="float: left; width: 72%;">
-                <p style="position: absolute; float:left; font-family: gothamLight; font-weight:bold; text-align: -webkit-left; font-size: 0.707vw; padding-left: 0px !important; letter-spacing: 0.074vw;  color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 9.6vw !important; margin-left: 18.77vw">
-                    Change the height with just a word or at the touch of a button<span style="font-family: monospace; font-size: 0.6vw;">.</span>
-                </p>
-                <img class="imagepane" style="max-width: 95vw; margin-top: 11.4vw; margin-left: 0.7vw;" src="img/Volant03.jpg" />
+            <span class="left" style="float: left; width: 72%; text-shadow: none;">
+                <img class="imagepane" style="max-width: 50vw; margin-left: -21.5vw; margin-top: 4.2vw;" src="img/nspace03.jpg" />
                 <div style="text-align: center; position: relative">
-                    <img style="width: 1.2vw; position: absolute; top: -4.2vw; left: 45.9vw;" src="img/volant_graphite_shade.png" />
-                    <span style="position: absolute; color:rgb(120,120,120); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -3.8vw; margin-left: 12.4vw;">GRAPHITE</span>
+                    <img style="width: 1.2vw; position: absolute; top: 0vw; left: 20vw;" src="img/graphitengray.png" />
+                    <span style="position: absolute; color:rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: 0.4vw; margin-left: -13.6vw;">Graphite &amp; Gray</span>
                 </div>
             </span>
-            <span class="right" style="float:left; margin-top: 13.5vw; width: 28%;">
-                <img class="notAnimated" style="position: absolute; width: 6.2vw; margin-top: 13vw; margin-left: -4.2vw;" src="img/Volant Icon 01.png" />
-                <img style="position: absolute; width: 1vw; margin-top: 14vw; margin-left: 0.55vw; transform: translateZ(0);" src="img/Volant Icon 02.png" />
-                <p style="float:left; text-align: -webkit-left; font-size: 0.707vw; font-family: gothamLight; font-weight: bold; padding-left: 0px !important; letter-spacing: 0.074vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 5vw">
-                    Sitting is the new smoking<span style="font-family: monospace; font-size: 0.6vw;">.</span>
+            <span class="right" style="float:left; margin-top: 0vw; margin-left: -35vw; width: 28%; text-shadow: none;">
+                <p style="position: absolute; float:left; font-family: gothamLight; text-align: -webkit-left; font-size: 0.84vw; font-weight: bold; padding-left: 0px !important; letter-spacing: 0.074vw;  color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 13.4vw !important; margin-left: 18.77vw">
+                    Blending Art and Technology<span style="font-family: monospace; font-size: 0.6vw;">.</span>
                 </p>
-            </span>
-        </div>
-        <div class="section" id="section3"style="position: relative; background-color: rgb(24,24,22);">
-            <span class="left" style="float: left; right: 0; width: 77%; height: 100%; background-image: url('img/Volant04.jpg'); background-size: cover; background-position: 90%;">
-                <span style="position: absolute; top: 49.2vw; left: 15.2vw; color: rgb(153,153,153); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.1vw;">
-                    concrete
-                </span>
-                <span>
-                    <img style="width: 1.4vw; position: absolute; top: 49vw; left: 12.5vw;" src="img/page5/Concrete%20Graphite%20Inactive.png"/>
-                </span>
-                <span id="pulse01" class="pulse"></span>
-                <span id="pulse02" class="pulse" style="margin-left: 23.2%; margin-top: 2.7%;"></span>
-            </span>
-            <span class="right" style="float:left; position: absolute; margin-top: 21.3vw; margin-left: -17.1vw; width: 28%; text-shadow: none; font-size: 0.05vw">
-                <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(165,165,165,0.9); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
-                    The Intelligence<span style="font-family: monospace; font-size: 0.7vw;">.</span>
-                </h2>
-                <p class="secp" style="color: rgb(153, 153, 153); line-height: 1.23vw;">
-                    Volant has been outfitted with a powerful processor, seamlessly combining Charcoal's proprietary software and hardware. Software updates will introduce new features and improve existing functionality, making the product more capable over time.
+                <p style="position: absolute; float:left; text-align: -webkit-left; font-size: 0.72vw; font-family: gothamLight; font-weight: lighter; padding-left: 0px !important; letter-spacing: 0.074vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 15.8vw !important; margin-left: 18.77vw">
+                    Raise the workshop with just a word to accommodate the natural standing posture.<span style="font-family: monospace; font-size: 0.6vw;">.</span>
                 </p>
-                <p class="secp" style="color: rgb(153, 153, 153); line-height: 1.23vw; margin-top: 1.1vw !important;">
-                    In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
-                </p>
+                <img class="notAnimated" style="position: absolute; width: 1.5vw; margin-top: 22.6vw; margin-left: 23.6vw;" src="img/nspace Icon 01.png" />
+                <img style="position: absolute; width: 6vw; margin-top: 22.6vw; margin-left: 19.1vw; transform: translateZ(0);" src="img/nspace Icon 02.png" />
             </span>
-        </div>
-        <div class="section" id="section4" style="position: relative; background-color: rgb(204,204,204);">
-            
-            <div class="imageslider" style="text-align: center;">
-                <img id="page5img1" class="page5img" src="img/page5/Volant051.jpg" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
-                <img id="page5img2" class="page5img" src="img/page5/Volant052.jpg" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
-                <img id="page5img3" class="page5img" src="img/page5/Volant053.jpg" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
-            </div>
-            <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(51,51,51,0.9); top: 0.74vw; left: 14.4vw;
-text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold;">editions</span>
-                <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 3vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;">
-                <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 6vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;"></span>
-            </div>
-            <div style="text-align: center; position: relative;">
-                <span style="position: absolute; top: 4.1vw; left: 15.2vw; color: rgb(0, 0, 0, 0.6); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
-                    solid
-                </span>
-                <span>
-                    <img id="tick1" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 18vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
-                    <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 20vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
-                </span>
-                <span style="position: absolute; top: 4.1vw; left: 26.25vw; color: rgb(0, 0, 0, 0.6); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
-                    concrete
-                </span>
-                <span>
-                    <img id="tick3" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 30.5vw; cursor: pointer;" src="img/page5/Concrete%20Icon%20Graphite%20Inactive.png"/>
-                </span>
-            </div>
-            <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(0, 0, 0, 0.6); top: 3.98vw; left: 39.4vw;
-text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;">AED 15,500</span>
-                
-                <span style="position: absolute; color: rgb(0,0,0,0.5); top: 3.98vw; left: 68.15vw;
-text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 13vw; position: absolute; top: -0.25vw; left: -0.5vw; color: rgb(165,165,165,0.6);">PRE-ORDER ENQUIRY</span>
-            </div>
-        </div>
         </div>
 
         <!-- The JavaScript -->
@@ -968,6 +934,12 @@ text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: Gotha
             });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
         });
+        $(".page2dot2").click(function() {
+            $(".page2dot1").addClass("page2dot2");
+            $(".page2dot2").removeClass("page2dot1");
+            $(this).addClass("page2dot1");
+            $(this).removeClass("page2dot2");
+        })
         var tick = "tick2";
         $(".shadetick").click(function() {
             tick = $(this).attr("id");
@@ -989,31 +961,22 @@ text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: Gotha
                 $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Inactive.png");
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
             }
+        });
+        var id1 = "page2dot1";
+        var id2 = "page2dot2";
+        function imagechange() {
             $(".imageslider").removeClass("sliderAnimateHide");
             $(".imageslider").removeClass("sliderResetLeft");
             $(".imageslider").removeClass("sliderAnimatedShow");
             $(".imageslider").addClass("sliderAnimatedHide");
-            var id = $(this).attr("id");
+            
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
-            }, 500);
-            if(id == "tick1")
-                setTimeout(function() {
-                $(".imageslider").children().attr("src", "img/page5/Volant051.jpg")
-            }, 510);
-            else if(id == "tick2")
-                setTimeout(function() {
-                $(".imageslider").children().attr("src", "img/page5/Volant052.jpg")
-            }, 510);
-            else if(id == "tick3")
-                setTimeout(function() {
-                $(".imageslider").children().attr("src", "img/page5/Volant053.jpg")
-            }, 510);
+            }, 400);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
-            }, 520);
-            
-        });
+            }, 410);
+        }
         </script>
         <script src="js/main.js"></script>
     </body>
