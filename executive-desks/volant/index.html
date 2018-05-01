@@ -274,7 +274,7 @@
         
         .sliderAnimatedHide {
             opacity: 0;
-            transition: opacity 0.33s ease;
+            transition: opacity 0.46s ease;
         }
         
         .sliderResetLeft {
@@ -996,22 +996,22 @@ text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: Gotha
             var id = $(this).attr("id");
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
-            }, 400);
+            }, 500);
             if(id == "tick1")
                 setTimeout(function() {
                 $(".imageslider").children().attr("src", "img/page5/Volant051.jpg")
-            }, 410);
+            }, 510);
             else if(id == "tick2")
                 setTimeout(function() {
                 $(".imageslider").children().attr("src", "img/page5/Volant052.jpg")
-            }, 410);
+            }, 510);
             else if(id == "tick3")
                 setTimeout(function() {
                 $(".imageslider").children().attr("src", "img/page5/Volant053.jpg")
-            }, 410);
+            }, 510);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
-            }, 420);
+            }, 520);
             
         });
         </script>
