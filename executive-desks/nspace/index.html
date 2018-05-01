@@ -737,7 +737,7 @@
             
         <div class="section" id="section0" style="background-color: rgb(209,209,209);">
             <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 92vw; margin-top: 4.8vw; margin-left: -7.6vw;" src="img/nspace01.png" />
+                <img class="imagepane" style="max-width: 92vw; margin-top: 4.8vw; margin-left: -7.6vw;" src="img/nspace021.png" />
                 <div style="text-align: center; position: relative">
                     <img style="width: 1.2vw; position: absolute; top: -18.2vw; margin-left: 28.7vw;" src="img/nspcae_gray_slat_shade.png" />
                     <span style="position: absolute; color:rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; top: -17.9vw; margin-left: 30.7vw; width: 4vw; text-shadow: none;">Gray &amp; Salt</span>
@@ -775,12 +775,12 @@
                 <img class="imagepane" class="animated fadeOutRight" style="max-width: 24vw;" src="img/Art_Imagine.png" />
             </span>
             <span class="left" style="float: left; width: 69%;">
-                <img class="imagepane imageslider" class="animated fadeOutRight" style="max-width: 73.2vw; margin-top: -6.1vw; margin-left: 29.4vw;" src="img/nspace02.png" />
+                <img class="imagepane imageslider" class="animated fadeOutRight" style="max-width: 73.2vw; margin-top: -6.1vw; margin-left: 29.4vw;" src="img/nspace021.jpg" />
             </span>
             <span class="left" style="float: left;">
-                <p id="page2dot1" class="page2dot2" style="position: absolute; margin-left: 0.3vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
-                <p id="page2dot2" class="page2dot2" style="position: absolute; margin-left: 1.9vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
-                <p id="page2dot3" class="page2dot2" style="position: absolute; margin-left: 3.5vw; cursor: pointer;" onclick="imagechange()">&#9679;</p>
+                <p id="page2dot1" class="page2dot2" style="position: absolute; margin-left: 0.3vw; cursor: pointer;">&#9679;</p>
+                <p id="page2dot2" class="page2dot2" style="position: absolute; margin-left: 1.9vw; cursor: pointer;">&#9679;</p>
+                <p id="page2dot3" class="page2dot2" style="position: absolute; margin-left: 3.5vw; cursor: pointer;">&#9679;</p>
                 <img class="imagepane" class="animated fadeOutRight" style="position: absolute; max-width: 44vw; margin-top: 13.8vw; margin-left: -24vw;" src="img/Line.png" />
                 <p class="secp" style="position: absolute; float: left; margin-top: 18vw !important; margin-left: -6vw !important; letter-spacing: 0.1vw; text-shadow: none;">The Forms</p>
             </span>
@@ -962,21 +962,31 @@
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
             }
         });
-        var id1 = "page2dot1";
-        var id2 = "page2dot2";
-        function imagechange() {
+        $(".page2dot2").click(function() {
             $(".imageslider").removeClass("sliderAnimateHide");
             $(".imageslider").removeClass("sliderResetLeft");
             $(".imageslider").removeClass("sliderAnimatedShow");
             $(".imageslider").addClass("sliderAnimatedHide");
-            
+            var id = $(this).attr("id");
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
             }, 400);
+            if(id == "page2dot1")
+                setTimeout(function() {
+                $(".imageslider").attr("src", "img/nspace021.jpg")
+            }, 410);
+            else if(id == "page2dot2")
+                setTimeout(function() {
+                $(".imageslider").attr("src", "img/nspace022.jpg")
+            }, 410);
+            else if(id == "page2dot3")
+                setTimeout(function() {
+                $(".imageslider").attr("src", "img/nspace023.jpg")
+            }, 410);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
             }, 420);
-        }
+        });
         </script>
         <script src="js/main.js"></script>
     </body>
