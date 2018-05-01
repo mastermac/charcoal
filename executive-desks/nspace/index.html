@@ -282,7 +282,7 @@
         
         .sliderAnimatedHide {
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.25s ease;
         }
         
         .sliderResetLeft {
@@ -291,7 +291,7 @@
         
         .sliderAnimatedShow {
             opacity: 1;
-            transition: transform 2s ease, opacity 1s ease;
+            transition: transform 2s ease, opacity 0.5s ease;
             transform: translateZ(0) translate(0,0);
         }
         
@@ -973,10 +973,10 @@
             
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
-            }, 500);
+            }, 400);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
-            }, 600);
+            }, 500);
         }
         </script>
         <script src="js/main.js"></script>
