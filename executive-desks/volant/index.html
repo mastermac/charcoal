@@ -72,20 +72,10 @@
                         $(".menudot2").attr("style","color: rgb(172,172,172) !important");
                     }
                     
-                    
                     if((nextIndex == 4)  && (index == 1 || index == 2 || index == 3 || index == 5)) {
                         $(".dark").fadeOut(600, function() {
                             $('.dark').css('color', 'rgb(153,153,153)');
                             $(".dark").css("opacity","0.9");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $(".menudot1").fadeOut(400, function() {
-                            $(".menudot1").attr("style","color: rgb(153,153,153) !important");
-                            $(".menudot1").css("opacity","0.9");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $(".menudot2").fadeOut(400, function() {
-                            $(".menudot2").attr("style","color: rgb(71,71,71) !important");
                         }.bind(this)).fadeIn(500);
                         
                         $(".menu-global").fadeOut(100, function() {
@@ -149,6 +139,12 @@
                         
                         $(".menu-global").fadeOut(100, function() {
                             $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
+                        }.bind(this)).fadeIn(1000);
+                    }
+                    
+                    if(index == 4 && nextIndex == 5) {
+                        $(".menudot2").fadeOut(100, function() {
+                            $(".menudot2").attr("style","color: rgb(172,172,172) !important");
                         }.bind(this)).fadeIn(1000);
                     }
                 },
@@ -804,37 +800,44 @@
         <div class="section" id="section4" style="position: relative; background-color: rgb(204,204,204);">
             
             <div class="imageslider" style="text-align: center;">
-                <img id="page5img1" class="page5img" src="img/page5/Volant051.jpg" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
-                <img id="page5img2" class="page5img" src="img/page5/Volant052.jpg" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
+                
                 <img id="page5img3" class="page5img" src="img/page5/Volant053.jpg" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
+                <img id="page5img2" class="page5img" src="img/page5/Volant052.png" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
+                <img id="page5img1" class="page5img" src="img/page5/Volant051.jpg" style="color: rgb(77,77,77); margin-top: -18vw; margin-left: -35.75vw; width: 80.4vw; position: absolute;">
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(51,51,51,0.9); top: 0.74vw; left: 14.4vw;
+                <span style="position: absolute; color: rgb(51,51,51); top: 0.74vw; left: 14.4vw;
 text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold;">editions</span>
                 <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 3vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;">
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 6vw; margin-left: -35.75vw; width: 31.4vw; height: 1px; position: absolute;"></span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; top: 4.1vw; left: 15.2vw; color: rgb(0, 0, 0, 0.6); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
+                <span style="position: absolute; top: 4.1vw; left: 15.2vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
                     solid
                 </span>
                 <span>
-                    <img id="tick1" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 18vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
-                    <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 20vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Active.png"/>
+                    <img id="tick1" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 18vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Salt%20Active.png"/>
+                    <p id="tick1text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 5.8vw; left: 17.9vw; cursor: pointer; color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw;">SALT</p>
+                    <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 20vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Inactive.png"/>
+                    <p id="tick2text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 5.8vw; left: 19vw; cursor: pointer; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.08vw;">GRAPHITE</p>
                 </span>
-                <span style="position: absolute; top: 4.1vw; left: 26.25vw; color: rgb(0, 0, 0, 0.6); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
+                <span style="position: absolute; top: 4.1vw; left: 26.25vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; font-size: 0.66vw; letter-spacing: 0.14vw;">
                     concrete
                 </span>
                 <span>
                     <img id="tick3" class="shadetick" style="width: 1.4vw; position: absolute; top: 4vw; left: 30.5vw; cursor: pointer;" src="img/page5/Concrete%20Icon%20Graphite%20Inactive.png"/>
+                    <p id="tick3text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 5.8vw; left: 29.5vw; cursor: pointer; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.08vw;">CONCRETE</p>
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(0, 0, 0, 0.6); top: 3.98vw; left: 39.4vw;
+                <span style="position: absolute; color: rgb(0, 0, 0); top: 3.98vw; left: 39.4vw;
 text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;">AED 15,500</span>
                 
-                <span style="position: absolute; color: rgb(0,0,0,0.5); top: 3.98vw; left: 68.15vw;
-text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 13vw; position: absolute; top: -0.25vw; left: -0.5vw; color: rgb(165,165,165,0.6);">PRE-ORDER ENQUIRY</span>
+                <span style="position: absolute; color: rgb(102,102,102); top: 0vw; left: 73.15vw;
+text-shadow: none; letter-spacing: 0.15vw; font-family: GothamBook; font-size: 0.66vw; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 9vw; position: absolute; top: -0.2vw; left: -0.7vw; color: rgb(102,102,102);">SPECIFICATIONS</span>
+                
+                <span style="position: absolute; color: rgb(0,0,0); top: 3.98vw; left: 68.15vw;
+text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamBook; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 13vw; position: absolute; top: -0.25vw; left: -0.5vw; color: rgb(77,77,77);">PRE-ORDER ENQUIRY</span>
             </div>
         </div>
         </div>
@@ -976,18 +979,27 @@ text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: Gotha
                 $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Active.png");
                 $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Inactive.png");
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Inactive.png");
+                $("#tick1text").css("opacity", "1");
+                $("#tick2text").css("opacity", "0");
+                $("#tick3text").css("opacity", "0");
             }
             else if(tick == "tick2")
             {
                 $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Inactive.png");
                 $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Active.png");
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Inactive.png");
+                $("#tick1text").css("opacity", "0");
+                $("#tick2text").css("opacity", "1");
+                $("#tick3text").css("opacity", "0");
             }
             else if(tick == "tick3")
             {
                 $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Inactive.png");
                 $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Inactive.png");
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
+                $("#tick1text").css("opacity", "0");
+                $("#tick2text").css("opacity", "0");
+                $("#tick3text").css("opacity", "1");
             }
             $(".imageslider").removeClass("sliderAnimateHide");
             $(".imageslider").removeClass("sliderResetLeft");
@@ -1003,7 +1015,7 @@ text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: Gotha
             }, 510);
             else if(id == "tick2")
                 setTimeout(function() {
-                $(".imageslider").children().attr("src", "img/page5/Volant052.jpg")
+                $(".imageslider").children().attr("src", "img/page5/Volant052.png")
             }, 510);
             else if(id == "tick3")
                 setTimeout(function() {
