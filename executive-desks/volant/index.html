@@ -842,6 +842,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
             var val1 = 0;
+            var my_image1 = new Image();
+            var my_image2 = new Image();
+            var my_image3 = new Image();
             var image = { width: 550, height: 190 };
             var target = { x: 178, y: 89 };
             var pointer1 = $('#pulse01');
@@ -965,6 +968,11 @@
             });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
         });
+        $("#section4").ready(function(){
+            my_image1.src = 'img/page5/Volant051.jpg';
+            my_image2.src = 'img/page5/Volant052.jpg';
+            my_image3.src = 'img/page5/Volant053.jpg';
+        });
         var tick = "tick2";
         $(".shadetick").click(function() {
             tick = $(this).attr("id");
@@ -997,13 +1005,6 @@
             $(".imageslider").removeClass("sliderAnimatedShow");
             $(".imageslider").addClass("sliderAnimatedHide");
             var id = $(this).attr("id");
-            var my_image1 = new Image();
-            var my_image2 = new Image();
-            var my_image3 = new Image();
-            my_image1.src = 'img/page5/Volant051.jpg';
-            my_image2.src = 'img/page5/Volant052.jpg';
-            my_image3.src = 'img/page5/Volant053.jpg';
-            
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
             }, 500);
