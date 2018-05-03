@@ -841,10 +841,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
-            var my_image = new Image();
-            my_image.src = 'mg/page5/Volant051.jpg';
-            my_image.src = 'mg/page5/Volant052.jpg';
-            my_image.src = 'mg/page5/Volant053.jpg';
             var val1 = 0;
             var image = { width: 550, height: 190 };
             var target = { x: 178, y: 89 };
@@ -1001,20 +997,27 @@
             $(".imageslider").removeClass("sliderAnimatedShow");
             $(".imageslider").addClass("sliderAnimatedHide");
             var id = $(this).attr("id");
+            var my_image1 = new Image();
+            var my_image2 = new Image();
+            var my_image3 = new Image();
+            my_image1.src = 'img/page5/Volant051.jpg';
+            my_image2.src = 'img/page5/Volant052.jpg';
+            my_image3.src = 'img/page5/Volant053.jpg';
+            
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
             }, 500);
             if(id == "tick1")
                 setTimeout(function() {
-                $(".imageslider").children().attr("src", "img/page5/Volant051.jpg")
+                $(".imageslider").children().attr("src", my_image1)
             }, 510);
             else if(id == "tick2")
                 setTimeout(function() {
-                $(".imageslider").children().attr("src", "img/page5/Volant052.png")
+                $(".imageslider").children().attr("src", my_image2)
             }, 510);
             else if(id == "tick3")
                 setTimeout(function() {
-                $(".imageslider").children().attr("src", "img/page5/Volant053.jpg")
+                $(".imageslider").children().attr("src", my_image3)
             }, 510);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
