@@ -968,20 +968,26 @@
             $(".imageslider").removeClass("sliderAnimatedShow");
             $(".imageslider").addClass("sliderAnimatedHide");
             var id = $(this).attr("id");
+            var my_image1 = new Image();
+            var my_image2 = new Image();
+            var my_image3 = new Image();
+            my_image1.src = 'img/nspace021.jpg';
+            my_image2.src = 'img/nspace022.jpg';
+            my_image3.src = 'img/nspace023.jpg';
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
             }, 400);
             if(id == "page2dot1")
                 setTimeout(function() {
-                $(".imageslider").attr("src", "img/nspace021.jpg")
+                $(".imageslider").attr("src", my_image1.src)
             }, 400);
             else if(id == "page2dot2")
                 setTimeout(function() {
-                $(".imageslider").attr("src", "img/nspace022.jpg")
+                $(".imageslider").attr("src", my_image2.src)
             }, 400);
             else if(id == "page2dot3")
                 setTimeout(function() {
-                $(".imageslider").attr("src", "img/nspace023.jpg")
+                $(".imageslider").attr("src", my_image3.src)
             }, 400);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
