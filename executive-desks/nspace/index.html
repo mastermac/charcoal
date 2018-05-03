@@ -962,18 +962,20 @@
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
             }
         });
-        $(".page2dot2").click(function() {
-            $(".imageslider").removeClass("sliderAnimateHide");
-            $(".imageslider").removeClass("sliderResetLeft");
-            $(".imageslider").removeClass("sliderAnimatedShow");
-            $(".imageslider").addClass("sliderAnimatedHide");
-            var id = $(this).attr("id");
+        $("section1").ready(function() {
             var my_image1 = new Image();
             var my_image2 = new Image();
             var my_image3 = new Image();
             my_image1.src = 'img/nspace021.jpg';
             my_image2.src = 'img/nspace022.jpg';
             my_image3.src = 'img/nspace023.jpg';
+        })
+        $(".page2dot2").click(function() {
+            $(".imageslider").removeClass("sliderAnimateHide");
+            $(".imageslider").removeClass("sliderResetLeft");
+            $(".imageslider").removeClass("sliderAnimatedShow");
+            $(".imageslider").addClass("sliderAnimatedHide");
+            var id = $(this).attr("id");
             setTimeout(function() {
                 $(".imageslider").addClass("sliderResetLeft");
             }, 400);
