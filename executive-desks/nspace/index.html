@@ -811,6 +811,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
             var val1 = 0;
+            var my_image1 = new Image();
+            var my_image2 = new Image();
+            var my_image3 = new Image();
             var image = { width: 550, height: 190 };
             var target = { x: 178, y: 89 };
             var pointer1 = $('#pulse01');
@@ -962,10 +965,7 @@
                 $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
             }
         });
-        $("section1").ready(function() {
-            var my_image1 = new Image();
-            var my_image2 = new Image();
-            var my_image3 = new Image();
+        $("#section1").ready(function() {
             my_image1.src = 'img/nspace021.jpg';
             my_image2.src = 'img/nspace022.jpg';
             my_image3.src = 'img/nspace023.jpg';
