@@ -521,6 +521,10 @@
             transition: color linear .2s;
         }
         
+        .linetext {
+            transition: opacity 1s ease;
+        }
+        
         input[type='radio'] {
             -webkit-appearance:none;
             width:0.6vw;
@@ -770,14 +774,14 @@
             </span>
         </div>
         <div class="section" id="section1" style="position: relative; overflow: hidden;">
-            <span class="right" style="position: absolute; float: left; margin-top: 11.8vw; width: 34%; margin-left: -50.73vw; z-index: 1; text-shadow: none;">
+            <span class="right" style="position: absolute; float: left; margin-top: 11.9vw; width: 34%; margin-left: -50.73vw; z-index: 1; text-shadow: none;">
                 <h2 style="font-family: GothamBook; font-size: 0.86vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.113vw;">
                     Realising Imagination,
                 </h2>
                 <p class="secp" style="line-height: 1.3vw; margin-top: 1vw !important; letter-spacing: 0.06vw">
-                    To materialize the innate movement in the form, we created n. Space using seamless lines of HI-MACS&trade;.
+                    To materialize the innate movement in the form, we created n. Space using seamless lines of HI-MACS&reg;.
                 </p>
-                <p class="secp" style="line-height: 1.3vw; margin-top:1.15vw !important; letter-spacing: 0.06vw">
+                <p class="secp" style="line-height: 1.3vw; margin-top:1.05vw !important; letter-spacing: 0.06vw">
                     This allows our designers the artistic freedom to work with undulating curves and organic free-forms, an incredible design versatility to realise their imagination.
                 </p>
             </span>
@@ -811,7 +815,7 @@
                 <p style="position: absolute; float:left; text-align: -webkit-left; font-size: 0.72vw; font-family: gothamLight; font-weight: lighter; padding-left: 0px !important; letter-spacing: 0.074vw; color: rgb(0,0,0,0.9); -webkit-font-smoothing: antialiased; margin-top: 11.38vw !important; margin-left: 18.77vw">
                     Raise the worktop with just a word to accommodate the natural standing posture<span style="font-family: monospace; font-size: 0.6vw;">.</span>
                 </p>
-                <img class="notAnimated" style="position: absolute; width: 1.75vw; margin-top: 19vw; margin-left: 23.3vw; image-rendering: -webkit-optimize-contrast;" src="img/nspace Icon 01.png" />
+                <img class="notAnimated" style="position: absolute; width: 1.743vw; margin-top: 19vw; margin-left: 23.3vw; image-rendering: -webkit-optimize-contrast;" src="img/nspace Icon 01.png" />
                 <img style="position: absolute; width: 5.6vw; margin-top: 19vw; margin-left: 19.1vw; transform: translateZ(0);" src="img/nspace Icon 02.png" />
             </span>
         </div>
@@ -982,31 +986,34 @@
             my_image3.src = 'img/nspace023.png';
         })
         $(".page2dot2").click(function() {
-            $(".imageslider, .linetext").removeClass("sliderAnimateHide");
-            $(".imageslider, .linetext").removeClass("sliderResetLeft");
-            $(".imageslider, .linetext").removeClass("sliderAnimatedShow");
-            $(".imageslider, .linetext").addClass("sliderAnimatedHide");
+            $(".linetext").css("opacity", 0);
+            $(".imageslider").removeClass("sliderAnimateHide");
+            $(".imageslider").removeClass("sliderResetLeft");
+            $(".imageslider").removeClass("sliderAnimatedShow");
+            $(".imageslider").addClass("sliderAnimatedHide");
             var id = $(this).attr("id");
             setTimeout(function() {
-                $(".imageslider, .linetext").addClass("sliderResetLeft");
+                $(".imageslider").addClass("sliderResetLeft");
             }, 400);
             if(id == "page2dot1")
                 setTimeout(function() {
-                $(".imageslider, .linetext").attr("src", my_image1.src)
+                $(".imageslider").attr("src", my_image1.src);
                 $(".linetext").text("");
             }, 400);
             else if(id == "page2dot2")
                 setTimeout(function() {
-                $(".imageslider, .linetext").attr("src", my_image2.src)
+                $(".imageslider").attr("src", my_image2.src);
                 $(".linetext").text("LIGHT");
+                $(".linetext").css("opacity", 1);
             }, 400);
             else if(id == "page2dot3")
                 setTimeout(function() {
-                $(".imageslider, .linetext").attr("src", my_image3.src)
+                $(".imageslider").attr("src", my_image3.src);
                 $(".linetext").text("L RETURN");
+                $(".linetext").css("opacity", 1);
             }, 400);
             setTimeout(function() {
-                $(".imageslider, .linetext").addClass("sliderAnimatedShow");
+                $(".imageslider").addClass("sliderAnimatedShow");
             }, 420);
         });
         </script>
