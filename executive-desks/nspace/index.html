@@ -510,12 +510,14 @@
             color: rgb(209,209,209) !important;
             text-shadow: none;
             transition: color linear .2s;
+            pointer-events: auto;
         }
         
         .page2dot1 {
             font-size: 0.74vw;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
+            pointer-events: none;
         }
         
         .page2singledot {
@@ -963,8 +965,6 @@
             $(".page2dot2").removeClass("page2dot1");
             $(this).addClass("page2dot1");
             $(this).removeClass("page2dot2");
-            $(".page2dot2").css({'pointer-events': 'auto'});
-            $(".page2dot1").css({'pointer-events': 'none'});
         })
         $("#section1").ready(function() {
             my_image1.src = 'img/nspace021.png';
