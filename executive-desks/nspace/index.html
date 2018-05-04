@@ -106,12 +106,12 @@
                         
                         $("#iconlink1").fadeOut(600, function() {
                             $("#iconlink1").attr("src","img/Volant Icon dark.png");
-                            $("#iconlink1").css("opacity","0.5");
+                            $("#iconlink1").css("opacity","0.35");
                         }.bind(this)).fadeIn(500);
                         
                         $("#iconlink2").fadeOut(600, function() {
                             $("#iconlink2").attr("src","img/N Space Icon dark.png");
-                            $("#iconlink2").css("opacity","0.3");
+                            $("#iconlink2").css("opacity","0.2");
                         }.bind(this)).fadeIn(500);
                     }
                     
@@ -316,9 +316,10 @@
         }
         
         .singledot {
-            margin-top: 48% !important;
+            margin-top: 1.25vw !important;
             -webkit-font-smoothing: antialiased;
             position: absolute;
+            height: 0;
         }
         
         .singledot:hover {
@@ -492,8 +493,7 @@
         }
         
         .menudot1 {
-            font-size: 0.9vw;
-            margin-top: -0.2vw !important;
+            font-size: 0.86vw;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
             transition: color linear .4s;
@@ -501,24 +501,25 @@
         
         .menudot2 {
             font-size: 0.86vw;
-            margin-top: -0.15vw !important;
             color: rgb(172,172,172) !important;
             transition: color linear .2s;
         }
         
+        .page2dot2 {
+            font-size: 0.74vw;
+            color: rgb(209,209,209) !important;
+            text-shadow: none;
+            transition: color linear .2s;
+        }
+        
         .page2dot1 {
-            font-size: 0.8vw;
-            margin-top: 19.9vw !important;
+            font-size: 0.74vw;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
         }
         
-        .page2dot2 {
-            font-size: 0.66vw;
-            margin-top: 20vw!important;
-            color: rgb(209,209,209) !important;
-            text-shadow: none;
-            transition: color linear .2s;
+        .page2singledot {
+            margin-top: 18vw !important;
         }
         
         .linetext {
@@ -711,40 +712,45 @@
                 <a class="dark" href="#firstPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     design
                 </a>
-                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; margin-top: 1vw; position: relative;" class="container inner">
+                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
                     <a class="singledot mynav" href="#firstPage" style="margin-left: -2.2vw;"><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
                     <a class="singledot mynav" href="#secondPage" style="margin-left: -1.5vw;"><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <a class="dark" href="#thirdPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <a class="dark" href="#thirdPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important; margin-left: -0.33vw;">
                     features
                 </a>
-                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#thirdPage" style="margin-left: -2.6vw; margin-top: 38% !important;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#fourthPage" style="margin-left: -1.9vw; margin-top: 38% !important;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
+                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
+                    <a class="singledot mynav" href="#thirdPage" style="margin-left: -2.6vw;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#fourthPage" style="margin-left: -1.9vw;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <a class="dark" href="#lastPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <a class="dark" href="#lastPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-left: 0.1vw; margin-top: 1.335vw !important;">
                     customize and pre-order
                 </a>
-                <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#lastPage" style="margin-top: 1.6vw !important; margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
+                <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
+                    <a class="singledot mynav" href="#lastPage" style="margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="../volant/index.html"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
-                    <a href="#"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.40; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
+                    <a style="margin-right: 1.4vw;" href="../volant/index.html"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.35; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
+                    <a href="#firstPage"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.9; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
             </div>
         </div>
     </div>
     </div>
     
-    <div style="text-align:center; z-index: 2;" class="header-top clearfix">
-        <span>
+    <div style="text-align:center;" class="header-top clearfix">
+        <span id="logospan">
             <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
         </span>
+    </div>
+    <div style="text-align:center; z-index: 5;" class="header-top clearfix">
+        <a href="../../index.html" id="logospan" >
+            <img id="logoMask" style=" width: 9.44vw; opacity: 0;" />
+        </a>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
         <div id="fullpage" style="color:rgb(250,250,250);">
@@ -792,9 +798,9 @@
                 <img class="imagepane imageslider" class="animated fadeOutRight" style="max-width: 82.5vw; margin-top: -8.4vw; margin-left: 28.5vw;" src="img/nspace021.png" />
             </span>
             <span class="left" style="float: left; margin-top: 12.4vw; margin-left: -10.4vw;">
-                <p id="page2dot1" class="page2dot2" style="position: absolute; margin-left: -3.85vw; margin-top: 19vw !important; cursor: pointer;">&#9679;</p>
-                <p id="page2dot2" class="page2dot2" style="position: absolute; margin-left: -2.16vw; margin-top: 19vw !important; cursor: pointer;">&#9679;</p>
-                <p id="page2dot3" class="page2dot2" style="position: absolute; margin-left: -0.4vw; margin-top: 19vw !important; cursor: pointer;">&#9679;</p>
+                <p id="page2dot1" class="page2dot2 page2dot1 page2singledot" style="position: absolute; margin-left: -3.85vw; cursor: pointer;">&#9679;</p>
+                <p id="page2dot2" class="page2dot2 page2singledot" style="position: absolute; margin-left: -2.16vw; cursor: pointer;">&#9679;</p>
+                <p id="page2dot3" class="page2dot2 page2singledot" style="position: absolute; margin-left: -0.4vw; cursor: pointer;">&#9679;</p>
                 <span class="linetext" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(51,51,51); margin-top: 11.94vw; margin-left: 16.1vw; z-index: 1; letter-spacing: 0.1"></span>
                 <img class="imagepane" class="animated fadeOutRight" style="position: absolute; max-width: 42.3vw; margin-top: 13.3vw; margin-left: -24vw;" src="img/Line.png" />
                 <p class="secp" style="position: absolute; float: left; margin-top: 16.3vw !important; margin-left: -10vw !important; letter-spacing: 0.11vw; text-shadow: none;">The Forms</p>
@@ -957,29 +963,9 @@
             $(".page2dot2").removeClass("page2dot1");
             $(this).addClass("page2dot1");
             $(this).removeClass("page2dot2");
+            $(".page2dot2").css({'pointer-events': 'auto'});
+            $(".page2dot1").css({'pointer-events': 'none'});
         })
-        var tick = "tick2";
-        $(".shadetick").click(function() {
-            tick = $(this).attr("id");
-            if(tick == "tick1")
-            {
-                $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Active.png");
-                $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Inactive.png");
-                $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Inactive.png");
-            }
-            else if(tick == "tick2")
-            {
-                $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Inactive.png");
-                $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Active.png");
-                $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Inactive.png");
-            }
-            else if(tick == "tick3")
-            {
-                $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Inactive.png");
-                $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Inactive.png");
-                $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
-            }
-        });
         $("#section1").ready(function() {
             my_image1.src = 'img/nspace021.png';
             my_image2.src = 'img/nspace022.png';
@@ -997,21 +983,21 @@
             }, 400);
             if(id == "page2dot1")
                 setTimeout(function() {
-                $(".imageslider").attr("src", my_image1.src);
-                $(".linetext").text("");
-            }, 400);
+                    $(".imageslider").attr("src", my_image1.src);
+                    $(".linetext").text("");
+                }, 400);
             else if(id == "page2dot2")
                 setTimeout(function() {
-                $(".imageslider").attr("src", my_image2.src);
-                $(".linetext").text("LIGHT");
-                $(".linetext").css("opacity", 1);
-            }, 400);
+                    $(".imageslider").attr("src", my_image2.src);
+                    $(".linetext").text("LIGHT");
+                    $(".linetext").css("opacity", 1);
+                }, 400);
             else if(id == "page2dot3")
                 setTimeout(function() {
-                $(".imageslider").attr("src", my_image3.src);
-                $(".linetext").text("L RETURN");
-                $(".linetext").css("opacity", 1);
-            }, 400);
+                    $(".imageslider").attr("src", my_image3.src);
+                    $(".linetext").text("L RETURN");
+                    $(".linetext").css("opacity", 1);
+                }, 400);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
             }, 420);
