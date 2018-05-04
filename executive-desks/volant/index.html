@@ -294,7 +294,7 @@
         }
         
         .singledot {
-            margin-top: 48% !important;
+            margin-top: 1vw !important;
             -webkit-font-smoothing: antialiased;
             position: absolute;
         }
@@ -471,15 +471,14 @@
         
         .menudot1 {
             font-size: 0.9vw;
-            margin-top: -0.2vw !important;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
             transition: color linear .4s;
+            cursor: default;
         }
         
         .menudot2 {
             font-size: 0.86vw;
-            margin-top: -0.15vw !important;
             color: rgb(209,209,209) !important;
             transition: color linear .2s;
         }
@@ -670,7 +669,7 @@
                 <a class="dark" href="#firstPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     design
                 </a>
-                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; margin-top: 1vw; position: relative;" class="container inner">
+                <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
                     <a class="singledot mynav" href="#firstPage" style="margin-left: -2.2vw;"><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
                     <a class="singledot mynav" href="#secondPage" style="margin-left: -1.5vw;"><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
@@ -679,22 +678,22 @@
                 <a class="dark" href="#thirdPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     features
                 </a>
-                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#thirdPage" style="margin-left: -2.6vw; margin-top: 38% !important;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#fourthPage" style="margin-left: -1.9vw; margin-top: 38% !important;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
+                <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
+                    <a class="singledot mynav" href="#thirdPage" style="margin-left: -2.6vw;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#fourthPage" style="margin-left: -1.9vw;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px;">
                 <a class="dark" href="#lastPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     customize and pre-order
                 </a>
-                <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased;  margin-top: 1vw; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#lastPage" style="margin-top: 1.6vw !important; margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
+                <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
+                    <a class="singledot mynav" href="#lastPage" style="margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="../volant/index.html"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
-                    <a href="#"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.40; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
+                    <a style="margin-right: 1.4vw;" href="#firstPage"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
+                    <a href="../nspace/index.html"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.40; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
             </div>
         </div>
     </div>
@@ -978,25 +977,35 @@
             tick = $(this).attr("id");
             if(tick == "tick1")
             {
-                $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Active.png");
-                $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Inactive.png");
-                $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Inactive.png");
-                $("#tick1text").css("opacity", "1");
-                $("#tick2text").css("opacity", "0");
+                $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Active.png'});
+                $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
+                $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
+                $("#tick1").css({'user-select': 'none'});
+                $("#tick2").css({'user-select': 'default'});
+                $("#tick3").css({'user-select': 'default'});
+                $("#tick1text").css({'opacity': 1});
+                $("#tick2text").css({'opacity': 0});
+                $("#tick3text").css({'opacity': 0});
             }
             else if(tick == "tick2")
             {
-                $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Inactive.png");
-                $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Active.png");
-                $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Inactive.png");
+                $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
+                $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Active.png'});
+                $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
+                $("#tick1").css({'user-select': 'default'});
+                $("#tick2").css({'user-select': 'none'});
+                $("#tick3").css({'user-select': 'default'});
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "1");
             }
             else if(tick == "tick3")
             {
-                $("#tick1").attr("src", "img/page5/Customisation%20Icon%20Salt%20Inactive.png");
-                $("#tick2").attr("src", "img/page5/Customisation%20Icon%20Graphite%20Inactive.png");
-                $("#tick3").attr("src", "img/page5/Concrete%20Icon%20Graphite%20Active.png");
+                $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
+                $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
+                $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Active.png'});
+                $("#tick1").css({'user-select': 'default'});
+                $("#tick2").css({'user-select': 'default'});
+                $("#tick3").css({'user-select': 'none'});
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "0");
             }
