@@ -297,6 +297,7 @@
             margin-top: 1.25vw !important;
             -webkit-font-smoothing: antialiased;
             position: absolute;
+            height: 0;
         }
         
         .singledot:hover {
@@ -692,17 +693,22 @@
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="#firstPage"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.94; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
-                    <a href="../nspace/index.html"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.40; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
+                    <a style="margin-right: 1.4vw;" href="#firstPage"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.9; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
+                    <a href="../nspace/index.html"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.35; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
             </div>
         </div>
     </div>
     </div>
     
-    <div style="text-align:center; z-index: 2;" class="header-top clearfix">
-        <span>
+    <div style="text-align:center;" class="header-top clearfix">
+        <span id="logospan">
             <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
         </span>
+    </div>
+    <div style="text-align:center; z-index: 5;" class="header-top clearfix">
+        <a href="../../index.html" id="logospan" >
+            <img id="logoMask" style=" width: 9.44vw; opacity: 0;" />
+        </a>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
         <div id="fullpage" style="color:rgb(250,250,250);">
@@ -980,9 +986,9 @@
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Active.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
-                $("#tick1").css({'user-select': 'none'});
-                $("#tick2").css({'user-select': 'default'});
-                $("#tick3").css({'user-select': 'default'});
+                $("#tick1").css({'pointer-events': 'none'});
+                $("#tick2").css({'pointer-events': 'auto'});
+                $("#tick3").css({'pointer-events': 'auto'});
                 $("#tick1text").css({'opacity': 1});
                 $("#tick2text").css({'opacity': 0});
                 $("#tick3text").css({'opacity': 0});
@@ -992,9 +998,9 @@
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Active.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
-                $("#tick1").css({'user-select': 'default'});
-                $("#tick2").css({'user-select': 'none'});
-                $("#tick3").css({'user-select': 'default'});
+                $("#tick1").css({'pointer-events': 'auto'});
+                $("#tick2").css({'pointer-events': 'none'});
+                $("#tick3").css({'pointer-events': 'auto'});
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "1");
             }
@@ -1003,9 +1009,9 @@
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Active.png'});
-                $("#tick1").css({'user-select': 'default'});
-                $("#tick2").css({'user-select': 'default'});
-                $("#tick3").css({'user-select': 'none'});
+                $("#tick1").css({'pointer-events': 'auto'});
+                $("#tick2").css({'pointer-events': 'auto'});
+                $("#tick3").css({'pointer-events': 'none'});
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "0");
             }
