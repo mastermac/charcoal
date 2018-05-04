@@ -982,31 +982,31 @@
             my_image3.src = 'img/nspace023.png';
         })
         $(".page2dot2").click(function() {
-            $(".imageslider").removeClass("sliderAnimateHide");
-            $(".imageslider").removeClass("sliderResetLeft");
-            $(".imageslider").removeClass("sliderAnimatedShow");
-            $(".imageslider").addClass("sliderAnimatedHide");
+            $(".imageslider, .linetext").removeClass("sliderAnimateHide");
+            $(".imageslider, .linetext").removeClass("sliderResetLeft");
+            $(".imageslider, .linetext").removeClass("sliderAnimatedShow");
+            $(".imageslider, .linetext").addClass("sliderAnimatedHide");
             var id = $(this).attr("id");
             setTimeout(function() {
-                $(".imageslider").addClass("sliderResetLeft");
+                $(".imageslider, .linetext").addClass("sliderResetLeft");
             }, 400);
             if(id == "page2dot1")
                 setTimeout(function() {
-                $(".imageslider").attr("src", my_image1.src)
+                $(".imageslider, .linetext").attr("src", my_image1.src)
                 $(".linetext").text("");
             }, 400);
             else if(id == "page2dot2")
                 setTimeout(function() {
-                $(".imageslider").attr("src", my_image2.src)
+                $(".imageslider, .linetext").attr("src", my_image2.src)
                 $(".linetext").text("LIGHT");
             }, 400);
             else if(id == "page2dot3")
                 setTimeout(function() {
-                $(".imageslider").attr("src", my_image3.src)
+                $(".imageslider, .linetext").attr("src", my_image3.src)
                 $(".linetext").text("L RETURN");
             }, 400);
             setTimeout(function() {
-                $(".imageslider").addClass("sliderAnimatedShow");
+                $(".imageslider, .linetext").addClass("sliderAnimatedShow");
             }, 420);
         });
         </script>
