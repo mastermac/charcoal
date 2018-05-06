@@ -89,12 +89,12 @@
                         
                         $("#iconlink1").fadeOut(600, function() {
                             $("#iconlink1").attr("src","img/Volant Icon dark.png");
-                            $("#iconlink1").css("opacity","0.5");
+                            $("#iconlink1").css("opacity","0.3");
                         }.bind(this)).fadeIn(500);
                         
                         $("#iconlink2").fadeOut(600, function() {
                             $("#iconlink2").attr("src","img/N Space Icon dark.png");
-                            $("#iconlink2").css("opacity","0.3");
+                            $("#iconlink2").css("opacity","0.15");
                         }.bind(this)).fadeIn(500);
                     }
                     
@@ -518,7 +518,7 @@
             font-size: 0.86vw;
             text-shadow: none;
             margin-left: 17.4%;
-            margin-top: -0.7%;
+            margin-top: -1%;
             animation: burst 1.7s infinite;
         }
         
@@ -757,7 +757,7 @@
             <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
         </span>
     </div>
-    <div style="text-align:center; z-index: 5;" class="header-top clearfix">
+    <div style="text-align:center; z-index: 5; width: 10%; left: 45%;" class="header-top clearfix">
         <a href="../../index.html" id="logospan" >
             <img id="logoMask" style=" width: 9.44vw; opacity: 0;" />
         </a>
@@ -863,7 +863,7 @@
                 <img id="page5img1" class="page5img" src="img/page5/Volant051.jpg" style="color: rgb(77,77,77); margin-top: -14.7vw; margin-left: -30.7vw; width: 62.3vw; position: absolute;">
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(51,51,51,0.9); top: 8.98vw; left: 34.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold;">editions</span>
+                <span style="position: absolute; color: rgb(51,51,51,0.9); top: 8.98vw; left: 32.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold;">editions</span>
                 <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 11.39vw; margin-left: -17.48vw; width: 35vw; height: 1px; position: absolute;">
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.13vw; margin-left: -17.48vw; width: 35vw; height: 1px; position: absolute;"></span>
             </div>
@@ -951,7 +951,7 @@
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 2.12;
                 }
-                pointer2.css('top', ((target.y) * scale + yOffset) * 1.11);
+                pointer2.css('top', ((target.y) * scale + yOffset) * 1.09);
                 pointer2.css('left', (target.x) * scale + xOffset);
             }
             
