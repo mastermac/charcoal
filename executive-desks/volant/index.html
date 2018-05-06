@@ -946,7 +946,7 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 100;
+                    yOffset = (windowHeight - (image.height * scale));
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
@@ -957,9 +957,9 @@
             }
             
             var pointer3 = $('#pg5ShadeIcon, #pg5ShadeText');
-            $(document).ready(updatePointer2);
-            $(window).resize(updatePointer2);
-            function updatePointer2() {
+            $(document).ready(updatePointer3);
+            $(window).resize(updatePointer3);
+            function updatePointer3() {
                 var windowWidth = $(window).width();
                 var windowHeight = $(window).height();
                 // Get largest dimension increase
