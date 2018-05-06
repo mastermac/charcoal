@@ -514,10 +514,10 @@
         #pulse01 {
             position: absolute;
             display: block;
-            width: 0.35vw;
-            height: 0.35vw;
+            width: 7.5px;
+            height: 7.5px;
             margin-left: 17.4%;
-            margin-top: -0.4%;
+            margin-top: -0.6%;
             border-radius: 50%;
             background: rgb(255,255,255,0.4);
             box-shadow: 0 0 #ffffff8c;
@@ -527,9 +527,9 @@
         #pulse02 {
             position: absolute;
             display: block;
-            width: 0.35vw;
-            height: 0.35vw;
-            margin-left: 24.7%;
+            width: 7.5px;
+            height: 7.5px;
+            margin-left: 24.2%;
             border-radius: 50%;
             background: rgb(255,255,255,0.4);
             box-shadow: 0 0 #ffffff8c;
@@ -884,20 +884,19 @@
                 var windowHeight = $(window).height();
                 // Get largest dimension increase
                 var xScale = windowWidth / image.width;
-                var yScale = (windowHeight+90) / image.height;
-                var scale;
+                var yScale = windowHeight / image.height;
                 var yOffset = 0;
                 var xOffset = 0;
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 0.2;
+                    yOffset = (windowHeight - (image.height * scale));
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 2.24;
+                    xOffset = (windowWidth - (image.width * scale)) / 2.2;
                 }
-                pointer2.css('top', (target.y) * scale + yOffset);
+                pointer2.css('top', ((target.y) * scale + yOffset)*1.17);
                 pointer2.css('left', (target.x) * scale + xOffset);
             }
             
