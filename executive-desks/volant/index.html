@@ -519,7 +519,7 @@
             text-shadow: none;
             margin-left: 17.4%;
             margin-top: -0.7%;
-            animation: burst 1.2s infinite;
+            animation: burst 1.2s infinite ease-in-out;
         }
         
         #pulse02 {
@@ -586,43 +586,33 @@
             }
             
             45% {
-                -webkit-text-stroke-width: 0.45vw;
+                -webkit-text-stroke-width: 0.5vw;
                 -webkit-text-stroke-color: rgba(135,135,135,0.55);
             }
             
             50% {
-                -webkit-text-stroke-width: 0.5vw;
+                -webkit-text-stroke-width: 0.6vw;
                 -webkit-text-stroke-color: rgba(135,135,135,0.5);
             }
             
             55% {
-                -webkit-text-stroke-width: 0.65vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.45);
-            }
-            
-            60% {
                 -webkit-text-stroke-width: 0.7vw;
                 -webkit-text-stroke-color: rgba(135,135,135,0.4);
             }
             
+            60% {
+                -webkit-text-stroke-width: 0.8vw;
+                -webkit-text-stroke-color: rgba(135,135,135,0.3);
+            }
+            
             65% {
-                -webkit-text-stroke-width: 0.75vw;
+                -webkit-text-stroke-width: 0.9vw;
                 -webkit-text-stroke-color: rgba(135,135,135,0.2);
             }
             
             70% {
-                -webkit-text-stroke-width: 0.8vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.1);
-            }
-
-            75% {
-                -webkit-text-stroke-width: 0.9vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.05);
-            }
-            
-            80% {
                 -webkit-text-stroke-width: 1vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0);
+                -webkit-text-stroke-color: rgba(135,135,135,0.1);
             }
 
             100% {
