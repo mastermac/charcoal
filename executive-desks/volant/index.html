@@ -833,16 +833,15 @@
         </div>
         <div class="section" id="section3"style="position: relative; background-color: rgb(24,24,22);">
             <span class="left" style="float: left; right: 0; width: 77%; height: 100%; background-image: url('img/Volant04.jpg'); background-size: cover; background-position: 90%;">
-                <span style="position: absolute; top: 40.4vw; left: 25.2vw; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none;">
+                <span id="pg5ShadeText" style="position: absolute; margin-left: 8vw; margin-top: 0.5vw; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none;">
                     CONCRETE EDITION
                 </span>
-                <span>
-                    <img style="width: 1.4vw; position: absolute; top: 40vw; left: 22.5vw;" src="img/volant_graphite_shade.png"/>
+                <img id="pg5ShadeIcon" style="width: 1.4vw; position: absolute; margin-left: 5vw;" src="img/volant_graphite_shade.png"/>
                 </span>
                 <span id="pulse01">&#9679;</span>
-                <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 10%; margin-top: -0.6%;">WIRELESS CHARGER</span>
+                <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 10.2%; margin-top: -0.6%;">WIRELESS CHARGER</span>
                 <span id="pulse02">&#9679;</span>
-                <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 24.4%; margin-top: 0.4%;">GOOGLE ASSISTANT</span>
+                <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 24.25%; margin-top: 0.4%;">GOOGLE ASSISTANT</span>
                 
             </span>
             <span class="right" style="float:left; position: absolute; margin-top: 21.3vw; margin-left: -17.1vw; width: 28%; text-shadow: none; font-size: 0.05vw">
@@ -955,6 +954,30 @@
                 }
                 pointer2.css('top', ((target.y) * scale + yOffset) * 1.09);
                 pointer2.css('left', (target.x) * scale + xOffset);
+            }
+            
+            var pointer3 = $('#pg5ShadeIcon, #pg5ShadeText');
+            $(document).ready(updatePointer2);
+            $(window).resize(updatePointer2);
+            function updatePointer2() {
+                var windowWidth = $(window).width();
+                var windowHeight = $(window).height();
+                // Get largest dimension increase
+                var xScale = windowWidth / image.width;
+                var yScale = windowHeight / image.height;
+                var yOffset = 0;
+                var xOffset = 0;
+                if (xScale > yScale) {
+                    // The image fits perfectly in x axis, stretched in y
+                    scale = xScale;
+                    yOffset = (windowHeight - (image.height * scale)) / 100;
+                } else {
+                    // The image fits perfectly in y axis, stretched in x
+                    scale = yScale;
+                    xOffset = (windowWidth - (image.width * scale)) / 1.5;
+                }
+                pointer3.css('top', ((target.y) * scale + yOffset) * 1.97);
+                pointer3.css('left', (target.x) * scale + xOffset);
             }
             
             $('.singledot').click(function() {
