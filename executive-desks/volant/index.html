@@ -511,29 +511,44 @@
             
         }
         
-        #pulse01 {
+        #pulse011 {
             position: absolute;
-            display: block;
-            width: 7.5px;
-            height: 7.5px;
+            display: inline-block;
+            color: rgb(255,255,255,0.4);
+            font-size: 0.86vw;
+            text-shadow: none;
             margin-left: 17.4%;
-            margin-top: -0.6%;
-            border-radius: 50%;
-            background: rgb(255,255,255,0.4);
-            box-shadow: 0 0 #ffffff8c;
-            animation: pulse 2s infinite;
+            margin-top: -0.7%;
+            animation: burst 2s infinite;
         }
         
-        #pulse02 {
+        #pulse012 {
             position: absolute;
-            display: block;
-            width: 7.5px;
-            height: 7.5px;
+            display: inline-block;
+            font-size: 0.86vw;
+            color: rgb(255,255,255,0.4);
+            text-shadow: none;
+            margin-left: 17.4%;
+            margin-top: -0.7%;
+        }
+        
+        #pulse021 {
+            position: absolute;
+            font-size: 0.86vw;
+            color: rgb(255,255,255,0.4);
+            text-shadow: none;
+            transition: color linear .4s;
             margin-left: 22.7%;
-            border-radius: 50%;
-            background: rgb(255,255,255,0.4);
-            box-shadow: 0 0 #ffffff8c;
-            animation: pulse 2s infinite;
+            animation: burst 2s infinite;
+        }
+        
+        #pulse022 {
+            position: absolute;
+            font-size: 0.86vw;
+            color: rgb(255,255,255,0.4);
+            text-shadow: none;
+            transition: color linear .4s;
+            margin-left: 22.7%;
         }
         
         .pulse:hover {
@@ -546,6 +561,23 @@
             width: 0.47vw !important;
             height: 0.37vw;
         }
+        
+        @keyframes burst {
+            0% {
+                color: rgb(204,169,44,1);
+            }
+
+            50% {
+                -webkit-transform: scale(2.8);
+                -ms-transform: scale(2.8);
+                color: rgba(204,169,44, 0);
+            }
+
+            100% {
+                color: rgb(255,255,255,0);
+            }
+        }
+     
         @-webkit-keyframes pulse {
         0% {
             -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
@@ -785,9 +817,11 @@
                 <span>
                     <img style="width: 1.4vw; position: absolute; top: 40vw; left: 22.5vw;" src="img/volant_graphite_shade.png"/>
                 </span>
-                <span id="pulse01"></span>
+                <span id="pulse011">&#9679;</span>
+                <span id="pulse012">&#9679;</span>
                 <span id="pulseText01" class="pulseText" style="position: absolute; top: 40.4vw; left: 25.2vw; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none;">WIRELESS CHARGER</span>
-                <span id="pulse02"></span>
+                <span id="pulse021">&#9679;</span>
+                <span id="pulse022">&#9679;</span>
             </span>
             <span class="right" style="float:left; position: absolute; margin-top: 21.3vw; margin-left: -17.1vw; width: 28%; text-shadow: none; font-size: 0.05vw">
                 <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(165,165,165,0.9); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
@@ -831,7 +865,7 @@
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(0, 0, 0, 0.9); top: 12.22vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight;">AED 15,500</span>
+                <span style="position: absolute; color: rgb(0, 0, 0, 0.9); top: 12.22vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight;" class="price">AED 15,500</span>
                 
                 <span style="position: absolute; color: rgb(30,30,30); top: 9.48vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
                 
@@ -851,7 +885,7 @@
             var my_image3 = new Image();
             var image = { width: 550, height: 190 };
             var target = { x: 178, y: 89 };
-            var pointer1 = $('#pulse01, #pulseText01');
+            var pointer1 = $('#pulse011, #pulse012, #pulseText01');
             $(document).ready(updatePointer1);
             $(window).resize(updatePointer1);
             function updatePointer1() {
@@ -867,7 +901,8 @@
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
                     yOffset = (windowHeight - (image.height * scale));
-                } else {
+                }
+                else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 1.94;
@@ -876,7 +911,7 @@
                 pointer1.css('left', (target.x) * scale + xOffset);
             }
             
-            var pointer2 = $('#pulse02, #pulseText02');
+            var pointer2 = $('#pulse021, #pulse022, #pulseText02');
             $(document).ready(updatePointer2);
             $(window).resize(updatePointer2);
             function updatePointer2() {
@@ -890,7 +925,7 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale));
+                    yOffset = (windowHeight - (image.height * scale)) / 100;
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
