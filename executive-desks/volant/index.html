@@ -518,7 +518,7 @@
             font-size: 0.86vw;
             text-shadow: none;
             margin-left: 17.4%;
-            margin-top: -1%;
+            margin-top: -1.2%;
             animation: burst 1.7s infinite;
         }
         
@@ -839,7 +839,7 @@
                 <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: 1.72vw; margin-top: -0.74vw;" src="img/volant_graphite_shade.png"/>
             </span>
             <span id="pulse01">&#9679;</span>
-            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 10.2%; margin-top: -0.6%;">WIRELESS CHARGER</span>
+            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 10.2%; margin-top: -0.83%;">WIRELESS CHARGER</span>
             <span id="pulse02">&#9679;</span>
             <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 24.25%; margin-top: 0.4%;">GOOGLE ASSISTANT</span>
             
@@ -921,14 +921,14 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale));
+                    yOffset = (windowHeight - (image.height * scale)) / 4;
                 }
                 else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 1.94;
                 }
-                pointer1.css('top', (target.y) * scale);
+                pointer1.css('top', (target.y) * scale + yOffset);
                 pointer1.css('left', (target.x) * scale + xOffset);
             }
             
@@ -946,7 +946,7 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale));
+                    yOffset = (windowHeight - (image.height * scale)) / 4;
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
