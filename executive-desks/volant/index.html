@@ -831,20 +831,19 @@
                 </p>
             </span>
         </div>
-        <div class="section" id="section3"style="position: relative; background-color: rgb(24,24,22);">
+        <div class="section" id="section3"style="background-color: rgb(24,24,22);">
             <span class="left" style="float: left; right: 0; width: 77%; height: 100%; background-image: url('img/Volant04.jpg'); background-size: cover; background-position: 90%;">
-                <span id="pg5ShadeText" style="position: absolute; margin-left: 8vw; margin-top: 0.5vw; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none;">
+                <span id="pg5ShadeText" style="position: absolute; margin-left: 4vw; margin-top: -0.21vw; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none;">
                     CONCRETE EDITION
                 </span>
-                <img id="pg5ShadeIcon" style="width: 1.4vw; position: absolute; margin-left: 5vw;" src="img/volant_graphite_shade.png"/>
-                </span>
-                <span id="pulse01">&#9679;</span>
-                <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 10.2%; margin-top: -0.6%;">WIRELESS CHARGER</span>
-                <span id="pulse02">&#9679;</span>
-                <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 24.25%; margin-top: 0.4%;">GOOGLE ASSISTANT</span>
-                
+                <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: 1.72vw; margin-top: -0.74vw;" src="img/volant_graphite_shade.png"/>
             </span>
-            <span class="right" style="float:left; position: absolute; margin-top: 21.3vw; margin-left: -17.1vw; width: 28%; text-shadow: none; font-size: 0.05vw">
+            <span id="pulse01">&#9679;</span>
+            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 10.2%; margin-top: -0.6%;">WIRELESS CHARGER</span>
+            <span id="pulse02">&#9679;</span>
+            <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 24.25%; margin-top: 0.4%;">GOOGLE ASSISTANT</span>
+            
+           <span style="float: left; position: absolute; top: 45%; margin-left: -17.1vw; text-shadow: none; font-size: 0.05vw">
                 <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(165,165,165,0.9); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
                     The Intelligence<span style="font-family: monospace; font-size: 0.7vw;">.</span>
                 </h2>
@@ -855,6 +854,7 @@
                     In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
                 </p>
             </span>
+            
         </div>
         <div class="section" id="section4" style="position: relative; background-color: rgb(204,204,204);">
             
@@ -978,6 +978,28 @@
                 }
                 pointer3.css('top', ((target.y) * scale + yOffset) * 1.97);
                 pointer3.css('left', (target.x) * scale + xOffset);
+            }
+            
+            var pointer4 = $('#pg5Info');
+            $(document).ready(updatePointer4);
+            $(window).resize(updatePointer4);
+            function updatePointer4() {
+                var windowWidth = $(window).width();
+                var windowHeight = $(window).height();
+                // Get largest dimension increase
+                var xScale = windowWidth / image.width;
+                var yScale = windowHeight / image.height;
+                var yOffset = 0;
+                var xOffset = 0;
+                if (xScale > yScale) {
+                    // The image fits perfectly in x axis, stretched in y
+                    scale = xScale;
+                    yOffset = (windowHeight - (image.height * scale)) / 100;
+                } else {
+                    // The image fits perfectly in y axis, stretched in x
+                    scale = yScale;
+                    xOffset = (windowWidth - (image.width * scale)) / 50;
+                }
             }
             
             $('.singledot').click(function() {
