@@ -1206,6 +1206,8 @@
             modal.style.display = "block";
             $('#outsideModal').css("z-index", "1");
             $('#outsideModal').css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.7}, 500);
+            $('.header-top').css({opacity: 0.4});
+            $('.header-top').css({'pointer-events': 'none'});
             $.fn.fullpage.setMouseWheelScrolling(false);
             $.fn.fullpage.setAllowScrolling(false);
         }
@@ -1213,7 +1215,9 @@
         btn2.onclick = function() {
             modal2.style.display = "block";
             $('#outsideModal').css("z-index", "1");
-            $('#outsideModal').css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.7}, 500);
+            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.7}, 500);
+            $('.header-top').css({opacity: 0.4});
+            $('.header-top').css({'pointer-events': 'none'});
             $.fn.fullpage.setMouseWheelScrolling(false);
             $.fn.fullpage.setAllowScrolling(false);
         }
@@ -1221,8 +1225,10 @@
         span.onclick = function() {
             modal.style.display = "none";
             modal2.style.display = "none";
-            $('#outsideModal').css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
             $('#outsideModal').css("z-index", "-2");
+            $('.header-top').css({opacity: 1});
+            $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
         }
@@ -1230,8 +1236,10 @@
         outside.onclick = function() {
             modal.style.display = "none";
             modal2.style.display = "none";
-            $('#outsideModal').css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
             $('#outsideModal').css("z-index", "-2");
+            $('.header-top').css({opacity: 1});
+            $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
         }
