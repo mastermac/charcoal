@@ -515,7 +515,7 @@
         }
         
         .page2dot1 {
-            font-size: 0.74vw;
+            font-size: 0.83vw;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
             pointer-events: none;
@@ -765,12 +765,12 @@
                 <img class="imagepane" style="max-width: 86vw; margin-top: 20.3vw; margin-left: -4.1vw;" src="img/nspace01.png" />
                 <div style="text-align: center; position: relative">
                     <img style="position: absolute; width: 1.2vw; margin-top: -3vw; margin-left: 36.15vw;" src="img/nspace_gray_salt_shade.png" />
-                    <span style="position: absolute; color:rgb(120,120,120); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -2.73vw; margin-left: 31.7vw; width: 4vw; text-shadow: none;">Gray &amp; Salt</span>
+                    <span style="position: absolute; color:rgb(120,120,120); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -2.73vw; margin-left: 31.7vw; width: 4vw; text-shadow: none;">Gray <span style="font-family: ClearSans;  color: rgb(125,125,125);">&amp;</span> Salt</span>
                 </div>
             </span>
             <span class="right" style="float:left; margin-top: 8.73vw; margin-left: -10.67vw; width: 36%; text-shadow: none;">
                 <h3 style="font-family: Nexa; font-size: 0.48vw; font-weight: lighter; letter-spacing: 0.20vw; color: rgb(102,102,102); margin-bottom: 1.3vw; text-align: left; margin-left: 5.6vw;">
-                    ASYMMETRY &amp; BEAUTY
+                    ASYMMETRY <span style="font-family: ClearSans; font-size: 0.6vw; color: rgb(125,125,125);">&amp;</span> BEAUTY
                 </h3>
                 <h2 style="font-family: GothamBook; font-size: 1vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.15vw; margin-bottom: 1.1vw;">
                     n<span style="font-family: monospace; font-size: 0.7vw;">.</span> SPACE
@@ -806,7 +806,8 @@
                 <p id="page2dot1" class="page2dot2 page2dot1 page2singledot" style="position: absolute; margin-left: -3.95vw; cursor: pointer;">&#9679;</p>
                 <p id="page2dot2" class="page2dot2 page2singledot" style="position: absolute; margin-left: -2.16vw; cursor: pointer;">&#9679;</p>
                 <p id="page2dot3" class="page2dot2 page2singledot" style="position: absolute; margin-left: -0.4vw; cursor: pointer;">&#9679;</p>
-                <span class="linetext" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(51,51,51); margin-top: 11.94vw; margin-left: 16.1vw; z-index: 1; letter-spacing: 0.1"></span>
+                <span class="linetext" id="linetext1" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(51,51,51); margin-top: 11.94vw; margin-left: 16.1vw; z-index: 1; letter-spacing: 0.1; opacity: 0;">LIGHT</span>
+                <span class="linetext" id="linetext2" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(51,51,51); margin-top: 11.94vw; margin-left: 16.1vw; z-index: 1; letter-spacing: 0.1; opacity: 0;">L RETURN</span>
                 <img class="imagepane" class="animated fadeOutRight" style="position: absolute; max-width: 44.3vw; margin-top: 7.35vw; margin-left: -24.08vw;" src="img/Line.png" />
                 <p class="secp" style="position: absolute; float: left; margin-top: 10.35vw !important; margin-left: -10vw !important; letter-spacing: 0.12vw; text-shadow: none;">The Forms</p>
             </span>
@@ -816,7 +817,7 @@
                 <img class="imagepane" style="max-width: 59.5vw; margin-left: -20.18vw; margin-top: 4.55vw;" src="img/nspace03.png" />
                 <div style="text-align: center; position: relative">
                     <img style="width: 1.2vw; position: absolute; top: 3.7vw; left: 21.2vw;" src="img/gray_graphite.png" />
-                    <span style="position: absolute; color:rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: 4.05vw; margin-left: -12.6vw;">Gray &amp; Graphite</span>
+                    <span style="position: absolute; color:rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: 4.05vw; margin-left: -12.6vw;">Gray <span style="font-family: ClearSans;  color: rgb(125,125,125);">&amp;</span> Graphite</span>
                 </div>
             </span>
             <span class="right" style="float:left; margin-top: 2.33vw; margin-left: -34.89vw; width: 28%; text-shadow: none;">
@@ -987,19 +988,20 @@
             if(id == "page2dot1")
                 setTimeout(function() {
                     $(".imageslider").attr("src", my_image1.src);
-                    $(".linetext").text("");
+                    $("#linetext1").css("opacity", 0);
+                    $("#linetext2").css("opacity", 0);
                 }, 400);
             else if(id == "page2dot2")
                 setTimeout(function() {
                     $(".imageslider").attr("src", my_image2.src);
-                    $(".linetext").text("LIGHT");
-                    $(".linetext").css("opacity", 1);
+                    $("#linetext1").css("opacity", 1);
+                    $("#linetext2").css("opacity", 0);
                 }, 400);
             else if(id == "page2dot3")
                 setTimeout(function() {
                     $(".imageslider").attr("src", my_image3.src);
-                    $(".linetext").text("L RETURN");
-                    $(".linetext").css("opacity", 1);
+                    $("#linetext1").css("opacity", 0);
+                    $("#linetext2").css("opacity", 1);
                 }, 400);
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
