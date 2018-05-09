@@ -251,6 +251,13 @@
             border: none;
             background-color: rgb(229,229,229);
         }
+        #modalfillin input {         
+            margin-bottom: 0.6vw;
+            width: 17.5vw;
+            height: 0.84vw;
+            border: none;
+            background-color: rgb(229,229,229);
+        }
         
         .notAnimated {
             transition: transform 2s ease;
@@ -662,7 +669,7 @@
                         <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.</label>
                     </p>
-                    <p id="menufillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1vw; margin-top: -0.64vw !important; margin-bottom: 0.4vw !important">
+                    <p id="modalfillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1vw; margin-top: -0.64vw !important; margin-bottom: 0.4vw !important;">
                     Name<br>
                     <input type="text" class="name " id="name"><br>
                     Street Address<br>
@@ -857,7 +864,7 @@
             
         </div>
         <div class="section" id="section4" style="position: relative; background-color: rgb(204,204,204);">
-            
+            <div id="outsideModal" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -2;"></div>
             <div class="imageslider" style="text-align: center;">
                 <!--<img id="page5img3" class="page5img" src="img/page5/Volant053.jpg" style="color: rgb(77,77,77); margin-top: -14.7vw; margin-left: -30.7vw; width: 62.3vw; position: absolute;">
                 <img id="page5img2" class="page5img" src="img/page5/Volant052.png" style="color: rgb(77,77,77); margin-top: -14.7vw; margin-left: -30.7vw; width: 62.3vw; position: absolute;">-->
@@ -869,7 +876,7 @@
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.13vw; margin-left: -17.48vw; width: 35vw; height: 1px; position: absolute;"></span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; top: 12.3vw; left: 35.25vw; color: rgb(0, 0, 0, 0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw;">
+                <span id="edition1" style="position: absolute; top: 12.3vw; left: 35.25vw; color: rgb(0, 0, 0, 0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw;">
                     solid
                 </span>
                 <span>
@@ -878,7 +885,7 @@
                     <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.1vw; left: 40.15vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Inactive.png"/>
                     <p id="tick2text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.7vw; left: 39.3vw; cursor: pointer; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.085vw;">GRAPHITE</p>
                 </span>
-                <span style="position: absolute; top: 12.3vw; left: 44.38vw; color: rgb(0, 0, 0 ,0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw;">
+                <span id="edition2" style="position: absolute; top: 12.3vw; left: 44.38vw; color: rgb(0, 0, 0 ,0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw;">
                     concrete
                 </span>
                 <span>
@@ -888,10 +895,37 @@
             <div style="text-align: center; position: relative;">
                 <span style="position: absolute; color: rgb(0, 0, 0, 0.9); top: 12.22vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight;" class="price">AED 15,500</span>
                 
-                <span style="position: absolute; color: rgb(30,30,30); top: 9.48vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
+                <span id="specs" style="position: absolute; color: rgb(30,30,30); top: 9.48vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
                 
-                <span style="position: absolute; color: rgb(0,0,0,0.7); top: 18.44vw; left: 43.91vw; text-shadow: none; font-size: 0.8vw; letter-spacing: 0.19vw; font-family: GothamBook; font-weight: lighter;"><img src="img/page5/Pre%20Order.png" style="width: 13.7vw; position: absolute; top: -0.39vw; left: -0.85vw; color: rgb(77,77,77,0.7);">PRE-ORDER ENQUIRY</span>
+                <span id="preorder" style="position: absolute; color: rgb(0,0,0,0.7); top: 18.44vw; left: 43.91vw; text-shadow: none; font-size: 0.8vw; letter-spacing: 0.19vw; font-family: GothamBook; font-weight: lighter; cursor: pointer;"><img src="img/page5/Pre%20Order.png" style="width: 13.7vw; position: absolute; top: -0.39vw; left: -0.85vw; color: rgb(77,77,77,0.7);">PRE-ORDER ENQUIRY</span>
             </div>
+            
+            <!-- The Modal -->
+            <div id="myModal1" class="modal" style="display: none; position: absolute; z-index: 8; left: 36%; top: 20%; width: 26%; height: 36vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
+                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 13.4vw; width: 1vw; cursor: pointer;" src="img/page5/Cross.png">
+                <span id="menufillin" class="menusp21" style="float: left; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw;">
+                    Name<br>
+                    <input type="text" class="name " id="name" style="margin-bottom: 0.8vw;"><br>
+                    E-mail Address<br>
+                    <input type="text" class="email" id="email" style="margin-bottom: 0.8vw;"><br>
+                    Telephone<br>
+                    <input type="text" class="tel" id="tel" style="margin-bottom: 0.8vw;"><br>
+                </span>
+                
+                <span style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 7vw;">
+                    <img src="img/page5/Customisation%20Line.png" style="color: rgb(204,204,204); width: 16vw; height: 1px; position: relative;">
+                    <span style="float: left; position: relative; color: rgb(179,179,179,0.9); margin-top: 0.4vw; margin-left: 2vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight;">EDITION</span>
+                    <span class="preorderText" style="float: left; position: relative; color: rgb(179,179,179,0.9); margin-top: 0.4vw; margin-left: 4vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight;">solid</span>
+                    <span style="float: left; position: relative; color: rgb(179,179,179,0.9); margin-left: 0.24vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight;">
+                        <img class="preorderShade" style="width: 1.4vw; cursor: pointer; pointer-events: none;" src="img/page5/Customisation%20Icon%20Salt%20Inactive.png"/>
+                    </span>
+                    <img src="img/page5/Customisation%20Line.png" style="color: rgb(204,204,204);  margin-top: 0vw; width: 16vw; height: 1px; position: relative;">
+                </span>
+               <span id="preorder" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 3.6vw; margin-left: 3.4vw; cursor: pointer; font-size: 0.8vw; color: rgb(179,179,179);">
+                    <img src="img/page5/Pre%20Order.png" style="position: absolute; width: 10vw;  margin-top: 0vw; margin-left: 0vw; color: rgb(179,179,179);">PRE-ORDER ENQUIRY
+                </span>
+            </div>
+            
         </div>
         </div>
 
@@ -1083,6 +1117,9 @@
             tick = $(this).attr("id");
             if(tick == "tick1")
             {
+                $("#tick1").addClass("shadetickActive");
+                $("#tick2").removeClass("shadetickActive");
+                $("#tick3").removeClass("shadetickActive");
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Active.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
@@ -1091,10 +1128,14 @@
                 $("#tick3").css({'pointer-events': 'auto'});
                 $("#tick1text").css({'opacity': 1});
                 $("#tick2text").css({'opacity': 0});
-                $("#tick3text").css({'opacity': 0});
+                $("#edition1").addClass('shadeticktextActive');
+                $("#edition2").removeClass('shadeticktextActive');
             }
             else if(tick == "tick2")
             {
+                $("#tick2").addClass("shadetickActive");
+                $("#tick1").removeClass("shadetickActive");
+                $("#tick3").removeClass("shadetickActive");
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Active.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
@@ -1103,9 +1144,14 @@
                 $("#tick3").css({'pointer-events': 'auto'});
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "1");
+                $("#edition1").addClass('shadeticktextActive');
+                $("#edition2").removeClass('shadeticktextActive');
             }
             else if(tick == "tick3")
             {
+                $("#tick3").addClass("shadetickActive");
+                $("#tick2").removeClass("shadetickActive");
+                $("#tick1").removeClass("shadetickActive");
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Active.png'});
@@ -1114,6 +1160,8 @@
                 $("#tick3").css({'pointer-events': 'none'});
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "0");
+                $("#edition2").addClass('shadeticktextActive');
+                $("#edition1").removeClass('shadeticktextActive');
             }
             $(".imageslider").removeClass("sliderAnimateHide");
             $(".imageslider").removeClass("sliderResetLeft");
@@ -1138,8 +1186,40 @@
             setTimeout(function() {
                 $(".imageslider").addClass("sliderAnimatedShow");
             }, 520);
-            
         });
+        
+            
+        var modal = document.getElementById('myModal1');
+        var btn = document.getElementById("preorder");
+        var span = document.getElementsByClassName("cross")[0];
+        var outside = document.getElementById("outsideModal");
+        btn.onclick = function() {
+            $(".preorderShade").attr("src", $(".shadetickActive").attr("src"));
+            $(".preorderText").text($(".shadeticktextActive").text());
+            if($(".shade"))
+            modal.style.display = "block";
+            $('#outsideModal').css("z-index", "1");
+            $('#outsideModal').css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.7}, 500);
+            $.fn.fullpage.setMouseWheelScrolling(false);
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+            $('#outsideModal').css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal').css("z-index", "-2");
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+        }
+        
+        outside.onclick = function() {
+            modal.style.display = "none";
+            $('#outsideModal').css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal').css("z-index", "-2");
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+        }
+        
         </script>
         <script src="js/main.js"></script>
     </body>
