@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="src/css/animate.css">
     <link rel="stylesheet" href="src/css/main.css">
     <meta name="theme-color" content="#F9F9F9">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
     <style>
         @font-face {
             font-family: 'Nexa';
@@ -23,6 +25,7 @@
             font-family: 'GothamLight';
             src: url("src/font/Gotham-Light.otf");
         }
+        
         .prodlogo {
             margin-left: 35px !important;
             margin-right: 40px !important;
@@ -31,40 +34,63 @@
             animation-fill-mode: none;
             transition: transform 1s;
         }
+        
         .prodlogo:hover {
             position: relative;
             -ms-transform: translate(0px,-6px);
             -webkit-transform: translate(0px,-6px);
             transform: translate(0px,-6px); 
         }
+        
+        .prodmenuimg {
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 60px;
+            width: 145px;
+        }
+
         html, body {
             height: 100%;
         }
-
-        div, p, span, a {
-            transition-property: visibility;
-            transition-duration: 1s;
-            animation: fadein 2s;
+        
+        body {
+            animation-delay: 2s;
         }
         
         p {
             margin-top: 1.25vw !important;
             margin-bottom: 1.25vw !important;
         }
+        
+        input, select {
+            outline: none;
+        }
+        
+        .secp {
+            font-family: GothamLight;
+            color: rgb(51,51,51);
+            font-size: 0.77vw;
+            margin-right: 2.4vw;
+            letter-spacing: 0.05vw;
+            -webkit-font-smoothing: antialiased;
+            -webkit-justify-content: center;
+            text-align: -webkit-left;
+            padding-left: 5.6vw;
+            line-height: 1.29vw;
+            margin-bottom: -0.79vw !important;
+        }
+        
         .hidden {
             visibility: hidden;
         }
         
-        img {
-            width: 100%;
-            height: 100%;
-            padding: 0 !important;
-            margin: 0 !important;
+        #menudot2 {
+            margin-right: 2.57vw;
         }
-        
+
         #menufillin input {         
-            margin-bottom: 0.4vw;
-            width: 17.7ßvw;
+            margin-bottom: 0.6vw;
+            width: 17.5vw;
             height: 0.84vw;
             border: none;
             background-color: rgb(229,229,229);
@@ -75,12 +101,29 @@
             margin-left: 2vw;
         }
         
-        .menudot01 {
-	        font-size: 0.9vw;
-	        margin-top: -0.19vw !important;
-            color: rgb(51,51,51) !important;
-            text-shadow: 0.001vw 0.001vw 0.001vw #000;
-	    }
+        .dots {
+            padding: o !important;
+            text-align: center;
+        }
+        
+        .singledot {
+            margin-top: 1.25vw !important;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            height: 0;
+        }
+        
+        .singledot:hover {
+            text-decoration: none;
+        }
+        
+        .menudot2:hover {
+            color: black !important;
+        }
+        
+        .menudot02:hover {
+            color: black !important;
+        }
         
         .vertical-center {
             min-height: 100%;
@@ -103,6 +146,26 @@
             justify-content: center;
         }
 
+        .rightv-center {
+            min-height: 50%;
+            min-height: 50vh;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
         .overlay {
             height: 100%;
             width: 0;
@@ -122,9 +185,8 @@
             font-family: GothamBook;
         }
 
-        .overlay a {
+        .overlay a:not(#noemail) {
             padding: 8px;
-            padding-right: 20px;
             text-decoration: none;
             font-size: 36px;
             color: #818181;
@@ -133,15 +195,15 @@
             font-family: GothamBook;
         }
         
+        a:hover {
+            text-decoration: none !important;
+        }
+
         .overlay p, h6 {
             letter-spacing: 0.04vw;
             color: rgb(102,102,102);
             font-family: GothamBook;
             -webkit-font-smoothing: antialiased;
-        }
-            
-        .overlay a:hover, .overlay a:focus {
-            color: #000;
         }
 
         .overlay .closebtn {
@@ -149,6 +211,7 @@
             top: -10px;
             font-size: 40px;
         }
+
         .menubar {
             width:100%;
         }
@@ -166,6 +229,11 @@
         
         .overlayhover:hover .overlaymenu {
             opacity: 1;
+        }
+        
+        .overlayhover:hover p {
+            opacity: 0;
+            transition: opacity linear .2s;
         }
         
         .overlaymenu {
@@ -201,23 +269,42 @@
             -webkit-appearance: none;
         }
         
-        .menudot1 {
+        .menudot01 {
             font-size: 0.9vw;
-            margin-top: -0.15vw !important;
+            margin-top: -0.19vw !important;
             color: rgb(51,51,51) !important;
-            text-shadow: 0.001vw 0.001vw 0.001vw #000;
+            text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
+        }
+        
+        .menudot02 {
+            font-size: 0.86vw;
+            margin-top: -0.15vw !important;
+            color: rgb(209,209,209) !important;
+            transition: color linear .2s;
+        }
+        
+        .menudot1 {
+            font-size: 0.86vw;
+            color: rgb(51,51,51) !important;
+            text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
+            transition: color linear .4s;
+            cursor: default;
         }
         
         .menudot2 {
             font-size: 0.86vw;
-            margin-top: -0.2vw !important;
-            color: rgb(209,209,209) !important;
+            color: rgb(172,172,172) !important;
+            transition: color linear .2s;
+        }
+        
+        .linetext {
+            transition: opacity 1s ease;
         }
         
         input[type='radio'] {
             -webkit-appearance:none;
-            width:8px;
-            height:8px;
+            width:0.6vw;
+            height:0.6vw;
             border:0.04vw solid #aaa9a93b;
             border-radius:50%;
             outline:none;
@@ -253,33 +340,6 @@
             
         }
 
-        @media screen and (max-height: 450px) {
-            .overlay a {
-                font-size: 20px
-            }
-            
-            .overlay .closebtn {
-                font-size: 40px;
-                top: 15px;
-                right: 35px;
-            }
-            
-        }
-        @media screen and (max-width: 450px){
-            .overlay-content {
-                position: relative;
-                top: 5%;
-                width: 100%;
-                margin: 0px;
-                text-align: center;
-                font-family: GothamBook;
-            }
-            .textspan {
-                margin-bottom: 0px;
-                margin-top: 0px;
-            }
-        }
-
     </style>
 
 </head>
@@ -293,29 +353,32 @@
             <span class="menu-global menu-bottom"></span>
         </div>
         
-        <div id="myNav" class="overlay" style="width:78%;margin-left:-78%;">
+        <div id="myNav" class="overlay" style="width:78%; margin-left:-80%; box-shadow: 0 0 1vw rgb(125,125,125,0.23);">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
-                <span class="menutextspan" style="position: relative;">
-                    <a id="menu1" class="menufirst" style="font-family: GothamLight; float:left; text-align: -webkit-left; font-size: 0.75vw; padding-left: 0px !important; letter-spacing: 0.11vw; color: rgb(0,0,0); width:50%; margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 1.94vw;">&#9679;</p></a>
-                    <a id="menu2" class="menufirst" style="font-family: GothamLight; float:right; text-align: -webkit-right; font-size: 0.75vw; padding-right: 0.14vw !important; letter-spacing: 0.11vw; color: rgb(0,0,0); width:50%; margin-top:-72% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot2" style="margin-right: 2.3vw;">&#9679;</p></a>
+                <span class="menutextspan" style="position: relative; margin-left: 7.7vw; margin-right: 3vw;">
+                    <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: -webkit-left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
+                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: -webkit-right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot02">&#9679;</p></a>
+                    <div>
+                    <p style="font-family: GothamLight; float:right; text-align: -webkit-right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" selected value><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA"><u>USA</u><option value="UAE">UAE</option></select>
+                    </p>
+                        </div>
                     <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
                     <h6 class="menusp1" style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
-                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, great businesses that shape the world are built here. Yet, it remains a simple surface.</p>
+                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, businesses that shape the world are built here. Yet, it remains a simple surface.</p>
                     <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
                 
-                <span class="menutextspan menusp21 hidden" style="position: absolute; left:2vw; height: 26vw;  top::16vw;">
-                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.68vw; margin-top: -0.56vw !important; line-height: 1.4vw;">EMAIL US <span style="position: absolute; margin-top: 0.3vw; margin-left: 0.6vw; border-bottom: 0.01vw outset; line-height: 1.1; letter-spacing: 0.02vw">support@charcoaltech.com</span><br>
-                        Change Country <select class="menuselect" style="margin-left: 0.6vw;background-color: unset;border: 0;color: rgb(102, 100, 100);letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="India"><u>India</u></option><option value="UAE">UAE</option></select>
+                <span class="menutextspan menusp21 hidden" style="position: absolute; left: 3vw; height: 26vw;">
+                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: -0.34vw !important; line-height: 1.3vw;">EMAIL US <span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 0.2vw; margin-left: 0.6vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
-                    <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.68vw; margin-top: 2.8vw !important;">ORDER A CATALOGUE
+                    <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 2.2vw !important;">ORDER A CATALOGUE
                     </p>
-                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">
-                        <input type="radio" name="gender" value="male"> <label>Ms</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gender" value="female"> <label>Mr</label>
+                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.5vw !important">
+                        <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.</label>
                     </p>
-                    <p id="menufillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: -0.8vw !important; margin-bottom: 1.4vw !important">
+                    <p id="menufillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1vw; margin-top: -0.64vw !important; margin-bottom: 0.4vw !important">
                     Name<br>
                     <input type="text" class="name " id="name"><br>
                     Street Address<br>
@@ -330,20 +393,18 @@
                     <input type="text" class="email" id="email"><br>
                     Telephone<br>
                     <input type="text" class="tel" id="tel"><br>
-                    </p>
-                    <p class="menusp21" style="margin-top:0 !important;">
-                        <a href="#" style="padding: 0; display: unset; font-size: 0;">
-                        <img class="menuimage" src="img/Order%20now.png" style="width: 6vw; height: 1.29vw;">
-                        </a>
+                    <a href="#" style="padding: 0; display: unset; font-size: 0;">
+                        <img class="menuimage" src="src/img/Order%20now.png" style="width: 5.6vw; height: 1.1vw; margin-top: 1.34vw;">
+                    </a>
                     </p>
                 </span>
                 
-                <a class="overlayhover menusp2" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
-                    <div class="menusp2" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Inactive.png');">
+                <a class="overlayhover menusp2" style="top: -0.45vw; padding: 0 !important; position: relative;" href="executive-desks/volant/index.html">
+                    <div class="menusp2 menusp2et" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity:0.85; background-size: cover; background-image: url('src/img/Volant%20Inactive.png');">
                     </div>
-                    <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">VOLANT.</p>
+                    <p class="menusp2" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">VOLANT.</p>
                     <div class="overlaymenu">
-                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Active.png');">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/Volant%20Active.png');">
                         </div>
                     </div>
                 </a>
@@ -351,28 +412,33 @@
                 <span class="menusp3" style="width: 2.67vw; flex: none;">
                 </span>
                 
-                <a class="overlayhover menusp4" style="top: -0.7vw; padding: 0 !important; position: relative; opacity: 0.9;" href="#">
-                    <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Nautic%20Inactive.png');">
+                <a class="overlayhover menusp4" style="top: -0.45vw; padding: 0 !important; position: relative;" href="executive-desks/nspace/index.html">
+                    <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity: 0.85; background-size: cover; background-image: url('src/img/N%20Space%20Inactive.png');">
                     </div>
-                    <p class="menusp2" style="color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw;vmargin: 0 !important; margin-bottom: 8% !important; margin-top: -14% !important;">NAUTIC.</p>
+                    <p class="menusp2 menusp2et" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">n.SPACE</p>
                     <div class="overlaymenu">
-                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Nautic%20Active.png');">
+                        <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('src/img/N%20Space%20Active.png');">
                         </div>
                     </div>
                 </a>
                 
                 <div class="menusp22 hidden" style="position: absolute; z-index: -2;">
-                    <div class="menusp22" style="max-width: 100%; width: 37vw; height: 25vw; padding:0; margin:0; margin-top: 9vw; margin-left: 26vw; background-size: cover; background-image: url('img/Catalogue.png');">
+                    <div class="menusp22" style="max-width: 100%; width: 37.5vw; height: 25.5vw; 
+    box-shadow: 0.3vw 0.2vw 0.4vw #80808040, -0.07vw -0.035vw 0.29vw #80808040; padding:0, 0.3vw 0.2vw 0.4vw #80808040; padding:0; margin: 6.2vw 0px 0px 23.6vw; background-size: cover; background-image: url('src/img/Catalogue.jpg');">
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
-    <div style="text-align:center; z-index: 2;" class="header-top clearfix">
+    <div style="text-align:center;" class="header-top clearfix">
         <span>
             <img src="src/img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
         </span>
+    </div>
+    <div style="text-align:center; z-index: 5; width: 10%; left: 45%;" class="header-top clearfix">
+        <a href="#" id="logospan" >
+            <img id="logoMask" style=" width: 9.44vw; opacity: 0;" />
+        </a>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%; z-index: -10"></div>
 
@@ -383,67 +449,76 @@
             <a href="executive-desks/nspace/index.html"><img class="prodlogo animated floatBubble" style="-webkit-animation-duration: 1s;" src="src/img/N%20Space%20Art%20Icon.png" /></a>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="jquery.easing.1.3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script>
+            $('.singledot').click(function() {
+                makeInactive();
+                val1 = $(this).children('p').attr('id');
+                makeActive();
+            })
+            function makeActive() {
+                $('#' + val1).removeClass("menudot2");
+                $('#' + val1).addClass("menudot1");
+            }
+            function makeInactive() {
+                $('#' + val1).removeClass("menudot1");
+                $('#' + val1).addClass("menudot2");
+            }
+            
         function openCloseNav() {
-            if(document.getElementById("myNav").style.marginLeft == "-78%")
+            if(document.getElementById("myNav").style.marginLeft == "-80%")
             {
-                $('#main').css("opacity", "1.0").animate({opacity: 0}, 400, function(){
-                    $('#main').css("visibility", "hidden");
-                })
+                $('#main, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
                 document.getElementById("myNav").style.marginLeft = "0%";
+                $('#outsidediv').css("z-index", "1");
             }
             else
             {
-                $('#main').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
-                document.getElementById("myNav").style.marginLeft = "0%";
-                document.getElementById("myNav").style.marginLeft = "-78%";
+                $('#main, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                document.getElementById("myNav").style.marginLeft = "-80%";
+                $('#outsidediv').css("z-index", "-1");
             }
         }
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
-                $('#fullpage, #topmenu').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
-                document.getElementById("myNav").style.marginLeft = "-78%";
+                $('#main, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                document.getElementById("myNav").style.marginLeft = "-80%";
+                $('#outsidediv').css("z-index", "-1");
             }
         });
         $("#menu1").click(function() {
-            $("#menudot1").removeClass("menudot2")
+            $("#menudot1").removeClass("menudot02")
             $("#menudot1").addClass("menudot01")
             $("#menudot2").removeClass("menudot01")
-            $("#menudot2").addClass("menudot2")
+            $("#menudot2").addClass("menudot02")
         });
         $("#menu2").click(function() {
-            $("#menudot2").removeClass("menudot2")
+            $("#menudot2").removeClass("menudot02")
             $("#menudot2").addClass("menudot01")
             $("#menudot1").removeClass("menudot01")
-            $("#menudot1").addClass("menudot2")
+            $("#menudot1").addClass("menudot02")
         });
         $("#menu1").click(function(){
             $('.menuimage, .menusp21, .menusp22').css("opacity", "1.0").animate({opacity: 0}, 200, function(){
                 $('.menuimage, .menusp21, .menusp22').css("visibility", "hidden");
-            })
+            });
+            
             $('.menusp1, .menusp2, .menusp3, .menusp4').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 200);
+            $('.menusp2et').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 0.85}, 1);
         });
         $("#menu2").click(function(){
             $('.menusp1, .menusp2, .menusp3, .menusp4').css("opacity", "1.0").animate({opacity: 0}, 400, function(){
                 $('.menusp1, .menusp2, .menusp3, .menusp4').css("visibility", "hidden");
-            })
+            });
+            $('.menusp2et').css("opacity", "0.85").animate({opacity: 0}, 1, function(){
+                $('.menusp2').css("visibility", "hidden");
+            });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
         });
     </script>
     <script src="src/js/main.js"></script>
-    <!--
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXX-X', 'auto');
-      ga('send', 'pageview');
-    </script>
-    -->
 </body>
 </html>
