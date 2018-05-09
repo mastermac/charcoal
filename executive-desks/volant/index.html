@@ -881,9 +881,9 @@
                 </span>
                 <span>
                     <img id="tick1" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.1vw; left: 38vw; cursor: pointer; pointer-events: none;" src="img/page5/Customisation%20Icon%20Salt%20Active.png"/>
-                    <p id="tick1text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.7vw; left: 38vw; cursor: pointer; color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw;">SALT</p>
+                    <p id="tick1text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.7vw; left: 38vw;  color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw;">SALT</p>
                     <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.1vw; left: 40.15vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Inactive.png"/>
-                    <p id="tick2text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.7vw; left: 39.3vw; cursor: pointer; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.085vw;">GRAPHITE</p>
+                    <p id="tick2text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.7vw; left: 39.3vw; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.085vw;">GRAPHITE</p>
                 </span>
                 <span id="edition2" style="position: absolute; top: 12.3vw; left: 44.38vw; color: rgb(0, 0, 0 ,0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw;">
                     concrete
@@ -895,7 +895,7 @@
             <div style="text-align: center; position: relative;">
                 <span style="position: absolute; color: rgb(0, 0, 0, 0.9); top: 12.22vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight;" class="price">AED 15,500</span>
                 
-                <span id="specs" style="position: absolute; color: rgb(30,30,30); top: 9.48vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
+                <span id="specs" style="position: absolute; color: rgb(30,30,30); top: 9.48vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw; cursor: pointer;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
                 
                 <span id="preorder" style="position: absolute; color: rgb(0,0,0,0.7); top: 18.44vw; left: 43.91vw; text-shadow: none; font-size: 0.8vw; letter-spacing: 0.19vw; font-family: GothamBook; font-weight: lighter; cursor: pointer;"><img src="img/page5/Pre%20Order.png" style="width: 13.7vw; position: absolute; top: -0.39vw; left: -0.85vw; color: rgb(77,77,77,0.7);">PRE-ORDER ENQUIRY</span>
             </div>
@@ -924,6 +924,11 @@
                <span id="preorder" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 3.6vw; margin-left: 3.4vw; cursor: pointer; font-size: 0.8vw; color: rgb(179,179,179);">
                     <img src="img/page5/Pre%20Order.png" style="position: absolute; width: 10vw;  margin-top: 0vw; margin-left: 0vw; color: rgb(179,179,179);">PRE-ORDER ENQUIRY
                 </span>
+            </div>
+            
+            <div id="myModal2" class="modal" style="display: none; position: absolute; z-index: 8; left: 25%; top: 20%; width: 50%; height: 36vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
+                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 45.4vw; width: 1vw; cursor: pointer;" src="img/page5/Cross.png">
+                <img class="preorderShade" style="width: 40vw;" src="img/page5/specification.png"/>
             </div>
             
         </div>
@@ -1190,14 +1195,23 @@
         
             
         var modal = document.getElementById('myModal1');
+        var modal2 = document.getElementById('myModal2');
         var btn = document.getElementById("preorder");
+        var btn2 = document.getElementById("specs");
         var span = document.getElementsByClassName("cross")[0];
         var outside = document.getElementById("outsideModal");
         btn.onclick = function() {
             $(".preorderShade").attr("src", $(".shadetickActive").attr("src"));
             $(".preorderText").text($(".shadeticktextActive").text());
-            if($(".shade"))
             modal.style.display = "block";
+            $('#outsideModal').css("z-index", "1");
+            $('#outsideModal').css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.7}, 500);
+            $.fn.fullpage.setMouseWheelScrolling(false);
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+        
+        btn2.onclick = function() {
+            modal2.style.display = "block";
             $('#outsideModal').css("z-index", "1");
             $('#outsideModal').css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.7}, 500);
             $.fn.fullpage.setMouseWheelScrolling(false);
@@ -1206,6 +1220,7 @@
 
         span.onclick = function() {
             modal.style.display = "none";
+            modal2.style.display = "none";
             $('#outsideModal').css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
             $('#outsideModal').css("z-index", "-2");
             $.fn.fullpage.setMouseWheelScrolling(true);
@@ -1214,6 +1229,7 @@
         
         outside.onclick = function() {
             modal.style.display = "none";
+            modal2.style.display = "none";
             $('#outsideModal').css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
             $('#outsideModal').css("z-index", "-2");
             $.fn.fullpage.setMouseWheelScrolling(true);
