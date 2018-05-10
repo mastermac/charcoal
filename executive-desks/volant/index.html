@@ -899,7 +899,7 @@
             </div>
             
             <!-- The Modal -->
-            <div id="myModal1" class="modal" style="display: none; position: absolute; z-index: 8; left: 36.5%; top: 18.8%; width: 27%; height: 36.45vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
+            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -16.8vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
                 <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 14vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
                 <span id="menufillin" class="menusp21" style="float: left; margin-left: 0.74vw; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased;">
                     Name<br>
@@ -924,8 +924,9 @@
                 </span>
             </div>
             
-            <div id="myModal2" class="modal" style="display: none; position: absolute; z-index: 8; left: 25%; top: 20%; width: 50%; height: 36vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
-                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 45.4vw; width: 1vw; cursor: pointer;" src="img/page5/Cross.png">
+            <div id="myModal2" style="display: none; position: absolute; z-index: 8; margin-left: 25vw; margin-top: -20vw; width: 50vw; height: 36vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
+                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 46.4vw; width: 1vw; cursor: pointer;" src="img/page5/Cross.png">
+                <img src="img/page5/specification.png" style="margin-top: -1vw; margin-left: -1vw; width: 44vw; height: 24vw; position: relative;">
             </div>
             
         </div>
@@ -1195,7 +1196,8 @@
         var modal2 = document.getElementById('myModal2');
         var btn = document.getElementById("preorder");
         var btn2 = document.getElementById("specs");
-        var span = document.getElementsByClassName("cross")[0];
+        var span1 = document.getElementsByClassName("cross")[0];
+        var span2 = document.getElementsByClassName("cross")[1];
         var outside = document.getElementById("outsideModal");
         btn.onclick = function() {
             $(".preorderShade").attr("src", $(".shadetickActive").attr("src"));
@@ -1219,8 +1221,17 @@
             $.fn.fullpage.setAllowScrolling(false);
         }
 
-        span.onclick = function() {
+        span1.onclick = function() {
             modal.style.display = "none";
+            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal').css("z-index", "-2");
+            $('.header-top').css({opacity: 1});
+            $('.header-top').css({'pointer-events': 'auto'});
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+        }
+        
+        span2.onclick = function() {
             modal2.style.display = "none";
             $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 0.7}).animate({'background-color': 'white', opacity: 1}, 500);
             $('#outsideModal').css("z-index", "-2");
