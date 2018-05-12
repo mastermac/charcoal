@@ -55,13 +55,21 @@
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
-                    if(nextIndex == 4) {
+                    if(nextIndex == 4 && (index==1 || index==2 || index==3)) {
                         makeInactive();
                         val1 = 3;
                         makeActive();
-                        $(".menudot1").attr("style","color: rgb(153,153,153) !important");
+                        $(".menudot1").attr("style","color: rgb(230,230,230) !important");
                         $(".menudot1").css("opacity","0.9");
-                        $(".menudot2").attr("style","color: rgb(71,71,71) !important");
+                        $(".menudot2").attr("style","color: rgb(153,153,153) !important");
+                        $(".dark").fadeOut(400, function() {
+                            $('.dark').css('color', 'rgb(153,153,153)');
+                            $(".dark").css("opacity","0.9");
+                        }.bind(this)).fadeIn(160);
+                        
+                        $(".menu-global").fadeOut(400, function() {
+                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
+                        }.bind(this)).fadeIn(160);
                     }
                     
                     if(nextIndex == 5) {
@@ -72,32 +80,6 @@
                         $(".menudot2").attr("style","color: rgb(172,172,172) !important");
                     }
                     
-                    if((nextIndex == 4)  && (index == 1 || index == 2 || index == 3 || index == 5)) {
-                        $(".dark").fadeOut(600, function() {
-                            $('.dark').css('color', 'rgb(153,153,153)');
-                            $(".dark").css("opacity","0.9");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $(".menu-global").fadeOut(100, function() {
-                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(153,153,153)');
-                        }.bind(this)).fadeIn(500);
-                        
-                        $("#logo").fadeOut(600, function() {
-                            $("#logo").attr("src","img/Logo Dark.png");
-                            $("#logo").css("opacity","0.9");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $("#iconlink1").fadeOut(600, function() {
-                            $("#iconlink1").attr("src","img/Volant Icon dark.png");
-                            $("#iconlink1").css("opacity","0.3");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $("#iconlink2").fadeOut(600, function() {
-                            $("#iconlink2").attr("src","img/N Space Icon dark.png");
-                            $("#iconlink2").css("opacity","0.15");
-                        }.bind(this)).fadeIn(500);
-                    }
-                    
                     if(index == 3 && (nextIndex==1 || nextIndex==2 || nextIndex==4)) {
                         if($('img').hasClass('iconAnimated'))
                         {
@@ -106,46 +88,43 @@
                         }
                     }
                     
-                    if((index == 4) && (nextIndex==1 || nextIndex==2 || nextIndex==3 || nextIndex==5)) {
-                        $('body').css('background-color', 'rgb(250,250,250)');
-                        $(".dark").fadeOut(100, function() {
+                    if((index == 4) && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
+                        $(".dark").fadeOut(10, function() {
                             $('.dark').css('color', 'black');
-                            $(".dark").css("opacity","1");
-                        }.bind(this)).fadeIn(100);
+                            $(".dark").css("opacity", "1");
+                        }.bind(this)).fadeIn(10);
                         
-                        $("#logo").fadeOut(100, function() {
-                            $("#logo").attr("src","img/Logo.png");
-                            $("#logo").css("opacity","1");
-                        }.bind(this)).fadeIn(100);
-                        
-                        $("#iconlink1").fadeOut(100, function() {
-                            $("#iconlink1").attr("src","img/Volant_link.png");
-                            $("#iconlink1").css("opacity","0.94");
-                        }.bind(this)).fadeIn(100);
-                        
-                        $("#iconlink2").fadeOut(100, function() {
-                            $("#iconlink2").attr("src","img/N Space_link.png");
-                            $("#iconlink2").css("opacity","0.40");
-                        }.bind(this)).fadeIn(100);
-                        
-                        $(".menudot1").fadeOut(100, function() {
-                            $(".menudot1").attr("style","color: rgb(51,51,51) !important");
-                            $(".menudot1").css("opacity","1");
-                        }.bind(this)).fadeIn(1000);
-                        
-                        $(".menudot2").fadeOut(100, function() {
-                            $(".menudot2").attr("style","color: rgb(209,209,209) !important");
-                        }.bind(this)).fadeIn(1000);
-                        
-                        $(".menu-global").fadeOut(100, function() {
+                        $(".menu-global").fadeOut(10, function() {
                             $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
-                        }.bind(this)).fadeIn(1000);
+                        }.bind(this)).fadeIn(10);
                     }
                     
                     if(index == 4 && nextIndex == 5) {
-                        $(".menudot2").fadeOut(100, function() {
-                            $(".menudot2").attr("style","color: rgb(172,172,172) !important");
-                        }.bind(this)).fadeIn(1000);
+                        $(".dark").fadeOut(400, function() {
+                            $('.dark').css('color', 'black');
+                            $(".dark").css("opacity", "1");
+                        }.bind(this)).fadeIn(160);
+                        
+                        $(".menu-global").fadeOut(400, function() {
+                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
+                        }.bind(this)).fadeIn(160);
+                    }
+                    
+                    if(index == 5 && nextIndex == 4) {
+                        makeInactive();
+                        val1 = 3;
+                        makeActive();
+                        $(".menudot1").attr("style","color: rgb(230,230,230) !important");
+                        $(".menudot1").css("opacity","0.9");
+                        $(".menudot2").attr("style","color: rgb(153,153,153) !important");
+                        $(".dark").fadeOut(10, function() {
+                            $('.dark').css('color', 'rgb(153,153,153)');
+                            $(".dark").css("opacity","0.9");
+                        }.bind(this)).fadeIn(10);
+                        
+                        $(".menu-global").fadeOut(10, function() {
+                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
+                        }.bind(this)).fadeIn(10);
                     }
                 },
                 
@@ -224,6 +203,7 @@
         }
         
         .secp {
+            text-align: left;
             font-family: GothamLight;
             color: rgb(95,95,95);
             font-size: 0.77vw;
@@ -521,10 +501,10 @@
         #pulse01 {
             position: absolute;
             display: inline-block;
-            color: rgb(140,140,140,0.4);
+            color: rgb(230, 230, 230);
             font-size: 0.86vw;
             text-shadow: none;
-            margin-left: 17.4%;
+            margin-left: 3.2%;
             margin-top: -1.2%;
             animation: burst 1.7s infinite;
         }
@@ -532,9 +512,9 @@
         #pulse02 {
             position: absolute;
             font-size: 0.86vw;
-            color: rgb(140,140,140,0.4);
+            color: rgb(230, 230, 230);
             text-shadow: none;
-            margin-left: 22.7%;
+            margin-left: 9.8%;
             animation: burst 1.7s infinite;
         }
         
@@ -548,88 +528,88 @@
         
         @keyframes burst {
             0% {
-                -webkit-text-stroke-color: rgba(135,135,135,1);
+                -webkit-text-stroke-color: rgb(230, 230, 230, 1);
                 -webkit-text-stroke-width: 0.02vw;
             }
             
             5% {
                 -webkit-text-stroke-width: 0.07vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.95);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.95);
             }
             
             10% {
                 -webkit-text-stroke-width: 0.12vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.9);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.9);
             }
             
             15% {
                 -webkit-text-stroke-width: 0.16vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.85);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.85);
             }
             
             20% {
                 -webkit-text-stroke-width: 0.21vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.8);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.8);
             }
             
             25% {
                 -webkit-text-stroke-width: 0.25vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.75);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.75);
             }
             
             30% {
                 -webkit-text-stroke-width: 0.3vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.7);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.7);
             }
             
             35% {
                 -webkit-text-stroke-width: 0.35vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.65);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.65);
             }
             
             40% {
                 -webkit-text-stroke-width: 0.4vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.6);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.6);
             }
             
             45% {
                 -webkit-text-stroke-width: 0.45vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.5);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.5);
             }
             
             50% {
                 -webkit-text-stroke-width: 0.5vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.4);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.4);
             }
             
             55% {
                 -webkit-text-stroke-width: 0.55vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.3);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.3);
             }
             
             60% {
                 -webkit-text-stroke-width: 0.6vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.2);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.2);
             }
             
             70% {
                 -webkit-text-stroke-width: 0.7vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.1);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.1);
             }
             
             75% {
                 -webkit-text-stroke-width: 0.8vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0.05);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0.05);
             }
             
             80% {
                 -webkit-text-stroke-width: 0.9vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0);
             }
 
             100% {
                 -webkit-text-stroke-width: 0.9vw;
-                -webkit-text-stroke-color: rgba(135,135,135,0);
+                -webkit-text-stroke-color: rgba(230, 230, 230, 0);
             }
         }
     </style>
@@ -646,21 +626,21 @@
         
         <div id="myNav" class="overlay" style="width:78%; margin-left:-80%; box-shadow: 0 0 1vw rgb(125,125,125,0.23);">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
-                <span class="menutextspan" style="position: relative; margin-left: 7.7vw; margin-right: 3vw;">
-                    <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: -webkit-left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
-                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: -webkit-right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot02">&#9679;</p></a>
+                <span class="menutextspan" style="position: relative; text-align: left; margin-left: 7.7vw; margin-right: 3vw;">
+                    <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
+                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot02">&#9679;</p></a>
                     <div>
-                    <p style="font-family: GothamLight; float:right; text-align: -webkit-right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" selected value><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA"><u>USA</u><option value="UAE">UAE</option></select>
+                    <p style="font-family: GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" selected value><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA"><u>USA</u><option value="UAE">UAE</option></select>
                     </p>
                         </div>
                     <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
                     <h6 class="menusp1" style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
-                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, businesses that shape the world are built here. Yet, it remains a simple surface.</p>
+                    <p class="menusp1" style="text-align: left; font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, businesses that shape the world are built here. Yet, it remains a simple surface.</p>
                     <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
                 
-                <span class="menutextspan menusp21 hidden" style="position: absolute; left: 3vw; height: 26vw;">
+                <span class="menutextspan menusp21 hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
                     <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: -0.34vw !important; line-height: 1.3vw;">EMAIL US <span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 0.2vw; margin-left: 0.6vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
                     <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 2.2vw !important;">ORDER A CATALOGUE
@@ -808,10 +788,10 @@
                 <h2 style="font-family: GothamBook; font-size: 0.86vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.07vw;">
                     A story of extraordinary engineering,
                 </h2>
-                <p class="secp" style="line-height: 1.3vw; margin-top: 1.1vw !important;">
+                <p class="secp" style="line-height: 1.3vw; margin-top: 1.1vw !important; color: rgb(51,51,51);">
                     For Volant to exist as it does, our engineers and designers had to create a light-weight frame strong enough to withstand an incredible 2,500 N-m of torque and yet ensure that Volant remains aesthetically stunning.
                 </p>
-                <p class="secp" style="line-height: 1.3vw; margin-top:1.4vw !important;">
+                <p class="secp" style="line-height: 1.3vw; margin-top:1.4vw !important; color: rgb(51,51,51);">
                     Drawing lessons from the cutting edge in aeronautics and automobile engineering, that's exactly what they did.
                 </p>
             </span>
@@ -838,27 +818,27 @@
                 </p>
             </span>
         </div>
-        <div class="section" id="section3"style="background-color: rgb(24,24,22);">
-            <span class="left" style="float: left; right: 0; width: 77%; height: 100%; background-image: url('img/Volant04.jpg'); background-size: cover; background-position: 90%;">
-                <span id="pg5ShadeText" style="position: absolute; margin-left: 4vw; margin-top: -0.21vw; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; -webkit-font-smoothing: antialiased;">
+        <div class="section" id="section3">
+            <span class="left" style="position: absolute; float: left; left: 0; top: 0; width: 77%; height: 100%; background-image: url(img/Volant04.jpg); background-size: cover; background-position: 80%;">
+                <span id="pg5ShadeText" style="position: absolute; margin-left: -5.4vw; margin-top: 0vw; color: rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; -webkit-font-smoothing: antialiased;">
                     CONCRETE EDITION
                 </span>
-                <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: 1.72vw; margin-top: -0.74vw;" src="img/volant_graphite_shade.png"/>
+                <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: -7.72vw; margin-top: -0.44vw;" src="img/volant_graphite_shade.png"/>
             </span>
             <span id="pulse01">&#9679;</span>
-            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 10.3%; margin-top: -0.83%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
+            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: -3.9%; margin-top: -0.83%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
             <span id="pulse02">&#9679;</span>
-            <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(153,153,153, 0.6); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 24.25%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
+            <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 11.4%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
             
-           <span style="float: left; position: absolute; top: 44.5%; margin-left: -17.1vw; text-shadow: none; font-size: 0.05vw; width: 28%;">
-                <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(165,165,165,0.9); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
+           <span style="float: left; position: absolute; top: 44%; margin-left: 16vw; text-shadow: none; font-size: 0.05vw; width: 32%;">
+                <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(0,0,0,0.9); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
                     The Intelligence<span style="font-family: monospace; font-size: 0.7vw;">.</span>
                 </h2>
-                <p class="secp" style="color: rgb(153, 153, 153); line-height: 1.18vw;">
-                    Volant has been outfitted with a powerful processor, seamlessly combining Charcoal's proprietary software and hardware. Software updates will introduce new features and improve existing functionality, making the product more capable over time.
+                <p class="secp" style="color: rgb(51,51,51); line-height: 1.18vw; letter-spacing: 0.06vw;">
+                    Volant has been outfitted with a powerful processor, seamlessly combining Charcoal's proprietary software and hardware. Software updates will introduce new features and improve existing functionality, making &nbsp; the product more capable over time.
                 </p>
-                <p class="secp" style="color: rgb(153, 153, 153); line-height: 1.18vw; margin-top: 1.1vw !important;">
-                    In the future, Volant will learn how it's used and accordingly remind the user to change positions. The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
+                <p class="secp" style="color: rgb(51,51,51); line-height: 1.18vw; margin-top: 1.1vw !important; letter-spacing: 0.06vw;">
+                    In the future, Volant will learn how it's used and will accordingly remind the user to change positions. &nbsp; &nbsp; The updates will also enable intelligent health-based analytics by syncing with phones and fitbits.
                 </p>
             </span>
             
@@ -963,7 +943,7 @@
                 else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 1.94;
+                    xOffset = (windowWidth - (image.width * scale)) / 2.45;
                 }
                 pointer1.css('top', (target.y) * scale + yOffset);
                 pointer1.css('left', (target.x) * scale + xOffset);
@@ -987,7 +967,7 @@
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 2.12;
+                    xOffset = (windowWidth - (image.width * scale)) / 2.86;
                 }
                 pointer2.css('top', ((target.y) * scale + yOffset) * 1.09);
                 pointer2.css('left', (target.x) * scale + xOffset);
@@ -1015,28 +995,6 @@
                 }
                 pointer3.css('top', ((target.y) * scale + yOffset) * 1.97);
                 pointer3.css('left', (target.x) * scale + xOffset);
-            }
-            
-            var pointer4 = $('#pg5Info');
-            $(document).ready(updatePointer4);
-            $(window).resize(updatePointer4);
-            function updatePointer4() {
-                var windowWidth = $(window).width();
-                var windowHeight = $(window).height();
-                // Get largest dimension increase
-                var xScale = windowWidth / image.width;
-                var yScale = windowHeight / image.height;
-                var yOffset = 0;
-                var xOffset = 0;
-                if (xScale > yScale) {
-                    // The image fits perfectly in x axis, stretched in y
-                    scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 100;
-                } else {
-                    // The image fits perfectly in y axis, stretched in x
-                    scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 50;
-                }
             }
             
             $('.singledot').click(function() {
