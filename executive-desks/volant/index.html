@@ -451,6 +451,8 @@
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
             transition: color linear .4s;
             cursor: default;
+            -webkit-text-stroke-width: 0.02vw;
+            -webkit-text-stroke-color: rgb(51,51,51);
         }
         
         .menudot2 {
@@ -500,11 +502,10 @@
         
         #pulse01 {
             position: absolute;
-            display: inline-block;
             color: rgb(230, 230, 230);
             font-size: 0.86vw;
             text-shadow: none;
-            margin-left: 3.2%;
+            margin-left: 8%;
             margin-top: -1.2%;
             animation: burst 1.7s infinite;
         }
@@ -514,7 +515,16 @@
             font-size: 0.86vw;
             color: rgb(230, 230, 230);
             text-shadow: none;
-            margin-left: 9.8%;
+            margin-left: 15.9%;
+            animation: burst 1.7s infinite;
+        }
+        
+        #pulse03 {
+            position: absolute;
+            font-size: 0.86vw;
+            color: rgb(230, 230, 230);
+            text-shadow: none;
+            margin-left: 7.9%;
             animation: burst 1.7s infinite;
         }
         
@@ -826,9 +836,11 @@
                 <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: -7.72vw; margin-top: -0.44vw;" src="img/volant_graphite_shade.png"/>
             </span>
             <span id="pulse01">&#9679;</span>
-            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: -3.9%; margin-top: -0.83%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
+            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 0.9%; margin-top: -0.73%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
             <span id="pulse02">&#9679;</span>
-            <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 11.4%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
+            <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 17.4%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
+            <span id="pulse03">&#9679;</span>
+            <span id="pulseText03" class="pulseText" style="position: absolute; text-align: left; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 9.4%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">LED INDICATOR -<br>ACTIVITY TRACKER</span>
             
            <span style="float: left; position: absolute; top: 44%; margin-left: 16vw; text-shadow: none; font-size: 0.05vw; width: 32%;">
                 <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(0,0,0,0.9); padding-left: 5.6vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
@@ -943,7 +955,7 @@
                 else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 2.45;
+                    xOffset = (windowWidth - (image.width * scale)) / 1.96;
                 }
                 pointer1.css('top', (target.y) * scale + yOffset);
                 pointer1.css('left', (target.x) * scale + xOffset);
@@ -963,13 +975,13 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 4;
+                    yOffset = (windowHeight - (image.height * scale)) / 1;
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 2.86;
+                    xOffset = (windowWidth - (image.width * scale)) / 2.2;
                 }
-                pointer2.css('top', ((target.y) * scale + yOffset) * 1.09);
+                pointer2.css('top', ((target.y) * scale + yOffset) * 1.07);
                 pointer2.css('left', (target.x) * scale + xOffset);
             }
             
@@ -995,6 +1007,32 @@
                 }
                 pointer3.css('top', ((target.y) * scale + yOffset) * 1.97);
                 pointer3.css('left', (target.x) * scale + xOffset);
+            }
+            
+            var pointer4 = $('#pulse03, #pulseText03');
+            $(document).ready(updatePointer4);
+            $(window).resize(updatePointer4);
+            function updatePointer4() {
+                var windowWidth = $(window).width();
+                var windowHeight = $(window).height();
+                // Get largest dimension increase
+                var xScale = windowWidth / image.width;
+                var yScale = windowHeight / image.height;
+                var scale;
+                var yOffset = 0;
+                var xOffset = 0;
+                if (xScale > yScale) {
+                    // The image fits perfectly in x axis, stretched in y
+                    scale = xScale;
+                    yOffset = (windowHeight - (image.height * scale)) / 4;
+                }
+                else {
+                    // The image fits perfectly in y axis, stretched in x
+                    scale = yScale;
+                    xOffset = (windowWidth - (image.width * scale)) / 1.88;
+                }
+                pointer4.css('top', ((target.y) * scale + yOffset) * 1.35);
+                pointer4.css('left', (target.x) * scale + xOffset);
             }
             
             $('.singledot').click(function() {
