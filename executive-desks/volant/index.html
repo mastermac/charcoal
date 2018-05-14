@@ -505,8 +505,7 @@
             color: rgb(180, 180, 180);
             font-size: 0.86vw;
             text-shadow: none;
-            margin-left: 8%;
-            margin-top: -1.2%;
+            margin-left: 9.6%;
             animation: burst 1.7s infinite;
         }
         
@@ -837,7 +836,7 @@
                 <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: -7.72vw; margin-top: -0.44vw;" src="img/volant_graphite_shade.png"/>
             </span>
             <span id="pulse01">&#9679;</span>
-            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 0.9%; margin-top: -0.8%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
+            <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 2.3%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
             <span id="pulse02">&#9679;</span>
             <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 15.85%; margin-top: 0.54%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
             <span id="pulse03">&#9679;</span>
@@ -958,7 +957,7 @@
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 1.94;
                 }
-                pointer1.css('top', (target.y) * scale + yOffset);
+                pointer1.css('top', ((target.y) * scale + yOffset) * 0.965);
                 pointer1.css('left', (target.x) * scale + xOffset);
             }
             
