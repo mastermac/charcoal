@@ -990,7 +990,7 @@
                 }
                 if((windowWidth/windowHeight)>2)
                 {
-                    pointer2.css('top', ((target.y) * scale + (windowHeight - (image.height * yScale)) * 0.4) * 1.078);
+                    pointer2.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * 0.01) * 1.076);
                     pointer2.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.5)) * 0.89);
                 }
                 else
@@ -1033,7 +1033,6 @@
                 // Get largest dimension increase
                 var xScale = windowWidth / image.width;
                 var yScale = windowHeight / image.height;
-                var scale;
                 var yOffset = 0;
                 var xOffset = 0;
                 if (xScale > yScale) {
@@ -1048,7 +1047,7 @@
                 }
                 if((windowWidth/windowHeight)>2)
                 {
-                    pointer4.css('top', ((target.y) * scale + (windowHeight - (image.height * yScale)) * 0.1) * 1.36);
+                    pointer4.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * -0.09) * 1.444);
                     pointer4.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.8)) * 0.767);
                 }
                 else
