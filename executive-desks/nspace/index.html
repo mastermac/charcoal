@@ -576,6 +576,15 @@
             animation: burst 1.7s infinite;
         }
         
+        #pulse03 {
+            position: absolute;
+            font-size: 0.86vw;
+            color: rgb(180, 180, 180);
+            text-shadow: none;
+            margin-left: 6.5%;
+            animation: burst 1.7s infinite;
+        }
+        
         .addtick {
             content:url(img/page5/Activation%20Tick.png);
             margin-top: 0.55vw;
@@ -882,7 +891,7 @@
             </span>
         </div>
         <div class="section" id="section3">
-            <span class="left" style="position: absolute; float: left; left: 0; bottom: 0; width: 70%; height: 70%; background-image: url(img/nspace04.png); background-size: cover; background-position: 60%;">
+            <span class="left" style="position: absolute; float: left; left: 0; bottom: 0; width: 95.4%; height: 84%; background-image: url(img/nspace04.jpg); background-size: cover; background-position: 60%;">
                 <span id="pg5ShadeText" style="position: absolute; margin-left: -2vw; margin-top: -0.21vw; color: rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; -webkit-font-smoothing: antialiased;">
                     Concrete Edition
                 </span>
@@ -892,6 +901,8 @@
             <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 13.7%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
             <span id="pulse02">&#9679;</span>
             <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: -12.15%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
+            <span id="pulse03">&#9679;</span>
+            <span id="pulseText03" class="pulseText" style="position: absolute; text-align: right; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: -0.4%; margin-top: 0.38%; -webkit-font-smoothing: antialiased;">LED INDICATOR -<br>ACTIVITY TRACKER</span>
             
            <span style="float: left; position: absolute; top: 25%; margin-left: 24vw; text-shadow: none; font-size: 0.05vw; width: 24%;">
                 <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(0,0,0,0.7); text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
@@ -939,7 +950,7 @@
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 2.26;
                 }
-                pointer1.css('top', ((target.y) * scale + yOffset) * 0.94);
+                pointer1.css('top', ((target.y) * scale + yOffset) * 0.9);
                 pointer1.css('left', (target.x) * scale + xOffset);
             }
             
@@ -1003,6 +1014,39 @@
             function makeInactive() {
                 $('#' + val1).removeClass("menudot1");
                 $('#' + val1).addClass("menudot2");
+            }
+            
+            var pointer4 = $('#pulse03, #pulseText03');
+            $(document).ready(updatePointer4);
+            $(window).resize(updatePointer4);
+            function updatePointer4() {
+                var windowWidth = $(window).width();
+                var windowHeight = $(window).height();
+                // Get largest dimension increase
+                var xScale = windowWidth / image.width;
+                var yScale = windowHeight / image.height;
+                var yOffset = 0;
+                var xOffset = 0;
+                if (xScale > yScale) {
+                    // The image fits perfectly in x axis, stretched in y
+                    scale = xScale;
+                    yOffset = (windowHeight - (image.height * scale));
+                }
+                else {
+                    // The image fits perfectly in y axis, stretched in x
+                    scale = yScale;
+                    xOffset = (windowWidth - (image.width * scale)) / 1.96;
+                }
+                if((windowWidth/windowHeight)>2)
+                {
+                    pointer4.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * -0.09) * 1.444);
+                    pointer4.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.8)) * 0.767);
+                }
+                else
+                {
+                    pointer4.css('top', ((target.y) * scale + yOffset) * 0.964);
+                    pointer4.css('left', (target.x) * scale + xOffset);
+                }
             }
             
         function openCloseNav() {
