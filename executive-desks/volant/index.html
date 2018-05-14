@@ -523,7 +523,7 @@
             font-size: 0.86vw;
             color: rgb(180, 180, 180);
             text-shadow: none;
-            margin-left: 6%;
+            margin-left: 7.7%;
             animation: burst 1.7s infinite;
         }
         
@@ -839,7 +839,7 @@
             <span id="pulse02">&#9679;</span>
             <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 16.9%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
             <span id="pulse03">&#9679;</span>
-            <span id="pulseText03" class="pulseText" style="position: absolute; text-align: left; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 7.6%; margin-top: 0.38%; -webkit-font-smoothing: antialiased;">LED INDICATOR -<br>ACTIVITY TRACKER</span>
+            <span id="pulseText03" class="pulseText" style="position: absolute; text-align: left; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 9.4%; margin-top: 0.38%; -webkit-font-smoothing: antialiased;">LED INDICATOR -<br>ACTIVITY TRACKER</span>
             
            <span style="float: left; position: absolute; top: 44%; margin-left: 16vw; text-shadow: none; font-size: 0.05vw; width: 32%;">
                 <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(0,0,0,0.9); padding-left: 5.6vw; margin-top: .8vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
@@ -958,13 +958,13 @@
                 }
                 if((windowWidth/windowHeight)>2)
                 {
-                    pointer1.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * 0.05) * 0.92);
-                    pointer2.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.5)) * 0.89);
+                    pointer1.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * 0.1) * 0.89);
+                    pointer1.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.7)) * 0.805);
                 }
                 else
                 {
                     pointer1.css('top', ((target.y) * scale + yOffset) * 0.965);
-                    pointer1.css('left', (target.x) * scale + xOffset);
+                    pointer1.css('left', (target.x) * scale + (windowWidth - (image.width * scale)) / 1.94);
                 }
             }
             
@@ -1039,15 +1039,23 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 4;
+                    yOffset = (windowHeight - (image.height * scale));
                 }
                 else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 1.88;
+                    xOffset = (windowWidth - (image.width * scale)) / 1.87;
                 }
-                pointer4.css('top', ((target.y) * scale + yOffset) * 1.35);
-                pointer4.css('left', (target.x) * scale + xOffset);
+                if((windowWidth/windowHeight)>2)
+                {
+                    pointer4.css('top', ((target.y) * scale + (windowHeight - (image.height * yScale)) * 0.1) * 1.36);
+                    pointer4.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.8)) * 0.767);
+                }
+                else
+                {
+                    pointer4.css('top', ((target.y) * scale + yOffset) * 1.35);
+                    pointer4.css('left', (target.x) * scale + xOffset);
+                }
             }
             
             $('.singledot').click(function() {
