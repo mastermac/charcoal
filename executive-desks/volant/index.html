@@ -890,7 +890,7 @@
             </div>
             
             <!-- The Modal -->
-            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
+            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.25vw 0.25vw 1.5vw;">
                 <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 14vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
                 <span id="menufillin" class="menusp21" style="float: left; margin-left: 0.74vw; margin-top: 1.5vw; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased;">
                     Name<br>
@@ -915,7 +915,7 @@
                 </span>
             </div>
             
-            <div id="myModal2" style="display: none; position: absolute; z-index: 8; margin-left: 21.05vw; margin-top: -14.32vw; width: 57.78vw; height: 34.5vw; overflow: visible; background-color: rgb(51,51,51,0.97); padding: 4%; padding-top: 8%; padding-bottom: 2%;">
+            <div id="myModal2" style="display: none; position: absolute; z-index: 8; margin-left: 21.05vw; margin-top: -14.32vw; width: 57.78vw; height: 34.5vw; overflow: visible; background-color: rgb(51,51,51,0.97); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.35vw 0.35vw 1.5vw;">
                 <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 54.3vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
                 <img src="img/page5/specification.png" style="margin-top: -3.8vw; margin-left: -0.4vw; width: 51vw; height: 25.6vw; position: relative;">
             </div>
@@ -1222,7 +1222,7 @@
             $(".preorderText").text($(".shadeticktextActive").text());
             modal.style.display = "block";
             $('#outsideModal').css("z-index", "1");
-            $('#outsideModal').css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.9}, 500);
+            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0}).animate({'background-color': 'rgb(204,204,204)', opacity: 0.9}, 1600);
             $('.header-top').css({opacity: 0.1});
             $('.header-top').css({'pointer-events': 'none'});
             $.fn.fullpage.setMouseWheelScrolling(false);
@@ -1232,7 +1232,7 @@
         btn2.onclick = function() {
             modal2.style.display = "block";
             $('#outsideModal').css("z-index", "1");
-            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 1}).animate({'background-color': 'white', opacity: 0.9}, 500);
+            $('#outsideModal', ".header-top").css({'background-color': 'rgb(204,204,204)', opacity: 0}).animate({'background-color': 'rgb(204,204,204)', opacity: 0.9}, 1600);
             $('.header-top').css({opacity: 0.1});
             $('.header-top').css({'pointer-events': 'none'});
             $.fn.fullpage.setMouseWheelScrolling(false);
@@ -1241,7 +1241,7 @@
 
         span1.onclick = function() {
             modal.style.display = "none";
-            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 0.9}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal', ".header-top").css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 1}, 800);
             $('#outsideModal').css("z-index", "-2");
             $('.header-top').css({opacity: 1});
             $('.header-top').css({'pointer-events': 'auto'});
@@ -1251,7 +1251,7 @@
         
         span2.onclick = function() {
             modal2.style.display = "none";
-            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 0.9}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal', ".header-top").css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 1}, 800);
             $('#outsideModal').css("z-index", "-2");
             $('.header-top').css({opacity: 1});
             $('.header-top').css({'pointer-events': 'auto'});
@@ -1262,7 +1262,7 @@
         outside.onclick = function() {
             modal.style.display = "none";
             modal2.style.display = "none";
-            $('#outsideModal', ".header-top").css({'background-color': 'white', opacity: 0.9}).animate({'background-color': 'white', opacity: 1}, 500);
+            $('#outsideModal', ".header-top").css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 1}, 800);
             $('#outsideModal').css("z-index", "-2");
             $('.header-top').css({opacity: 1});
             $('.header-top').css({'pointer-events': 'auto'});
