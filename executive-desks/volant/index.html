@@ -949,15 +949,23 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 4;
+                    yOffset = (windowHeight - (image.height * scale));
                 }
                 else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 1.94;
                 }
-                pointer1.css('top', ((target.y) * scale + yOffset) * 0.965);
-                pointer1.css('left', (target.x) * scale + xOffset);
+                if((windowWidth/windowHeight)>2)
+                {
+                    pointer1.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * 0.05) * 0.92);
+                    pointer2.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.5)) * 0.89);
+                }
+                else
+                {
+                    pointer1.css('top', ((target.y) * scale + yOffset) * 0.965);
+                    pointer1.css('left', (target.x) * scale + xOffset);
+                }
             }
             
             var pointer2 = $('#pulse02, #pulseText02');
@@ -974,14 +982,22 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 1;
+                    yOffset = (windowHeight - (image.height * scale));
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 2.2;
                 }
-                pointer2.css('top', ((target.y) * scale + yOffset) * 1.084);
-                pointer2.css('left', (target.x) * scale + xOffset);
+                if((windowWidth/windowHeight)>2)
+                {
+                    pointer2.css('top', ((target.y) * scale + (windowHeight - (image.height * yScale)) * 0.4) * 1.078);
+                    pointer2.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.5)) * 0.89);
+                }
+                else
+                {
+                    pointer2.css('top', ((target.y) * scale + yOffset) * 1.084);
+                    pointer2.css('left', (target.x) * scale + xOffset);
+                }
             }
             
             var pointer3 = $('#pg5ShadeIcon, #pg5ShadeText');
