@@ -63,43 +63,12 @@
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
-                    if(nextIndex == 5 && (index == 1 || index == 2 || index == 3 || index == 4)) {
+                    if(nextIndex == 5) {
                         makeInactive();
                         val1 = 4;
                         makeActive();
-                        
-                        $(".dark").fadeOut(600, function() {
-                            $('.dark').css('color', 'rgb(153,153,153)');
-                            $(".dark").css("opacity","0.9");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $(".menudot1").fadeOut(400, function() {
-                            $(".menudot1").attr("style","color: rgb(153,153,153) !important");
-                            $(".menudot1").css("opacity","0.9");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $(".menudot2").fadeOut(400, function() {
-                            $(".menudot2").attr("style","color: rgb(71,71,71) !important");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $(".menu-global").fadeOut(100, function() {
-                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(153,153,153)');
-                        }.bind(this)).fadeIn(500);
-                        
-                        $("#logo").fadeOut(600, function() {
-                            $("#logo").attr("src","img/Logo Dark.png");
-                            $("#logo").css("opacity","0.9");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $("#iconlink1").fadeOut(600, function() {
-                            $("#iconlink1").attr("src","img/Volant Icon dark.png");
-                            $("#iconlink1").css("opacity","0.35");
-                        }.bind(this)).fadeIn(500);
-                        
-                        $("#iconlink2").fadeOut(600, function() {
-                            $("#iconlink2").attr("src","img/N Space Icon dark.png");
-                            $("#iconlink2").css("opacity","0.2");
-                        }.bind(this)).fadeIn(500);
+                        $(".menudot1").attr("style","color: rgb(51,51,51) !important");
+                        $(".menudot2").attr("style","color: rgb(209,209,209) !important");
                     }
                     
                     if(index == 3 && (nextIndex==1 || nextIndex==2 || nextIndex==4)) {
@@ -108,42 +77,6 @@
                             $('.iconAnimated').addClass('notAnimated')
                             $('.notAnimated').removeClass('iconAnimated')
                         }
-                    }
-                    
-                    if(index == 5 && (nextIndex==1 || nextIndex==2 || nextIndex==3 || nextIndex==4)) {
-                        $('body').css('background-color', 'rgb(250,250,250)');
-                        $(".dark").fadeOut(100, function() {
-                            $('.dark').css('color', 'black');
-                            $(".dark").css("opacity","1");
-                        }.bind(this)).fadeIn(100);
-                        
-                        $("#logo").fadeOut(100, function() {
-                            $("#logo").attr("src","img/Logo.png");
-                            $("#logo").css("opacity","1");
-                        }.bind(this)).fadeIn(100);
-                        
-                        $("#iconlink1").fadeOut(100, function() {
-                            $("#iconlink1").attr("src","img/Volant_link.png");
-                            $("#iconlink1").css("opacity","0.94");
-                        }.bind(this)).fadeIn(100);
-                        
-                        $("#iconlink2").fadeOut(100, function() {
-                            $("#iconlink2").attr("src","img/N Space_link.png");
-                            $("#iconlink2").css("opacity","0.40");
-                        }.bind(this)).fadeIn(100);
-                        
-                        $(".menudot1").fadeOut(100, function() {
-                            $(".menudot1").attr("style","color: rgb(51,51,51) !important");
-                            $(".menudot1").css("opacity","1");
-                        }.bind(this)).fadeIn(1000);
-                        
-                        $(".menudot2").fadeOut(100, function() {
-                            $(".menudot2").attr("style","color: rgb(209,209,209) !important");
-                        }.bind(this)).fadeIn(1000);
-                        
-                        $(".menu-global").fadeOut(100, function() {
-                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 black');
-                        }.bind(this)).fadeIn(1000);
                     }
                 },
                 'afterLoad': function(anchorLink, index){
@@ -916,6 +849,91 @@
                 </p>
             </span>
         </div>
+        <div class="section" id="section4" style="position: relative;">
+            <div id="outsideModal" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -2;"></div>
+            <div class="page5imageslider" style="text-align: center;">
+                <img id="page5img1" class="page5img" src="img/page5/nspace051.jpg" style="color: rgb(77,77,77); margin-top: -14.7vw; margin-left: -30.7vw; width: 62.3vw; position: absolute;">
+            </div>
+            <div style="text-align: center; position: relative;">
+                <span style="position: absolute; color: rgb(51,51,51,0.9); top: 9.25vw; left: 7.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold; -webkit-font-smoothing: antialiased;">forms</span>
+                <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 11.62vw; margin-left: -42.48vw; width: 20vw; height: 1px; position: absolute;">
+                <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.35vw; margin-left: -42.48vw; width: 20vw; height: 1px; position: absolute;"></span>
+            </div>
+            <div id="forms" style="text-align: center; position: relative;">
+                <span id="form1" class="formSelectActive formSelect" style="position: absolute; top: 12.54vw; left: 9.25vw; color: rgb(0, 0, 0, 0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
+                    light
+                </span>
+                <span id="form2" class="formSelect" style="position: absolute; top: 12.54vw; left: 14.38vw; color: rgb(0, 0, 0 ,0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
+                    standard
+                </span>
+                <span id="form3" class="formSelect" style="position: absolute; top: 12.54vw; left: 21.40vw; color: rgb(0, 0, 0 ,0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
+                    L return
+                </span>
+            </div>
+            <div style="text-align: center; position: relative;">
+                <span style="position: absolute; color: rgb(51,51,51,0.9); top: 9.25vw; left: 32.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold; -webkit-font-smoothing: antialiased;">editions</span>
+                <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 11.62vw; margin-left: -17.48vw; width: 35vw; height: 1px; position: absolute;">
+                <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.35vw; margin-left: -17.48vw; width: 35vw; height: 1px; position: absolute;"></span>
+            </div>
+            <div style="text-align: center; position: relative;">
+                <span id="edition1" class="shadeticktextActive" style="position: absolute; top: 12.54vw; left: 35.25vw; color: rgb(0, 0, 0, 0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased;">
+                    solid
+                </span>
+                <span>
+                    <img id="tick1" class="shadetick shadetickActive" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 38vw; cursor: pointer; pointer-events: none;" src="img/page5/gray%20and%20salt%20active.png"/>
+                    <p id="tick1text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 38vw;  color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw; -webkit-font-smoothing: antialiased;">GRAY &amp; SALT</p>
+                    <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 40vw; cursor: pointer;" src="img/page5/sand%20and%20salt%20Inactive.png"/>
+                    <p id="tick2text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 39.3vw; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.085vw; -webkit-font-smoothing: antialiased;">SAND &amp; SALT</p>
+                    <img id="tick3" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 42vw; cursor: pointer;" src="img/page5/gray%20and%20graphite%20Inactive.png"/>
+                    <p id="tick3text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 39.3vw; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.085vw; -webkit-font-smoothing: antialiased;">GRAY &amp; GRAPHITE</p>
+                </span>
+                <span id="edition2" style="position: absolute; top: 12.54vw; left: 46vw; color: rgb(0, 0, 0 ,0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased;">
+                    concrete
+                </span>
+                <span>
+                    <img id="tick4" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 50.4vw; cursor: pointer;" src="img/page5/concrete%20and%20graphite%20Inactive.png"/>
+                </span>
+            </div>
+            <div style="text-align: center; position: relative;">
+                <span style="position: absolute; color: rgb(0, 0, 0, 0.7); top: 12.38vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;" class="price">AED 15,500</span>
+                
+                <span id="specs" style="position: absolute; color: rgb(30,30,30); top: 9.72vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw; cursor: pointer; -webkit-font-smoothing: antialiased;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
+                
+                <span id="preorder" style="position: absolute; color: rgb(0,0,0,0.7); top: 18.8vw; left: 43.91vw; text-shadow: none; font-size: 0.8vw; letter-spacing: 0.19vw; font-family: GothamBook; font-weight: lighter; cursor: pointer;"><img src="img/page5/Pre%20Order.png" style="width: 13.25vw; position: absolute; top: -0.39vw; left: -0.67vw; color: rgb(77,77,77,0.7);">PRE-ORDER ENQUIRY</span>
+            </div>
+            
+            <!-- The Modal -->
+            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.25vw 0.25vw 1.5vw;">
+                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 14vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
+                <span id="menufillin" class="menusp21" style="float: left; margin-left: 0.74vw; margin-top: 1.5vw; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased;">
+                    Name<br>
+                    <input type="text" class="name " id="name" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
+                    E-mail Address<br>
+                    <input type="text" class="email" id="email" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
+                    Telephone<br>
+                    <input type="text" class="tel" id="tel" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
+                </span>
+                
+                <span style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 7.4vw; margin-left: 0.52vw;">
+                    <hr style="border-color: rgb(204,204,204,0.8); border-width: 0.4px; margin-left: 1vw; margin-top: 0 !important; margin-bottom: 0.5vw !important; width: 16vw; height: 1px; position: relative;">
+                    <span style="float: left; position: relative; color: rgb(179,179,179,0.9); margin-top: 0.4vw; margin-left: 2vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;">EDITION</span>
+                    <span class="preorderText" style="float: left; position: relative; color: rgb(179,179,179,0.9); margin-top: 0.4vw; margin-left: 5.41vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;">solid</span>
+                    <span style="float: left; position: relative; color: rgb(179,179,179,0.9); margin-left: 0.28vw; margin-top: 0.15vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight;">
+                        <img class="preorderShade" style="width: 1.4vw; cursor: pointer; pointer-events: none;" src="img/page5/gray%20and%20salt%20active.png"/>
+                    </span>
+                    <hr style="border-color: rgb(204,204,204,0.8); border-width: 0.4px; margin-left: 1vw; margin-top: 2.78vw !important; margin-bottom: 0vw !important; width: 16vw; height: 1px; position: relative;">
+                </span>
+               <span id="preorder2" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.19vw; margin-top: 4.3vw; margin-left: 3.4vw; cursor: pointer; font-size: 0.8vw; color: rgb(179,179,179);">
+                    <img src="img/page5/Pre%20Order%20Dark.png" style="position: absolute; width: 13.3vw; margin-top: -0.29vw; margin-left: -0.6vw; color: rgb(179,179,179);">PRE-ORDER ENQUIRY
+                </span>
+            </div>
+            
+            <div id="myModal2" style="display: none; position: absolute; z-index: 8; margin-left: 21.05vw; margin-top: -14.32vw; width: 57.78vw; height: 34.5vw; overflow: visible; background-color: rgb(51,51,51,0.97); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.35vw 0.35vw 1.5vw;">
+                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 54.3vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
+                <img src="img/page5/specification.png" style="margin-top: -3.8vw; margin-left: -0.4vw; width: 51vw; height: 25.6vw; position: relative;">
+            </div>
+        </div>
+        </div>
 
         <!-- The JavaScript -->
         <script type="text/javascript" src="jquery.easing.1.3.js"></script>
@@ -926,6 +944,20 @@
             var my_image1 = new Image();
             var my_image2 = new Image();
             var my_image3 = new Image();
+            
+            var l_img1 = new Image();
+            var l_img2 = new Image();
+            var l_img3 = new Image();
+            var l_img4 = new Image();
+            var l_img5 = new Image();
+            var l_img6 = new Image();
+            var l_img7 = new Image();
+            var l_img8 = new Image();
+            var l_img9 = new Image();
+            var l_img10 = new Image();
+            var l_img11 = new Image();
+            var l_img12 = new Image();
+            
             var image = { width: 550, height: 190 };
             var target = { x: 178, y: 89 };
             var pointer1 = $('#pulse01, #pulseText01');
@@ -1128,12 +1160,13 @@
             $(".page2dot2").removeClass("page2dot1");
             $(this).addClass("page2dot1");
             $(this).removeClass("page2dot2");
-        })
+        });
         $("#section1").ready(function() {
             my_image1.src = 'img/nspace021.jpg';
             my_image2.src = 'img/nspace022.jpg';
             my_image3.src = 'img/nspace023.jpg';
-        })
+        });
+        
         $(".page2dot2").click(function() {
             $(".linetext").css("opacity", 0);
             $(".imageslider").removeClass("sliderAnimateHide");
@@ -1166,6 +1199,239 @@
                 $(".imageslider").addClass("sliderAnimatedShow");
             }, 420);
         });
+            
+        $("#section4").ready(function() {
+            l_img1.src = 'img/page5/nspace051.jpg';
+            l_img2.src = 'img/page5/nspace052.jpg';
+            l_img3.src = 'img/page5/nspace053.jpg';
+            l_img4.src = 'img/page5/nspace054.jpg';
+            l_img5.src = 'img/page5/nspace055.jpg';
+            l_img6.src = 'img/page5/nspace056.jpg';
+            l_img7.src = 'img/page5/nspace057.jpg';
+            l_img8.src = 'img/page5/nspace058.jpg';
+            l_img9.src = 'img/page5/nspace059.jpg';
+            l_img10.src = 'img/page5/nspace0510.jpg';
+            l_img11.src = 'img/page5/nspace0511.jpg';
+            l_img12.src = 'img/page5/nspace0512.jpg';
+        });
+        
+        var tick = "tick1";
+        var form = "form1";
+        $(".formSelect").click(function() {
+            $(this).addClass("formSelectActive");
+            $("#" + form).removeClass("formSelectActive");
+            form = $(this).attr("id");
+            changeImage();
+        });
+        
+        $(".shadetick").click(function() {
+            tick = $(this).attr("id");
+            if(tick == "tick1")
+            {
+                $("#tick1").addClass("shadetickActive");
+                $("#tick2").removeClass("shadetickActive");
+                $("#tick3").removeClass("shadetickActive");
+                $("#tick4").removeClass("shadetickActive");
+                $("#tick1").attr({'src': 'img/page5/gray%20and%20salt%20active.png'});
+                $("#tick2").attr({'src': 'img/page5/sand%20and%20salt%20Inactive.png'});
+                $("#tick3").attr({'src': 'img/page5/gray%20and%20graphite%20Inactive.png'});
+                $("#tick4").attr({'src': 'img/page5/concrete%20and%20graphite%20Inactive.png'});
+                $("#tick1").css({'pointer-events': 'none'});
+                $("#tick2").css({'pointer-events': 'auto'});
+                $("#tick3").css({'pointer-events': 'auto'});
+                $("#tick4").css({'pointer-events': 'auto'});
+                $("#tick1text").css({'opacity': 1});
+                $("#tick2text").css({'opacity': 0});
+                $("#tick3text").css({'opacity': 0});
+                $("#edition1").addClass('shadeticktextActive');
+                $("#edition2").removeClass('shadeticktextActive');
+            }
+            else if(tick == "tick2")
+            {
+                $("#tick2").addClass("shadetickActive");
+                $("#tick1").removeClass("shadetickActive");
+                $("#tick3").removeClass("shadetickActive");
+                $("#tick4").removeClass("shadetickActive");
+                $("#tick1").attr({'src': 'img/page5/gray%20and%20salt%20Inactive.png'});
+                $("#tick2").attr({'src': 'img/page5/sand%20and%20salt%20Active.png'});
+                $("#tick3").attr({'src': 'img/page5/gray%20and%20graphite%20Inactive.png'});
+                $("#tick4").attr({'src': 'img/page5/concrete%20and%20graphite%20Inactive.png'});
+                $("#tick1").css({'pointer-events': 'auto'});
+                $("#tick2").css({'pointer-events': 'none'});
+                $("#tick3").css({'pointer-events': 'auto'});
+                $("#tick4").css({'pointer-events': 'auto'});
+                $("#tick1text").css("opacity", "0");
+                $("#tick2text").css("opacity", "1");
+                $("#tick3text").css("opacity", "0");
+                $("#edition1").addClass('shadeticktextActive');
+                $("#edition2").removeClass('shadeticktextActive');
+            }
+            else if(tick == "tick3")
+            {
+                $("#tick3").addClass("shadetickActive");
+                $("#tick1").removeClass("shadetickActive");
+                $("#tick2").removeClass("shadetickActive");
+                $("#tick4").removeClass("shadetickActive");
+                $("#tick1").attr({'src': 'img/page5/gray%20and%20salt%20Inactive.png'});
+                $("#tick2").attr({'src': 'img/page5/sand%20and%20salt%20Inactive.png'});
+                $("#tick3").attr({'src': 'img/page5/gray%20and%20graphite%20active.png'});
+                $("#tick4").attr({'src': 'img/page5/concrete%20and%20graphite%20Inactive.png'});
+                $("#tick1").css({'pointer-events': 'auto'});
+                $("#tick2").css({'pointer-events': 'auto'});
+                $("#tick3").css({'pointer-events': 'none'});
+                $("#tick4").css({'pointer-events': 'auto'});
+                $("#tick1text").css("opacity", "0");
+                $("#tick2text").css("opacity", "0");
+                $("#tick3text").css("opacity", "1");
+                $("#edition1").addClass('shadeticktextActive');
+                $("#edition2").removeClass('shadeticktextActive');
+            }
+            else if(tick == "tick4")
+            {
+                $("#tick4").addClass("shadetickActive");
+                $("#tick1").removeClass("shadetickActive");
+                $("#tick2").removeClass("shadetickActive");
+                $("#tick3").removeClass("shadetickActive");
+                $("#tick1").attr({'src': 'img/page5/gray%20and%20salt%20Inactive.png'});
+                $("#tick2").attr({'src': 'img/page5/sand%20and%20salt%20Inactive.png'});
+                $("#tick3").attr({'src': 'img/page5/gray%20and%20graphite%20Inactive.png'});
+                $("#tick4").attr({'src': 'img/page5/concrete%20and%20graphite%20active.png'});
+                $("#tick1").css({'pointer-events': 'auto'});
+                $("#tick2").css({'pointer-events': 'auto'});
+                $("#tick3").css({'pointer-events': 'auto'});
+                $("#tick4").css({'pointer-events': 'none'});
+                $("#tick1text").css("opacity", "0");
+                $("#tick2text").css("opacity", "0");
+                $("#tick3text").css("opacity", "0");
+                $("#edition2").addClass('shadeticktextActive');
+                $("#edition1").removeClass('shadeticktextActive');
+            }
+            changeImage();
+        });
+        
+        function changeImage()
+        {
+            $(".page5imageslider").removeClass("sliderAnimateHide");
+            $(".page5imageslider").removeClass("sliderResetLeft");
+            $(".page5imageslider").removeClass("sliderAnimatedShow");
+            $(".page5imageslider").addClass("sliderAnimatedHide");
+            var id1 = $(".shadetickActive").attr("id");
+            var id2 = $(".formSelectActive").attr("id");
+            setTimeout(function() {
+                $(".page5imageslider").addClass("sliderResetLeft");
+            }, 500);
+            if(id1 == "tick1" && id2 == "form1")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img1.src)
+            }, 510);
+            else if(id1 == "tick2" && id2 == "form1")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img2.src)
+            }, 510);
+            else if(id1 == "tick3" && id2 == "form1")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img3.src)
+            }, 510);
+            else if(id1 == "tick4" && id2 == "form1")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img4.src)
+            }, 510);
+            else if(id1 == "tick1" && id2 == "form2")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img5.src)
+            }, 510);
+            else if(id1 == "tick2" && id2 == "form2")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img6.src)
+            }, 510);
+            else if(id1 == "tick3" && id2 == "form2")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img7.src)
+            }, 510);
+            else if(id1 == "tick4" && id2 == "form2")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img8.src)
+            }, 510);
+            else if(id1 == "tick1" && id2 == "form3")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img9.src)
+            }, 510);
+            else if(id1 == "tick2" && id2 == "form3")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img10.src)
+            }, 510);
+            else if(id1 == "tick3" && id2 == "form3")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img11.src)
+            }, 510);
+            else if(id1 == "tick4" && id2 == "form3")
+                setTimeout(function() {
+                $(".page5imageslider").children().attr("src", l_img12.src)
+            }, 510);
+            setTimeout(function() {
+                $(".page5imageslider").addClass("sliderAnimatedShow");
+            }, 520);
+        }
+            
+        var modal = document.getElementById('myModal1');
+        var modal2 = document.getElementById('myModal2');
+        var btn = document.getElementById("preorder");
+        var btn2 = document.getElementById("specs");
+        var span1 = document.getElementsByClassName("cross")[0];
+        var span2 = document.getElementsByClassName("cross")[1];
+        var outside = document.getElementById("outsideModal");
+        btn.onclick = function() {
+            $(".preorderShade").attr("src", $(".shadetickActive").attr("src"));
+            $(".preorderText").text($(".shadeticktextActive").text());
+            modal.style.display = "block";
+            $('#outsideModal').css("z-index", "1");
+            $('#outsideModal').css({'background-color': 'rgb(250,250,250)', opacity: 0}).animate({'background-color': 'rgb(250,250,250)', opacity: 0.9}, 800);
+            $('.header-top').css({opacity: 1}).animate({opacity: 0.1}, 800);
+            $('.header-top').css({'pointer-events': 'none'});
+            $.fn.fullpage.setMouseWheelScrolling(false);
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+        
+        btn2.onclick = function() {
+            modal2.style.display = "block";
+            $('#outsideModal').css("z-index", "1");
+            $('#outsideModal').css({'background-color': 'rgb(250,250,250)', opacity: 0}).animate({'background-color': 'rgb(250,250,250)', opacity: 0.9}, 800);
+            $('.header-top').css({opacity: 1}).animate({opacity: 0.1}, 800);
+            $('.header-top').css({'pointer-events': 'none'});
+            $.fn.fullpage.setMouseWheelScrolling(false);
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+
+        span1.onclick = function() {
+            modal.style.display = "none";
+            $('#outsideModal', ".header-top").css({'background-color': 'rgb(250,250,250)', opacity: 0.9}).animate({'background-color': 'rgb(250,250,250)', opacity: 1}, 800);
+            $('#outsideModal').css("z-index", "-2");
+            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 800);
+            $('.header-top').css({'pointer-events': 'auto'});
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+        }
+        
+        span2.onclick = function() {
+            modal2.style.display = "none";
+            $('#outsideModal', ".header-top").css({'background-color': 'rgb(250,250,250)', opacity: 0.9}).animate({'background-color': 'rgb(250,250,250)', opacity: 1}, 800);
+            $('#outsideModal').css("z-index", "-2");
+            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 800);
+            $('.header-top').css({'pointer-events': 'auto'});
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+        }
+        
+        outside.onclick = function() {
+            modal.style.display = "none";
+            modal2.style.display = "none";
+            $('#outsideModal', ".header-top").css({'background-color': 'rgb(250,250,250)', opacity: 0.9}).animate({'background-color': 'rgb(250,250,250)', opacity: 1}, 800);
+            $('#outsideModal').css("z-index", "-2");
+            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 800);
+            $('.header-top').css({'pointer-events': 'auto'});
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+        }
         </script>
         <script src="js/main.js"></script>
     </body>
