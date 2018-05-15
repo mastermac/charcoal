@@ -572,7 +572,7 @@
             font-size: 0.86vw;
             color: rgb(230, 230, 230);
             text-shadow: none;
-            margin-left: -5.2%;
+            margin-left: -4.8%;
             animation: burst 1.7s infinite;
         }
         
@@ -581,7 +581,7 @@
             font-size: 0.86vw;
             color: rgb(180, 180, 180);
             text-shadow: none;
-            margin-left: 6.5%;
+            margin-left: 7.2%;
             animation: burst 1.7s infinite;
         }
         
@@ -943,15 +943,23 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 4;
+                    yOffset = (windowHeight - (image.height * scale));
                 }
                 else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 2.26;
                 }
-                pointer1.css('top', ((target.y) * scale + yOffset) * 0.9);
-                pointer1.css('left', (target.x) * scale + xOffset);
+                if((windowWidth/windowHeight)>2.11)
+                {
+                    pointer1.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * 0.32) * 0.76);
+                    pointer1.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.5)) * 0.93);
+                }
+                else
+                {
+                    pointer1.css('top', ((target.y) * scale + yOffset) * 0.9);
+                    pointer1.css('left', (target.x) * scale + xOffset);
+                }
             }
             
             var pointer2 = $('#pulse02, #pulseText02');
@@ -968,14 +976,23 @@
                 if (xScale > yScale) {
                     // The image fits perfectly in x axis, stretched in y
                     scale = xScale;
-                    yOffset = (windowHeight - (image.height * scale)) / 4;
+                    yOffset = (windowHeight - (image.height * scale));
                 } else {
                     // The image fits perfectly in y axis, stretched in x
                     scale = yScale;
-                    xOffset = (windowWidth - (image.width * scale)) / 1.59;
+                    xOffset = (windowWidth - (image.width * scale)) / 1.62;
                 }
-                pointer2.css('top', ((target.y) * scale + yOffset) * 0.68);
-                pointer2.css('left', (target.x) * scale + xOffset);
+                
+                if((windowWidth/windowHeight)>2.11)
+                {
+                    pointer2.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * 0.7) * 0.48);
+                    pointer2.css('left', ((target.x) * (scale / 1.08) + (xOffset / 2.1)) * 0.71);
+                }
+                else
+                {
+                    pointer2.css('top', ((target.y) * scale + yOffset) * 0.68);
+                    pointer2.css('left', (target.x) * scale + xOffset);
+                }
             }
             
             var pointer3 = $('#pg5ShadeIcon, #pg5ShadeText');
@@ -1037,14 +1054,14 @@
                     scale = yScale;
                     xOffset = (windowWidth - (image.width * scale)) / 1.96;
                 }
-                if((windowWidth/windowHeight)>2)
+                if((windowWidth/windowHeight)>2.11)
                 {
-                    pointer4.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * -0.09) * 1.444);
-                    pointer4.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.8)) * 0.767);
+                    pointer4.css('top', ((target.y) * scale + (windowHeight - (image.height * xScale)) * 0.16) * 0.9);
+                    pointer4.css('left', ((target.x) * (scale / 1.08) + (xOffset / 1.7)) * 0.847);
                 }
                 else
                 {
-                    pointer4.css('top', ((target.y) * scale + yOffset) * 0.964);
+                    pointer4.css('top', ((target.y) * scale + yOffset) * 0.99);
                     pointer4.css('left', (target.x) * scale + xOffset);
                 }
             }
