@@ -860,7 +860,7 @@
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.35vw; margin-left: -42.48vw; width: 20vw; height: 1px; position: absolute;"></span>
             </div>
             <div id="forms" style="text-align: center; position: relative;">
-                <span id="form1" class="formSelectActive formSelect" style="position: absolute; top: 12.54vw; left: 9.25vw; color: rgb(0, 0, 0, 0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
+                <span id="form1" class="formSelectActive formSelect" style="position: absolute; top: 12.54vw; left: 9.25vw; color: rgb(0, 0, 0, 0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer; pointer-events: none;">
                     light
                 </span>
                 <span id="form2" class="formSelect" style="position: absolute; top: 12.54vw; left: 14.38vw; color: rgb(0, 0, 0 ,0.8); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
@@ -1219,7 +1219,9 @@
         var form = "form1";
         $(".formSelect").click(function() {
             $(this).addClass("formSelectActive");
+            $(this).css({'pointer-events': 'none'});
             $("#" + form).removeClass("formSelectActive");
+            $("#" + form).css({'pointer-events': 'auto'});
             form = $(this).attr("id");
             changeImage();
         });
@@ -1253,7 +1255,7 @@
                 $("#tick3").removeClass("shadetickActive");
                 $("#tick4").removeClass("shadetickActive");
                 $("#tick1").attr({'src': 'img/page5/gray%20and%20salt%20Inactive.png'});
-                $("#tick2").attr({'src': 'img/page5/sand%20and%20salt%20Active.png'});
+                $("#tick2").attr({'src': 'img/page5/sand%20and%20salt%20active.png'});
                 $("#tick3").attr({'src': 'img/page5/gray%20and%20graphite%20Inactive.png'});
                 $("#tick4").attr({'src': 'img/page5/concrete%20and%20graphite%20Inactive.png'});
                 $("#tick1").css({'pointer-events': 'auto'});
