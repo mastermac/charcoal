@@ -115,7 +115,7 @@
                         $(".menudot1").attr("style","color: rgb(230,230,230) !important; -webkit-text-stroke-color: rgb(230,230,230); text-shadow: 0.04vw 0.06vw 0.2vw rgba(230, 230, 230, 0.3);");
                         $(".menudot2").attr("style","color: rgb(160,160,160) !important");
                         $(".dark").fadeOut(10, function() {
-                            $('.dark').css('color', 'rgb(230,230,230)');
+                            $('.dark').css('color', 'rgb(205,205,205)');
                         }.bind(this)).fadeIn(10);
                         
                         $(".menu-global").fadeOut(10, function() {
@@ -1216,9 +1216,9 @@
             $(".preorderShade").attr("src", $(".shadetickActive").attr("src"));
             $(".preorderText").text($(".shadeticktextActive").text());
             modal.style.display = "block";
-            $('#outsideModal').css("z-index", "1");
-            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0}).animate({'background-color': 'rgb(204,204,204)', opacity: 0.9}, 800);
-            $('.header-top').css({opacity: 1}).animate({opacity: 0.1}, 800);
+            $('#outsideModal').css("z-index", "1")
+            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0}).animate({'background-color': 'rgb(204,204,204)', opacity: 0.9}, 400);
+            $('.header-top').css({opacity: 1}).animate({opacity: 0.1}, 400);
             $('.header-top').css({'pointer-events': 'none'});
             $.fn.fullpage.setMouseWheelScrolling(false);
             $.fn.fullpage.setAllowScrolling(false);
@@ -1227,8 +1227,8 @@
         btn2.onclick = function() {
             modal2.style.display = "block";
             $('#outsideModal').css("z-index", "1");
-            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0}).animate({'background-color': 'rgb(204,204,204)', opacity: 0.9}, 800);
-            $('.header-top').css({opacity: 1}).animate({opacity: 0.1}, 800);
+            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0}).animate({'background-color': 'rgb(204,204,204)', opacity: 0.9}, 400);
+            $('.header-top').css({opacity: 1}).animate({opacity: 0.1}, 400);
             $('.header-top').css({'pointer-events': 'none'});
             $.fn.fullpage.setMouseWheelScrolling(false);
             $.fn.fullpage.setAllowScrolling(false);
@@ -1236,9 +1236,11 @@
 
         span1.onclick = function() {
             modal.style.display = "none";
-            $('#outsideModal', ".header-top").css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 1}, 800);
-            $('#outsideModal').css("z-index", "-2");
-            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 800);
+            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 0}, 500);
+            setTimeout(function() {
+                $("#outsideModal").css("z-index", "-2")
+            }, 500);
+            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 500);
             $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
@@ -1246,9 +1248,11 @@
         
         span2.onclick = function() {
             modal2.style.display = "none";
-            $('#outsideModal', ".header-top").css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 1}, 800);
-            $('#outsideModal').css("z-index", "-2");
-            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 800);
+            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 0}, 500);
+            setTimeout(function() {
+                $("#outsideModal").css("z-index", "-2")
+            }, 500);
+            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 500);
             $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
@@ -1257,9 +1261,11 @@
         outside.onclick = function() {
             modal.style.display = "none";
             modal2.style.display = "none";
-            $('#outsideModal', ".header-top").css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 1}, 800);
-            $('#outsideModal').css("z-index", "-2");
-            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 800);
+            $('#outsideModal').css({'background-color': 'rgb(204,204,204)', opacity: 0.9}).animate({'background-color': 'rgb(204,204,204)', opacity: 0}, 500);
+            setTimeout(function() {
+                $("#outsideModal").css("z-index", "-2")
+            }, 500);
+            $('.header-top').css({opacity: 0.1}).animate({opacity: 1}, 500);
             $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
