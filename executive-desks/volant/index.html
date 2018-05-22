@@ -635,7 +635,7 @@
                     <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
                     <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot02">&#9679;</p></a>
                     <div>
-                    <p style="font-family: GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" selected value><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA"><u>USA</u><option value="UAE">UAE</option></select>
+                    <p style="font-family: GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" value="Bahrain"><u>Bahrain</u><option value="France"><u>France</u><option value="Germany"><u>Germany</u><option value="Hong Kong"><u>Hong Kong</u><option value="India"><u>India</u><option value="Jordan"><u>Jordan</u><option value="Kuwait"><u>Kuwait</u><option value="Oman"><u>Oman</u><option value="Qatar"><u>Qatar</u><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA" selected><u>USA</u><option value="UAE">UAE</option></select>
                     </p>
                         </div>
                     <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
@@ -866,7 +866,7 @@
                 </span>
                 <span>
                     <img id="tick1" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 38vw; cursor: pointer; pointer-events: none;" src="img/page5/Customisation%20Icon%20Salt%20Active.png"/>
-                    <p id="tick1text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 38vw;  color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw; -webkit-font-smoothing: antialiased;">SALT</p>
+                    <p id="tick1text" class="shadeticktext shadetickActive" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 38vw;  color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw; -webkit-font-smoothing: antialiased;">SALT</p>
                     <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 40.15vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Inactive.png"/>
                     <p id="tick2text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 39.3vw; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.085vw; -webkit-font-smoothing: antialiased;">GRAPHITE</p>
                 </span>
@@ -878,7 +878,7 @@
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(0, 0, 0, 0.7); top: 12.38vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;" class="price">AED 15,500</span>
+                <span style="position: absolute; color: rgb(0, 0, 0, 0.7); top: 12.38vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;" class="price">USA 4,050</span>
                 
                 <span id="specs" style="position: absolute; color: rgb(30,30,30); top: 9.72vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw; cursor: pointer; -webkit-font-smoothing: antialiased;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
                 
@@ -1133,9 +1133,9 @@
             tick = $(this).attr("id");
             if(tick == "tick1")
             {
-                $("#tick1").addClass("shadetickActive");
-                $("#tick2").removeClass("shadetickActive");
-                $("#tick3").removeClass("shadetickActive");
+                $("#tick1text").addClass("shadetickActive");
+                $("#tick2text").removeClass("shadetickActive");
+                $("#edition2").removeClass("shadetickActive");
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Active.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
@@ -1149,9 +1149,9 @@
             }
             else if(tick == "tick2")
             {
-                $("#tick2").addClass("shadetickActive");
-                $("#tick1").removeClass("shadetickActive");
-                $("#tick3").removeClass("shadetickActive");
+                $("#tick2text").addClass("shadetickActive");
+                $("#tick1text").removeClass("shadetickActive");
+                $("#edition2").removeClass("shadetickActive");
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Active.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Inactive.png'});
@@ -1165,9 +1165,9 @@
             }
             else if(tick == "tick3")
             {
-                $("#tick3").addClass("shadetickActive");
-                $("#tick2").removeClass("shadetickActive");
-                $("#tick1").removeClass("shadetickActive");
+                $("#edition2").addClass("shadetickActive");
+                $("#tick1text").removeClass("shadetickActive");
+                $("#tick2text").removeClass("shadetickActive");
                 $("#tick1").attr({'src': 'img/page5/Customisation%20Icon%20Salt%20Inactive.png'});
                 $("#tick2").attr({'src': 'img/page5/Customisation%20Icon%20Graphite%20Inactive.png'});
                 $("#tick3").attr({'src': 'img/page5/Concrete%20Icon%20Graphite%20Active.png'});
@@ -1270,6 +1270,128 @@
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
         }
+        
+        $(".menuselect").change(function() {
+            var value = $("option:selected", this).val();
+            var ed = $(".shadetickActive").text().trim().toLowerCase();
+            if(value == "USA")
+            {
+                if(ed == "salt")
+                    $(".price").text("USD 4,050");
+                else if(ed == "graphite")
+                    $(".price").text("USD 4,420");
+                else if(ed  == "concrete")
+                    $(".price").text("USD 4,640");
+            }
+            if( value == "UAE")
+            {
+                if(ed == "salt")
+                    $(".price").text("AED 14,900");
+                else if(ed == "graphite")
+                    $(".price").text("AED 16,250");
+                else if(ed  == "concrete")
+                    $(".price").text("AED 17,050");
+            }
+            if( value == "United Kingdom")
+            {
+                if(ed == "salt")
+                    $(".price").text("GBP 2,990");
+                else if(ed == "graphite")
+                    $(".price").text("GBP 3,270");
+                else if(ed  == "concrete")
+                    $(".price").text("GBP 3,440");
+            }
+            if( value == "Qatar")
+            {
+                if(ed == "salt")
+                    $(".price").text("QAR 14,730");
+                else if(ed == "graphite")
+                    $(".price").text("QAR 16,090");
+                else if(ed  == "concrete")
+                    $(".price").text("QAR 16,910");
+            }
+            if( value == "Oman")
+            {
+                if(ed == "salt")
+                    $(".price").text("OMR 1,560");
+                else if(ed == "graphite")
+                    $(".price").text("OMR 1,705");
+                else if(ed  == "concrete")
+                    $(".price").text("OMR 1,795");
+            }
+            if( value == "Kuwait")
+            {
+                if(ed == "salt")
+                    $(".price").text("KWD 1,220");
+                else if(ed == "graphite")
+                    $(".price").text("KWD 1,340");
+                else if(ed  == "concrete")
+                    $(".price").text("KWD 1,410");
+            }
+            if( value == "Jordan")
+            {
+                if(ed == "salt")
+                    $(".price").text("JOD 2,880");
+                else if(ed == "graphite")
+                    $(".price").text("JOD 3,140");
+                else if(ed  == "concrete")
+                    $(".price").text("JOD 3,300");
+            }
+            if( value == "India")
+            {
+                if(ed == "salt")
+                    $(".price").text("INR 2,70,000");
+                else if(ed == "graphite")
+                    $(".price").text("INR 2,95,000");
+                else if(ed  == "concrete")
+                    $(".price").text("INR 3,10,000");
+            }
+            if( value == "Hong Kong")
+            {
+                if(ed == "salt")
+                    $(".price").text("HKD 31,730");
+                else if(ed == "graphite")
+                    $(".price").text("HKD 34,660");
+                else if(ed  == "concrete")
+                    $(".price").text("HKD 36,430");
+            }
+            if( value == "Germany")
+            {
+                if(ed == "salt")
+                    $(".price").text("EUR 3,390");
+                else if(ed == "graphite")
+                    $(".price").text("EUR 3,710");
+                else if(ed  == "concrete")
+                    $(".price").text("EUR 3,710");
+            }
+            if( value == "France")
+            {
+                if(ed == "salt")
+                    $(".price").text("EUR 3,390");
+                else if(ed == "graphite")
+                    $(".price").text("EUR 3,710");
+                else if(ed  == "concrete")
+                    $(".price").text("EUR 3,890");
+            }
+            if( value == "Italy")
+            {
+                if(ed == "salt")
+                    $(".price").text("EUR 3,390");
+                else if(ed == "graphite")
+                    $(".price").text("EUR 3,710");
+                else if(ed  == "concrete")
+                    $(".price").text("EUR 3,890");
+            }
+            if( value == "Bahrain")
+            {
+                if(ed == "salt")
+                    $(".price").text("BHD 1,530");
+                else if(ed == "graphite")
+                    $(".price").text("BHD 1,670");
+                else if(ed  == "concrete")
+                    $(".price").text("BHD 1,760");
+            }
+        });
         </script>
         <script src="js/main.js"></script>
     </body>
