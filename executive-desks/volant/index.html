@@ -880,7 +880,7 @@
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgb(0, 0, 0, 0.7); top: 12.38vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;" class="price">USA 4,050</span>
+                <span style="position: absolute; color: rgb(0, 0, 0, 0.7); top: 12.38vw; left: 61.3vw; text-shadow: none; font-size: 0.85vw; letter-spacing: 0.15vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;" class="price">USD 4,050</span>
                 
                 <span id="specs" style="position: absolute; color: rgb(30,30,30); top: 9.72vw; left: 61.55vw; text-shadow: none; letter-spacing: 0.11vw; font-family: GothamLight; font-size: 0.47vw; cursor: pointer; -webkit-font-smoothing: antialiased;"><img src="img/page5/Pre%20Order.png" style="width: 6.5vw; position: absolute; top: -0.144vw; left: -0.53vw; color: rgb(30,30,30);">SPECIFICATIONS</span>
                 
@@ -1148,6 +1148,7 @@
                 $("#tick2text").css({'opacity': 0});
                 $("#edition1").addClass('shadeticktextActive');
                 $("#edition2").removeClass('shadeticktextActive');
+                priceChange();
             }
             else if(tick == "tick2")
             {
@@ -1164,6 +1165,7 @@
                 $("#tick2text").css("opacity", "1");
                 $("#edition1").addClass('shadeticktextActive');
                 $("#edition2").removeClass('shadeticktextActive');
+                priceChange();
             }
             else if(tick == "tick3")
             {
@@ -1180,6 +1182,7 @@
                 $("#tick2text").css("opacity", "0");
                 $("#edition2").addClass('shadeticktextActive');
                 $("#edition1").removeClass('shadeticktextActive');
+                priceChange();
             }
             $(".imageslider").removeClass("sliderAnimateHide");
             $(".imageslider").removeClass("sliderResetLeft");
@@ -1274,7 +1277,11 @@
         }
         
         $(".menuselect").change(function() {
-            var value = $("option:selected", this).val();
+            priceChange();
+        });
+            
+        function priceChange() {
+            var value = $(".menuselect option:selected").val();
             var ed = $(".shadetickActive").text().trim().toLowerCase();
             if(value == "USA")
             {
@@ -1364,7 +1371,7 @@
                 else if(ed == "graphite")
                     $(".price").text("EUR 3,710");
                 else if(ed  == "concrete")
-                    $(".price").text("EUR 3,710");
+                    $(".price").text("EUR 3,890");
             }
             if( value == "France")
             {
@@ -1393,7 +1400,7 @@
                 else if(ed  == "concrete")
                     $(".price").text("BHD 1,760");
             }
-        });
+        }
         </script>
         <script src="js/main.js"></script>
     </body>
