@@ -24,6 +24,9 @@
 
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/examples.js"></script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    
 	<script type="text/javascript">
 		$(document).ready(function() {
             var val1 = 0;
@@ -103,6 +106,8 @@
         @font-face {
             font-family: 'Nexa';
             src: url("font/Nexa-Light.otf");
+            Cache-Control: public, max-age=15552000; 
+Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files)
         }
 
         @font-face {
@@ -166,6 +171,14 @@
         
         input, select {
             outline: none;
+        }
+        
+        .wf-loading body {
+            visibility: hidden; 
+        }
+        
+        .wf-active body .wf-inactive body {
+            visibility: visible;
         }
         
         .secp {
