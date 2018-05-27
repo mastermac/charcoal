@@ -23,6 +23,9 @@
 	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
 
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    
 	<script type="text/javascript" src="js/examples.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -196,6 +199,14 @@
         
         input, select {
             outline: none;
+        }
+        
+        .wf-loading body {
+            visibility: hidden; 
+        }
+        
+        .wf-active body .wf-inactive body {
+            visibility: visible;
         }
         
         .secp {
