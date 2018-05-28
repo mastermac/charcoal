@@ -1065,6 +1065,45 @@
                 }
             }
             
+            var latitude = "";
+            var longitude = "";
+            var geocoder;
+            
+            function initMap() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(updateLocation, handleLocationError, {
+                        timeout: 50000
+                    });  
+                }
+            }
+            function updateLocation(position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                geocoder = new google.maps.Geocoder();
+                var latlng = new google.maps.LatLng(latitude,longitude);
+                if (geocoder) {
+                    geocoder.geocode({'latLng': latlng}, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            if (results) {
+                                for (var i = 0; i < results.length; i++)
+                                    if (results[i].types[0] == "country")
+                                    {
+                                        $(".menuselect").val(results[i].formatted_address);
+                                        priceChange();
+                                    }
+                            } else {
+                                alert("No results found");
+                            }
+                        } else {
+                            alert("Geocoder failed due to: " + status);
+                        }
+                    });
+                }
+            }
+            
+            function handleLocationError() {
+            }
+            
             $('.singledot').click(function() {
                 makeInactive();
                 val1 = $(this).children('p').attr('id');
@@ -1413,6 +1452,8 @@
             }
         }
         </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDihkWmfF4vQGeY3Ck3EiXR70Rw_2YvXY0&callback=initMap"
+  type="text/javascript"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
