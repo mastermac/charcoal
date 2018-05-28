@@ -674,7 +674,7 @@
                     <!--Telephone<br>
                     <input type="text" class="tel" id="tel" name="tel"><br>-->
                     <a href="#" style="padding: 0; display: unset; font-size: 0;">
-                        <img class="menuimage" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 1.37vw;">
+                        <img class="menuimage" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 0.37vw;">
                     </a>
                     </p>
                     </form>
@@ -871,7 +871,7 @@
                 </span>
                 <span>
                     <img id="tick1" class="shadetick shadetickActive" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 38vw; cursor: pointer; pointer-events: none;" src="img/page5/Customisation%20Icon%20Salt%20Active.png"/>
-                    <p id="tick1text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 38vw;  color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw; -webkit-font-smoothing: antialiased;">SALT</p>
+                    <p id="tick1text" class="shadeticktext shadetickChangeActive" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 38vw;  color: rgb(0, 0, 0); text-shadow: none; opacity: 1; letter-spacing: 0.08vw; -webkit-font-smoothing: antialiased;">SALT</p>
                     <img id="tick2" class="shadetick" style="width: 1.4vw; position: absolute; top: 12.3vw; left: 40.15vw; cursor: pointer;" src="img/page5/Customisation%20Icon%20Graphite%20Inactive.png"/>
                     <p id="tick2text" class="shadeticktext" style="font-size: 0.5vw; font-family: Nexa; position: absolute; top: 13.91vw; left: 39.3vw; color: rgb(0, 0, 0); text-shadow: none; opacity: 0; letter-spacing: 0.085vw; -webkit-font-smoothing: antialiased;">GRAPHITE</p>
                 </span>
@@ -1190,6 +1190,9 @@
                 $("#tick2text").css({'opacity': 0});
                 $("#edition1").addClass('shadeticktextActive');
                 $("#edition2").removeClass('shadeticktextActive');
+                $("#tick1text").addClass('shadetickChangeActive');
+                $("#tick2text").removeClass('shadetickChangeActive');
+                $("#edition2").removeClass('shadetickChangeActive');
                 priceChange();
             }
             else if(tick == "tick2")
@@ -1207,6 +1210,9 @@
                 $("#tick2text").css("opacity", "1");
                 $("#edition1").addClass('shadeticktextActive');
                 $("#edition2").removeClass('shadeticktextActive');
+                $("#tick2text").addClass('shadetickChangeActive');
+                $("#tick1text").removeClass('shadetickChangeActive');
+                $("#edition2").removeClass('shadetickChangeActive');
                 priceChange();
             }
             else if(tick == "tick3")
@@ -1224,6 +1230,9 @@
                 $("#tick2text").css("opacity", "0");
                 $("#edition2").addClass('shadeticktextActive');
                 $("#edition1").removeClass('shadeticktextActive');
+                $("#edition2").addClass('shadetickChangeActive');
+                $("#tick1text").removeClass('shadetickChangeActive');
+                $("#tick2text").removeClass('shadetickChangeActive');
                 priceChange();
             }
             $(".imageslider").removeClass("sliderAnimateHide");
@@ -1324,7 +1333,7 @@
             
         function priceChange() {
             var value = $(".menuselect option:selected").val();
-            var ed = $(".shadetickActive").text().trim().toLowerCase();
+            var ed = $(".shadetickChangeActive").text().trim().toLowerCase();
             if(value == "USA")
             {
                 if(ed == "salt")
