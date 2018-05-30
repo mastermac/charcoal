@@ -692,20 +692,21 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 <span class="menutextspan menusp21 hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
                     <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 3.21vw !important; line-height: 1.3vw;"><span style="position: absolute; margin-top: 23.2vw;">EMAIL US</span><span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 23.42vw; margin-left: 5vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
+                    <p id="menureqtext" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; margin-top: -2.24vw !important">
+                        *Please check the required fields
+                    </p>
                     <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.5vw !important">
                         <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.</label>
                     </p>
-                    <form name="contactForm" method="post" action="contact.php">
+                    <form name="contactForm" method="post">
                         <p id="modalfillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.5vw; margin-top: -0.11vw !important; margin-bottom: 0.4vw !important;">
                             Name<br>
-                            <input type="text" class="name " id="name" name="name"><br>
+                            <input type="text" class="name " id="name" name="name" pattern="[A-Za-z ]{1,40}" required><br>
                             E-mail Address<br>
-                            <input type="text" class="email" id="email" name="email"><br>
-                            <a href="#" style="padding: 0; display: unset; font-size: 0;">
-                                <img class="menuimage" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 0.37vw;">
-                            </a>
-                    </p>
+                            <input type="text" class="email" id="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
+                            <input type="image" class="menuimage" name="submit" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 0.46vw; background-color: transparent;" alt="Submit">
+                        </p>
                     </form>
                 </span>
                 
@@ -733,8 +734,8 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 </a>
                 
                 <div class="menusp22 hidden" style="position: absolute; z-index: -2;">
-                    <div class="menusp22" style="max-width: 100%; width: 37.5vw; height: 25.5vw; 
-    box-shadow: 0.3vw 0.2vw 0.4vw #80808040, -0.07vw -0.035vw 0.29vw #80808040; padding:0, 0.3vw 0.2vw 0.4vw #80808040; padding:0; margin: 6.2vw 0px 0px 23.6vw; background-size: cover; background-image: url('img/Catalogue.jpg');">
+                    <div class="menusp22" style="max-width: 100%; width: 32.5vw; height: 22.1vw; 
+    box-shadow: 0.3vw 0.2vw 0.4vw #80808040, -0.07vw -0.035vw 0.29vw #80808040; padding:0, 0.3vw 0.2vw 0.4vw #80808040; padding:0; margin: 0.9vw 0px 0px 23.2vw; background-size: cover; background-image: url('img/Catalogue.jpg');">
                     </div>
                 </div>
                 
@@ -899,13 +900,13 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.44vw; margin-left: -42.48vw; width: 19.85vw; height: 1px; position: absolute;"></span>
             </div>
             <div id="forms" style="text-align: center; position: relative; top: 3.57vw; left: -2.65vw;">
-                <span id="form1" class="formSelectActive formSelect" style="position: absolute; top: 12.54vw; left: 9.25vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; opacity: 0.45; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer; pointer-events: none;">
+                <span id="form1" class="formSelectActive formSelect" style="position: absolute; top: 12.54vw; left: 9.25vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; opacity: 1; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer; pointer-events: none;">
                     light
                 </span>
-                <span id="form2" class="formSelect" style="position: absolute; top: 12.54vw; left: 14.77vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
+                <span id="form2" class="formSelect" style="position: absolute; top: 12.54vw; left: 14.77vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; opacity: 0.45; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
                     standard
                 </span>
-                <span id="form3" class="formSelect" style="position: absolute; top: 12.54vw; left: 22.12vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
+                <span id="form3" class="formSelect" style="position: absolute; top: 12.54vw; left: 22.12vw; color: rgb(0, 0, 0); font-family: GothamLight; text-shadow: none; opacity: 0.45; font-size: 0.69vw; letter-spacing: 0.14vw; -webkit-font-smoothing: antialiased; cursor: pointer;">
                     L return
                 </span>
             </div>
@@ -944,12 +945,13 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             <!-- The Modal -->
             <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgb(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.25vw 0.25vw 1.5vw;">
                 <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 14vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
-                <span id="menufillin" class="menusp21" style="float: left; margin-left: 0.74vw; margin-top: 1.5vw; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased;">
+                <span id="menufillin" class="menusp21" style="float: left; margin-left: 0.74vw; margin-top: -1vw; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased;">
+                    *Please check the required fields<br><br>
                     Name<br>
                     <input type="text" class="name " id="name" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
-                    E-mail Address<br>
+                    E-mail Address<span>*</span><br>
                     <input type="text" class="email" id="email" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
-                    Telephone<br>
+                    Telephone<span>*</span><br>
                     <input type="text" class="tel" id="tel" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
                 </span>
                 
@@ -1312,10 +1314,10 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 $(".specsImg").css({'margin-top': '-3.2vw', 'margin-left': '1.47vw', 'width': '46.3vw', 'height': '25.05vw'});
             }
             $(this).addClass("formSelectActive");
-            $(this).css({'pointer-events': 'none', 'opacity': 0.45});
+            $(this).css({'pointer-events': 'none', 'opacity': 1});
             $("#" + form).removeClass("formSelectActive");
             priceChange();
-            $("#" + form).css({'pointer-events': 'auto', 'opacity': 1});
+            $("#" + form).css({'pointer-events': 'auto', 'opacity': 0.45});
             form = $(this).attr("id");
             changeImage();
         });
