@@ -668,7 +668,7 @@
                         <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.</label>
                     </p>
-                    <form name="contactForm" method="post">
+                    <form name="contactForm" method="post" action="contact.php">
                         <p id="modalfillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.5vw; margin-top: -0.11vw !important; margin-bottom: 0.4vw !important;">
                             Name<br>
                             <input type="text" class="name " id="name" name="name" pattern="[A-Za-z ]{1,40}" required><br>
@@ -928,6 +928,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
+            
             var val1 = 0;
             var my_image1 = new Image();
             var my_image2 = new Image();
@@ -1092,6 +1093,16 @@
                     });
                 }
             }
+            
+            $(document).ready(function(){
+                var $form = $('form');
+                $form.submit(function(){
+                    $.post($(this).attr('action'), $(this).serialize(), function(response){
+                        // do something here on success
+                    },'json');
+                    return false;
+                });
+            });
             
             function handleLocationError() {
             }
