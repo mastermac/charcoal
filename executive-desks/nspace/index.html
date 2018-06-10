@@ -1033,7 +1033,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             </div>
             
             <div id="myModal2" style="display: none; position: absolute; z-index: 8; margin-left: 21.05vw; margin-top: -14.85vw; width: 57.78vw; height: 34.5vw; overflow: visible; background-color: rgba(51,51,51,0.97); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.35vw 0.35vw 1.5vw;">
-                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 50.3vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
+                <img class="cross crossModal2" style="position: absolute; margin-top: -8vw; margin-left: 50.3vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
                 <img class="specsImg" src="img/page5/specs01.png" style="margin-top: -3.18vw; margin-left: 0.58vw; width: 41.3vw; height: 25.45vw; position: relative;">
             </div>
         </div>
@@ -1365,16 +1365,19 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             if(formtxt == "light") {
                 $(".specsImg").attr("src","img/page5/specs01.png");
                 $(".specsImg").css({'margin-top': '-3.18vw', 'margin-left': '0.58vw', 'width': '41.3vw', 'height': '25.45vw'});
+                $(".crossModal2").css({'margin-left': '50.3vw'});
             }
             else if(formtxt == "standard")
             {
                 $(".specsImg").attr("src","img/page5/specs02.png");
                 $(".specsImg").css({'margin-top': '-2.85vw', 'margin-left': '0.47vw', 'width': '46.5vw', 'height': '24.9vw'});
+                $(".crossModal2").css({'margin-left': '52.8vw'});
             }
             else if(formtxt == "L return")
             {
                 $(".specsImg").attr("src","img/page5/specs03.png");
                 $(".specsImg").css({'margin-top': '-3.2vw', 'margin-left': '1.47vw', 'width': '46.3vw', 'height': '25.05vw'});
+                $(".crossModal2").css({'margin-left': '53.2vw'});
             }
             $(this).addClass("formSelectActive");
             $(this).css({'pointer-events': 'none', 'opacity': 1});
