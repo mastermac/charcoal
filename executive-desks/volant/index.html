@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-    <title>Volant | Charcoal</title>
+    <title>Volant</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -16,22 +16,24 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link rel="icon" href="img/fav.png" type="image/x-icon"/>
     
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
 	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
 
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
     
-    <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
-    
 	<script type="text/javascript" src="js/examples.js"></script>
 	<script type="text/javascript">
+        $(document).ready(function() {
+            document.getElementsByTagName("html")[0].style.visibility = "visible";
+        });
 		$(document).ready(function() {
             var val1 = 0;
 			$('#fullpage').fullpage({
-                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+                anchors: ['01', '02', '03', '04', '05'],
 				bigSectionsDestination:'top',
                 onLeave: function(index, nextIndex, direction){                
                     if(nextIndex == 1) {
@@ -81,14 +83,6 @@
                         $(".menudot2").attr("style","color: rgb(172,172,172) !important");
                     }
                     
-                    if(index == 3 && (nextIndex==1 || nextIndex==2 || nextIndex==4)) {
-                        if($('img').hasClass('iconAnimated'))
-                        {
-                            $('.iconAnimated').addClass('notAnimated')
-                            $('.notAnimated').removeClass('iconAnimated')
-                        }
-                    }
-                    
                     if((index == 4) && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
                         $(".dark").fadeOut(10, function() {
                             $('.dark').css('color', 'black');
@@ -134,6 +128,18 @@
                             $('.notAnimated').addClass('iconAnimated')
                             $('.iconAnimated').removeClass('notAnimated')
                         }
+                        if($('img').hasClass('notAnimatedBase'))
+                        {
+                            $('.notAnimatedBase').addClass('iconAnimatedBase')
+                            $('.iconAnimatedBase').removeClass('notAnimatedBase')
+                        }
+                    }
+                    
+                    if(index == 1 || index == 2 || index == 4 || index == 5) {
+                        $('.iconAnimatedBase').addClass('notAnimatedBase');
+                        $('.iconAnimated').addClass('notAnimated');
+                        $('.notAnimated').removeClass('iconAnimated');
+                        $('.notAnimatedBase').removeClass('iconAnimatedBase');
                     }
                 }
 			});
@@ -152,18 +158,25 @@
             font-family: 'Nexa';
             src: url("font/Nexa-Light.otf");
         }
+        
         @font-face {
             font-family: 'GothamBook';
             src: url("font/Gotham-Book.otf");
         }
+        
         @font-face {
             font-family: 'GothamLight';
             src: url("font/Gotham-Light.otf");
         }
         
         @font-face {
-            font-family: 'GothamELight';
-            src: url("font/Gotham-ExtraLight.otf");
+            font-family: 'GothamLight';
+            src: url("font/Gotham-Light.otf");
+        }
+        
+        @font-face {
+            font-family: 'GothamLightB';
+            src: url("font/Gotham-LightB.otf");
         }
         
         @font-face {
@@ -184,6 +197,11 @@
             height: 60px;
             width: 145px;
         }
+        
+        html {
+            visibility:hidden;
+        }
+
         html, body {
             height: 100%;
         }
@@ -213,19 +231,14 @@
             text-align: left;
             font-family: GothamLight;
             color: rgb(80,80,80);
-            font-size: 0.77vw;
             margin-right: 2.4vw;
             letter-spacing: 0.05vw;
             -webkit-font-smoothing: antialiased;
             -webkit-justify-content: center;
             text-align: -webkit-left;
             padding-left: 5.6vw;
-            line-height: 1.29vw;
             margin-bottom: -0.79vw !important;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering:optimizeLegibility;
         }
         
         .hidden {
@@ -252,14 +265,13 @@
             background-color: rgb(229,229,229);
         }
         
-        .notAnimated {
-            transition: transform 2s ease;
-            transform: translateZ(0) translate(0, 0);
+        .notAnimated, .notAnimatedBase {
+            opacity: 0;
         }
         
-        .iconAnimated {
-            transition: transform 2s ease;
-            transform: translateZ(0) translate(0.4vw,-0.6vw);
+        .iconAnimatedBase {
+            transition: opacity 2s ease;
+            opacity: 1;
         }
         
         .sliderAnimatedHide {
@@ -292,10 +304,7 @@
             -webkit-font-smoothing: antialiased;
             position: absolute;
             height: 0;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering:optimizeLegibility;
         }
         
         .singledot:hover {
@@ -361,21 +370,15 @@
             overflow-x: hidden;
             transition: 1s;
             font-family: GothamBook;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         .overlay-content {
             position: relative;
             text-align: center;
             font-family: GothamBook;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
-        .overlay a:not(#noemail) {
+        .overlay a:not(#noemail):not(#nodownload) {
             padding: 8px;
             text-decoration: none;
             font-size: 36px;
@@ -383,10 +386,7 @@
             display: block;
             transition: 0.3s;
             font-family: GothamBook;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         
         a:hover {
@@ -397,19 +397,13 @@
             color: rgb(102,102,102);
             font-family: GothamBook;
             -webkit-font-smoothing: antialiased;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         .overlay .closebtn {
             position: absolute;
             top: -10px;
             font-size: 40px;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         .menubar {
             width:100%;
@@ -424,10 +418,7 @@
             margin-top: 2vw;
             margin-right: 3.9vw;
             flex: none;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         
         .overlayhover:hover .overlaymenu {
@@ -477,10 +468,7 @@
             margin-top: -0.19vw !important;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         
         .menudot02 {
@@ -488,10 +476,7 @@
             margin-top: -0.15vw !important;
             color: rgb(209,209,209) !important;
             transition: color linear .2s;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         
         .menudot1 {
@@ -502,20 +487,14 @@
             cursor: default;
             -webkit-text-stroke-width: 0.02vw;
             -webkit-text-stroke-color: rgb(51,51,51);
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         
         .menudot2 {
             font-size: 0.86vw;
             color: rgb(209,209,209) !important;
             transition: color linear .2s;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            text-rendering: optimizeLegibility;
         }
         
         input[type='radio'] {
@@ -554,20 +533,14 @@
             z-index: 2;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-            
         }
         
         #pulse01 {
             position: absolute;
             color: rgb(180, 180, 180);
             font-size: 0.86vw;
-            text-shadow: none;
             margin-left: 9.6%;
-            animation: burst 1.7s infinite;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            -webkit-animation: burst 2.2s infinite;
         }
         
         #pulse02 {
@@ -576,11 +549,7 @@
             color: rgb(180, 180, 180);
             text-shadow: none;
             margin-left: 15.3%;
-            animation: burst 1.7s infinite;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            -webkit-animation: burst 2.2s infinite;
         }
         
         #pulse03 {
@@ -589,11 +558,7 @@
             color: rgb(180, 180, 180);
             text-shadow: none;
             margin-left: 7.7%;
-            animation: burst 1.7s infinite;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            -webkit-animation: burst 2.2s infinite;
         }
         
         .addtick {
@@ -604,92 +569,107 @@
             height: 0.37vw;
         }
         
-        @keyframes burst {
-            0% {
-                -webkit-text-stroke-color: rgba(230, 230, 230, 1);
-                -webkit-text-stroke-width: 0.02vw;
+        @-webkit-keyframes burst {
+            
+        
+        from {
+                text-shadow: 0 0 0 rgba(230, 230, 230, 0.7), 0 0 0 rgba(230, 230, 230, 0.7), 0 0 0  rgba(230, 230, 230, 0.7), 0 0 0 rgba(230, 230, 230, 0.7);
             }
             
-            5% {
-                -webkit-text-stroke-width: 0.07vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.95);
+        to {
+                text-shadow: 0 0 2vw rgba(255, 255, 255, 0), 0 0 2vw rgba(255, 255, 255, 0), 0 0 2vw  rgba(255, 255, 255, 0), 0 0 2vw rgba(255, 255, 255, 0);
             }
             
-            10% {
-                -webkit-text-stroke-width: 0.12vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.9);
-            }
-            
-            15% {
-                -webkit-text-stroke-width: 0.16vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.85);
-            }
-            
-            20% {
-                -webkit-text-stroke-width: 0.21vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.8);
-            }
-            
-            25% {
-                -webkit-text-stroke-width: 0.25vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.75);
-            }
-            
-            30% {
-                -webkit-text-stroke-width: 0.3vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.7);
-            }
-            
-            35% {
-                -webkit-text-stroke-width: 0.35vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.65);
-            }
-            
-            40% {
-                -webkit-text-stroke-width: 0.4vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.6);
-            }
-            
-            45% {
-                -webkit-text-stroke-width: 0.45vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.5);
-            }
-            
-            50% {
-                -webkit-text-stroke-width: 0.5vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.4);
-            }
-            
-            55% {
-                -webkit-text-stroke-width: 0.55vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.3);
-            }
-            
-            60% {
-                -webkit-text-stroke-width: 0.6vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.2);
-            }
-            
-            70% {
-                -webkit-text-stroke-width: 0.7vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.1);
-            }
-            
-            75% {
-                -webkit-text-stroke-width: 0.8vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.05);
-            }
-            
-            80% {
-                -webkit-text-stroke-width: 0.9vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0);
-            }
-
-            100% {
-                -webkit-text-stroke-width: 0.9vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0);
+            animation-timing-function: ease-in-out;
+        }
+        
+        @media screen and (min-width: 1920px) {
+            .iconAnimated {
+                transition: transform 2s ease, opacity 2s ease;
+                transform: translateZ(0) translate(0.4vw,-0.6vw);
+                opacity: 1;
             }
         }
+        
+        @media screen and (max-width: 1920px) {
+            .iconAnimated {
+                transition: transform 2.4s cubic-bezier(0.72, -0.32, 0.89, -0.37), opacity 2s ease;
+                transform: translateZ(0) translate(0.4vw,-0.6vw);
+                opacity: 1;
+            }
+        }
+        
+        @media screen and (min-width: 415px) {
+            .imagepane {
+                max-width: 103vw;
+                margin-top: 9.48vw;
+                margin-left: -7.4vw;
+            }
+            .mobilePara {
+                float:left;
+                margin-top: 17.8vw;
+                margin-left: -2.37vw;
+                width: 29%;
+            }
+            .sec1head1 {
+                 font-size: 0.5vw;
+                letter-spacing: 0.2vw;
+                margin-bottom: 1.3vw;
+            }
+            .sec1head2 {
+                letter-spacing: 0.12vw;
+                margin-bottom: 1.1vw;
+                font-size: 1vw;
+            }
+            .secp {
+                font-size: 0.77vw;
+                line-height: 1.29vw;
+            }
+            #logo {
+                width: 9.44vw;
+            }
+        }
+        
+        @media screen and (max-width: 414px) {
+            .imagepane {
+                max-width: 248vw;
+                margin-top: 12.48vw;
+                margin-left: -28.4vw;
+            }
+            .mobilePara {
+                float: left;
+                margin-top: 100.8vw;
+                margin-left: -73.37vw;
+                width: 100%;
+            }
+            .sec1head1 {
+                font-size: 2.4vw;
+                letter-spacing: 0.85vw;
+                margin-bottom: 4.4vw;
+            }
+            .sec1head2 {
+                font-size: 4vw;
+                letter-spacing: 0.5vw;
+                margin-bottom: 6.1vw;
+            }
+            .secp {
+                font-size: 3.7vw;
+                line-height: 5.29vw;
+            }
+            #logo {
+                width: 37.44vw;
+            }
+            .top-bar {
+                opacity: 0;
+            }
+            .menu {
+                float: right;
+                cursor: pointer;
+                margin-right: 3%;
+                margin-left: 0%;
+            }
+        }
+        
     </style>
     </head>
     <body tabindex="1" style="background-color: rgb(250,250,250);">
@@ -721,20 +701,22 @@
                 <span class="menutextspan menusp21 hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
                     <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 3.21vw !important; line-height: 1.3vw;"><span style="position: absolute; margin-top: 23.2vw;">EMAIL US</span><span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 23.42vw; margin-left: 5vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
-                    <p id="menureqtext" class="menureq" style="font-family: GothamLight; font-size: 0.67vw; margin-top: -2.24vw !important; visibility: hidden;">
+                    <p class="notfilled" id="menureqtext" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; margin-top: -2.24vw !important; opacity: 0;">
                         *Please check the required fields
                     </p>
                     <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.5vw !important">
-                        <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.</label>
+                        <input type="radio" name="gender" value="female"> <label>Ms.<span class="notfilledmrms" style="opacity: 0;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.<span class="notfilledmrms" style="opacity: 0;">*</span></label>
                     </p>
-                    <form name="contactForm" id="contactForm" method="post" action="contact.php">
+                    <form name="contactForm" method="">
                         <p id="modalfillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.5vw; margin-top: -0.11vw !important; margin-bottom: 0.4vw !important;">
-                            Name<span class="menureq" style="visibility: hidden;">*</span><br>
+                            Name<span class="notfilledname" style="opacity: 0;">*</span><br>
                             <input type="text" class="name " id="name" name="name" pattern="[A-Za-z ]{1,40}" required><br>
-                            E-mail Address<span class="menureq" style="visibility: hidden;">*</span><br>
+                            E-mail Address<span class="notfilledemail" style="opacity: 0;">*</span><br>
                             <input type="text" class="email" id="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
-                            <input type="image" class="menuimage" name="submit" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 0.46vw; background-color: transparent;" alt="Submit">
+                            <a id="nodownload" href="#">
+                                <img type="image" class="menuimage" name="submit" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 0.46vw; background-color: transparent;">
+                            </a>
                         </p>
                     </form>
                 </span>
@@ -752,7 +734,7 @@
                 <span class="menusp3" style="width: 2.67vw; flex: none;">
                 </span>
                 
-                <a class="overlayhover menusp4" style="top: -0.45vw; padding: 0 !important; position: relative;" href="../nspace/index.html">
+                <a class="overlayhover menusp4" style="top: -0.45vw; padding: 0 !important; position: relative;" href="../nspace/#design01">
                     <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity: 0.85; background-size: cover; background-image: url('img/N%20Space%20Inactive.png');">
                     </div>
                     <p class="menusp2 menusp2et" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">n.SPACE</p>
@@ -775,34 +757,34 @@
         </p>
         <div class="row">
             <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <a class="dark" href="#firstPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <a class="dark" href="#01" style="font-family: GothamLightB; float:left; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     design
                 </a>
                 <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#firstPage" style="margin-left: -2.2vw;"><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#secondPage" style="margin-left: -1.5vw;"><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#01" style="margin-left: -2.2vw;"><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#02" style="margin-left: -1.5vw;"><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <a class="dark" href="#thirdPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important; margin-left: -0.33vw;">
+                <a class="dark" href="#3" style="font-family: GothamLightB; float:left; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important; margin-left: -0.33vw;">
                     features
                 </a>
                 <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#thirdPage" style="margin-left: -2.6vw;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#fourthPage" style="margin-left: -1.9vw;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#03" style="margin-left: -2.6vw;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#04" style="margin-left: -1.9vw;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <a class="dark" href="#lastPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-left: 0.1vw; margin-top: 1.335vw !important;">
+                <a class="dark" href="#05" style="font-family: GothamLightB; float:left; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-left: 0.1vw; margin-top: 1.335vw !important;">
                     customize and pre-order
                 </a>
                 <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#lastPage" style="margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
+                    <a class="singledot mynav" href="#05" style="margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
                     <a style="margin-right: 1.4vw;" href="#firstPage"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.9; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
-                    <a href="../nspace/index.html"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.35; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
+                    <a href="../nspace/#design01"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.35; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
             </div>
         </div>
     </div>
@@ -810,12 +792,12 @@
     
     <div style="text-align:center;" class="header-top clearfix">
         <span id="logospan">
-            <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
+            <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast;" />
         </span>
     </div>
     <div style="text-align:center; z-index: 5; width: 10%; left: 45%;" class="header-top clearfix">
-        <a href="../../index.html" id="logospan" >
-            <img id="logoMask" style=" width: 9.44vw; opacity: 0;" />
+        <a href="../../" id="logospan" >
+            <img id="logoMask" style=" width: 9.44vw; height: 0.8vw; opacity: 0;" />
         </a>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
@@ -823,54 +805,54 @@
             
         <div class="section" id="section0">
             <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 103vw; margin-top: 9.48vw; margin-left: -7.4vw;" src="img/Volant01.png" />
+                <img class="imagepane" style="" src="img/Volant01.png" />
                 <div style="text-align: center; position: relative">
                     <img style="width: 1.2vw; position: absolute; top: -6.9vw; margin-left: -3vw;" src="img/volant_salt_shade.png" />
                     <span style="position: absolute; color:rgb(120,120,120); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -6.5vw; margin-left: -0.56vw;">SALT</span>
                 </div>
             </span>
-            <span class="right" style="float:left; margin-top: 17.8vw; margin-left: -2.37vw; width: 28%;">
-                <h3 style="font-family: Nexa; font-size: 0.5vw; font-weight: lighter; letter-spacing: 0.2vw; color: rgb(60,60,60); margin-bottom: 1.3vw; text-align: left; margin-left: 5.6vw; -webkit-font-smoothing: antialiased;">
+            <span class="right mobilePara" style="">
+                <h3 class="sec1head1" style="font-family: Nexa; font-weight: lighter; color: rgb(60,60,60); text-align: left; margin-left: 5.6vw; -webkit-font-smoothing: antialiased;">
                     AN ICON FOR ICONOCLASTS
                 </h3>
-                <h2 style="font-family: GothamBook; font-size: 1vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.12vw; margin-bottom: 1.1vw;">
+                <h2 class="sec1head2" style="font-family: GothamBook; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left;">
                     VOLANT<span style="font-family: monospace; font-size: 0.7vw;">.</span>
                 </h2>
                 <p class="secp" style="margin-top: 0 !important; margin-bottom: -1.2vw !important; letter-spacing: 0.057vw;">Our singular purpose was to create a product</p>
-                <p class="secp" style="letter-spacing: 0.02vw;">
-                    not bound by convention. Volant is the realization
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.06vw; margin-top: 0.8vw !important;">of that dream. Inspired by 21<sup>st</sup> century trends</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.06vw;">in aeronautics, we brought Volant to life and</p>
-                <p class="secp" style="margin-top: 1.26vw !important;">integrated it with cutting edge technology.
-                </p>
+                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.03vw;">
+                    not bound by convention. Inspired by 21<sup>st</sup> century</p>
+                <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.03vw;">
+                    trends in aeronautics, Volant is the realization of</p>
+                <p class="secp" style="letter-spacing: 0.03vw;">
+                    this dream.</p>
                 <p class="secp" style="margin-top: 1.1vw !important; margin-bottom: -1.2vw !important; letter-spacing: 0.057vw;">
                     Imagined with simple yet purposeful strokes,</p>
                 <p class="secp" style="letter-spacing: 0.029vw;">the body is constructed out of virtually seamless</p>
                 <p class="secp" style="margin-bottom: -1.2vw !important; letter-spacing: 0.037vw; margin-top: 0.86vw !important;">lines of HI-MACS<sup style="top: 0em; font-size: 1vw;">&reg;</sup> - marrying the look of classic</p>
-                <p class="secp" style="margin-bottom: -1.2vw !important; margin-top: 1.197vw !important; letter-spacing: 0.057vw; word-spacing: 0.01vw">stone with the avant grade form.
+                <p class="secp" style="margin-bottom: -1.2vw !important; margin-top: 1.197vw !important; letter-spacing: 0.057vw; word-spacing: 0.01vw">stone with the avant-grade form.
                 </p>
 
             </span>
         </div>
         <div class="section" id="section1" style="position: relative;">
-            <span class="right" style="position: absolute; float: left; margin-top: 23.2vw; width: 35%; margin-left: -50.73vw;">
-                <h2 style="font-family: GothamBook; font-size: 0.86vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.07vw;">
+            <span class="left" style="position: relative; float: left; margin-top: 23.2vw; width: 35%; margin-left: -0.8vw;">
+                <h2 style="font-family: GothamLightB; font-size: 0.86vw; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.07vw;">
                     A story of extraordinary engineering,
                 </h2>
                 <p class="secp" style="line-height: 1.3vw; margin-top: 1.1vw !important;">
-                    For Volant to exist as it does, our engineers and designers had to create a light-weight frame strong enough to withstand an incredible 2,500 N-m of torque and yet ensure that Volant remains aesthetically stunning.
+                    For Volant to exist as it does, our engineers and designers had to create a light-weight frame strong enough to withstand an incredible 2,500 N-m of torque, and yet ensure that Volant remains aesthetically stunning.
                 </p>
                 <p class="secp" style="line-height: 1.3vw; margin-top:1.4vw !important;">
                     Drawing lessons from the cutting edge in aeronautics and automobile engineering, that's exactly what they did.
                 </p>
             </span>
-            <span class="left" style="float: left; width: 69%;">
-                <img class="imagepane" style="max-width: 93vw; margin-top: 11vw; margin-left: 8.5vw;" src="img/Volant02.png" />
+            <span class="right" style="float: right; width: 65%;">
+                <img class="imagepane" style="max-width: 93vw; margin-top: 11vw; margin-left: -26.4vw;" src="img/Volant02.png" />
             </span>
         </div>
         <div class="section" id="section2">
             <span class="left" style="float: left; width: 72%;">
-                <p style="position: absolute; float:left; font-family: gothamLight; font-weight:bold; text-align: -webkit-left; font-size: 0.707vw; padding-left: 0px !important; letter-spacing: 0.074vw;  color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 9.6vw !important; margin-left: 18.77vw">
+                <p style="position: absolute; float:left; font-family: GothamLightB; text-align: -webkit-left; font-size: 0.707vw; padding-left: 0px !important; letter-spacing: 0.074vw;  color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 9.6vw !important; margin-left: 18.77vw">
                     Change the height with just a word or at the touch of a button<span style="font-family: monospace; font-size: 0.6vw;">.</span>
                 </p>
                 <img class="imagepane" style="max-width: 95vw; margin-top: 11.4vw; margin-left: 0.7vw;" src="img/Volant03.png" />
@@ -880,9 +862,9 @@
                 </div>
             </span>
             <span class="right" style="float:left; margin-top: 13.5vw; width: 28%;">
-                <img class="notAnimated" style="position: absolute; width: 6.2vw; margin-top: 13vw; margin-left: -4.2vw;" src="img/Volant Icon 01.png" />
-                <img style="position: absolute; width: 1vw; margin-top: 14vw; margin-left: 0.55vw; transform: translateZ(0);" src="img/Volant Icon 02.png" />
-                <p style="float:left; text-align: -webkit-left; font-size: 0.707vw; font-family: gothamLight; font-weight: bold; padding-left: 0px !important; letter-spacing: 0.074vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 5vw">
+                <img class="notAnimated" style="position: relative; width: 6.2vw; margin-top: 12.1vw; margin-left: -19.3vw;" src="img/Volant Icon 01.png" />
+                <img class="notAnimatedBase" style="position: relative; width: 1vw; margin-top: 14vw; margin-left: -1.7vw; transform: translateZ(0);" src="img/Volant Icon 02.png" />
+                <p style="float:left; text-align: -webkit-left; font-size: 0.707vw; font-family: GothamLightB; padding-left: 0px !important; letter-spacing: 0.074vw; color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 16.4vw !important; margin-left: 5vw">
                     Sitting is the new smoking<span style="font-family: monospace; font-size: 0.6vw;">.</span>
                 </p>
             </span>
@@ -902,7 +884,7 @@
             <span id="pulseText03" class="pulseText" style="position: absolute; text-align: left; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 9.4%; margin-top: 0.38%; -webkit-font-smoothing: antialiased;">LED INDICATOR -<br>ACTIVITY TRACKER</span>
             
            <span style="float: left; position: absolute; top: 44%; margin-left: 16vw; text-shadow: none; font-size: 0.05vw; width: 32%;">
-                <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgba(0,0,0,0.9); padding-left: 5.6vw; margin-top: .8vw; text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
+                <h2 style="font-family: GothamLightB; font-size: 1.1vw; color: rgba(0,0,0,0.9); padding-left: 5.6vw; margin-top: .8vw; text-align: left; letter-spacing: 0.127vw;">
                     The Intelligence<span style="font-family: monospace; font-size: 0.7vw;">.</span>
                 </h2>
                 <p class="secp" style="letter-spacing: 0.055vw; line-height: 1.24vw;">
@@ -920,7 +902,7 @@
                 <img id="page5img1" class="page5img" src="img/page5/Volant051.png" style="color: rgb(77,77,77); margin-top: -14.7vw; margin-left: -30.7vw; width: 62.3vw; position: absolute;">
             </div>
             <div style="text-align: center; position: relative;">
-                <span style="position: absolute; color: rgba(51,51,51,0.9); top: 9.25vw; left: 32.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold; -webkit-font-smoothing: antialiased;">editions</span>
+                <span style="position: absolute; color: rgba(51,51,51,0.9); top: 9.25vw; left: 32.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamLightB;">editions</span>
                 <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 11.62vw; margin-left: -17.48vw; width: 35vw; height: 1px; position: absolute;">
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.35vw; margin-left: -17.48vw; width: 35vw; height: 1px; position: absolute;"></span>
             </div>
@@ -950,19 +932,23 @@
             </div>
             
             <!-- The Modal -->
-            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgba(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.25vw 0.25vw 1.5vw;">
-                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 14vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
+            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgba(51,51,51,0.95); padding: 4%; padding-top: 9.7%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.25vw 0.25vw 1.5vw;">
+                <img class="cross" style="position: absolute; margin-top: -9.7vw; left: 27.55vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
                 <span id="menufillin" class="menusp21" style="float: left; margin-left: 0.74vw; margin-top: -1vw; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased;">
-                    *Please check the required fields<br><br>
-                    Name<br>
-                    <input type="text" class="name " id="name" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
-                    E-mail Address<span>*</span><br>
-                    <input type="text" class="email" id="email" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
-                    Telephone<span>*</span><br>
-                    <input type="text" class="tel" id="tel" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
+                    <p class="notfilledModal" id="menureqtext" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; margin-top: -2.24vw !important; opacity: 0;">
+                        *Please check the required fields
+                    </p>
+                    Name<span class="notfillednameModal" style="opacity: 0;">*</span><br>
+                    <input type="text" class="nameModal " id="name" name="name" required><br>
+                    E-mail Address<span class="notfilledemailModal" style="opacity: 0;">*</span><br>
+                    <input type="text" class="emailModal" id="email" name="email" type="email" required><br>
+                    Telephone<span class="notfilledtelModal" style="opacity: 0;">*</span><br>
+                    <input type="number" class="telModal" id="tel" name="tel" style="width: 17.4vw; margin-bottom: 0.8vw;" required><br>
                 </span>
                 
-                <span style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 7.4vw; margin-left: 0.52vw;">
+                <span id="thankyou" style="position: absolute; text-shadow: none; opacity: 0; width: 30vw; left: -1vw; top: 14vw; font-family: GothamLight; font-size: 0.67vw; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased; z-index: -2;">Thank you!<br>We will be in touch with you shortly.</span>
+                
+                <span id="editionModal" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 7.4vw; margin-left: 0.52vw;">
                     <hr style="border-color: rgba(204,204,204,0.8); border-width: 0.4px; margin-left: 1vw; margin-top: 0 !important; margin-bottom: 0.5vw !important; width: 16vw; height: 1px; position: relative;">
                     <span style="float: left; position: relative; color: rgba(179,179,179,0.9); margin-top: 0.4vw; margin-left: 2vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;">EDITION</span>
                     <span class="preorderText" style="float: left; position: relative; color: rgba(179,179,179,0.9); margin-top: 0.4vw; margin-left: 5.41vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;">solid</span>
@@ -971,7 +957,7 @@
                     </span>
                     <hr style="border-color: rgba(204,204,204,0.8); border-width: 0.4px; margin-left: 1vw; margin-top: 2.78vw !important; margin-bottom: 0vw !important; width: 16vw; height: 1px; position: relative;">
                 </span>
-               <span id="preorder2" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.19vw; margin-top: 4.3vw; margin-left: 3.4vw; cursor: pointer; font-size: 0.8vw; color: rgb(179,179,179);">
+                <span id="preorder2" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.19vw; margin-top: 4.3vw; margin-left: 3.4vw; cursor: pointer; font-size: 0.8vw; color: rgb(179,179,179); -webkit-font-feature-settings: 'kern' 1; text-rendering: optimizeLegibility;">
                     <img src="img/page5/Pre%20Order%20Dark.png" style="position: absolute; width: 13.3vw; margin-top: -0.29vw; margin-left: -0.6vw; color: rgb(179,179,179);">PRE-ORDER ENQUIRY
                 </span>
             </div>
@@ -984,7 +970,6 @@
         </div>
 
         <!-- The JavaScript -->
-        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
@@ -1245,6 +1230,74 @@
             });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
         });
+            
+        $("#nodownload").click(function() {
+            uname = /^[a-zA-Z ]{4,}$/;
+            email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(!uname.test($(".name").val()) || !email.test($(".email").val()) || !$('input:radio[name="gender"]:checked').val())
+            {
+                $(".notfilled").css({opacity: 1});
+                $("#nodownload").removeAttr("download", "Charcoal Issue");
+                $("#nodownload").attr("href", "#");
+                if(!uname.test($(".name").val())) 
+                    $(".notfilledname").css({opacity: 1});
+                else
+                    $(".notfilledname").css({opacity: 0});
+                if(!email.test($(".email").val()))
+                    $(".notfilledemail").css({opacity: 1});
+                else
+                    $(".notfilledemail").css({opacity: 0});
+                if(!$('input:radio[name="gender"]:checked').val())
+                    $(".notfilledmrms").css({opacity: 1});
+                else
+                    $(".notfilledmrms").css({opacity: 0});
+            }
+            else
+            {
+                $(".notfilled").css({opacity: 0});
+                $(".notfilledname").css({opacity: 0});
+                $(".notfilledemail").css({opacity: 0});
+                $("#nodownload").attr("download", "Charcoal Issue");
+                $("#nodownload").attr("href", "pdf/Charcoal%20Issue.pdf");
+            }
+            
+        });
+
+        $("#preorder2").click(function() {
+            uname = /^[a-zA-Z ]{4,}$/;
+            email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            tel = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if(!uname.test($(".nameModal").val()) || !email.test($(".emailModal").val()) || !tel.test($(".telModal").val()))
+            {
+                $(".notfilledModal").css({opacity: 1});
+                $("#nodownload").removeAttr("download", "Charcoal Issue");
+                $("#nodownload").attr("href", "#");
+                if(!uname.test($(".nameModal").val())) 
+                    $(".notfillednameModal").css({opacity: 1});
+                else
+                    $(".notfillednameModal").css({opacity: 0});
+                if(!email.test($(".emailModal").val()))
+                    $(".notfilledemailModal").css({opacity: 1});
+                else
+                    $(".notfilledemailModal").css({opacity: 0});
+                if(!tel.test($(".telModal").val()))
+                    $(".notfilledtelModal").css({opacity: 1});
+                else
+                    $(".notfilledtelModal").css({opacity: 0});
+            }
+            else
+            {
+                $(".notfilledModal").css({opacity: 0});
+                $(".notfillednameModal").css({opacity: 0});
+                $(".notfilledemailModal").css({opacity: 0});
+                $("#editionModal").css({opacity: 0});
+                $("#menufillin").css({opacity: 0});
+                $("#preorder2").css({opacity: 0});
+                $("#thankyou").css({opacity: 1});
+            }
+            
+        });
+            
         $("#section4").ready(function(){
             my_image1.src = 'img/page5/Volant051.png';
             my_image2.src = 'img/page5/Volant052.png';
@@ -1264,6 +1317,7 @@
                 $("#tick1").css({'pointer-events': 'none'});
                 $("#tick2").css({'pointer-events': 'auto'});
                 $("#tick3").css({'pointer-events': 'auto'});
+                $(".preorderText").css("margin-left", "5.41vw");
                 $("#tick1text").css({'opacity': 1});
                 $("#tick2text").css({'opacity': 0});
                 $("#edition1").addClass('shadeticktextActive');
@@ -1284,6 +1338,7 @@
                 $("#tick1").css({'pointer-events': 'auto'});
                 $("#tick2").css({'pointer-events': 'none'});
                 $("#tick3").css({'pointer-events': 'auto'});
+                $(".preorderText").css("margin-left", "5.41vw");
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "1");
                 $("#edition1").addClass('shadeticktextActive');
@@ -1304,6 +1359,7 @@
                 $("#tick1").css({'pointer-events': 'auto'});
                 $("#tick2").css({'pointer-events': 'auto'});
                 $("#tick3").css({'pointer-events': 'none'});
+                $(".preorderText").css("margin-left", "3.71vw");
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "0");
                 $("#edition2").addClass('shadeticktextActive');
@@ -1378,6 +1434,10 @@
             $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
+            $("#editionModal").css({opacity: 1});
+            $("#menufillin").css({opacity: 0.7});
+            $("#preorder2").css({opacity: 1});
+            $("#thankyou").css({opacity: 0});
         }
         
         span2.onclick = function() {
@@ -1403,6 +1463,10 @@
             $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
+            $("#editionModal").css({opacity: 1});
+            $("#menufillin").css({opacity: 0.7});
+            $("#preorder2").css({opacity: 1});
+            $("#thankyou").css({opacity: 0});
         }
         
         $(".menuselect").change(function() {
