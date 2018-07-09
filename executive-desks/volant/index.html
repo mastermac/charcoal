@@ -798,7 +798,6 @@
             }
             
             .mobilemenu {
-                margin-left:-80%;
                 width: 78%; 
             }
             .mobilemenu1 {
@@ -1064,7 +1063,6 @@
             }
             
             .mobilemenu {
-                margin-left:199%;
                 width: 97%; 
             }
             .mobilemenu1 {
@@ -1152,7 +1150,7 @@
             <span class="menu-global menu-bottom"></span>
         </div>
         
-        <div id="myNav" class="overlay mobilemenu" style="box-shadow: 0 0 1vw rgba(125,125,125,0.23);">
+        <div id="myNav" class="overlay mobilemenu" style="box-shadow: 0 0 1vw rgba(125,125,125,0.23); margin-left: -80%;">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
                 <span class="menutextspan mobilemenu1" style="position: relative; text-align: left;">
                     <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
@@ -1612,6 +1610,10 @@
             }
             
             $(document).ready(function(){
+                if(desktop.matches)
+                    document.getElementById("myNav").style.marginLeft = "-80%";
+                else if(mobile.matches)
+                    document.getElementById("myNav").style.marginLeft = "100%";
                 var $form = $('form');
                 $form.submit(function(){
                     $.post($(this).attr('action'), $(this).serialize(), function(response){
@@ -1647,7 +1649,6 @@
             
         function openCloseNav() {
             if(desktop.matches)
-            {
                 if(document.getElementById("myNav").style.marginLeft == "-80%")
                 {
                     $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
@@ -1664,10 +1665,8 @@
                     $.fn.fullpage.setMouseWheelScrolling(true);
                     $.fn.fullpage.setAllowScrolling(true);
                 }
-            }
             if(mobile.matches)
-            {
-                if(document.getElementById("myNav").style.marginLeft == "199%")
+                if(document.getElementById("myNav").style.marginLeft == "100%")
                 {
                     $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
                     document.getElementById("myNav").style.marginLeft = "3%";
@@ -1678,23 +1677,32 @@
                 else
                 {
                     $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
-                    document.getElementById("myNav").style.marginLeft = "199%";
+                    document.getElementById("myNav").style.marginLeft = "100%";
                     $('#outsidediv').css("z-index", "-1");
                     $.fn.fullpage.setMouseWheelScrolling(true);
                     $.fn.fullpage.setAllowScrolling(true);
                 }
-            }
         }
-            desktop.addListener(openCloseNav);
         $('#outsidediv').click(function() {
-            if(document.getElementById("myNav").style.marginLeft == "0%")
-            {
-                $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
-                document.getElementById("myNav").style.marginLeft = "-80%";
-                $('#outsidediv').css("z-index", "-1");
-                $.fn.fullpage.setMouseWheelScrolling(true);
-                $.fn.fullpage.setAllowScrolling(true);
-            }
+            if(desktop.matches)
+                if(document.getElementById("myNav").style.marginLeft == "0%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "-80%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
+            if(mobile.matches)
+                if(document.getElementById("myNav").style.marginLeft == "3%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "100%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
+                
         });
         $("#menu1").click(function() {
             $("#menudot1").removeClass("menudot02")
