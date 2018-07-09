@@ -798,6 +798,7 @@
             }
             
             .mobilemenu {
+                margin-left:-80%;
                 width: 78%; 
             }
             .mobilemenu1 {
@@ -1063,7 +1064,8 @@
             }
             
             .mobilemenu {
-                width: 93%; 
+                margin-left:199%;
+                width: 97%; 
             }
             .mobilemenu1 {
                 max-width: 70%;
@@ -1150,7 +1152,7 @@
             <span class="menu-global menu-bottom"></span>
         </div>
         
-        <div id="myNav" class="overlay mobilemenu" style="margin-left:-80%; box-shadow: 0 0 1vw rgba(125,125,125,0.23);">
+        <div id="myNav" class="overlay mobilemenu" style="box-shadow: 0 0 1vw rgba(125,125,125,0.23);">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
                 <span class="menutextspan mobilemenu1" style="position: relative; text-align: left;">
                     <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
@@ -1442,6 +1444,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
             
+            var desktop = window.matchMedia("(min-width: 415px)");
+            var mobile = window.matchMedia("(max-width: 414px)");
             var val1 = 0;
             var my_image1 = new Image();
             var my_image2 = new Image();
@@ -1642,23 +1646,46 @@
             }
             
         function openCloseNav() {
-            if(document.getElementById("myNav").style.marginLeft == "-80%")
+            if(desktop.matches)
             {
-                $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
-                document.getElementById("myNav").style.marginLeft = "0%";
-                $('#outsidediv').css("z-index", "1");
-                $.fn.fullpage.setMouseWheelScrolling(false);
-                $.fn.fullpage.setAllowScrolling(false);
+                if(document.getElementById("myNav").style.marginLeft == "-80%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
+                    document.getElementById("myNav").style.marginLeft = "0%";
+                    $('#outsidediv').css("z-index", "1");
+                    $.fn.fullpage.setMouseWheelScrolling(false);
+                    $.fn.fullpage.setAllowScrolling(false);
+                }
+                else
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "-80%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
             }
-            else
+            if(mobile.matches)
             {
-                $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
-                document.getElementById("myNav").style.marginLeft = "-80%";
-                $('#outsidediv').css("z-index", "-1");
-                $.fn.fullpage.setMouseWheelScrolling(true);
-                $.fn.fullpage.setAllowScrolling(true);
+                if(document.getElementById("myNav").style.marginLeft == "199%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
+                    document.getElementById("myNav").style.marginLeft = "3%";
+                    $('#outsidediv').css("z-index", "1");
+                    $.fn.fullpage.setMouseWheelScrolling(false);
+                    $.fn.fullpage.setAllowScrolling(false);
+                }
+                else
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "199%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
             }
         }
+            desktop.addListener(openCloseNav);
         $('#outsidediv').click(function() {
             if(document.getElementById("myNav").style.marginLeft == "0%")
             {
