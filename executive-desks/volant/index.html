@@ -27,11 +27,16 @@
     
 	<script type="text/javascript" src="js/examples.js"></script>
 	<script type="text/javascript">
+        var desktop = window.matchMedia("(min-width: 415px)");
+        var mobile = window.matchMedia("(max-width: 414px)");
         $(document).ready(function() {
             document.getElementsByTagName("html")[0].style.visibility = "visible";
         });
 		$(document).ready(function() {
             var val1 = 0;
+            $(".design").css("visibility", "visible");
+            $(".features").css("visibility", "hidden");
+            $(".customize").css("visibility", "hidden");
 			$('#fullpage').fullpage({
                 anchors: ['01', '02', '03', '04', '05'],
 				bigSectionsDestination:'top',
@@ -42,6 +47,12 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51) text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                        if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "hidden");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 2) {
@@ -50,6 +61,12 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51) text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                        if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "hidden");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 3) {
@@ -58,21 +75,37 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51); text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                        if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "hidden");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 4 && (index==1 || index==2 || index==3)) {
                         makeInactive();
                         val1 = 3;
                         makeActive();
-                        $(".menudot1").attr("style","color: rgb(230,230,230) !important; -webkit-text-stroke-color: rgb(230,230,230); text-shadow: 0.04vw 0.06vw 0.2vw rgba(230, 230, 230, 0.3);");
-                        $(".menudot2").attr("style","color: rgb(160,160,160) !important");
-                        $(".dark").fadeOut(400, function() {
-                            $('.dark').css('color', 'rgb(205,205,205)');
-                        }.bind(this)).fadeIn(160);
-                        
-                        $(".menu-global").fadeOut(400, function() {
-                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
-                        }.bind(this)).fadeIn(160);
+                        if(desktop.matches)
+                        {
+                            $(".menudot1").attr("style","color: rgb(230,230,230) !important; -webkit-text-stroke-color: rgb(230,230,230); text-shadow: 0.04vw 0.06vw 0.2vw rgba(230, 230, 230, 0.3);");
+                            $(".menudot2").attr("style","color: rgb(160,160,160) !important");
+                            $(".dark").fadeOut(400, function() {
+                                $('.dark').css('color', 'rgb(205,205,205)');
+                            }.bind(this)).fadeIn(160);
+                            $(".menu-global").fadeOut(400, function() {
+                                $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
+                            }.bind(this)).fadeIn(160);
+                        }
+                        if(mobile.matches)
+                        {
+                            $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51); text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
+                            $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                            $(".design").css("visibility", "hidden");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 5) {
@@ -81,9 +114,15 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51)");
                         $(".menudot2").attr("style","color: rgb(172,172,172) !important");
+                        if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "hidden");
+                            $(".features").css("visibility", "hidden");
+                            $(".customize").css("visibility", "visible");
+                        }
                     }
                     
-                    if((index == 4) && (nextIndex==1 || nextIndex==2 || nextIndex==3)) {
+                    if((index == 4) && (nextIndex==1 || nextIndex==2 || nextIndex==3) & desktop.matches) {
                         $(".dark").fadeOut(10, function() {
                             $('.dark').css('color', 'black');
                             $(".dark").css("opacity", "1");
@@ -94,7 +133,7 @@
                         }.bind(this)).fadeIn(10);
                     }
                     
-                    if(index == 4 && nextIndex == 5) {
+                    if(index == 4 && nextIndex == 5 && desktop.matches) {
                         $(".dark").fadeOut(400, function() {
                             $('.dark').css('color', 'black');
                             $(".dark").css("opacity", "1");
@@ -109,15 +148,26 @@
                         makeInactive();
                         val1 = 3;
                         makeActive();
-                        $(".menudot1").attr("style","color: rgb(230,230,230) !important; -webkit-text-stroke-color: rgb(230,230,230); text-shadow: 0.04vw 0.06vw 0.2vw rgba(230, 230, 230, 0.3);");
-                        $(".menudot2").attr("style","color: rgb(160,160,160) !important");
-                        $(".dark").fadeOut(10, function() {
-                            $('.dark').css('color', 'rgb(205,205,205)');
-                        }.bind(this)).fadeIn(10);
+                        if(desktop.matches)
+                        {
+                            $(".menudot1").attr("style","color: rgb(230,230,230) !important; -webkit-text-stroke-color: rgb(230,230,230); text-shadow: 0.04vw 0.06vw 0.2vw rgba(230, 230, 230, 0.3);");
+                            $(".menudot2").attr("style","color: rgb(160,160,160) !important");
+                            $(".dark").fadeOut(10, function() {
+                                $('.dark').css('color', 'rgb(205,205,205)');
+                            }.bind(this)).fadeIn(10);
                         
-                        $(".menu-global").fadeOut(10, function() {
-                            $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
-                        }.bind(this)).fadeIn(10);
+                            $(".menu-global").fadeOut(10, function() {
+                                $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
+                            }.bind(this)).fadeIn(10);
+                        }
+                        if(mobile.matches)
+                        {
+                            $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51) text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
+                            $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                            $(".design").css("visibility", "hidden");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                 },
                 
@@ -249,10 +299,7 @@
             margin-right: 2.57vw;
         }
         
-        #modalfillin input {         
-            margin-bottom: 1.15vw;
-            width: 17.5vw;
-            height: 0.84vw;
+        #modalfillin input {
             border: none;
             background-color: rgb(229,229,229);
         }
@@ -300,7 +347,6 @@
         }
         
         .singledot {
-            margin-top: 1.25vw !important;
             -webkit-font-smoothing: antialiased;
             position: absolute;
             height: 0;
@@ -464,7 +510,6 @@
         }
         
         .menudot01 {
-            font-size: 0.9vw;
             margin-top: -0.19vw !important;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
@@ -472,7 +517,6 @@
         }
         
         .menudot02 {
-            font-size: 0.86vw;
             margin-top: -0.15vw !important;
             color: rgb(209,209,209) !important;
             transition: color linear .2s;
@@ -480,7 +524,6 @@
         }
         
         .menudot1 {
-            font-size: 0.86vw;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);
             transition: color linear .4s;
@@ -491,7 +534,6 @@
         }
         
         .menudot2 {
-            font-size: 0.86vw;
             color: rgb(209,209,209) !important;
             transition: color linear .2s;
             text-rendering: optimizeLegibility;
@@ -499,8 +541,6 @@
         
         input[type='radio'] {
             -webkit-appearance:none;
-            width:0.6vw;
-            height:0.6vw;
             border:0.04vw solid #aaa9a93b;
             border-radius:50%;
             outline:none;
@@ -805,7 +845,7 @@
                 margin-right: 3vw;
             }
             .menu1head1 {
-                letter-spacing: 0.174vw;
+                letter-spacing: 0.174vw !important;
                 font-size: 0.52vw;
             }
             .menu1head2 {
@@ -847,6 +887,115 @@
                 letter-spacing: 0.14vw;
                 margin-left: 9.2vw !important;
                 margin-top: -14% !important;
+            }
+            #menu1 {
+                margin-top:-70% !important;
+                text-align: left;
+                padding-right: 0vw !important;
+            }
+            #menu2 {
+                margin-top:-70% !important;
+                text-align: right;
+                padding-left: 1vw !important;
+            }
+            .menutext1 {
+                display: block;
+            }
+            .menutext2 {
+                display: block;
+            }
+            .menudot01 {
+                font-size: 0.9vw;
+            }
+            .menudot02 {
+                font-size: 0.86vw;
+            }
+            .menusp21 {
+                
+            }
+            .menuspcat {
+                width: 32.5vw;
+                height: 22.1vw; 
+                margin: 0.9vw 0px 0px 23.2vw;
+            }
+            .menuemail {
+                font-size: 0.64vw;
+            }
+            .menuemailspan {
+                margin-top: 23.2vw;
+            }
+            .menuemailvalspan {
+                margin-top: 23.42vw;
+                margin-left: 5vw;
+            }
+            #menureqtext {
+                font-size: 0.67vw;
+            }
+            #menuradio {
+                font-size: 0.67vw;
+            }
+            input[type='radio'] {
+                width: 0.6vw;
+                height: 0.6vw;
+            }
+            #modalfillin {
+                font-size: 0.67vw;
+                line-height: 1.5vw;
+                margin-top: -0.11vw !important;
+            }
+            #modalfillin input {         
+                margin-bottom: 1.15vw;
+                width: 17.5vw;
+                height: 0.84vw;
+            }
+            .menuimage {
+                width: 10.43vw;
+                height: 1.15vw;
+                margin-top: 0.46vw;
+            }
+            .changecountry {
+                font-size: 0.64vw;
+                width: 104%;
+                margin-top:-65.8% !important;
+                margin-right: -51.7vw;
+            }
+            .menucat {
+                width: 32.5vw;
+                height: 22.1vw;
+                margin: 0.9vw 0px 0px 23.2vw;
+            }
+            .menudot1 {
+                font-size: 0.86vw;
+            }
+            .menudot2 {
+                font-size: 0.86vw;
+            }
+            .dot1 {
+                margin-left: -2.2vw;
+            }
+            .dot2 {
+                margin-left: -1.5vw;
+            }
+            .dot3 {
+                margin-left: -2.6vw;
+            }
+            .dot4 {
+                margin-left: -1.9vw;
+            }
+            .dot5 {
+                margin-left: -6.17vw;
+            }
+            .singledot {
+                margin-top: 1.25vw !important;
+            }
+            .dark {
+                font-size: 0.7vw;
+            }
+            .features {
+                margin-left: -0.33vw;
+            }
+            .customize {
+               margin-left: 0.1vw;
             }
             
             .secp {
@@ -1072,7 +1221,7 @@
                 margin-top: -96vw !important;
             }
             .menu1head1 {
-                letter-spacing: 0.774vw;
+                letter-spacing: 0.774vw !important;
                 font-size: 2.2vw;
                 margin-bottom: 3vw !important;
             }
@@ -1119,6 +1268,124 @@
                 margin-left: 30.2vw !important;
                 margin-top: -14% !important;
             }
+                        #menu1 {
+                margin-top:-70% !important;
+                text-align: left;
+            }
+            #menu1 {
+                margin-top:-15% !important;
+                text-align: right;
+                padding-right: 0vw !important;
+            }
+            #menu2 {
+                margin-top:-15% !important;
+                text-align: left;
+                padding-left: 1vw !important;
+            }
+            .menutext1 {
+                display: none;
+            }
+            .menutext2 {
+                display: none;
+            }
+            .menudot01 {
+                font-size: 3.9vw;
+            }
+            .menudot02 {
+                font-size: 3.9vw;
+            }
+            .menuspcat {
+                width: 82.5vw;
+                height: 55.1vw;
+                margin: -69.9vw 80px 0px 23.2vw;
+            }
+            .menuemail {
+                font-size: 3.64vw;
+            }
+            .menuemailspan {
+                margin-top: 72.2vw;
+            }
+            .menuemailvalspan {
+                margin-top: 70.62vw;
+                margin-left: 22vw;
+            }
+            #menureqtext {
+                font-size: 3.27vw;
+            }
+            #menuradio {
+                font-size: 2.67vw;
+                margin-top: 6vw !important;
+            }
+            input[type='radio'] {
+                width: 2.6vw;
+                height: 2.6vw;
+            }
+            #modalfillin {  
+                font-size: 2.67vw;
+                line-height: 6.5vw;
+                margin-top: 2.89vw !important;
+            }
+            #modalfillin input {
+                margin-bottom: 2.15vw;
+                width: 78.5vw;
+                height: 3.84vw;
+            }
+            .menuimage {
+                width: 46.43vw;
+                height: 5.5vw;
+                margin-top: 6.46vw;
+            }
+            .changecountry {
+                font-size: 3.74vw;
+                width: 70vw;
+                margin-top: 211% !important;
+                margin-left: -10vw;
+                position: absolute;
+            }
+            .menuformspan {
+                max-width: 72% !important;
+            }
+            .menucat {
+                width: 82.5vw;
+                height: 55.1vw;
+                margin: -69.9vw 80px 0px 23.2vw;
+            }
+            .menudot1 {
+                font-size: 3.86vw;
+            }
+            .menudot2 {
+                font-size: 3.86vw;
+            }
+            .dot1 {
+                margin-left: -13.5vw;
+            }
+            .dot2 {
+                margin-left: -10.65vw;
+            }
+            .dot3 {
+                margin-left: -13.5vw;
+            }
+            .dot4 {
+                margin-left: -10.7vw;
+            }
+            .dot5 {
+                margin-left: -38.2vw;
+            }
+            .singledot {
+                margin-top: -3.75vw !important;
+            }
+            .dark {
+                font-size: 3.7vw;
+            }
+            .iconlink {
+                display: none;
+            }
+            .features {
+                margin-left: -18.9vw;
+            }
+            .customize {
+               margin-left: -24.9vw;
+            }
             
             .secp {
                 font-size: 3.7vw;
@@ -1128,7 +1395,7 @@
                 width: 37.44vw;
             }
             .top-bar {
-                opacity: 0;
+                opacity: 1;
             }
             .menu {
                 float: right;
@@ -1153,10 +1420,10 @@
         <div id="myNav" class="overlay mobilemenu" style="box-shadow: 0 0 1vw rgba(125,125,125,0.23); margin-left: -80%;">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
                 <span class="menutextspan mobilemenu1" style="position: relative; text-align: left;">
-                    <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
-                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot02">&#9679;</p></a>
+                    <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; -webkit-font-smoothing: antialiased;" href="#"><span class="menutext1">products</span><p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
+                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; -webkit-font-smoothing: antialiased;" href="#"><span class="menutext2">know more</span><p id="menudot2" class="menudot02">&#9679;</p></a>
                     <div>
-                    <p style="font-family: GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" value><u>Bahrain</u></option><option value="France"><u>France</u></option><option value="Germany"><u>Germany</u></option><option value="Hong Kong"><u>Hong Kong</u></option><option value="India"><u>India</u></option><option value="Italy"><u>Italy</u></option><option value="Jordan"><u>Jordan</u></option><option value="Kuwait"><u>Kuwait</u></option><option value="Oman"><u>Oman</u></option><option value="Qatar"><u>Qatar</u></option><option value="UAE">UAE</option><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA" selected><u>USA</u></option></select>
+                    <p class="changecountry" style="font-family: GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-weight: lighter; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" value><u>Bahrain</u></option><option value="France"><u>France</u></option><option value="Germany"><u>Germany</u></option><option value="Hong Kong"><u>Hong Kong</u></option><option value="India"><u>India</u></option><option value="Italy"><u>Italy</u></option><option value="Jordan"><u>Jordan</u></option><option value="Kuwait"><u>Kuwait</u></option><option value="Oman"><u>Oman</u></option><option value="Qatar"><u>Qatar</u></option><option value="UAE">UAE</option><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA" selected><u>USA</u></option></select>
                     </p>
                         </div>
                     <p class="menusp1 menu1head1" style="">REIMAGINING THE EXECUTIVE DESK</p>
@@ -1166,24 +1433,24 @@
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
                 
-                <span class="menutextspan menusp21 hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
-                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 3.21vw !important; line-height: 1.3vw;"><span style="position: absolute; margin-top: 23.2vw;">EMAIL US</span><span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 23.42vw; margin-left: 5vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
+                <span class="menutextspan menusp21 menuformspan hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
+                    <p class="menusp21 menuemail" style="position: relative; letter-spacing: 0.07vw; font-weight: lighter; margin-top: 3.21vw !important; line-height: 1.3vw;"><span class="menuemailspan" style="position: absolute;">EMAIL US</span><span id="noemailspan" class="menuemailvalspan" style="position: absolute; color: rgb(125,125,125); border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
-                    <p class="notfilled" id="menureqtext" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; margin-top: -2.24vw !important; opacity: 0;">
+                    <p class="notfilled menusp21" id="menureqtext" style="font-family: GothamLight; margin-top: -2.24vw !important; opacity: 0;">
                         *Please check the required fields
                     </p>
-                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.5vw !important">
+                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; line-height: 1.14vw; margin-bottom: 0.5vw !important">
                         <input type="radio" name="gender" value="female"> <label>Ms.<span class="notfilledmrms" style="opacity: 0;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.<span class="notfilledmrms" style="opacity: 0;">*</span></label>
                     </p>
                     <form name="contactForm" method="">
-                        <p id="modalfillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.5vw; margin-top: -0.11vw !important; margin-bottom: 0.4vw !important;">
+                        <p id="modalfillin" class="menusp21" style="font-family: GothamLight; margin-bottom: 0.4vw !important;">
                             Name<span class="notfilledname" style="opacity: 0;">*</span><br>
                             <input type="text" class="name " id="name" name="name" pattern="[A-Za-z ]{1,40}" required><br>
                             E-mail Address<span class="notfilledemail" style="opacity: 0;">*</span><br>
                             <input type="text" class="email" id="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
                             <a id="nodownload" href="#">
-                                <img type="image" class="menuimage" name="submit" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 0.46vw; background-color: transparent;">
+                                <img type="image" class="menuimage" name="submit" src="img/Download.png" style="background-color: transparent;">
                             </a>
                         </p>
                     </form>
@@ -1213,8 +1480,7 @@
                 </a>
                 
                 <div class="menusp22 hidden" style="position: absolute; z-index: -2;">
-                    <div class="menusp22" style="max-width: 100%; width: 32.5vw; height: 22.1vw; 
-    box-shadow: 0.3vw 0.2vw 0.4vw #80808040, -0.07vw -0.035vw 0.29vw #80808040; padding:0, 0.3vw 0.2vw 0.4vw #80808040; padding:0; margin: 0.9vw 0px 0px 23.2vw; background-size: cover; background-image: url('img/Catalogue.jpg');">
+                    <div class="menusp22 menucat" style="max-width: 100%; box-shadow: 0.3vw 0.2vw 0.4vw #80808040, -0.07vw -0.035vw 0.29vw #80808040; padding:0; background-size: cover; background-image: url('img/Catalogue.jpg');">
                     </div>
                 </div>
                 
@@ -1225,29 +1491,29 @@
         </p>
         <div class="row">
             <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <a class="dark" href="#01" style="font-family: GothamLightB; float:left; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <a class="dark design" href="#01" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     design
                 </a>
                 <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#01" style="margin-left: -2.2vw;"><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#02" style="margin-left: -1.5vw;"><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot1" href="#01" style=""><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot2" href="#02" style=""><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <a class="dark" href="#3" style="font-family: GothamLightB; float:left; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important; margin-left: -0.33vw;">
+                <a class="dark features" href="#03" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important;">
                     features
                 </a>
                 <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#03" style="margin-left: -2.6vw;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#04" style="margin-left: -1.9vw;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot3" href="#03" style=""><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot4" href="#04" style=""><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <a class="dark" href="#05" style="font-family: GothamLightB; float:left; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-left: 0.1vw; margin-top: 1.335vw !important;">
+                <a class="dark customize" href="#05" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important;">
                     customize and pre-order
                 </a>
                 <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#05" style="margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
+                    <a class="singledot mynav dot5" href="#05" style=""><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
@@ -1392,7 +1658,7 @@
                 </span>
             </div>
             <div style="text-align: center; position: relative;">
-                <span class="sec5price" style="position: absolute; color: rgba(0, 0, 0, 0.7); text-shadow: none; font-family: GothamLight; -webkit-font-smoothing: antialiased;" class="price">USD 4,050</span>
+                <span class="sec5price price" style="position: absolute; color: rgba(0, 0, 0, 0.7); text-shadow: none; font-family: GothamLight; -webkit-font-smoothing: antialiased;">USD 4,050</span>
                 
                 <span id="specs" class="sec5specs" style="position: absolute; color: rgb(30,30,30); text-shadow: none; font-family: GothamLight; cursor: pointer; -webkit-font-smoothing: antialiased;"><img class="sec5specsbox" src="img/page5/Pre%20Order.png" style="position: absolute; color: rgb(30,30,30);">SPECIFICATIONS</span>
                 
