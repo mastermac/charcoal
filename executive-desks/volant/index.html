@@ -34,9 +34,18 @@
         });
 		$(document).ready(function() {
             var val1 = 0;
-            $(".design").css("visibility", "visible");
-            $(".features").css("visibility", "hidden");
-            $(".customize").css("visibility", "hidden");
+            if(desktop.matches)
+            {
+                $(".design").css("visibility", "visible");
+                $(".features").css("visibility", "visible");
+                $(".customize").css("visibility", "visible");
+            }
+            else if(mobile.matches)
+            {
+                $(".design").css("visibility", "visible");
+                $(".features").css("visibility", "hidden");
+                $(".customize").css("visibility", "hidden");
+            }
 			$('#fullpage').fullpage({
                 anchors: ['01', '02', '03', '04', '05'],
 				bigSectionsDestination:'top',
@@ -47,7 +56,13 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51) text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
-                        if(mobile.matches)
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
                         {
                             $(".design").css("visibility", "visible");
                             $(".features").css("visibility", "hidden");
@@ -61,7 +76,13 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51) text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
-                        if(mobile.matches)
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
                         {
                             $(".design").css("visibility", "visible");
                             $(".features").css("visibility", "hidden");
@@ -75,7 +96,13 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51); text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
-                        if(mobile.matches)
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
                         {
                             $(".design").css("visibility", "hidden");
                             $(".features").css("visibility", "visible");
@@ -97,8 +124,11 @@
                             $(".menu-global").fadeOut(400, function() {
                                 $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
                             }.bind(this)).fadeIn(160);
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
                         }
-                        if(mobile.matches)
+                        else if(mobile.matches)
                         {
                             $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51); text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                             $(".menudot2").attr("style","color: rgb(209,209,209) !important");
@@ -114,7 +144,13 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51)");
                         $(".menudot2").attr("style","color: rgb(172,172,172) !important");
-                        if(mobile.matches)
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
                         {
                             $(".design").css("visibility", "hidden");
                             $(".features").css("visibility", "hidden");
@@ -159,6 +195,9 @@
                             $(".menu-global").fadeOut(10, function() {
                                 $('.menu-global').css('box-shadow', 'inset 0.1px 1px 0 rgb(204,204,204)');
                             }.bind(this)).fadeIn(10);
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
                         }
                         if(mobile.matches)
                         {
@@ -628,10 +667,18 @@
             }
         }
         
-        @media screen and (max-width: 1920px) {
+        @media screen and (max-width: 1920px) and (min-width: 415px) {
             .iconAnimated {
                 transition: transform 2.4s cubic-bezier(0.72, -0.32, 0.89, -0.37), opacity 2s ease;
                 transform: translateZ(0) translate(0.4vw,-0.6vw);
+                opacity: 1;
+            }
+        }
+        
+        @media screen and (max-width: 415px) {
+            .iconAnimated {
+                transition: transform 2s ease, opacity 2s ease;
+                transform: translateZ(0) translate(2.4vw,-3.2vw);
                 opacity: 1;
             }
         }
@@ -1527,7 +1574,7 @@
                 width: 70vw;
                 margin-top: 211% !important;
                 margin-left: -10vw;
-                position: absolute;
+                opacity: 0;
             }
             .menuformspan {
                 max-width: 72% !important;
@@ -1610,7 +1657,7 @@
                     <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; -webkit-font-smoothing: antialiased;" href="#"><span class="menutext1">products</span><p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
                     <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; -webkit-font-smoothing: antialiased;" href="#"><span class="menutext2">know more</span><p id="menudot2" class="menudot02">&#9679;</p></a>
                     <div>
-                    <p class="changecountry" style="font-family: GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-weight: lighter; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" value><u>Bahrain</u></option><option value="France"><u>France</u></option><option value="Germany"><u>Germany</u></option><option value="Hong Kong"><u>Hong Kong</u></option><option value="India"><u>India</u></option><option value="Italy"><u>Italy</u></option><option value="Jordan"><u>Jordan</u></option><option value="Kuwait"><u>Kuwait</u></option><option value="Oman"><u>Oman</u></option><option value="Qatar"><u>Qatar</u></option><option value="UAE">UAE</option><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA" selected><u>USA</u></option></select>
+                    <p class="changecountry" style="position: absolute; GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-weight: lighter; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" value><u>Bahrain</u></option><option value="France"><u>France</u></option><option value="Germany"><u>Germany</u></option><option value="Hong Kong"><u>Hong Kong</u></option><option value="India"><u>India</u></option><option value="Italy"><u>Italy</u></option><option value="Jordan"><u>Jordan</u></option><option value="Kuwait"><u>Kuwait</u></option><option value="Oman"><u>Oman</u></option><option value="Qatar"><u>Qatar</u></option><option value="UAE">UAE</option><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA" selected><u>USA</u></option></select>
                     </p>
                         </div>
                     <p class="menusp1 menu1head1" style="">REIMAGINING THE EXECUTIVE DESK</p>
@@ -2170,6 +2217,10 @@
             $("#menudot1").addClass("menudot02")
         });
         $("#menu1").click(function(){
+            if(desktop.matches)
+                $(".changecountry").css("opacity", "1");
+            else if(mobile.matches)
+                $(".changecountry").css("opacity", "1").animate({opacity: 0}, 200);
             $('.menuimage, .menusp21, .menusp22').css("opacity", "1.0").animate({opacity: 0}, 200, function(){
                 $('.menuimage, .menusp21, .menusp22').css("visibility", "hidden");
             });
@@ -2178,6 +2229,11 @@
             $('.menusp2et').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 0.85}, 1);
         });
         $("#menu2").click(function(){
+            if(desktop.matches)
+                $(".changecountry").css("opacity", "1");
+            else if(mobile.matches)
+                $(".changecountry").css("opacity", "0").animate({opacity: 1}, 400);
+            
             $('.menusp1, .menusp2, .menusp3, .menusp4').css("opacity", "1.0").animate({opacity: 0}, 400, function(){
                 $('.menusp1, .menusp2, .menusp3, .menusp4').css("visibility", "hidden");
             });
