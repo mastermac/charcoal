@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="css/examples.css" />
+    <link rel="icon" href="img/fav.png" type="image/x-icon"/>
     
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
 	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
@@ -26,10 +27,27 @@
 	<script type="text/javascript" src="js/examples.js"></script>
 
 	<script type="text/javascript">
+        var desktop = window.matchMedia("(min-width: 415px)");
+        var mobile = window.matchMedia("(max-width: 414px)");
+        $(document).ready(function() {
+            document.getElementsByTagName("html")[0].style.visibility = "visible";
+        });
 		$(document).ready(function() {
             var val1 = 0;
+            if(desktop.matches)
+            {
+                $(".design").css("visibility", "visible");
+                $(".features").css("visibility", "visible");
+                $(".customize").css("visibility", "visible");
+            }
+            else if(mobile.matches)
+            {
+                $(".design").css("visibility", "visible");
+                $(".features").css("visibility", "hidden");
+                $(".customize").css("visibility", "hidden");
+            }
 			$('#fullpage').fullpage({
-                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+                anchors: ['01', '02', '03', '04', '05'],
 				bigSectionsDestination:'top',
                 onLeave: function(index, nextIndex, direction){                
                     if(nextIndex == 1) {
@@ -38,6 +56,18 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important");
                         $(".menudot2").attr("style","color: rgb(172,172,172) !important");
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "hidden");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 2) {
@@ -46,6 +76,18 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "hidden");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 3) {
@@ -54,6 +96,18 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "hidden");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 4) {
@@ -62,6 +116,18 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
+                        if(desktop.matches)
+                        {
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "hidden");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "hidden");
+                        }
                     }
                     
                     if(nextIndex == 5) {
@@ -70,13 +136,17 @@
                         makeActive();
                         $(".menudot1").attr("style","color: rgb(51,51,51) !important");
                         $(".menudot2").attr("style","color: rgb(209,209,209) !important");
-                    }
-                    
-                    if(index == 3 && (nextIndex==1 || nextIndex==2 || nextIndex==4)) {
-                        if($('img').hasClass('iconAnimated'))
+                        if(desktop.matches)
                         {
-                            $('.iconAnimated').addClass('notAnimated')
-                            $('.notAnimated').removeClass('iconAnimated')
+                            $(".design").css("visibility", "visible");
+                            $(".features").css("visibility", "visible");
+                            $(".customize").css("visibility", "visible");
+                        }
+                        else if(mobile.matches)
+                        {
+                            $(".design").css("visibility", "hidden");
+                            $(".features").css("visibility", "hidden");
+                            $(".customize").css("visibility", "visible");
                         }
                     }
                 },
@@ -87,6 +157,18 @@
                             $('.notAnimated').addClass('iconAnimated')
                             $('.iconAnimated').removeClass('notAnimated')
                         }
+                        if($('img').hasClass('notAnimatedBase'))
+                        {
+                            $('.notAnimatedBase').addClass('iconAnimatedBase')
+                            $('.iconAnimatedBase').removeClass('notAnimatedBase')
+                        }
+                    }
+                    
+                    if(index == 1 || index == 2 || index == 4 || index == 5) {
+                        $('.iconAnimatedBase').addClass('notAnimatedBase');
+                        $('.iconAnimated').addClass('notAnimated');
+                        $('.notAnimated').removeClass('iconAnimated');
+                        $('.notAnimatedBase').removeClass('iconAnimatedBase');
                     }
                 }
 			});
@@ -104,8 +186,6 @@
         @font-face {
             font-family: 'Nexa';
             src: url("font/Nexa-Light.otf");
-            Cache-Control: public, max-age=15552000; 
-Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files)
         }
 
         @font-face {
@@ -126,6 +206,11 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
         @font-face {
             font-family: 'GothamLight';
             src: url("font/Gotham-Light.otf");
+        }
+        
+        @font-face {
+            font-family: 'GothamLightB';
+            src: url("font/Gotham-LightB.otf");
         }
         
         @font-face {
@@ -152,6 +237,10 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             margin-right: 10px;
             height: 60px;
             width: 145px;
+        }
+        
+        html {
+            visibility:hidden;
         }
 
         html, body {
@@ -223,14 +312,13 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
         }
         
         
-        .notAnimated {
-            transition: transform 2s ease;
-            transform: translateZ(0) translate(0, 0);
+        .notAnimated, .notAnimatedBase {
+            opacity: 0;
         }
         
-        .iconAnimated {
-            transition: transform 2s ease;
-            transform: translateZ(0) translate(0, -0.8vw);
+        .iconAnimatedBase {
+            transition: opacity 2s ease;
+            opacity: 1;
         }
         
         .sliderAnimatedHide {
@@ -345,7 +433,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             text-transform: none;
         }
 
-        .overlay a:not(#noemail) {
+        .overlay a:not(#noemail):not(#nodownload) {
             padding: 8px;
             text-decoration: none;
             font-size: 36px;
@@ -492,7 +580,6 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
         }
         
         .page2dot2 {
-            font-size: 0.83vw;
             color: rgb(209,209,209) !important;
             text-shadow: none;
             transition: color linear .2s;
@@ -504,7 +591,6 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
         }
         
         .page2dot1 {
-            font-size: 0.83vw;
             color: rgb(51,51,51) !important;
             text-shadow: 0.04vw 0.06vw 0.2vw #00000061;
             pointer-events: none;
@@ -514,10 +600,6 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             font-style: normal;
             font-variant: normal;
             text-transform: none;
-        }
-        
-        .page2singledot {
-            margin-top: 12.46vw !important;
         }
         
         .linetext {
@@ -568,11 +650,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             font-size: 0.86vw;
             text-shadow: none;
             margin-left: 12.2%;
-            animation: burst 1.7s infinite;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            animation: burst 2.2s infinite;
         }
         
         #pulse02 {
@@ -581,11 +659,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             color: rgb(205, 205, 205);
             text-shadow: none;
             margin-left: -4.8%;
-            animation: burst 1.7s infinite;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            animation: burst 2.2s infinite;
         }
         
         #pulse03 {
@@ -594,11 +668,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             color: rgb(205, 205, 205);
             text-shadow: none;
             margin-left: 7.2%;
-            animation: burst 1.7s infinite;
-            speak: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
+            animation: burst 2.2s infinite;
         }
         
         .addtick {
@@ -609,91 +679,1093 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             height: 0.37vw;
         }
         
-        @keyframes burst {
-            0% {
-                -webkit-text-stroke-color: rgba(230, 230, 230, 1);
-                -webkit-text-stroke-width: 0.02vw;
+        @media screen and (min-width: 415px) {
+            .desksec1 {
+                visibility: visible;
+            }
+            .mobilesec1 {
+                visibility: hidden;
+            }
+            .mobileimage1 {
+                max-width: 86vw;
+                margin-top: 20.3vw;
+                margin-left: -4.1vw;
+            }
+            .mobilehidden {
+                visibility: visible;
+            }
+            .mobilePara1 {
+                margin-top: 8.73vw;
+                margin-left: -10.67vw;
+                width: 36%;
+            }
+            .sec1head1 {
+                font-size: 0.48vw;
+                letter-spacing: 0.20vw;
+                margin-bottom: 1.3vw;
+                margin-left: 5.6vw;
+            }
+            .sec1head1and {
+                font-size: 0.55vw; 
+            }
+            .sec1head2 {
+                font-size: 1vw;
+                letter-spacing: 0.15vw;
+                margin-bottom: 1.1vw;
             }
             
-            5% {
-                -webkit-text-stroke-width: 0.07vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.95);
+            .mobileimage2 {
+                max-width: 77vw;
+                margin-top: -1.74vw;
+                margin-left: -6.1vw;
+            }
+            .mobileimage2artspan {
+                margin-top: 31.6vw;
+                width: 34%;
+                margin-left: -36.9vw;
+            }
+            .mobileimage2artimg {
+                max-width: 24vw;
+                margin-top: 0vw;
+            }
+            .mobilePara2 {
+                margin-top: 17.9vw;
+                width: 34%;
+                margin-left: -0.77vw;
+            }
+            .sec2head1 {
+                font-size: 0.86vw;
+                letter-spacing: 0.113vw;
+            }
+            .sec2para1 {
+                line-height: 1.3vw;
+                margin-top: 0.96vw !important;
+                letter-spacing: 0.06vw;
+            }
+            .sec2para2 {
+                line-height: 1.3vw !important;
+                margin-top: 1.14vw !important;
+                letter-spacing: 0.06vw;
+            }
+            .sec2forms {
+                margin-top: 10.6vw !important;
+                margin-left: -10.05vw !important;
+                letter-spacing: 0.12vw;
+            }
+            #page2dot1 {
+                margin-left: -3.95vw;
+            }
+            #page2dot2 {
+                margin-left: -2.16vw;
+            }
+            #page2dot3 {
+                margin-left: -0.4vw;
+            }
+            .page2singledot {
+                margin-top: 12.46vw !important;
+            }
+            .page2dot1 {
+                font-size: 0.83vw;
+            }
+            .page2dot2 {
+                font-size: 0.83vw;
             }
             
-            10% {
-                -webkit-text-stroke-width: 0.12vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.9);
+            .mobileimage3 {
+                max-width: 81.25vw;
+                margin-left: 20.5vw;
+                margin-top: 11.4vw;
+            }
+            .mobilePara3 {
+                margin-top: 5.74vw;
+                margin-left: -85.9vw;
+                width: 28%;
+            }
+            .sec3head1 {
+                font-size: 0.84vw;
+                letter-spacing: 0.074vw;
+                margin-top: 9.2vw !important;
+                margin-left: 18.77vw;
+            }
+            .sec3head1comma {
+                font-size: 0.6vw;
+            }
+            .sec3para1 {
+                font-size: 0.72vw;
+                letter-spacing: 0.068vw;
+                margin-top: 11.62vw !important;
+                margin-left: 18.77vw
+            }
+            .sec3para1dot {
+                font-size: 0.4vw;
+            }
+            .sec3animation {
+                 margin-top: 13.5vw;
+            }
+            .sec3ani1 {
+                width: 1.743vw;
+                margin-top: 20.27vw;
+                margin-left: 13.3vw;
+            }
+            .sec3ani2 {
+                width: 5.6vw;
+                margin-top: 20.44vw;
+                margin-left: 9.1vw;
             }
             
-            15% {
-                -webkit-text-stroke-width: 0.16vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.85);
+            .mobileimage4 {
+                width: 95.4%;
+                height: 84%;
+                background-position: 60%;
+            }
+            .mobilePara4 {
+                top: 26.3%;
+                margin-left: 21.08vw;
+                width: 25%;
+            }
+            .sec4head1 {
+                font-size: 1.1vw;
+                letter-spacing: 0.127vw;
+            }
+            .sec4para1 {
+                line-height: 1.24vw;
+                margin-top: 1.18vw !important;
+                letter-spacing: 0.083vw;
+            }
+            .sec4para2 {
+                line-height: 1.24vw;
+                margin-top: 1.1vw !important;
+                letter-spacing: 0.082vw;
             }
             
-            20% {
-                -webkit-text-stroke-width: 0.21vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.8);
+            .mobileimage5 {
+                margin-top: -14.7vw;
+                margin-left: -30.7vw;
+                width: 62.3vw;
+            }
+            .sec5edition {
+                top: 9.25vw;
+                left: 32.42vw;
+                font-size: 0.94vw;
+                letter-spacing: 0.18vw;
+            }
+            .sec5line1 {
+                margin-top: 11.62vw;
+                margin-left: -17.48vw;
+                width: 35vw;
+            }
+            .sec5line2 {
+                margin-top: 14.35vw;
+                margin-left: -17.48vw;
+                width: 35vw; 
+            }
+            .sec5edition1 {
+                top: 12.54vw;
+                left: 35.25vw;
+                font-size: 0.69vw;
+                letter-spacing: 0.14vw;
+            }
+            .sec5edition2 {
+                top: 12.54vw;
+                left: 44.38vw;
+                font-size: 0.69vw;
+                letter-spacing: 0.14vw;
+            }
+            .sec5tick1 {
+                width: 1.4vw;
+                top: 12.3vw;
+                left: 38vw; 
+            }
+            .sec5tick1text {
+                font-size: 0.5vw;
+                top: 13.91vw;
+                left: 38vw;
+                letter-spacing: 0.08vw;
+            }
+            .sec5tick2 {
+                width: 1.4vw;
+                top: 12.3vw;
+                left: 40.15vw;
+            }
+            .sec5tick2text {
+                font-size: 0.5vw;
+                top: 13.91vw;
+                left: 39.3vw;
+                letter-spacing: 0.085vw;
+            }
+            .sec5tick3 {
+                width: 1.4vw;
+                top: 12.3vw;
+                left: 48.92vw;
+            }
+            .sec5price {
+                top: 12.38vw;
+                right: 32.24vw;
+                font-size: 0.85vw;
+                letter-spacing: 0.15vw;
+            }
+            .sec5specs {
+                top: 9.72vw;
+                left: 61.55vw;
+                letter-spacing: 0.11vw;
+                font-size: 0.47vw;
+            }
+            .sec5specsbox {
+                width: 6.5vw;
+                position: absolute;
+                top: -0.144vw;
+                left: -0.53vw; 
+            }
+            .sec5preo {
+                top: 18.8vw;
+                left: 43.91vw;
+                font-size: 0.8vw;
+                letter-spacing: 0.19vw;
+            }
+            .sec5preobox {
+                width: 13.25vw;
+                top: -0.39vw;
+                left: -0.67vw;
             }
             
-            25% {
-                -webkit-text-stroke-width: 0.25vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.75);
+            #myModal1 {
+                margin-left: 36.5vw;
+                margin-top: -14.7vw;
+                width: 27vw;
+                height: 36.45vw;
+            }
+            .modal1cross {
+                margin-top: -9.7vw;
+                left: 27.55vw;
+                width: 0.75vw;
+            }
+            #menufillin {
+                margin-left: 0.74vw;
+                margin-top: -1vw;
+                font-size: 0.67vw;
+                line-height: 1.3vw;
+                letter-spacing: 0.05vw;
+            }
+            #menufillin input {         
+                margin-bottom: 1.15vw;
+                width: 17.5vw;
+                height: 0.84vw;
+            }
+            #editionModal {
+                letter-spacing: 0.05vw;
+                margin-top: 7.4vw;
+                margin-left: 0.52vw;
+            }
+            .modalline1 {
+                margin-left: 1vw;
+                margin-top: 0 !important;
+                margin-bottom: 0.5vw !important;
+                width: 16vw;
+                height: 1px;
+            }
+            .modalline2 {
+                margin-left: 1vw;
+                margin-top: 2.78vw !important;
+                margin-bottom: 0vw !important;
+                width: 16vw;
+                height: 1px;
+            }
+            .modaledition {
+                margin-top: 0.4vw;
+                margin-left: 2vw;
+                font-size: 0.7vw;
+                letter-spacing: 0.18vw;
+            }
+            .modaleditiontype {
+                margin-top: 0.4vw;
+                margin-left: 5.41vw;
+                font-size: 0.7vw;
+                letter-spacing: 0.18vw;
+            }
+            .modalshade {
+                margin-left: 0.28vw;
+                margin-top: 0.15vw;
+                font-size: 0.7vw;
+                letter-spacing: 0.18vw;
+            }
+            .modalshadeimg {
+                width: 1.4vw;
+            }
+            #preorder2 {
+                letter-spacing: 0.19vw;
+                margin-top: 4.3vw;
+                margin-left: 3.4vw;
+                font-size: 0.8vw;
+            }
+            .preorder2box {
+                width: 13.3vw;
+                margin-top: -0.29vw;
+                margin-left: -0.6vw;
+            }
+            .notfilledModal {
+                font-size: 0.67vw;
+            }
+            #myModal2 {
+                margin-left: 21.05vw;
+                margin-top: -14.32vw;
+                width: 57.78vw;
+                height: 34.5vw;
+            }
+            .modal2cross {
+                margin-top: -8vw;
+                margin-left: 54.3vw;
+                width: 0.75vw;
+            }
+            .modal2img {
+                margin-top: -3.8vw;
+                margin-left: -0.4vw;
+                width: 51vw;
+                height: 25.6vw;
             }
             
-            30% {
-                -webkit-text-stroke-width: 0.3vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.7);
+            .mobilemenu {
+                width: 78%; 
+            }
+            .mobilemenu1 {
+                margin-left: 7.7vw;
+                margin-right: 3vw;
+            }
+            .menu1head1 {
+                letter-spacing: 0.174vw !important;
+                font-size: 0.52vw;
+            }
+            .menu1head2 {
+                font-size: 0.72vw;
+                letter-spacing: 0.14vw;
+            }
+            .menu1para1 {
+                font-size: 0.67vw;
+                line-height: 1.14vw;
+                margin-bottom: 0.4vw !important;
+            }
+            .menu1para2 {
+                font-size: 0.67vw;
+                line-height: 1.14vw;
+                margin-top: 0 !important;
+            }
+            .menu1aimg1 {
+                top: -0.45vw;
+            }
+            .menu1aimg2 {
+                top: -0.45vw;
+            }
+            .menu1img1 {
+                width: 22vw;
+                height: 15vw;
+            }
+            .menu1img2 {
+                width: 22vw;
+                height: 15vw;
+            }
+            .menu1img1text {
+                font-size: 0.57vw;
+                letter-spacing: 0.14vw;
+                margin-left: 9.2vw !important;
+                margin-top: -14% !important;
+            }
+            .menu1img2text {
+                font-size: 0.57vw;
+                letter-spacing: 0.14vw;
+                margin-left: 9.2vw !important;
+                margin-top: -14% !important;
+            }
+            #menu1 {
+                margin-top:-70% !important;
+                text-align: left;
+                padding-right: 0vw !important;
+            }
+            #menu2 {
+                margin-top:-70% !important;
+                text-align: right;
+                padding-left: 1vw !important;
+            }
+            .menutext1 {
+                display: block;
+            }
+            .menutext2 {
+                display: block;
+            }
+            .menudot01 {
+                font-size: 0.9vw;
+            }
+            .menudot02 {
+                font-size: 0.86vw;
+            }
+            .menusp21 {
+                
+            }
+            .menuspcat {
+                width: 32.5vw;
+                height: 22.1vw; 
+                margin: 0.9vw 0px 0px 23.2vw;
+            }
+            .menuemail {
+                font-size: 0.64vw;
+            }
+            .menuemailspan {
+                margin-top: 23.2vw;
+            }
+            .menuemailvalspan {
+                margin-top: 23.42vw;
+                margin-left: 5vw;
+            }
+            #menureqtext {
+                font-size: 0.67vw;
+            }
+            #menuradio {
+                font-size: 0.67vw;
+            }
+            input[type='radio'] {
+                width: 0.6vw;
+                height: 0.6vw;
+            }
+            #modalfillin {
+                font-size: 0.67vw;
+                line-height: 1.5vw;
+                margin-top: -0.11vw !important;
+            }
+            #modalfillin input {         
+                margin-bottom: 1.15vw;
+                width: 17.5vw;
+                height: 0.84vw;
+            }
+            .menuimage {
+                width: 10.43vw;
+                height: 1.15vw;
+                margin-top: 0.46vw;
+            }
+            .changecountry {
+                font-size: 0.64vw;
+                width: 440%;
+                margin-top:-65.8% !important;
+                margin-right: -51.7vw;
+            }
+            .menucat {
+                width: 32.5vw;
+                height: 22.1vw;
+                margin: 0.9vw 0px 0px 23.2vw;
+            }
+            .menudot1 {
+                font-size: 0.86vw;
+            }
+            .menudot2 {
+                font-size: 0.86vw;
+            }
+            .dot1 {
+                margin-left: -2.2vw;
+            }
+            .dot2 {
+                margin-left: -1.5vw;
+            }
+            .dot3 {
+                margin-left: -2.6vw;
+            }
+            .dot4 {
+                margin-left: -1.9vw;
+            }
+            .dot5 {
+                margin-left: -6.17vw;
+            }
+            .singledot {
+                margin-top: 1.25vw !important;
+            }
+            .dark {
+                font-size: 0.7vw;
+            }
+            .features {
+                margin-left: -0.33vw;
+            }
+            .customize {
+               margin-left: 0.1vw;
             }
             
-            35% {
-                -webkit-text-stroke-width: 0.35vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.65);
+            .secp {
+                font-size: 0.77vw;
+                line-height: 1.29vw;
+            }
+            #logo {
+                width: 9.44vw;
+            }
+        }
+        
+        @media screen and (max-width: 414px) {
+            .desksec1 {
+                visibility: hidden;
+            }
+            .mobilesec1 {
+                visibility: visible;
+            }
+            .mobileimage1 {
+                max-width: 240vw;
+                margin-top: 14vw;
+                margin-left: -137.1vw;
+            }
+            .mobilehidden {
+                visibility: hidden;
+            }
+            .mobilePara1 {
+                margin-top: 4.73vw;
+                margin-left: 0;
+                width: 90%;
+            }
+            .sec1head1 {
+                font-size: 2.48vw;
+                letter-spacing: 1.2vw;
+                margin-bottom: 5.3vw;
+                margin-left: 5.6vw;
+            }
+            .sec1head1and {
+                font-size: 2.48vw; 
+            }
+            .sec1head2 {
+                font-size: 4vw;
+                letter-spacing: 0.15vw;
+                margin-bottom: 1.1vw;
             }
             
-            40% {
-                -webkit-text-stroke-width: 0.4vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.6);
+            .mobileimage2 {
+                max-width: 140vw;
+                margin-top: -184.74vw;
+                margin-left: -68vw;
+            }
+            .mobileimage2artspan {
+                margin-top: 31.6vw;
+                width: 24%;
+                margin-left: 21.1vw;
+            }
+            .mobileimage2artimg {
+                max-width: 61vw;
+                margin-top: -20vw;
+            }
+            .mobilePara2 {    
+                margin-top: 81.4vw;
+                width: 94%;
+                margin-left: -0.77vw;
+            }
+            .sec2head1 {
+                font-size: 3.86vw;
+                letter-spacing: 0.4vw;
+            }
+            .sec2para1 {
+                line-height: 6vw;
+                margin-top: 3.96vw !important;
+                letter-spacing: 0.1vw;
+            }
+            .sec2para2 {
+                line-height: 6vw !important;
+                margin-top: 1.14vw !important;
+                letter-spacing: 0.1vw;
+            }
+            .sec2forms {
+                margin-top: -92.6vw !important;
+                margin-left: -46.05vw !important;
+                letter-spacing: 0.54vw;
+                font-size: 2.7vw !important;
+            }
+            #page2dot1 {
+                margin-left: -38.95vw;
+            }
+            #page2dot2 {
+                margin-left: -32.26vw;
+            }
+            #page2dot3 {
+                margin-left: -25.4vw;
+            }
+            .page2singledot {
+                margin-top: -86.46vw !important;
+            }
+            .page2dot1 {
+                font-size: 2.83vw;
+            }
+            .page2dot2 {
+                font-size: 2.83vw;
             }
             
-            45% {
-                -webkit-text-stroke-width: 0.45vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.5);
+            .mobileimage3 {
+                max-width: 260.25vw;
+                margin-left: -59vw;
+                margin-top: 48.4vw;
+            }
+            .mobilePara3 {
+                margin-top: 6.74vw;
+                margin-left: -85.9vw;
+                width: 28%;
+            }
+            .sec3head1 {
+                font-size: 4.2vw;
+                letter-spacing: 0.074vw;
+                margin-top: 9.2vw !important;
+                margin-left: 18.77vw;
+            }
+            .sec3head1comma {
+                font-size: 4vw;
+            }
+            .sec3para1 {
+                font-size: 3.2vw;
+                letter-spacing: 0.168vw;
+                margin-top: 19.62vw !important;
+                margin-left: 18.77vw;
+                width: 85vw;
+            }
+            .sec3para1dot {
+                font-size: 3vw;
+            }
+            .sec3ani1 {
+                width: 9.743vw;
+                margin-top: 138.95vw;
+                margin-left: 80vw;
+            }
+            .sec3ani2 {
+                width: 26vw;
+                margin-top: 140vw;
+                margin-left: 60vw;
             }
             
-            50% {
-                -webkit-text-stroke-width: 0.5vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.4);
+            .mobileimage4 {
+                width: 100%;
+                height: 56%;
+                background-position: 19%;
+            }
+            .mobilePara4 {
+                top: 15%;
+                margin-left: -45.92vw;
+                width: 95%;
+            }
+            .sec4head1 {
+                font-size: 5.1vw;
+                letter-spacing: 0.277vw;
+            }
+            .sec4para1 {
+                line-height: 5.24vw;
+                margin-top: 4.18vw !important;
+                letter-spacing: 0.183vw;
+            }
+            .sec4para2 {
+                line-height: 5.24vw;
+                margin-top: 1.1vw !important;
+                letter-spacing: 0.182vw;
             }
             
-            55% {
-                -webkit-text-stroke-width: 0.55vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.3);
+            .mobileimage5 {
+                margin-top: -64.7vw;
+                margin-left: -75.7vw;
+                width: 158.3vw;
+            }
+            .sec5edition {
+                top: 9.25vw;
+                left: 2.42vw;
+                font-size: 3.69vw;
+                letter-spacing: 0.48vw;
+            }
+            .sec5line1 {
+                margin-top: 14.62vw;
+                margin-left: -47.48vw;
+                width: 94vw;
+            }
+            .sec5line2 {
+                margin-top: 28.35vw;
+                margin-left: -47.48vw;
+                width: 94vw;
+            }
+            .sec5edition1 {
+                top: 18.54vw;
+                left: 8.42vw;
+                font-size: 3.4vw;
+                letter-spacing: 0.4vw;
+            }
+            .sec5edition2 {
+                font-size: 3.4vw;
+                letter-spacing: 0.14vw;
+                top: 18.54vw;
+                left: 59vw;
+            }
+            .sec5tick1 {
+                width: 7.4vw;
+                top: 17.5vw;
+                left: 24vw;
+            }
+            .sec5tick1text {
+                font-size: 2.5vw;
+                top: 29.91vw;
+                left: 24.8vw;
+                letter-spacing: 0.08vw;
+            }
+            .sec5tick2 {
+                width: 7.4vw;
+                top: 17.5vw;
+                left: 35vw;
+            }
+            .sec5tick2text {
+                font-size: 2.5vw;
+                top: 29.91vw;
+                left: 32.3vw;
+                letter-spacing: 0.085vw;
+            }
+            .sec5tick3 {
+                width: 7.4vw;
+                top: 17.5vw;
+                left: 82vw;
+            }
+            .sec5price {
+                top: 50.38vw;
+                right: 35.24vw;
+                font-size: 4.85vw;
+                letter-spacing: 0.15vw;
+            }
+            .sec5specs {
+                top: 4.72vw;
+                left: 72.55vw;
+                letter-spacing: 0.11vw;
+                font-size: 2.2vw;
+            }
+            .sec5specsbox {
+                width: 25.5vw;
+                top: -0.2vw;
+                left: -2.4vw;
+            }
+            .sec5preo {
+                top: 72.8vw;
+                left: 18.91vw;
+                font-size: 4.4vw;
+                letter-spacing: 0.59vw;
+            }
+            .sec5preobox {
+                width: 63.75vw;
+                position: absolute;
+                top: -1.39vw;
+                left: -2.3vw;
             }
             
-            60% {
-                -webkit-text-stroke-width: 0.6vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.2);
+            #myModal1 {
+                margin-left: 7.5vw;
+                margin-top: -52vw;
+                width: 84vw;
+                height: 130.45vw;
+            }
+            .modal1cross {
+                margin-top: -14.7vw;
+                left: 80.4vw;
+                width: 3.75vw;
+            }
+            #menufillin {
+                margin-left: 0.74vw;
+                margin-top: 0vw;
+                font-size: 3.27vw;
+                line-height: 6.3vw;
+                letter-spacing: 0.2vw;
+            }
+            #menufillin input {
+                margin-bottom: 4.15vw;
+                width: 74.5vw;
+                height: 3.84vw;
+            }
+            #editionModal {
+                letter-spacing: 0.05vw;
+                margin-top: 18.4vw;
+                margin-left: 0.52vw;
+            }
+            .modalline1 {
+                margin-left: 1vw;
+                margin-top: 0 !important;
+                margin-bottom: 0.5vw !important;
+                width: 73vw;
+                height: 1px;
+            }
+            .modalline2 {
+                margin-left: 1vw;
+                margin-top: 9.78vw !important;
+                margin-bottom: 0vw !important;
+                width: 73vw;
+                height: 1px;
+            }
+            .modaledition {
+                margin-top: 1.8vw;
+                margin-left: 9vw;
+                font-size: 3.7vw;
+                letter-spacing: 0.18vw;
+            }
+            .modaleditiontype {
+                margin-top: 1.4vw;
+                margin-left: 17.41vw;
+                font-size: 4vw;
+                letter-spacing: 0.18vw;
+            }
+            .modalshade {
+                margin-left: 7.28vw;
+                margin-top: 1.55vw;
+                font-size: 3.7vw;
+                letter-spacing: 0.18vw;
+            }
+            .modalshadeimg {
+                width: 5.4vw;
+            }
+            #preorder2 {
+                letter-spacing: 0.69vw;
+                margin-top: 22vw;
+                margin-left: 9.4vw;
+                font-size: 4vw;
+            }
+            .preorder2box {
+                width: 59.3vw;
+                margin-top: -1.29vw;
+                margin-left: -1.6vw;
+            }
+            .notfilledModal {
+                font-size: 3.67vw;
+            }
+            #myModal2 {
+                margin-left: 4.05vw;
+                margin-top: -34.32vw;
+                width: 91.78vw;
+                height: 64.5vw;
+            }
+            .modal2cross {
+                margin-top: -12vw;
+                margin-left: 85vw;
+                width: 2.75vw;
+            }
+            .modal2img {
+                margin-top: 1.2vw;
+                margin-left: -3vw;
+                width: 90vw;
+                height: 47.6vw;
             }
             
-            70% {
-                -webkit-text-stroke-width: 0.7vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.1);
+            .mobilemenu {
+                width: 97%; 
+            }
+            .mobilemenu1 {
+                max-width: 70%;
+                margin-left: 159.7vw;
+                margin-right: 6vw;
+                margin-top: -96vw !important;
+            }
+            .menu1head1 {
+                letter-spacing: 0.774vw !important;
+                font-size: 2.2vw;
+                margin-bottom: 3vw !important;
+            }
+            .menu1head2 {
+                font-size: 2.72vw;
+                letter-spacing: 0.44vw;
+                margin-bottom: 3vw !important;
+            }
+            .menu1para1 {
+                font-size: 2.9vw;
+                line-height: 4.6vw;
+                margin-bottom: 0.4vw !important;
+            }
+            .menu1para2 {
+                font-size: 2.9vw;
+                line-height: 4.6vw;
+                margin-top: 0 !important;
+            }
+            .menu1aimg1 {
+                top: 7.55vw;
+                left: -74vw;
+            }
+            .menu1aimg2 {
+                top: 60.55vw;
+                left: -153vw;
+            }
+            .menu1img1 {
+                width: 76vw;
+                height: 51vw;
+            }
+            .menu1img2 {
+                width: 76vw;
+                height: 51vw;
+            }
+            .menu1img1text {
+                font-size: 2.57vw;
+                letter-spacing: 0.14vw;
+                margin-left: 30.2vw !important;
+                margin-top: -14% !important;
+            }
+            .menu1img2text {
+                font-size: 2.57vw;
+                letter-spacing: 0.14vw;
+                margin-left: 30.2vw !important;
+                margin-top: -14% !important;
+            }
+                        #menu1 {
+                margin-top:-70% !important;
+                text-align: left;
+            }
+            #menu1 {
+                margin-top:-15% !important;
+                text-align: right;
+                padding-right: 0vw !important;
+            }
+            #menu2 {
+                margin-top:-15% !important;
+                text-align: left;
+                padding-left: 1vw !important;
+            }
+            .menutext1 {
+                display: none;
+            }
+            .menutext2 {
+                display: none;
+            }
+            .menudot01 {
+                font-size: 3.9vw;
+            }
+            .menudot02 {
+                font-size: 3.9vw;
+            }
+            .menuspcat {
+                width: 82.5vw;
+                height: 55.1vw;
+                margin: -69.9vw 80px 0px 23.2vw;
+            }
+            .menuemail {
+                font-size: 3.64vw;
+            }
+            .menuemailspan {
+                margin-top: 72.2vw;
+            }
+            .menuemailvalspan {
+                margin-top: 70.62vw;
+                margin-left: 22vw;
+            }
+            #menureqtext {
+                font-size: 3.27vw;
+            }
+            #menuradio {
+                font-size: 2.67vw;
+                margin-top: 6vw !important;
+            }
+            input[type='radio'] {
+                width: 2.6vw;
+                height: 2.6vw;
+            }
+            #modalfillin {  
+                font-size: 2.67vw;
+                line-height: 6.5vw;
+                margin-top: 2.89vw !important;
+            }
+            #modalfillin input {
+                margin-bottom: 2.15vw;
+                width: 78.5vw;
+                height: 3.84vw;
+            }
+            .menuimage {
+                width: 46.43vw;
+                height: 5.5vw;
+                margin-top: 6.46vw;
+            }
+            .changecountry {
+                font-size: 3.74vw;
+                width: 70vw;
+                margin-top: 211% !important;
+                margin-left: -10vw;
+                opacity: 0;
+            }
+            .menuformspan {
+                max-width: 72% !important;
+            }
+            .menucat {
+                width: 82.5vw;
+                height: 55.1vw;
+                margin: -69.9vw 80px 0px 23.2vw;
+            }
+            .menudot1 {
+                font-size: 3.86vw;
+            }
+            .menudot2 {
+                font-size: 3.86vw;
+            }
+            .dot1 {
+                margin-left: -13.5vw;
+            }
+            .dot2 {
+                margin-left: -10.65vw;
+            }
+            .dot3 {
+                margin-left: -13.5vw;
+            }
+            .dot4 {
+                margin-left: -10.7vw;
+            }
+            .dot5 {
+                margin-left: -38.2vw;
+            }
+            .singledot {
+                margin-top: -3.75vw !important;
+            }
+            .dark {
+                font-size: 3.7vw;
+            }
+            .iconlink {
+                display: none;
+            }
+            .features {
+                margin-left: -18.9vw;
+            }
+            .customize {
+               margin-left: -24.9vw;
             }
             
-            75% {
-                -webkit-text-stroke-width: 0.8vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0.05);
+            .secp {
+                font-size: 3.7vw;
+                line-height: 5.29vw;
+            }
+            #logo {
+                width: 37.44vw;
+            }
+            .top-bar {
+                opacity: 1;
+            }
+            .menu {
+                float: right;
+                cursor: pointer;
+                margin-right: 3%;
+                margin-left: 0%;
+            }
+        }
+        
+        @-webkit-keyframes burst {
+        
+            from {
+                text-shadow: 0 0 0 rgba(230, 230, 230, 0.7), 0 0 0 rgba(230, 230, 230, 0.7), 0 0 0  rgba(230, 230, 230, 0.7), 0 0 0 rgba(230, 230, 230, 0.7);
             }
             
-            80% {
-                -webkit-text-stroke-width: 0.9vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0);
+            to {
+                text-shadow: 0 0 2vw rgba(255, 255, 255, 0), 0 0 2vw rgba(255, 255, 255, 0), 0 0 2vw  rgba(255, 255, 255, 0), 0 0 2vw rgba(255, 255, 255, 0);
             }
-
-            100% {
-                -webkit-text-stroke-width: 0.9vw;
-                -webkit-text-stroke-color: rgba(230, 230, 230, 0);
+            
+            animation-timing-function: ease-in-out;
+        }
+        
+        @media screen and (max-width: 415px) {
+            .iconAnimated {
+                transition: transform 2s ease, opacity 2s ease;
+                transform: translateZ(0) translate(0, -4.8vw);
+                opacity: 1;
             }
+        }
+        
+        @media screen and (min-width: 1920px) {
+            .iconAnimated {
+                transition: transform 2s ease, opacity 2s ease;
+                transform: translateZ(0) translate(0, -0.8vw);
+                opacity: 1;
+            }
+        }
+        
+        @media screen and (max-width: 1920px) and (min-width: 415px) {
+            .iconAnimated {
+                transition: transform 2.4s cubic-bezier(0.72, -0.32, 0.89, -0.37), opacity 2s ease;
+                transform: translateZ(0) translate(0, -0.8vw);
+                opacity: 1;
+            }
+        }
 
     </style>
     </head>
@@ -707,76 +1779,49 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             <span class="menu-global menu-bottom"></span>
         </div>
         
-        <div id="myNav" class="overlay" style="width:78%; margin-left:-80%; box-shadow: 0 0 1vw rgba(125,125,125,0.23);">
+        <div id="myNav" class="overlay mobilemenu" style="box-shadow: 0 0 1vw rgba(125,125,125,0.23); margin-left: -80%;">
             <div class="overlay-content vertical-center" style="margin-left: -1vw;">
-                <span class="menutextspan" style="position: relative; margin-left: 7.7vw; margin-right: 3vw; text-align: left;">
-                    <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; text-align: left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">products<p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
-                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; text-align: right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; margin-top:-70% !important; -webkit-font-smoothing: antialiased;" href="#">know more<p id="menudot2" class="menudot02">&#9679;</p></a>
+                <span class="menutextspan mobilemenu1" style="position: relative; text-align: left;">
+                    <a id="menu1" class="menufirst" style="font-family: GothamBook; float:left; font-size: 0.84vw; padding-left: 0px !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; -webkit-font-smoothing: antialiased;" href="#"><span class="menutext1">products</span><p id="menudot1" class="menudot01" style="margin-left: 2.3vw;">&#9679;</p></a>
+                    <a id="menu2" class="menufirst" style="font-family: GothamBook; float:right; font-size: 0.84vw; padding-right: 0.14vw !important; letter-spacing: 0.12vw; color: rgb(0,0,0); width:50%; -webkit-font-smoothing: antialiased;" href="#"><span class="menutext2">know more</span><p id="menudot2" class="menudot02">&#9679;</p></a>
                     <div>
-                        <p style="font-family: GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; width:104%; margin-top:-65.8% !important; margin-right: -51.7vw; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" value><u>Bahrain</u></option><option value="France"><u>France</u></option><option value="Germany"><u>Germany</u></option><option value="Hong Kong"><u>Hong Kong</u></option><option value="India"><u>India</u></option><option value="Italy"><u>Italy</u></option><option value="Jordan"><u>Jordan</u></option><option value="Kuwait"><u>Kuwait</u></option><option value="Oman"><u>Oman</u></option><option value="Qatar"><u>Qatar</u></option><option value="UAE">UAE</option><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA" selected><u>USA</u></option></select>
-                        </p>
+                    <p class="changecountry" style="position: absolute; GothamLight; float:right; text-align: right; letter-spacing: 0.07vw; font-weight: lighter; -webkit-font-smoothing: antialiased">Change Country <select class="menuselect" name="menuselect[]" style="margin-left: 0.6vw;background-color: unset;border: 0; color: rgb(125,125,125); letter-spacing: 0.04vw; -moz-appearance:none; -webkit-appearance:none; appearance:none; text-decoration: underline;"><option value="Bahrain" value><u>Bahrain</u></option><option value="France"><u>France</u></option><option value="Germany"><u>Germany</u></option><option value="Hong Kong"><u>Hong Kong</u></option><option value="India"><u>India</u></option><option value="Italy"><u>Italy</u></option><option value="Jordan"><u>Jordan</u></option><option value="Kuwait"><u>Kuwait</u></option><option value="Oman"><u>Oman</u></option><option value="Qatar"><u>Qatar</u></option><option value="UAE">UAE</option><option value="United Kingdom"><u>United Kingdom</u></option><option value="USA" selected><u>USA</u></option></select>
+                    </p>
                         </div>
-                    <p class="menusp1" style="letter-spacing: 0.174vw; font-size: 0.52vw;">REIMAGINING THE EXECUTIVE DESK</p>
-                    <h6 class="menusp1" style="color: rgb(26,26,26); font-size: 0.72vw; letter-spacing: 0.14vw;">THE ART OF CHARCOAL.</h6>
-                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.4vw !important">The executive's desk is more than furniture, businesses that shape the world are built here. Yet, it remains a simple surface.</p>
-                    <p class="menusp1" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-top: 0 !important">
+                    <p class="menusp1 menu1head1" style="">REIMAGINING THE EXECUTIVE DESK</p>
+                    <h6 class="menusp1 menu1head2" style="color: rgb(26,26,26);">THE ART OF CHARCOAL.</h6>
+                    <p class="menusp1 menu1para1" style="text-align: left; font-family: GothamLight;">The executive's desk is more than furniture, businesses that shape the world are built here. Yet, it remains a simple surface.</p>
+                    <p class="menusp1 menu1para2" style="font-family: GothamLight;">
                     We wanted to reimagine the conventional and create products worthy of visionary leaders. Products that defy the status quo, built for the individuals who inspire change.</p>
                 </span>
                 
-                <!--<span class="menutextspan menusp21 hidden" style="position: absolute; left: 3vw; height: 26vw; text-align: left;">
-                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: -0.34vw !important; line-height: 1.3vw;">EMAIL US <span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 0.2vw; margin-left: 0.6vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
+                <span class="menutextspan menusp21 menuformspan hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
+                    <p class="menusp21 menuemail" style="position: relative; letter-spacing: 0.07vw; font-weight: lighter; margin-top: 3.21vw !important; line-height: 1.3vw;"><span class="menuemailspan" style="position: absolute;">EMAIL US</span><span id="noemailspan" class="menuemailvalspan" style="position: absolute; color: rgb(125,125,125); border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
-                    <p class="menusp21" style="letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 2.2vw !important;">ORDER A CATALOGUE
-                    </p>
-                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.5vw !important">
-                        <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.</label>
-                    </p>
-                    <p id="menufillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1vw; margin-top: -0.64vw !important; margin-bottom: 0.4vw !important">
-                    Name<br>
-                    <input type="text" class="name " id="name"><br>
-                    Street Address<br>
-                    <input type="text" class="stadd" id="stadd"><br>
-                    Zip Code<br>
-                    <input type="text" class="zipcode" id="zipcode"><br>
-                    City/Town<br>
-                    <input type="text" class="city" id="city"><br>
-                    Country<br>
-                    <input type="text" class="country" id="country"><br>
-                    E-mail Address<br>
-                    <input type="text" class="email" id="email"><br>
-                    Telephone<br>
-                    <input type="text" class="tel" id="tel"><br>
-                    <a href="#" style="padding: 0; display: unset; font-size: 0;">
-                        <img class="menuimage" src="img/Order%20now.png" style="width: 5.6vw; height: 1.1vw; margin-top: 1.34vw;">
-                    </a>
-                    </p>
-                </span>-->
-                <span class="menutextspan menusp21 hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
-                    <p class="menusp21" style="position: relative; letter-spacing: 0.07vw; font-size: 0.64vw; font-weight: lighter; margin-top: 3.21vw !important; line-height: 1.3vw;"><span style="position: absolute; margin-top: 23.2vw;">EMAIL US</span><span id="noemailspan" style="position: absolute; color: rgb(125,125,125); margin-top: 23.42vw; margin-left: 5vw; border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
-                    </p>
-                    <p id="menureqtext" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; margin-top: -2.24vw !important">
+                    <p class="notfilled menusp21" id="menureqtext" style="font-family: GothamLight; margin-top: -2.24vw !important; opacity: 0;">
                         *Please check the required fields
                     </p>
-                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.14vw; margin-bottom: 0.5vw !important">
-                        <input type="radio" name="gender" value="female"> <label>Ms.</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.</label>
+                    <p id="menuradio" class="menusp21" style="font-family: GothamLight; line-height: 1.14vw; margin-bottom: 0.5vw !important">
+                        <input type="radio" name="gender" value="female"> <label>Ms.<span class="notfilledmrms" style="opacity: 0;">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" value="male" style="margin-left: 0.5vw;"> <label>Mr.<span class="notfilledmrms" style="opacity: 0;">*</span></label>
                     </p>
-                    <form name="contactForm" method="post">
-                        <p id="modalfillin" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; line-height: 1.5vw; margin-top: -0.11vw !important; margin-bottom: 0.4vw !important;">
-                            Name<br>
+                    <form name="contactForm" method="">
+                        <p id="modalfillin" class="menusp21" style="font-family: GothamLight; margin-bottom: 0.4vw !important;">
+                            Name<span class="notfilledname" style="opacity: 0;">*</span><br>
                             <input type="text" class="name " id="name" name="name" pattern="[A-Za-z ]{1,40}" required><br>
-                            E-mail Address<br>
+                            E-mail Address<span class="notfilledemail" style="opacity: 0;">*</span><br>
                             <input type="text" class="email" id="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required><br>
-                            <input type="image" class="menuimage" name="submit" src="img/Download.png" style="width: 10.43vw; height: 1.15vw; margin-top: 0.46vw; background-color: transparent;" alt="Submit">
+                            <a id="nodownload" href="#">
+                                <img type="image" class="menuimage" name="submit" src="img/Download.png" style="background-color: transparent;">
+                            </a>
                         </p>
                     </form>
                 </span>
                 
-                <a class="overlayhover menusp2" style="top: -0.45vw; padding: 0 !important; position: relative;" href="../volant/index.html">
-                    <div class="menusp2 menusp2et" id="menuani1" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity:0.85; background-size: cover; background-image: url('img/Volant%20Inactive.png');">
+                <a class="overlayhover menusp2 menu1aimg1" style="padding: 0 !important; position: relative;" href="#">
+                    <div class="menusp2 menusp2et menu1img1" id="menuani1" style="max-width: 100%; padding:0; margin:0; opacity:0.85; background-size: cover; background-image: url('img/Volant%20Inactive.png');">
                     </div>
-                    <p class="menusp2" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">VOLANT.</p>
+                    <p class="menusp2 menu1img1text" style="position: absolute; color: rgb(26,26,26);">VOLANT.</p>
                     <div class="overlaymenu">
                         <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/Volant%20Active.png');">
                         </div>
@@ -786,10 +1831,10 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 <span class="menusp3" style="width: 2.67vw; flex: none;">
                 </span>
                 
-                <a class="overlayhover menusp4" style="top: -0.45vw; padding: 0 !important; position: relative;" href="#">
-                    <div id="menuani2" class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; opacity: 0.85; background-size: cover; background-image: url('img/N%20Space%20Inactive.png');">
+                <a class="overlayhover menusp4 menu1aimg2" style="padding: 0 !important; position: relative;" href="../nspace/#design01">
+                    <div id="menuani2" class="menusp2 menu1img2" style="max-width: 100%; padding:0; margin:0; opacity: 0.85; background-size: cover; background-image: url('img/N%20Space%20Inactive.png');">
                     </div>
-                    <p class="menusp2 menusp2et" style="position: absolute; color: rgb(26,26,26); font-size: 0.57vw; letter-spacing: 0.14vw; margin: 0 !important; margin-left: 9.2vw !important; margin-top: -14% !important;">n.SPACE</p>
+                    <p class="menusp2 menusp2et menu1img2text" style="position: absolute; color: rgb(26,26,26);">n.SPACE</p>
                     <div class="overlaymenu">
                         <div class="menusp2" style="max-width: 100%; width: 22vw; height: 15vw; padding:0; margin:0; background-size: cover; background-image: url('img/N%20Space%20Active.png');">
                         </div>
@@ -797,8 +1842,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 </a>
                 
                 <div class="menusp22 hidden" style="position: absolute; z-index: -2;">
-                    <div class="menusp22" style="max-width: 100%; width: 32.5vw; height: 22.1vw; 
-    box-shadow: 0.3vw 0.2vw 0.4vw #80808040, -0.07vw -0.035vw 0.29vw #80808040; padding:0, 0.3vw 0.2vw 0.4vw #80808040; padding:0; margin: 0.9vw 0px 0px 23.2vw; background-size: cover; background-image: url('img/Catalogue.jpg');">
+                    <div class="menusp22 menucat" style="max-width: 100%; box-shadow: 0.3vw 0.2vw 0.4vw #80808040, -0.07vw -0.035vw 0.29vw #80808040; padding:0; background-size: cover; background-image: url('img/Catalogue.jpg');">
                     </div>
                 </div>
                 
@@ -809,34 +1853,34 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
         </p>
         <div class="row">
             <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <a class="dark" href="#firstPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <a class="dark design" href="#01" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
                     design
                 </a>
                 <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#firstPage" style="margin-left: -2.2vw;"><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#secondPage" style="margin-left: -1.5vw;"><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot1" href="#01" style=""><p id="0" class="menudot1" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot2" href="#02" style=""><p id="1" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <a class="dark" href="#thirdPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important; margin-left: -0.33vw;">
+                <a class="dark features" href="#03" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important;">
                     features
                 </a>
                 <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#thirdPage" style="margin-left: -2.6vw;"><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
-                    <a class="singledot mynav" href="#fourthPage" style="margin-left: -1.9vw;"><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot3" href="#03" style=""><p id="2" class="menudot2" style="height: 0;">&#9679;</p></a>
+                    <a class="singledot mynav dot4" href="#04" style=""><p id="3" class="menudot2" style="height: 0;">&#9679;</p></a>
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <a class="dark" href="#lastPage" style="font-family: GothamLight; float:left; font-weight: bold; text-align: -webkit-left; font-size: 0.7vw; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-left: 0.1vw; margin-top: 1.335vw !important;">
+                <a class="dark customize" href="#05" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important;">
                     customize and pre-order
                 </a>
                 <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
-                    <a class="singledot mynav" href="#lastPage" style="margin-left: -6.17vw;"><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
+                    <a class="singledot mynav dot5" href="#05" style=""><p id="4" class="menudot2" style="height: 0; position: absolute; margin-left:0.24vw;">&#9679;</p></a>
                 </div>
             </div>
             <div style="text-align: right; padding-right: 2.64vw; flex: 1;">
-                    <a style="margin-right: 1.4vw;" href="../volant/index.html"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.35; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
-                    <a href="#firstPage"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.9; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
+                    <a style="margin-right: 1.4vw;" href="#firstPage"><img class="iconlink" id="iconlink1" style="-webkit-animation-duration: 2.4s; width:3vw; height: 1.2vw; opacity: 0.9; margin-top: 1.6vw" src="img/Volant_link.png" /></a>
+                    <a href="../nspace/#design01"><img class="iconlink" id="iconlink2" style="-webkit-animation-duration: 2.4s; width:3.2vw; height: 1.2vw; opacity: 0.35; margin-top: 1.6vw;" src="img/N Space_link.png" /></a>
             </div>
         </div>
     </div>
@@ -844,12 +1888,12 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
     
     <div style="text-align:center;" class="header-top clearfix">
         <span id="logospan">
-            <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast; width: 9.44vw;" />
+            <img id="logo" src="img/Logo.png" style="image-rendering: -webkit-optimize-contrast;" />
         </span>
     </div>
     <div style="text-align:center; z-index: 5; width: 10%; left: 45%;" class="header-top clearfix">
-        <a href="../../index.html" id="logospan" >
-            <img id="logoMask" style=" width: 9.44vw; opacity: 0;" />
+        <a href="../../" id="logospan" >
+            <img id="logoMask" style=" width: 9.44vw; height: 0.8vw; opacity: 0;" />
         </a>
     </div>
         <div id="outsidediv" style="position: fixed; width: 100%; height: 100%;"></div>
@@ -857,81 +1901,86 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             
         <div class="section" id="section0" style="background-color: rgb(209,209,209);">
             <span class="left" style="float: left; width: 72%;">
-                <img class="imagepane" style="max-width: 86vw; margin-top: 20.3vw; margin-left: -4.1vw;" src="img/nspace01.png" />
-                <div style="text-align: center; position: relative">
+                <img class="imagepane mobileimage1" style="" src="img/nspace01.png" />
+                <div class="mobilehidden" style="text-align: center; position: relative">
                     <img style="position: absolute; width: 1.2vw; margin-top: -3vw; margin-left: 36.15vw;" src="img/nspace_gray_salt_shade.png" />
                     <span style="position: absolute; color:rgb(120,120,120); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -2.73vw; margin-left: 31.7vw; width: 4vw; text-shadow: none;">SALT <span style="font-family: ClearSans;  color: rgb(125,125,125);">&amp;</span> GRAY</span>
                 </div>
             </span>
-            <span class="right" style="float:left; margin-top: 8.73vw; margin-left: -10.67vw; width: 36%; text-shadow: none;">
-                <h3 style="font-family: Nexa; font-size: 0.48vw; font-weight: lighter; letter-spacing: 0.20vw; color: rgb(102,102,102); margin-bottom: 1.3vw; text-align: left; margin-left: 5.6vw;">
-                    ASYMMETRY <span style="font-family: ClearSans; font-size: 0.55vw; color: rgba(125,125,125,0.95);">&amp;</span> BEAUTY
+            <span class="right mobilePara1" style="float:left; text-shadow: none;">
+                <h3 class="sec1head1" style="font-family: Nexa; font-weight: lighter; color: rgb(102,102,102); text-align: left;">
+                    ASYMMETRY <span class="sec1head1and" style="font-family: ClearSans; color: rgba(125,125,125,0.95);">&amp;</span> BEAUTY
                 </h3>
-                <h2 style="font-family: GothamBook; font-size: 1vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.15vw; margin-bottom: 1.1vw;">
+                <h2 class="sec1head2" style="font-family: GothamLightB; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left;">
                     n<span style="font-family: monospace; font-size: 0.7vw;">.</span> SPACE
                 </h2>
-                <p class="secp" style="margin-top: -0.152vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">There's always beauty in symmetry, but that's why it's easy.</p>
-                <p class="secp" style="margin-top: 0.795vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">
-                    So we set the design brief - create a beautiful product using
-                <p class="secp" style=" margin-top: 0.78vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">principles of asymmetry. Though challenging, or perhaps</p>
-                <p class="secp" style=" margin-top: 0.8vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">because of it, we knew the creation will stand the test of time.</p>
-                <p class="secp" style="margin-top: 1.05vw !important; margin-bottom: -1.2vw !important; font-size: 0.72vw; color: rgb(70,70,70); letter-spacing: 0.11vw;">
+                <p class="secp desksec1" style="margin-top: -0.152vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">There's always beauty in symmetry, but that's why it's easy.</p>
+                <p class="secp desksec1" style="margin-top: 0.795vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">
+                    So we set the design brief - create a beautiful product using</p>
+                <p class="secp desksec1" style=" margin-top: 0.78vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">principles of asymmetry. Though challenging, or perhaps</p>
+                <p class="secp desksec1" style=" margin-top: 0.8vw !important; letter-spacing: 0.085vw; font-size: 0.72vw; color: rgb(70,70,70);">because of it, we knew the creation will stand the test of time.</p>
+                <p class="secp desksec1" style="margin-top: 1.05vw !important; margin-bottom: -1.2vw !important; font-size: 0.72vw; color: rgb(70,70,70); letter-spacing: 0.11vw;">
+                    This is <i>n. Space</i></p>
+                
+                <p class="secp mobilesec1" style="margin-top: -20.152vw !important; letter-spacing: 0.085vw; font-size: 3.72vw; color: rgb(70,70,70);">There's always beauty in symmetry, but that's why it's easy. So we set the design brief - create a beautiful product using principles of asymmetry.</p>
+                <p class="secp mobilesec1" style="margin-top: 2.22vw !important; letter-spacing: 0.085vw; font-size: 3.72vw; color: rgb(70,70,70);">Though challenging, or perhaps because of it, we knew the creation will stand the test of time.</p>
+                <p class="secp mobilesec1" style="margin-top: 3.05vw !important; margin-bottom: -1.2vw !important; font-size: 3.72vw; color: rgb(70,70,70); letter-spacing: 0.11vw;">
                     This is <i>n. Space</i></p>
             </span>
         </div>
         <div class="section" id="section1" style="position: relative; overflow: hidden;">
-            <span class="right" style="position: absolute; float: left; margin-top: 12.4vw; width: 34%; margin-left: -50.76vw; z-index: 1; text-shadow: none;">
-                <h2 style="font-family: GothamBook; font-size: 0.86vw; font-weight: lighter; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left; letter-spacing: 0.113vw;">
+            <span class="left mobilePara2" style="position: relative; float: left; z-index: 1; text-shadow: none;">
+                <h2 class="sec2head1" style="font-family: GothamLightB; color: rgb(0,0,0); padding-left: 5.6vw; text-align: left;">
                     Realising Imagination,
                 </h2>
-                <p class="secp" style="line-height: 1.3vw; margin-top: 0.96vw !important; letter-spacing: 0.06vw">
+                <p class="secp sec2para1" style="">
                     To materialize the innate movement in the form, we created <i>n. Space</i> using seamless lines of HI-MACS&reg;.
                 </p>
-                <p class="secp" style="line-height: 1.3vw; margin-top: 1.14vw !important; letter-spacing: 0.06vw">
+                <p class="secp sec2para2" style="">
                     This allows our designers the artistic freedom to work with undulating curves and organic free-forms, an incredible design versatility to realise their imagination.
                 </p>
             </span>
-            <span class="right" style="position: absolute; float: left; margin-top: 25.6vw; width: 34%; margin-left: -53.7vw;  text-shadow: none;">
-                <img class="imagepane" class="animated fadeOutRight" style="max-width: 24vw; margin-top: 0.5vw;" src="img/Art_Imagine.png" />
+            <span class="left mobileimage2artspan" style="position: relative; float: left; text-shadow: none;">
+                <img class="imagepane mobileimage2artimg" class="animated fadeOutRight" style="" src="img/Art_Imagine.png" />
             </span>
-            <span class="left" style="float: left; width: 79%;">
-                <img class="imagepane imageslider" class="animated fadeOutRight" style="max-width: 77vw; margin-top: -7.2vw; margin-left: 27.13vw;" src="img/nspace021.jpg" />
+            <span class="right" style="float: left; width: 50%;">
+                <img class="imagepane imageslider mobileimage2" class="animated fadeOutRight" style="" src="img/nspace021.jpg" />
             </span>
-            <span class="left" style="float: left; margin-top: 18.57vw; margin-left: -10.4vw;">
-                <p id="page2dot1" class="page2dot2 page2dot1 page2singledot" style="position: absolute; margin-left: -3.95vw; cursor: pointer;">&#9679;</p>
-                <p id="page2dot2" class="page2dot2 page2singledot" style="position: absolute; margin-left: -2.16vw; cursor: pointer;">&#9679;</p>
-                <p id="page2dot3" class="page2dot2 page2singledot" style="position: absolute; margin-left: -0.4vw; cursor: pointer;">&#9679;</p>
-                <span class="linetext" id="linetext1" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(80,80,80); margin-top: 6.2vw; margin-left: 17.94vw; z-index: 1; letter-spacing: 0.12vw; opacity: 0;">LIGHT</span>
-                <span class="linetext" id="linetext2" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(80,80,80); margin-top: 6.2vw; margin-left: 16.3vw; z-index: 1; letter-spacing: 0.12vw; opacity: 0;">L RETURN</span>
-                <img class="imagepane" class="animated fadeOutRight" style="position: absolute; max-width: 44.3vw; margin-top: 7.67vw; margin-left: -24.08vw; transform: translateZ(0); -webkit-font-smoothing: antialiased;" src="img/Line.png" />
-                <p class="secp" style="position: absolute; float: left; margin-top: 10.6vw !important; margin-left: -10.05vw !important; letter-spacing: 0.12vw; text-shadow: none;">The Forms</p>
+            <span class="right" style="float: left; margin-top: 24.07vw; margin-left: -14.6vw;">
+                <p id="page2dot1" class="page2dot2 page2dot1 page2singledot" style="position: absolute; cursor: pointer;">&#9679;</p>
+                <p id="page2dot2" class="page2dot2 page2singledot" style="position: absolute; cursor: pointer;">&#9679;</p>
+                <p id="page2dot3" class="page2dot2 page2singledot" style="position: absolute; cursor: pointer;">&#9679;</p>
+                <span class="linetext mobilehidden" id="linetext1" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(80,80,80); margin-top: 6.2vw; margin-left: 17.94vw; z-index: 1; letter-spacing: 0.12vw; opacity: 0;">LIGHT</span>
+                <span class="linetext mobilehidden" id="linetext2" style="position: absolute; font-style: italic; font-family: GothamThin; font-size: 0.58vw; color: rgb(80,80,80); margin-top: 6.2vw; margin-left: 16.3vw; z-index: 1; letter-spacing: 0.12vw; opacity: 0;">L RETURN</span>
+                <img class="imagepane mobilehidden" class="animated fadeOutRight" style="position: absolute; max-width: 44.3vw; margin-top: 7.67vw; margin-left: -24.08vw; transform: translateZ(0); -webkit-font-smoothing: antialiased;" src="img/Line.png" />
+                <p class="secp sec2forms" style="position: absolute; float: left; text-shadow: none;">The Forms</p>
             </span>
         </div>
         <div class="section" id="section2">
             <span class="left" style="float: left; width: 72%; text-shadow: none;">
-                <img class="imagepane" style="max-width: 81.25vw; margin-left: 20.5vw; margin-top: 11.4vw;" src="img/nspace03.jpg" />
+                <img class="imagepane mobileimage3" style="" src="img/nspace03.jpg" />
                 <div style="text-align: center; position: relative">
-                    <img style="width: 1.2vw; position: absolute; top: -3.8vw; left: 61.1vw;" src="img/gray_graphite.png" />
-                    <span style="position: absolute; color:rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -3.5vw; margin-left: 27.3vw;">Graphite <span style="font-family: ClearSans;  color: rgb(125,125,125);">&amp;</span> Gray</span>
+                    <img class="mobilehidden" style="width: 1.2vw; position: absolute; top: -3.8vw; left: 61.1vw;" src="img/gray_graphite.png" />
+                    <span class="mobilehidden" style="position: absolute; color:rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; margin-top: -3.5vw; margin-left: 27.3vw;">Graphite <span style="font-family: ClearSans;  color: rgb(125,125,125);">&amp;</span> Gray</span>
                 </div>
             </span>
-            <span class="right" style="float:left; margin-top: 5.74vw; margin-left: -85.9vw; width: 28%; text-shadow: none;">
-                <p style="position: absolute; float:left; font-family: gothamLight; text-align: -webkit-left; font-size: 0.84vw; font-weight: bold; padding-left: 0px !important; letter-spacing: 0.074vw;  color: rgb(0,0,0); -webkit-font-smoothing: antialiased; margin-top: 9.2vw !important; margin-left: 18.77vw">
-                    Blending Art and Technology<span style="font-family: monospace; font-size: 0.6vw;">.</span>
+            <span class="mobilePara3 right" style="float:left; text-shadow: none;">
+                <p class="sec3head1" style="position: absolute; float:left; font-family: GothamLightB; text-align: -webkit-left; padding-left: 0px !important; color: rgb(0,0,0); -webkit-font-smoothing: antialiased;">
+                    Blending Art and Technology<span class="sec3head1comma" style="font-family: monospace;">,</span>
                 </p>
-                <p style="position: absolute; float:left; text-align: -webkit-left; font-size: 0.72vw; font-family: gothamLight; font-weight: lighter; padding-left: 0px !important; letter-spacing: 0.068vw; color: rgb(80,80,80); -webkit-font-smoothing: antialiased; margin-top: 11.62vw !important; margin-left: 18.77vw">
-                    Raise the worktop with just a word to accommodate the natural standing posture<span style="font-family: monospace; font-size: 0.4vw;">.</span>
+                <p class="sec3para1" style="position: absolute; float: left; text-align: -webkit-left; font-family: gothamLight; font-weight: lighter; padding-left: 0px !important; color: rgb(80,80,80); -webkit-font-smoothing: antialiased;">
+                    Raise the worktop with just a word to accommodate the natural standing posture<span class="sec3para1dot" style="font-family: monospace;">.</span>
                 </p>
-                <img class="notAnimated" style="position: absolute; width: 1.743vw; margin-top: 20.44vw; margin-left: 13.3vw; image-rendering: -webkit-optimize-contrast;" src="img/nspace Icon 01.png" />
-                <img style="position: absolute; width: 5.6vw; margin-top: 20.44vw; margin-left: 9.1vw; transform: translateZ(0);" src="img/nspace Icon 02.png" />
+                <img class="notAnimated sec3ani1" style="position: absolute; image-rendering: -webkit-optimize-contrast;" src="img/nspace Icon 01.png" />
+                <img class="notAnimatedBase sec3ani2" style="position: absolute; transform: translateZ(0);" src="img/nspace Icon 02.png" />
             </span>
         </div>
         <div class="section" id="section3">
-            <span class="left" style="position: absolute; float: left; left: 0; bottom: 0; width: 95.4%; height: 84%; background-image: url(img/nspace04.jpg); background-size: cover; background-position: 60%;">
-                <span id="pg5ShadeText" style="position: absolute; margin-left: -2vw; margin-top: -0.21vw; color: rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none;">
+            <span class="left mobileimage4" style="position: absolute; float: left; left: 0; bottom: 0; background-image: url(img/nspace04.jpg); background-size: cover;">
+                <span id="pg5ShadeText" class="mobilehidden" style="position: absolute; margin-left: -2vw; margin-top: -0.21vw; color: rgb(89,89,89); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none;">
                     Concrete Edition
                 </span>
-                <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: -4.72vw; margin-top: -0.74vw;" src="img/concrete_page4.png"/>
+                <img id="pg5ShadeIcon" class="mobilehidden" style="position: absolute; width: 1.4vw; margin-left: -4.72vw; margin-top: -0.74vw;" src="img/concrete_page4.png"/>
             </span>
             <span id="pulse01">&#9679;</span>
             <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(235, 235, 235); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 13.7%; margin-top: 0.39%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
@@ -940,14 +1989,14 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             <span id="pulse03">&#9679;</span>
             <span id="pulseText03" class="pulseText" style="position: absolute; text-align: left; color: rgb(230, 230, 230); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 0.8%; margin-top: 0.38%; -webkit-font-smoothing: antialiased;">LED INDICATOR -<br>ACTIVITY TRACKER</span>
             
-           <span style="float: left; position: absolute; top: 26.3%; margin-left: 21.08vw; text-shadow: none; font-size: 0.05vw; width: 25%;">
-                <h2 style="font-family: GothamBook; font-size: 1.1vw; color: rgb(0,0,0); text-align: left; font-weight: bold; letter-spacing: 0.127vw;">
+           <span class="mobilePara4" style="float: left; position: absolute; text-shadow: none;">
+                <h2 class="sec4head1" style="font-family: GothamLightB; color: rgb(0,0,0); text-align: left;">
                     The Intelligence<span style="font-family: monospace; font-size: 0.7vw;">.</span>
                 </h2>
-                <p class="secp" style="line-height: 1.24vw; margin-top: 1.18vw !important; letter-spacing: 0.083vw; padding-left: 0; margin-right: 0;">
+                <p class="sec4para1 secp" style="padding-left: 0; margin-right: 0;">
                     Advanced hardware and software come together to create a product whose intelligence actively evolves with time. 
                 </p>
-                <p class="secp" style="line-height: 1.24vw; margin-top: 1.1vw !important; letter-spacing: 0.082vw; padding-left: 0; margin-right: 0;">
+                <p class="sec4para2 secp" style="padding-left: 0; margin-right: 0;">
                     Over-the-air software updates add new features and functionality. The first wave of updates <i>n. Space</i> will receive, focuses on intelligent health based analytics and smart height-adjustability reminders.
                 </p>
             </span>
@@ -958,7 +2007,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 <img id="page5img1" class="page5img" src="img/page5/imgs/nspace052.png" style="color: rgb(77,77,77); margin-top: -17.7vw; margin-left: -33.95vw; width: 72vw; position: absolute;">
             </div>
             <div style="text-align: center; position: relative; top: 3.52vw; left: -2.53vw;">
-                <span style="position: absolute; color: rgba(51,51,51,0.9); top: 9.25vw; left: 7.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold; -webkit-font-smoothing: antialiased;">forms</span>
+                <span style="position: absolute; color: rgb(0,0,0); top: 9.25vw; left: 7.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamLightB;">forms</span>
                 <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 11.65vw; margin-left: -42.48vw; width: 19.85vw; height: 1px; position: absolute;">
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.44vw; margin-left: -42.48vw; width: 19.85vw; height: 1px; position: absolute;"></span>
             </div>
@@ -974,7 +2023,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 </span>
             </div>
             <div style="text-align: center; position: relative; top: 3.52vw; left: -2.24vw;">
-                <span style="position: absolute; color: rgba(51,51,51,0.9); top: 9.25vw; left: 32.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamBook; font-weight: bold; -webkit-font-smoothing: antialiased;">editions</span>
+                <span style="position: absolute; color: rgb(0,0,0); top: 9.25vw; left: 32.42vw; text-shadow: none; font-size: 0.94vw; letter-spacing: 0.18vw; font-family: GothamLightB;">editions</span>
                 <span><img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 11.65vw; margin-left: -17.48vw; width: 39.5vw; height: 1px; position: absolute;">
                 <img src="img/page5/Customisation%20Line.png" style="color: rgb(77,77,77); opacity: 0.3; margin-top: 14.44vw; margin-left: -17.48vw; width: 39.5vw; height: 1px; position: absolute;"></span>
             </div>
@@ -1006,28 +2055,32 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             </div>
             
             <!-- The Modal -->
-            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgba(51,51,51,0.95); padding: 4%; padding-top: 8%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.25vw 0.25vw 1.5vw;">
-                <img class="cross" style="position: absolute; margin-top: -8vw; margin-left: 14vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
+            <div id="myModal1" style="display: none; position: absolute; z-index: 8; margin-left: 36.5vw; margin-top: -14.7vw; width: 27vw; height: 36.45vw; overflow: visible; background-color: rgba(51,51,51,0.95); padding: 4%; padding-top: 9.7%; padding-bottom: 2%; box-shadow: rgba(90,90,90) 0.25vw 0.25vw 1.5vw;">
+                <img class="cross" style="position: absolute; margin-top: -9.7vw; left: 27.55vw; width: 0.75vw; cursor: pointer;" src="img/page5/Cross.png">
                 <span id="menufillin" class="menusp21" style="float: left; margin-left: 0.74vw; margin-top: -1vw; font-family: GothamLight; font-size: 0.67vw; line-height: 1.3vw; text-shadow: none; text-align: left; opacity: 0.7; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased;">
-                    *Please check the required fields<br><br>
-                    Name<br>
-                    <input type="text" class="name " id="name" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
-                    E-mail Address<span>*</span><br>
-                    <input type="text" class="email" id="email" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
-                    Telephone<span>*</span><br>
-                    <input type="text" class="tel" id="tel" style="width: 17.4vw; margin-bottom: 0.8vw;"><br>
+                    <p class="notfilledModal" id="menureqtext" class="menusp21" style="font-family: GothamLight; font-size: 0.67vw; margin-top: -2.24vw !important; opacity: 0;">
+                        *Please check the required fields
+                    </p>
+                    Name<span class="notfillednameModal" style="opacity: 0;">*</span><br>
+                    <input type="text" class="nameModal " id="name" name="name" required><br>
+                    E-mail Address<span class="notfilledemailModal" style="opacity: 0;">*</span><br>
+                    <input type="text" class="emailModal" id="email" name="email" type="email" required><br>
+                    Telephone<span class="notfilledtelModal" style="opacity: 0;">*</span><br>
+                    <input type="number" class="telModal" id="tel" name="tel" style="width: 17.4vw; margin-bottom: 0.8vw;" required><br>
                 </span>
                 
-                <span style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 7.4vw; margin-left: 0.52vw;">
+                <span id="thankyou" style="position: absolute; text-shadow: none; opacity: 0; width: 30vw; left: -1vw; top: 14vw; font-family: GothamLight; font-size: 0.67vw; letter-spacing: 0.05vw; -webkit-font-smoothing: antialiased; z-index: -2;">Thank you!<br>We will be in touch with you shortly.</span>
+                
+                <span id="editionModal" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.05vw; margin-top: 7.4vw; margin-left: 0.52vw;">
                     <hr style="border-color: rgba(204,204,204,0.8); border-width: 0.4px; margin-left: 1vw; margin-top: 0 !important; margin-bottom: 0.5vw !important; width: 16vw; height: 1px; position: relative;">
                     <span style="float: left; position: relative; color: rgba(179,179,179,0.9); margin-top: 0.4vw; margin-left: 2vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;">EDITION</span>
                     <span class="preorderText" style="float: left; position: relative; color: rgba(179,179,179,0.9); margin-top: 0.4vw; margin-left: 5.41vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight; -webkit-font-smoothing: antialiased;">solid</span>
                     <span style="float: left; position: relative; color: rgba(179,179,179,0.9); margin-left: 0.28vw; margin-top: 0.15vw; text-shadow: none; font-size: 0.7vw; letter-spacing: 0.18vw; font-family: GothamLight;">
-                        <img class="preorderShade" style="width: 1.4vw; cursor: pointer; pointer-events: none;" src="img/page5/gray%20and%20salt%20active.png"/>
+                        <img class="preorderShade" style="width: 1.4vw; cursor: pointer; pointer-events: none;" src="img/page5/Customisation%20Icon%20Salt%20Active.png"/>
                     </span>
                     <hr style="border-color: rgba(204,204,204,0.8); border-width: 0.4px; margin-left: 1vw; margin-top: 2.78vw !important; margin-bottom: 0vw !important; width: 16vw; height: 1px; position: relative;">
                 </span>
-               <span id="preorder2" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.19vw; margin-top: 4.3vw; margin-left: 3.4vw; cursor: pointer; font-size: 0.8vw; color: rgb(179,179,179);">
+                <span id="preorder2" style="float: left; font-family: GothamLight; text-shadow: none; text-align: left; opacity: 1; letter-spacing: 0.19vw; margin-top: 4.3vw; margin-left: 3.4vw; cursor: pointer; font-size: 0.8vw; color: rgb(179,179,179); -webkit-font-feature-settings: 'kern' 1; text-rendering: optimizeLegibility;">
                     <img src="img/page5/Pre%20Order%20Dark.png" style="position: absolute; width: 13.3vw; margin-top: -0.29vw; margin-left: -0.6vw; color: rgb(179,179,179);">PRE-ORDER ENQUIRY
                 </span>
             </div>
@@ -1040,10 +2093,11 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
         </div>
 
         <!-- The JavaScript -->
-        <script type="text/javascript" src="jquery.easing.1.3.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
+            var desktop = window.matchMedia("(min-width: 415px)");
+            var mobile = window.matchMedia("(max-width: 414px)");
             var val1 = 0;
             var my_image1 = new Image();
             var my_image2 = new Image();
@@ -1240,34 +2294,77 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             
         function handleLocationError() {
         }
-            
+        
+        $(document).ready(function(){
+                if(desktop.matches)
+                    document.getElementById("myNav").style.marginLeft = "-80%";
+                else if(mobile.matches)
+                    document.getElementById("myNav").style.marginLeft = "100%";
+                var $form = $('form');
+                $form.submit(function(){
+                    $.post($(this).attr('action'), $(this).serialize(), function(response){
+                        // do something here on success
+                    },'json');
+                    return false;
+                });
+            });
+        
         function openCloseNav() {
-            if(document.getElementById("myNav").style.marginLeft == "-80%")
-            {
-                $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
-                document.getElementById("myNav").style.marginLeft = "0%";
-                $('#outsidediv').css("z-index", "1");
-                $.fn.fullpage.setMouseWheelScrolling(false);
-                $.fn.fullpage.setAllowScrolling(false);
-            }
-            else
-            {
-                $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
-                document.getElementById("myNav").style.marginLeft = "-80%";
-                $('#outsidediv').css("z-index", "-1");
-                $.fn.fullpage.setMouseWheelScrolling(true);
-                $.fn.fullpage.setAllowScrolling(true);
-            }
+            if(desktop.matches)
+                if(document.getElementById("myNav").style.marginLeft == "-80%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
+                    document.getElementById("myNav").style.marginLeft = "0%";
+                    $('#outsidediv').css("z-index", "1");
+                    $.fn.fullpage.setMouseWheelScrolling(false);
+                    $.fn.fullpage.setAllowScrolling(false);
+                }
+                else
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "-80%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
+            if(mobile.matches)
+                if(document.getElementById("myNav").style.marginLeft == "100%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
+                    document.getElementById("myNav").style.marginLeft = "3%";
+                    $('#outsidediv').css("z-index", "1");
+                    $.fn.fullpage.setMouseWheelScrolling(false);
+                    $.fn.fullpage.setAllowScrolling(false);
+                }
+                else
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "100%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
         }
         $('#outsidediv').click(function() {
-            if(document.getElementById("myNav").style.marginLeft == "0%")
-            {
-                $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
-                document.getElementById("myNav").style.marginLeft = "-80%";
-                $('#outsidediv').css("z-index", "-1");
-                $.fn.fullpage.setMouseWheelScrolling(true);
-                $.fn.fullpage.setAllowScrolling(true);
-            }
+            if(desktop.matches)
+                if(document.getElementById("myNav").style.marginLeft == "0%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "-80%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
+            if(mobile.matches)
+                if(document.getElementById("myNav").style.marginLeft == "3%")
+                {
+                    $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
+                    document.getElementById("myNav").style.marginLeft = "100%";
+                    $('#outsidediv').css("z-index", "-1");
+                    $.fn.fullpage.setMouseWheelScrolling(true);
+                    $.fn.fullpage.setAllowScrolling(true);
+                }
+                
         });
         $("#menu1").click(function() {
             $("#menudot1").removeClass("menudot02")
@@ -1282,6 +2379,10 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             $("#menudot1").addClass("menudot02")
         });
         $("#menu1").click(function(){
+            if(desktop.matches)
+                $(".changecountry").css("opacity", "1");
+            else if(mobile.matches)
+                $(".changecountry").css("opacity", "1").animate({opacity: 0}, 200);
             $('.menuimage, .menusp21, .menusp22').css("opacity", "1.0").animate({opacity: 0}, 200, function(){
                 $('.menuimage, .menusp21, .menusp22').css("visibility", "hidden");
             });
@@ -1290,6 +2391,11 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             $('.menusp2et').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 0.85}, 1);
         });
         $("#menu2").click(function(){
+            if(desktop.matches)
+                $(".changecountry").css("opacity", "1");
+            else if(mobile.matches)
+                $(".changecountry").css("opacity", "0").animate({opacity: 1}, 400);
+            
             $('.menusp1, .menusp2, .menusp3, .menusp4').css("opacity", "1.0").animate({opacity: 0}, 400, function(){
                 $('.menusp1, .menusp2, .menusp3, .menusp4').css("visibility", "hidden");
             });
@@ -1298,6 +2404,74 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             });
             $('.menuimage, .menusp21, .menusp22').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1}, 400);
         });
+        
+        $("#nodownload").click(function() {
+            uname = /^[a-zA-Z ]{4,}$/;
+            email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(!uname.test($(".name").val()) || !email.test($(".email").val()) || !$('input:radio[name="gender"]:checked').val())
+            {
+                $(".notfilled").css({opacity: 1});
+                $("#nodownload").removeAttr("download", "Charcoal Issue");
+                $("#nodownload").attr("href", "#");
+                if(!uname.test($(".name").val())) 
+                    $(".notfilledname").css({opacity: 1});
+                else
+                    $(".notfilledname").css({opacity: 0});
+                if(!email.test($(".email").val()))
+                    $(".notfilledemail").css({opacity: 1});
+                else
+                    $(".notfilledemail").css({opacity: 0});
+                if(!$('input:radio[name="gender"]:checked').val())
+                    $(".notfilledmrms").css({opacity: 1});
+                else
+                    $(".notfilledmrms").css({opacity: 0});
+            }
+            else
+            {
+                $(".notfilled").css({opacity: 0});
+                $(".notfilledname").css({opacity: 0});
+                $(".notfilledemail").css({opacity: 0});
+                $("#nodownload").attr("download", "Charcoal Issue");
+                $("#nodownload").attr("href", "pdf/Charcoal%20Issue.pdf");
+            }
+            
+        });
+            
+        $("#preorder2").click(function() {
+            uname = /^[a-zA-Z ]{4,}$/;
+            email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            tel = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if(!uname.test($(".nameModal").val()) || !email.test($(".emailModal").val()) || !tel.test($(".telModal").val()))
+            {
+                $(".notfilledModal").css({opacity: 1});
+                $("#nodownload").removeAttr("download", "Charcoal Issue");
+                $("#nodownload").attr("href", "#");
+                if(!uname.test($(".nameModal").val())) 
+                    $(".notfillednameModal").css({opacity: 1});
+                else
+                    $(".notfillednameModal").css({opacity: 0});
+                if(!email.test($(".emailModal").val()))
+                    $(".notfilledemailModal").css({opacity: 1});
+                else
+                    $(".notfilledemailModal").css({opacity: 0});
+                if(!tel.test($(".telModal").val()))
+                    $(".notfilledtelModal").css({opacity: 1});
+                else
+                    $(".notfilledtelModal").css({opacity: 0});
+            }
+            else
+            {
+                $(".notfilledModal").css({opacity: 0});
+                $(".notfillednameModal").css({opacity: 0});
+                $(".notfilledemailModal").css({opacity: 0});
+                $("#editionModal").css({opacity: 0});
+                $("#menufillin").css({opacity: 0});
+                $("#preorder2").css({opacity: 0});
+                $("#thankyou").css({opacity: 0.7});
+            }
+            
+        });
+            
         $(".page2dot2").click(function() {
             $(".page2dot1").addClass("page2dot2");
             $(".page2dot2").removeClass("page2dot1");
@@ -1404,6 +2578,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 $("#tick2").css({'pointer-events': 'auto'});
                 $("#tick3").css({'pointer-events': 'auto'});
                 $("#tick4").css({'pointer-events': 'auto'});
+                $(".preorderText").css("margin-left", "5.41vw");
                 $("#tick1text").css({'opacity': 1});
                 $("#tick2text").css({'opacity': 0});
                 $("#tick3text").css({'opacity': 0});
@@ -1429,6 +2604,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 $("#tick2").css({'pointer-events': 'none'});
                 $("#tick3").css({'pointer-events': 'auto'});
                 $("#tick4").css({'pointer-events': 'auto'});
+                $(".preorderText").css("margin-left", "5.41vw");
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "1");
                 $("#tick3text").css("opacity", "0");
@@ -1454,6 +2630,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 $("#tick2").css({'pointer-events': 'auto'});
                 $("#tick3").css({'pointer-events': 'none'});
                 $("#tick4").css({'pointer-events': 'auto'});
+                $(".preorderText").css("margin-left", "5.41vw");
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "0");
                 $("#tick3text").css("opacity", "1");
@@ -1479,6 +2656,7 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
                 $("#tick2").css({'pointer-events': 'auto'});
                 $("#tick3").css({'pointer-events': 'auto'});
                 $("#tick4").css({'pointer-events': 'none'});
+                $(".preorderText").css("margin-left", "3.71vw");
                 $("#tick1text").css("opacity", "0");
                 $("#tick2text").css("opacity", "0");
                 $("#tick3text").css("opacity", "0");
@@ -1596,6 +2774,10 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
+            $("#editionModal").css({opacity: 1});
+            $("#menufillin").css({opacity: 0.7});
+            $("#preorder2").css({opacity: 1});
+            $("#thankyou").css({opacity: 0});
         }
         
         span2.onclick = function() {
@@ -1621,6 +2803,10 @@ Content-Type:application/x-font-woff;charset=UTF-8 (differs for other font files
             $('.header-top').css({'pointer-events': 'auto'});
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
+            $("#editionModal").css({opacity: 1});
+            $("#menufillin").css({opacity: 0.7});
+            $("#preorder2").css({opacity: 1});
+            $("#thankyou").css({opacity: 0});
         }
         
         $(".menuselect").change(function() {
