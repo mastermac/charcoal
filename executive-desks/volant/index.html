@@ -27,8 +27,9 @@
     
 	<script type="text/javascript" src="js/examples.js"></script>
 	<script type="text/javascript">
-        var desktop = window.matchMedia("(min-width: 415px)");
-        var mobile = window.matchMedia("(max-width: 414px)");
+        var desktop = window.matchMedia("(min-width: 737px)");
+        var mobilepotrait = window.matchMedia("(max-width: 414px)");
+        var mobileland = window.matchMedia("(min-width: 415px) and (max-width: 736px)");
         $(document).ready(function() {
             document.getElementsByTagName("html")[0].style.visibility = "visible";
         });
@@ -40,7 +41,7 @@
                 $(".features").css("visibility", "visible");
                 $(".customize").css("visibility", "visible");
             }
-            else if(mobile.matches)
+            else if(mobilepotrait.matches || mobileland.matches)
             {
                 $(".design").css("visibility", "visible");
                 $(".features").css("visibility", "hidden");
@@ -62,7 +63,7 @@
                             $(".features").css("visibility", "visible");
                             $(".customize").css("visibility", "visible");
                         }
-                        else if(mobile.matches)
+                        else if(mobilepotrait.matches || mobileland.matches)
                         {
                             $(".design").css("visibility", "visible");
                             $(".features").css("visibility", "hidden");
@@ -82,7 +83,7 @@
                             $(".features").css("visibility", "visible");
                             $(".customize").css("visibility", "visible");
                         }
-                        else if(mobile.matches)
+                        else if(mobilepotrait.matches || mobileland.matches)
                         {
                             $(".design").css("visibility", "visible");
                             $(".features").css("visibility", "hidden");
@@ -102,7 +103,7 @@
                             $(".features").css("visibility", "visible");
                             $(".customize").css("visibility", "visible");
                         }
-                        else if(mobile.matches)
+                        else if(mobilepotrait.matches || mobileland.matches)
                         {
                             $(".design").css("visibility", "hidden");
                             $(".features").css("visibility", "visible");
@@ -128,7 +129,7 @@
                             $(".features").css("visibility", "visible");
                             $(".customize").css("visibility", "visible");
                         }
-                        else if(mobile.matches)
+                        else if(mobilepotrait.matches || mobileland.matches)
                         {
                             $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51); text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                             $(".menudot2").attr("style","color: rgb(209,209,209) !important");
@@ -150,7 +151,7 @@
                             $(".features").css("visibility", "visible");
                             $(".customize").css("visibility", "visible");
                         }
-                        else if(mobile.matches)
+                        else if(mobilepotrait.matches || mobileland.matches)
                         {
                             $(".design").css("visibility", "hidden");
                             $(".features").css("visibility", "hidden");
@@ -199,7 +200,7 @@
                             $(".features").css("visibility", "visible");
                             $(".customize").css("visibility", "visible");
                         }
-                        if(mobile.matches)
+                        if(mobilepotrait.matches || mobileland.matches)
                         {
                             $(".menudot1").attr("style","color: rgb(51,51,51) !important; -webkit-text-stroke-color: rgb(51,51,51) text-shadow: 0.04vw 0.06vw 0.2vw rgba(0, 0, 0, 0.38);");
                             $(".menudot2").attr("style","color: rgb(209,209,209) !important");
@@ -667,7 +668,7 @@
             }
         }
         
-        @media screen and (max-width: 1920px) and (min-width: 415px) {
+        @media screen and (max-width: 1920px) and (min-width: 737px) {
             .iconAnimated {
                 transition: transform 2.4s cubic-bezier(0.72, -0.32, 0.89, -0.37), opacity 2s ease;
                 transform: translateZ(0) translate(0.4vw,-0.6vw);
@@ -675,7 +676,7 @@
             }
         }
         
-        @media screen and (max-width: 415px) {
+        @media screen and (max-width: 737px) {
             .iconAnimated {
                 transition: transform 2s ease, opacity 2s ease;
                 transform: translateZ(0) translate(2.4vw,-3.2vw);
@@ -683,7 +684,7 @@
             }
         }
         
-        @media screen and (min-width: 415px) {
+        @media screen and (min-width: 737px) {
             .mobileimage1 {
                 max-width: 103vw;
                 margin-top: 9.48vw;
@@ -1049,11 +1050,6 @@
             .menudot02 {
                 font-size: 0.86vw;
             }
-            .menuspcat {
-                width: 32.5vw;
-                height: 22.1vw; 
-                margin: 0.9vw 0px 0px 23.2vw;
-            }
             .menuemail {
                 font-size: 0.64vw;
             }
@@ -1065,6 +1061,7 @@
                 margin-left: 5vw;
             }
             #menureqtext {
+                margin-top: -2.24vw !important; 
                 font-size: 0.67vw;
             }
             #menuradio {
@@ -1127,11 +1124,16 @@
             .dark {
                 font-size: 0.7vw;
             }
+            .design {
+                margin-top: 1.335vw !important;
+            }
             .features {
                 margin-left: -0.33vw;
+                margin-top: 1.335vw !important;
             }
             .customize {
-               margin-left: 0.1vw;
+                margin-left: 0.1vw;
+                margin-top: 1.335vw !important;
             }
             
             .secp {
@@ -1142,6 +1144,7 @@
                 width: 9.44vw;
             }
         }
+        
         
         @media screen and (max-width: 414px) {
             .mobileimage1 {
@@ -1521,11 +1524,6 @@
             .menudot02 {
                 font-size: 3.9vw;
             }
-            .menuspcat {
-                width: 82.5vw;
-                height: 55.1vw;
-                margin: -69.9vw 80px 0px 23.2vw;
-            }
             .menuemail {
                 font-size: 3.64vw;
             }
@@ -1537,6 +1535,7 @@
                 margin-left: 22vw;
             }
             #menureqtext {
+                margin-top: -2.24vw !important; 
                 font-size: 3.27vw;
             }
             #menuradio {
@@ -1607,11 +1606,16 @@
             .iconlink {
                 display: none;
             }
+            .design {
+                margin-top: 1.335vw !important;
+            }
             .features {
                 margin-left: -18.9vw;
+                margin-top: 1.335vw !important;
             }
             .customize {
-               margin-left: -24.9vw;
+                margin-left: -24.9vw;
+                margin-top: 1.335vw !important;
             }
             
             .secp {
@@ -1620,6 +1624,495 @@
             }
             #logo {
                 width: 37.44vw;
+            }
+            .top-bar {
+                opacity: 1;
+            }
+            .menu {
+                float: right;
+                cursor: pointer;
+                margin-right: 3%;
+                margin-left: 0%;
+            }
+        }
+        
+        @media screen and (min-width: 415px) and (max-width: 736px) {
+            .mobileimage1 {
+                max-width: 100vw;
+                margin-top: 16.48vw;
+                margin-left: -11.9vw;
+            }
+            .mobilePara1 {
+                float: left;
+                margin-top: 16.8vw;
+                margin-left: -12.63vw;
+                width: 40%;
+            }
+            .sec1head1 {
+                font-size: 1vw;
+                letter-spacing: 0.45vw;
+                margin-bottom: 2.4vw;
+            }
+            .sec1head2 {
+                font-size: 2vw;
+                letter-spacing: 0.2vw;
+                margin-bottom: 2.1vw;
+            }
+            .secshade {
+                visibility: hidden;
+            }
+            
+            .mobileimage2 {
+                max-width: 87vw;
+                margin-top: -25vw;
+                margin-left: -16.9vw;
+            }
+            .mobilePara2 {
+                float: left;
+                margin-top: 23.2vw;
+                width: 46%;
+                margin-left: -2.8vw;
+            }
+            .sec2head1 {
+                font-size: 1.6vw;
+                letter-spacing: 0.07vw;
+            }
+            .sec2para1 {
+                letter-spacing: 0.03vw;
+                margin-top: 1.5vw !important;
+            }
+            .sec2para2 {
+                letter-spacing: 0.07vw;
+                margin-top: 1.4vw !important;
+            }
+            
+            .sec3para1 {
+                font-size: 1.67vw;
+                width: 64%;
+                letter-spacing: 0.074vw;
+                margin-top: 15.7vw !important;
+                margin-left: 5.77vw;
+            }
+            .mobileimage3 {
+                max-width: 98vw;
+                margin-top: 21vw;
+                margin-left: -7.9vw;
+            }
+            .sec3animation {
+                margin-top: 32.5vw;
+            }
+            .sec3ani1 {
+                width: 10.2vw;
+                margin-top: 6vw;
+                margin-left: 3.7vw;
+            }
+            .sec3ani2 {
+                width: 2vw;
+                margin-top: 4vw;
+                margin-left: -1.4vw;
+            }
+            .sec3para2 {
+                font-size: 1.57vw;
+                letter-spacing: 0.044vw;
+                margin-top: 1.4vw !important;
+                margin-left: 1vw;
+            }
+            .sec3para2dot {
+                font-size: 1vw;
+            }
+            
+            .mobileimage4 {
+                left: 0;
+                bottom: -7vw;
+                width: 73.4vw;
+                height: 64vw;
+            }
+            .mobilepara4 {
+                top: 48%;
+                margin-left: 7vw;
+                width: 43%;
+            }
+            .sec4head1 {
+                font-size: 2.2vw;
+                margin-top: .8vw;
+                letter-spacing: 0.27vw;
+            }
+            .sec4para1 {
+                letter-spacing: 0.055vw;
+                line-height: 2.2vw !important;
+                margin-top: 2vw !important;
+                margin-bottom: 1vw !important;
+            }
+            .sec4para2 {
+                letter-spacing: 0.055vw;
+                line-height: 2.2vw !important;
+                margin-top: -0.4vw !important;
+                margin-bottom: -1vw !important;
+                width: 91.5%;
+            }
+            
+            .mobileimage5 {
+                margin-top: -24vw;
+                margin-left: -50.7vw;
+                width: 104vw;
+            }
+            .sec5edition {
+                top: 10.25vw;
+                left: 2.42vw;
+                font-size: 2vw;
+                letter-spacing: 0.32vw;
+            }
+            .sec5line1 {
+                margin-top: 14.62vw;
+                margin-left: -47.48vw;
+                width: 65vw;
+            }
+            .sec5line2 {
+                margin-top: 21.35vw;
+                margin-left: -47.48vw;
+                width: 65vw;
+            }
+            .sec5edition1 {
+                top: 16.74vw;
+                left: 4.82vw;
+                font-size: 2vw;
+                letter-spacing: 0.3vw;
+            }
+            .sec5edition2 {
+                font-size: 2vw;
+                letter-spacing: 0.3vw;
+                top: 16.74vw;
+                left: 29vw;
+            }
+            .sec5tick1 {
+                width: 4vw;
+                top: 16.2vw;
+                left: 14vw;
+            }
+            .sec5tick1text {
+                font-size: 1.2vw;
+                top: 21.91vw;
+                left: 14.4vw;
+                letter-spacing: 0.18vw;
+            }
+            .sec5tick2 {
+                width: 4vw;
+                top: 16.2vw;
+                left: 20.2vw;
+            }
+            .sec5tick2text {
+                font-size: 1.2vw;
+                top: 21.91vw;
+                left: 18.3vw;
+                letter-spacing: 0.18vw;
+            }
+            .sec5tick3 {
+                width: 4vw;
+                top: 16.2vw;
+                left: 43.22vw;
+            }
+            .sec5price {
+                top: 16.74vw;
+                right: 32.24vw;
+                font-size: 2vw;
+                letter-spacing: 0.3vw;
+            }
+            .sec5specs {
+                visibility: hidden;
+            }
+            .sec5specsbox {
+                visibility: hidden;
+            }
+            .sec5preo {
+                top: 16.74vw;
+                left: 71.91vw;
+                font-size: 1.8vw;
+                letter-spacing: 0.3vw;
+            }
+            .sec5preobox {
+                width: 26.75vw;
+                position: absolute;
+                top: -0.7vw;
+                left: -0.8vw;
+            }
+            
+            #myModal1 {
+                margin-left: 7.5vw;
+                margin-top: -52vw;
+                width: 84vw;
+                height: 130.45vw;
+            }
+            .modal1cross {
+                margin-top: -14.7vw;
+                left: 80.4vw;
+                width: 3.75vw;
+            }
+            #menufillin {
+                margin-left: 0.74vw;
+                margin-top: 0vw;
+                font-size: 3.27vw;
+                line-height: 6.3vw;
+                letter-spacing: 0.2vw;
+            }
+            #menufillin input {
+                margin-bottom: 4.15vw;
+                width: 74.5vw;
+                height: 3.84vw;
+            }
+            #editionModal {
+                letter-spacing: 0.05vw;
+                margin-top: 18.4vw;
+                margin-left: 0.52vw;
+            }
+            .modalline1 {
+                margin-left: 1vw;
+                margin-top: 0 !important;
+                margin-bottom: 0.5vw !important;
+                width: 73vw;
+                height: 1px;
+            }
+            .modalline2 {
+                margin-left: 1vw;
+                margin-top: 9.78vw !important;
+                margin-bottom: 0vw !important;
+                width: 73vw;
+                height: 1px;
+            }
+            .modaledition {
+                margin-top: 1.8vw;
+                margin-left: 9vw;
+                font-size: 3.7vw;
+                letter-spacing: 0.18vw;
+            }
+            .modaleditiontype {
+                margin-top: 1.4vw;
+                margin-left: 17.41vw;
+                font-size: 4vw;
+                letter-spacing: 0.18vw;
+            }
+            .modalshade {
+                margin-left: 7.28vw;
+                margin-top: 1.55vw;
+                font-size: 3.7vw;
+                letter-spacing: 0.18vw;
+            }
+            .modalshadeimg {
+                width: 5.4vw;
+            }
+            #preorder2 {
+                letter-spacing: 0.69vw;
+                margin-top: 22vw;
+                margin-left: 9.4vw;
+                font-size: 4vw;
+            }
+            .preorder2box {
+                width: 59.3vw;
+                margin-top: -1.29vw;
+                margin-left: -1.6vw;
+            }
+            .notfilledModal {
+                font-size: 3.67vw;
+            }
+            #myModal2 {
+                margin-left: 4.05vw;
+                margin-top: -34.32vw;
+                width: 91.78vw;
+                height: 64.5vw;
+            }
+            .modal2cross {
+                margin-top: -12vw;
+                margin-left: 85vw;
+                width: 2.75vw;
+            }
+            .modal2img {
+                margin-top: 1.2vw;
+                margin-left: -3vw;
+                width: 90vw;
+                height: 47.6vw;
+            }
+            
+            .mobilemenu {
+                width: 97%;
+                height: 96%;
+            }
+            .mobilemenu1 {
+                max-width: 40%;
+                margin-left: 29.7vw;
+                margin-right: 6vw;
+                margin-top: 6vw !important;
+            }
+            .menu1head1 {
+                letter-spacing: 0.484vw !important;
+                font-size: 1.2vw;
+                margin-bottom: 4vw !important;
+            }
+            .menu1head2 {
+                font-size: 1.72vw;
+                letter-spacing: 0.44vw;
+                margin-bottom: 4vw !important;
+            }
+            .menu1para1 {
+                font-size: 1.7vw;
+                line-height: 2.7vw;
+                margin-bottom: 1vw !important;
+            }
+            .menu1para2 {
+                font-size: 1.7vw;
+                line-height: 2.7vw;
+                margin-top: 0 !important;
+            }
+            .menu1aimg1 {
+                top: -9.45vw;
+                left: 4vw;
+            }
+            .menu1aimg2 {
+                top: 12.55vw;
+                left: -28.6vw;
+            }
+            .menu1img1 {
+                width: 30vw;
+                height: 20vw;
+            }
+            .menu1img2 {
+                width: 30vw;
+                height: 20vw;
+            }
+            .menu1img1text {
+                font-size: 1vw;
+                letter-spacing: 0.14vw;
+                margin-left: 12.2vw !important;
+                margin-top: -14% !important;
+            }
+            .menu1img2text {
+                font-size: 1vw;
+                letter-spacing: 0.14vw;
+                margin-left: 12.5vw !important;
+                margin-top: -14% !important;
+            }
+            #menu1 {
+                margin-left: 48%;
+                margin-top: -24% !important;
+                text-align: right;
+                padding-right: 0vw !important;
+            }
+            #menu2 {
+                margin-right: -18.1vw;
+                margin-top: -24.2% !important;
+                text-align: left;
+                padding-left: 1vw !important;
+            }
+            .menutext1 {
+                display: none;
+            }
+            .menutext2 {
+                display: none;
+            }
+            .menudot01 {
+                font-size: 2.4vw;
+            }
+            .menudot02 {
+                font-size: 2.4vw;
+            }
+            .menuemail {
+                font-size: 1.64vw;
+            }
+            .menuemailspan {
+                margin-top: 26.2vw;
+            }
+            .menuemailvalspan {
+                margin-top: 25.6vw;
+                margin-left: 10vw;
+            }
+            #menureqtext {
+                margin-top: -12.24vw !important;
+                font-size: 1.27vw;
+            }
+            #menuradio {
+                font-size: 1.67vw;
+                margin-top: -0.4vw !important;
+            }
+            input[type='radio'] {
+                width: 2.6vw;
+                height: 2.6vw;
+            }
+            #modalfillin {
+                font-size: 1.67vw;
+                line-height: 3.5vw;
+                margin-top: 0.89vw !important;
+            }
+            #modalfillin input {
+                margin-bottom: 4.15vw;
+                width: 36.5vw;
+                height: 1.84vw;
+            }
+            .menuimage {
+                width: 23.43vw;
+                height: 2.7vw;
+                margin-top: 0.46vw;
+            }
+            .changecountry {
+                font-size: 3.74vw;
+                width: 70vw;
+                margin-top: 211% !important;
+                margin-left: -10vw;
+                opacity: 0;
+            }
+            .menuformspan {
+                max-width: 72% !important;
+            }
+            .menucat {
+                width: 42.5vw;
+                height: 28.1vw;
+                margin: 7.1vw -23vw 0px 24.2vw;
+            }
+            .menudot1 {
+                font-size: 1.86vw;
+            }
+            .menudot2 {
+                font-size: 1.86vw;
+            }
+            .dot1 {
+                margin-left: -7.5vw;
+            }
+            .dot2 {
+                margin-left: -6.2vw;
+            }
+            .dot3 {
+                margin-left: -10.56vw;
+            }
+            .dot4 {
+                margin-left: -9.2vw;
+            }
+            .dot5 {
+                margin-left: -22.8vw;
+            }
+            .singledot {
+                margin-top: -0.99vw !important;
+            }
+            .dark {
+                font-size: 2vw;
+            }
+            .iconlink {
+                display: none;
+            }
+            .design {
+                margin-top: 2.29vw;
+            }
+            .features {
+                margin-top: 2.335vw;
+                margin-left: -13.1vw;
+            }
+            .customize {
+                margin-top: 2.335vw;
+                margin-left: -19.5vw;
+            }
+            
+            .secp {
+                font-size: 1.2vw;
+                line-height: 2.29vw;
+            }
+            #logo {
+                width: 19.44vw;
             }
             .top-bar {
                 opacity: 1;
@@ -1663,7 +2156,7 @@
                 <span class="menutextspan menusp21 menuformspan hidden" style="position: absolute; text-align: left; left: 3vw; height: 26vw;">
                     <p class="menusp21 menuemail" style="position: relative; letter-spacing: 0.07vw; font-weight: lighter; margin-top: 3.21vw !important; line-height: 1.3vw;"><span class="menuemailspan" style="position: absolute;">EMAIL US</span><span id="noemailspan" class="menuemailvalspan" style="position: absolute; color: rgb(125,125,125); border-bottom: 0.005vw outset; line-height: 1.1; letter-spacing: 0.04vw;"><a href = "mailto:support@charcoaltech.com" id="noemail" style="color: rgb(125,125,125);">support@charcoaltech.com</a></span><br>
                     </p>
-                    <p id="menureqtext" class="notfilled" style="font-family: GothamLight; margin-top: -2.24vw !important; opacity: 0;">
+                    <p id="menureqtext" class="notfilled" style="font-family: GothamLight; opacity: 0;">
                         *Please check the required fields
                     </p>
                     <p id="menuradio" class="menusp21" style="font-family: GothamLight; line-height: 1.14vw; margin-bottom: 0.5vw !important">
@@ -1718,7 +2211,7 @@
         </p>
         <div class="row">
             <div style="padding-left: 0px; margin-right: 5.7vw;">
-                <a class="dark design" href="#01" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.29vw !important;">
+                <a class="dark design" href="#01" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important;">
                     design
                 </a>
                 <div class="dots" style="font-family: Nexa; color: #666666; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
@@ -1727,7 +2220,7 @@
                 </div>
             </div>
             <div style="padding-left: 0px; margin-right: 6.5vw;">
-                <a class="dark features" href="#03" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important;">
+                <a class="dark features" href="#03" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important;">
                     features
                 </a>
                 <div class="dots" style="text-align:center;font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
@@ -1736,7 +2229,7 @@
                 </div>
             </div>
             <div style="padding-left: 0px;">
-                <a class="dark customize" href="#05" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important; margin-top: 1.335vw !important;">
+                <a class="dark customize" href="#05" style="font-family: GothamLightB; float:left; text-align: -webkit-left; padding-left: 0px !important; letter-spacing: 0.151vw; color: rgb(0,0,0); margin-bottom: -0.4vw !important;">
                     customize and pre-order
                 </a>
                 <div class="dots" style="text-align:center; font-family: Nexa; -webkit-font-smoothing: antialiased; position: relative;" class="container inner">
@@ -1837,12 +2330,14 @@
                 </span>
                 <img id="pg5ShadeIcon" style="position: absolute; width: 1.4vw; margin-left: -7.72vw; margin-top: -0.44vw;" src="img/concrete_page4.png"/>
             </span>
+            <div class="secshade">
             <span id="pulse01">&#9679;</span>
             <span id="pulseText01" class="pulseText" style="position: absolute; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 2.3%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">WIRELESS CHARGER</span>
             <span id="pulse02">&#9679;</span>
             <span id="pulseText02" class="pulseText" style="position: absolute; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 16.9%; margin-top: 0.4%; -webkit-font-smoothing: antialiased;">GOOGLE ASSISTANT</span>
             <span id="pulse03">&#9679;</span>
             <span id="pulseText03" class="pulseText" style="position: absolute; text-align: left; color: rgb(210, 210, 210); letter-spacing: 0.07vw; font-family: Nexa; font-weight: lighter; font-size: 0.5vw; text-shadow: none; margin-left: 9.4%; margin-top: 0.38%; -webkit-font-smoothing: antialiased;">LED INDICATOR -<br>ACTIVITY TRACKER</span>
+            </div>
             
            <span class="mobilepara4" style="float: left; position: absolute; text-shadow: none;">
                 <h2 class="sec4head1" style="font-family: GothamLightB; color: rgba(0,0,0,0.9); padding-left: 5.6vw; text-align: left;">
@@ -1935,8 +2430,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script>
             
-            var desktop = window.matchMedia("(min-width: 415px)");
-            var mobile = window.matchMedia("(max-width: 414px)");
+            var desktop = window.matchMedia("(min-width: 737px)");
+            var mobilepotrait = window.matchMedia("(max-width: 414px)");
+            var mobileland = window.matchMedia("(min-width: 415px) and (max-width: 736px)");
             var val1 = 0;
             var my_image1 = new Image();
             var my_image2 = new Image();
@@ -2105,7 +2601,7 @@
             $(document).ready(function(){
                 if(desktop.matches)
                     document.getElementById("myNav").style.marginLeft = "-80%";
-                else if(mobile.matches)
+                else if(mobilepotrait.matches || mobileland.matches)
                     document.getElementById("myNav").style.marginLeft = "100%";
                 var $form = $('form');
                 $form.submit(function(){
@@ -2158,7 +2654,7 @@
                     $.fn.fullpage.setMouseWheelScrolling(true);
                     $.fn.fullpage.setAllowScrolling(true);
                 }
-            if(mobile.matches)
+            if(mobilepotrait.matches || mobileland.matches)
                 if(document.getElementById("myNav").style.marginLeft == "100%")
                 {
                     $('#fullpage, #topmenu').css({color: 'rgb(250,250,250)', opacity: 1}).animate({color: 'rgb(220,220,220)', opacity: 0.05}, 250);
@@ -2186,7 +2682,7 @@
                     $.fn.fullpage.setMouseWheelScrolling(true);
                     $.fn.fullpage.setAllowScrolling(true);
                 }
-            if(mobile.matches)
+            if(mobilepotrait.matches || mobileland.matches)
                 if(document.getElementById("myNav").style.marginLeft == "3%")
                 {
                     $('#fullpage, #topmenu').css({color: 'rgb(220,220,220)', opacity: 0.05}).animate({color: 'rgb(250,250,250)', opacity: 1}, 250);
@@ -2212,7 +2708,7 @@
         $("#menu1").click(function(){
             if(desktop.matches)
                 $(".changecountry").css("opacity", "1");
-            else if(mobile.matches)
+            else if(mobilepotrait.matches || mobileland.matches)
                 $(".changecountry").css("opacity", "1").animate({opacity: 0}, 200);
             $('.menuimage, .menusp21, .menusp22').css("opacity", "1.0").animate({opacity: 0}, 200, function(){
                 $('.menuimage, .menusp21, .menusp22').css("visibility", "hidden");
@@ -2224,7 +2720,7 @@
         $("#menu2").click(function(){
             if(desktop.matches)
                 $(".changecountry").css("opacity", "1");
-            else if(mobile.matches)
+            else if(mobilepotrait.matches || mobileland.matches)
                 $(".changecountry").css("opacity", "0").animate({opacity: 1}, 400);
             
             $('.menusp1, .menusp2, .menusp3, .menusp4').css("opacity", "1.0").animate({opacity: 0}, 400, function(){
@@ -2331,7 +2827,7 @@
                 $("#edition2").removeClass('shadetickChangeActive');
                 if(desktop.matches)
                     $(".preorderText").css("margin-left", "5.41vw");
-                else if(mobile.matches)
+                else if(mobilepotrait.matches || mobileland.matches)
                     $(".preorderText").css("margin-left", "17.41vw");
                 priceChange();
             }
@@ -2355,7 +2851,7 @@
                 $("#edition2").removeClass('shadetickChangeActive');
                 if(desktop.matches)
                     $(".preorderText").css("margin-left", "5.41vw");
-                else if(mobile.matches)
+                else if(mobilepotrait.matches || mobileland.matches)
                     $(".preorderText").css("margin-left", "17.41vw");
                 priceChange();
             }
@@ -2379,7 +2875,7 @@
                 $("#tick2text").removeClass('shadetickChangeActive');
                 if(desktop.matches)
                     $(".preorderText").css("margin-left", "3.71vw");
-                else if(mobile.matches)
+                else if(mobilepotrait.matches || mobileland.matches)
                     $(".preorderText").css("margin-left", "10.41vw");
                 priceChange();
             }
