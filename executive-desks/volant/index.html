@@ -1238,7 +1238,7 @@
                 bottom: -33vw;
                 width: 100vw;
                 height: 126vw;
-                background-image: url(img/Volant04-min.png);
+                background-image: url(img/Volant04-min.jpg);
             }
             .mobilepara4 {
                 top: 12%;
@@ -2434,15 +2434,16 @@
             var mobileland = window.matchMedia("(min-width: 415px) and (max-width: 823px)");
             var val1 = 0;
             
+            var my_image1 = new Image();
+            var my_image2 = new Image();
+            var my_image3 = new Image();
+            
             $(".mobileimage1").lazyload();
             $(".mobileimage2").lazyload();
             $(".mobileimage3").lazyload();
             $(".mobileimage4").lazyload();
             $(".mobileimage5").lazyload();
             
-            var my_image1 = new Image();
-            var my_image2 = new Image();
-            var my_image3 = new Image();
             var image = { width: 550, height: 190 };
             var target = { x: 178, y: 89 };
             var pointer1 = $('#pulse01, #pulseText01');
