@@ -20,6 +20,7 @@
     
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js" type="text/javascript"></script>
 
 	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
 
@@ -2432,6 +2433,13 @@
             var mobilepotrait = window.matchMedia("(max-width: 414px)");
             var mobileland = window.matchMedia("(min-width: 415px) and (max-width: 823px)");
             var val1 = 0;
+            
+            $(".mobileimage1").lazyload();
+            $(".mobileimage2").lazyload();
+            $(".mobileimage3").lazyload();
+            $(".mobileimage4").lazyload();
+            $(".mobileimage5").lazyload();
+            
             var my_image1 = new Image();
             var my_image2 = new Image();
             var my_image3 = new Image();
